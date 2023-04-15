@@ -6,5 +6,6 @@ Graph based anomaly detection
 
 ## References
 
-EULER: Detecting Network Lateral Movement via Scalable Temporal Link Prediction
-HTTP-Based APT Malware Infection Detection Using URL Correlation Analysis
+- EULER: Detecting Network Lateral Movement via Scalable Temporal Link Prediction
+
+- HTTP-Based APT Malware Infection Detection Using URL Correlation Analysis
