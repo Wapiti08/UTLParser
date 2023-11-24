@@ -1,8 +1,15 @@
 # GraphTrace
-Graph based anomaly detection
+Graph based anomaly detection for malware (part of APT)
 
 ## Features
 - correlate host logs and http traffic to precisely locate anomaly behaviours
+
+## Explaination of Dataset
+
+- IoT23:
+    - attack (anomaly):
+
+        indictors that there was some type of attack from the infected device to another host
 
 ## References
 
