@@ -8,3 +8,10 @@
 '''
 
 '''
+from zat.log_to_dataframe import LogToDataFrame
+
+def graph_from_structure_data(bro_log_file):
+    ''' build graph from structured logs --- consider ips and ports only
+    
+    
+    '''
