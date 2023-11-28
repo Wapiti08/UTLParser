@@ -9,9 +9,61 @@
 
 '''
 from zat.log_to_dataframe import LogToDataFrame
+import spacy
+import networkx as nx
+from stellargraph import StellarGraph
 
-def graph_from_structure_data(bro_log_file):
+
+def graph_from_structure_data(bro_log_file: str):
     ''' build graph from structured logs --- consider ips and ports only
-    
+
+    node value: id.orig_h, id.resp_h
+    node attributes: id.orig_p, id.resp_p
+    edge attributes: ts, resp_bytes, conn_state
     
     '''
+    log_to_df = LogToDataFrame()
+    # pd.read_csv(test_file_path).head()#
+    conn_df = log_to_df.create_dataframe(bro_log_file)
+    # extract the initial desired features
+    field_list = ['ts', 'id.orig_h', 'id.orig_p', 'id.resp_h', 'id.resp_p', 'resp_bytes', 'conn_state']
+    fea_df = conn_df[field_list]
+
+    for row in fea_df.iterrows():
+        G = nx.MultiDiGraph()
+        edges = []
+        # add node with its attribute
+        G.add_node(row['id.orig_h'])
+        # add its port
+        G.nodes[row['id.orig_h']]['port'].append(row['id.orig_p'])
+        G.add_node(row['id.resp_h'])
+        G.nodes[row['id.resp_h']]['port'].append(row['id.resp_p'])
+        # add edge
+        G.add_edge(row['id.orig_h'], row['id.resp_h'], time=row['ts'], resp_bytes=row['resp_bytes'], conn_state=row['conn_state'])
+    
+    return list(nx.connected_components(G))
+
+def graph_label(G: nx.Graph, node_indicator:str, att_indicitor:str, edge_indicitor:tuple, label:str):
+    if label == '-   Malicious   C&C':
+        # check whether containing specific C&C server Ip
+
+
+    elif label == '-   Malicious   C&C-FileDownload':
+        # check specific ip and resp bytes
+
+    elif label == '-   Malicious   Attack':
+        # conn_state or the resp_p ---> vulnerable service
+
+    elif label == '-   Malicious   DDoS':
+        # count the edges between two nodes
+
+
+def edges_count(G:nx.Graph, edge:tuple):
+    '''
+        the edge is directed edge from node[0] to node[1]
+    '''
+    return G.number_of_edges(edge[0],edge[1])
+
+
+def feature_analysis(df, feature_list:list):
+    pass
