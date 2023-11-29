@@ -4,3 +4,4 @@ zat==0.4.6
 spacy==3.7.2
 networkx==3.1
 stellargraph==1.2.1
+chardet==5.2.0

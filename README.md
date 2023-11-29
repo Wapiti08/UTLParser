@@ -38,6 +38,12 @@ Graph based anomaly detection for malware (part of APT)
         - conn_state ---- port scan
         - feature analysis? --- other features
 
+## Running
+
+```
+python(3) -m spacy download en_core_web_sm
+
+```
  
 ## References
 

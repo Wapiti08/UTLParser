@@ -5,13 +5,14 @@
 @File        : util.py
 """
 
-'''
-
-'''
 from zat.log_to_dataframe import LogToDataFrame
 import spacy
 import networkx as nx
 from stellargraph import StellarGraph
+import matplotlib.pyplot as plt
+from tqdm import tqdm
+
+nlp = spacy.load("en_core_web_sm")
 
 
 def graph_from_structure_data(bro_log_file: str):
@@ -29,9 +30,9 @@ def graph_from_structure_data(bro_log_file: str):
     field_list = ['ts', 'id.orig_h', 'id.orig_p', 'id.resp_h', 'id.resp_p', 'resp_bytes', 'conn_state']
     fea_df = conn_df[field_list]
 
-    for row in fea_df.iterrows():
+    for row in tqdm(fea_df.iterrows(), desc='parsing logs to graphs'):
         G = nx.MultiDiGraph()
-        edges = []
+        # edges = []
         # add node with its attribute
         G.add_node(row['id.orig_h'], label='orig ip')
         # add its port
@@ -42,7 +43,10 @@ def graph_from_structure_data(bro_log_file: str):
         # add edge
         G.add_edge(row['id.orig_h'], row['id.resp_h'], time=row['ts'], resp_bytes=row['resp_bytes'], conn_state=row['conn_state'])
     
-    return list(nx.connected_components(G))
+    # split into connected graphs
+    graphs = list(nx.connected_components(G))
+    print("generated {} graphs from {}".format(len(graphs), bro_log_file))
+    return graphs
 
 def graph_label(G: nx.Graph, node_indicator:str, att_indicitor:str, edge_indicitor:tuple, label:str):
     G_label = 0
@@ -84,6 +88,17 @@ def edges_count(G:nx.Graph, edge:tuple):
     '''
     return G.number_of_edges(edge[0],edge[1])
 
+def token_emb():
+    pass
 
 def feature_analysis(df, feature_list:list):
     pass
+
+def visualize_graph(G: nx.Graph, file_path: None):
+    # draw the graph
+    pos = nx.spring_layout(G)
+    nx.draw(G, pos, with_labels=True, font_weight='bold')
+    plt.show()
+    # save the graph
+    if file_path:
+        nx.write_graph(G, file_path)
