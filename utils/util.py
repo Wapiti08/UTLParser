@@ -8,7 +8,7 @@
 from zat.log_to_dataframe import LogToDataFrame
 import spacy
 import networkx as nx
-from stellargraph import StellarGraph
+# from stellargraph import StellarGraph
 import matplotlib.pyplot as plt
 from tqdm import tqdm
 
@@ -24,29 +24,29 @@ def graph_from_structure_data(bro_log_file: str):
     
     '''
     log_to_df = LogToDataFrame()
-    # pd.read_csv(test_file_path).head()#
-    conn_df = log_to_df.create_dataframe(bro_log_file)
+    # keep the ts column
+    conn_df = log_to_df.create_dataframe(bro_log_file,ts_index=False)
     # extract the initial desired features
     field_list = ['ts', 'id.orig_h', 'id.orig_p', 'id.resp_h', 'id.resp_p', 'resp_bytes', 'conn_state']
-    fea_df = conn_df[field_list]
-
-    for row in tqdm(fea_df.iterrows(), desc='parsing logs to graphs'):
-        G = nx.MultiDiGraph()
+    # for testing
+    fea_df = conn_df[field_list][:100]
+    G = nx.MultiDiGraph()
+    for _, row in tqdm(fea_df.iterrows(), desc='parsing logs to graphs'):
         # edges = []
         # add node with its attribute
-        G.add_node(row['id.orig_h'], label='orig ip')
-        # add its port
-        G.nodes[row['id.orig_h']]['port'].append(row['id.orig_p'])
+        # if G.has_node(row['id.orig_h']):
+
+        G.add_node(row['id.orig_h'], label='orig ip', port=row['id.orig_p'])
         
-        G.add_node(row['id.resp_h'], label='resp ip')
-        G.nodes[row['id.resp_h']]['port'].append(row['id.resp_p'])
+        G.add_node(row['id.resp_h'], label='resp ip', port=row['id.resp_p'])
+        # G.nodes[row['id.resp_h']]['port'].append(row['id.resp_p'])
         # add edge
-        G.add_edge(row['id.orig_h'], row['id.resp_h'], time=row['ts'], resp_bytes=row['resp_bytes'], conn_state=row['conn_state'])
+        G.add_edge(row['id.orig_h'], row['id.resp_h'], label=row['ts'], resp_bytes=row['resp_bytes'], conn_state=row['conn_state'])
     
     # split into connected graphs
-    graphs = list(nx.connected_components(G))
-    print("generated {} graphs from {}".format(len(graphs), bro_log_file))
-    return graphs
+    graphs = list(nx.strongly_connected_components(G))
+    print("there are {} full connected graphs from {}".format(len(graphs), bro_log_file))
+    return G
 
 def graph_label(G: nx.Graph, node_indicator:str, att_indicitor:str, edge_indicitor:tuple, label:str):
     G_label = 0
@@ -96,9 +96,14 @@ def feature_analysis(df, feature_list:list):
 
 def visualize_graph(G: nx.Graph, file_path: None):
     # draw the graph
+    # print(G.info())
     pos = nx.spring_layout(G)
-    nx.draw(G, pos, with_labels=True, font_weight='bold')
+    # nx.draw_networkx(G, pos)
+    nx.draw(G, pos, arrows=True, with_labels=True, node_color='skyblue',font_weight='bold')
+    # draw multiple edges
+    edge_labels = {(u,v): d['label'] for u, v, d in G.edges(data=True)}
+    nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels)
     plt.show()
     # save the graph
     if file_path:
-        nx.write_graph(G, file_path)
+        nx.write_graphml(G, file_path)
