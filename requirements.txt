@@ -3,10 +3,4 @@ dask==2023.5.0
 zat==0.4.6
 spacy==3.7.2
 networkx==3.1
-<<<<<<< HEAD
-stellargraph==1.2.1
 chardet==5.2.0
-matplotlib==3.7.4
-=======
-chardet==5.2.0
->>>>>>> 5349200 (start to invesitgate entity extraction)
