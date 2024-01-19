@@ -2,7 +2,14 @@
 Graph based anomaly detection for malware (part of APT)
 
 ## Features
-- correlate host logs and http traffic to precisely locate anomaly behaviours
+- correlate data from multiple sources (network traffic, system/applications/service logs, process execution status)
+- extract the entities (obj, sub, action) from events
+- correlate processes and build process-specific communities
+- graph compression with graph summarization
+- distributed graph-based neural network training
+- creation of casual graphs
+- graph training with mutiple attributes for nodes and edges
+
 
 ## Explaination of Dataset
 
@@ -38,6 +45,18 @@ Graph based anomaly detection for malware (part of APT)
         - conn_state ---- port scan
         - feature analysis? --- other features
 
+- HoneyNet
+    Linux logs /var/log/messages, /var/log/secure , process accounting records /var/log/pacct , other Linux logs, Apache web server logs /var/log/httpd/access_log, /var/log/httpd/error-log and , Sendmail /var/log/mailog, Squid /var/log/squid/access_log, /var/log/squid/store_log, /var/log/squid/cache_log, etc. (fun Squid proxy logs during honeynet operation as an open proxy)
+
+- MLog
+    Linux logs /var/log/messages, /var/log/secure , process accounting records /var/log/pacct , other Linux logs, Apache web server logs /var/log/httpd/access_log, /var/log/httpd/error-log, /var/log/httpd/referer-log and /var/log/httpd/audit_log , Sendmail /var/log/mailog, Squid /var/log/squid/access_log, /var/log/squid/store_log, /var/log/squid/cache_log, etc.
+
+- AIT fox
+    
+
+- Windows (CBS)
+    contain information about component installation, removal or servicing events
+
 ## Running
 
 ```
@@ -48,5 +67,3 @@ python(3) -m spacy download en_core_web_sm
 ## References
 
 - EULER: Detecting Network Lateral Movement via Scalable Temporal Link Prediction
-
-- HTTP-Based APT Malware Infection Detection Using URL Correlation Analysis

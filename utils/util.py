@@ -8,7 +8,6 @@
 from zat.log_to_dataframe import LogToDataFrame
 import spacy
 import networkx as nx
-# from stellargraph import StellarGraph
 import matplotlib.pyplot as plt
 from tqdm import tqdm
 
