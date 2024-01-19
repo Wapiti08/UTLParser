@@ -74,6 +74,9 @@ Graph based anomaly detection for malware (part of APT)
 
 ```
 python(3) -m spacy download en_core_web_sm
+# for rust compiler 
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
 
 ```
  
