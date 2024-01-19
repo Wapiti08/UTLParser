@@ -45,7 +45,6 @@ Graph based anomaly detection for malware (part of APT)
         - conn_state ---- port scan
         - feature analysis? --- other features
 
-<<<<<<< HEAD
 - MLog:
 
     - include:
@@ -70,19 +69,6 @@ Graph based anomaly detection for malware (part of APT)
 - Windows (CBS):
     
     - contain information about component installation, removal or servicing events
-=======
-- HoneyNet
-    Linux logs /var/log/messages, /var/log/secure , process accounting records /var/log/pacct , other Linux logs, Apache web server logs /var/log/httpd/access_log, /var/log/httpd/error-log and , Sendmail /var/log/mailog, Squid /var/log/squid/access_log, /var/log/squid/store_log, /var/log/squid/cache_log, etc. (fun Squid proxy logs during honeynet operation as an open proxy)
-
-- MLog
-    Linux logs /var/log/messages, /var/log/secure , process accounting records /var/log/pacct , other Linux logs, Apache web server logs /var/log/httpd/access_log, /var/log/httpd/error-log, /var/log/httpd/referer-log and /var/log/httpd/audit_log , Sendmail /var/log/mailog, Squid /var/log/squid/access_log, /var/log/squid/store_log, /var/log/squid/cache_log, etc.
-
-- AIT fox
-    
-
-- Windows (CBS)
-    contain information about component installation, removal or servicing events
->>>>>>> 5349200 (start to invesitgate entity extraction)
 
 ## Running
 
