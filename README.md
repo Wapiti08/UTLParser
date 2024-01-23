@@ -3,11 +3,12 @@ Graph based anomaly detection for malware (part of APT)
 
 ## Features
 - correlate data from multiple sources (network traffic, system/applications/service logs, process execution status)
-- extract the entities (obj, sub, action) from events
+- extract the entities (obj, sub, action) from events (both structured and unstructured logs)
+- cover both logs from Windows and Linux
 - correlate processes and build process-specific communities
 - graph compression with graph summarization
 - distributed graph-based neural network training
-- creation of casual graphs
+- creation of causal and provenance graphs
 - graph training with mutiple attributes for nodes and edges
 
 
@@ -59,7 +60,8 @@ Graph based anomaly detection for malware (part of APT)
     - used for intrusion detection systems, federated learning, alert aggregation
 
     - include logs from all hosts, apache, error, authentication, DNS/VPN, audit, network traffic, syslog, system monitoring logs
-    ground truth labels for events
+
+    - ground truth labels for events
 
     - details:
         - host log: gather/ host name / logs
@@ -70,10 +72,17 @@ Graph based anomaly detection for malware (part of APT)
     
     - contain information about component installation, removal or servicing events
 
+## Structure
+
+- entity-extractor：
+
+    - 
+
 ## Running
 
 ```
-python(3) -m spacy download en_core_web_sm
+# download large language library
+python(3) -m spacy download en_core_web_lg
 # for rust compiler 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
