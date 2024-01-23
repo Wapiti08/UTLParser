@@ -92,3 +92,5 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ## References
 
 - EULER: Detecting Network Lateral Movement via Scalable Temporal Link Prediction
+
+- EXTRACTOR: Extracting Attack Behavior from Threat Reports
