@@ -6,6 +6,13 @@
 @Last Modified time: 2024-01-23 16:14:32  
 """
 
+
+from zat.log_to_dataframe import LogToDataFrame
+import spacy
+import networkx as nx
+import matplotlib.pyplot as plt
+from tqdm import tqdm
+
 def graph_from_structure_data(bro_log_file: str):
     ''' build graph from structured logs --- consider ips and ports only
 
