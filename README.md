@@ -72,6 +72,23 @@ Graph based anomaly detection for malware (part of APT)
     
     - contain information about component installation, removal or servicing events
 
+
+## Process Modules
+
+- DNS process
+    - log components
+
+        timestamp + service_name[id]: message
+
+    - involving attacks
+
+        wpscan, webshell, dns/network/service scan
+
+    - potential indicitors
+
+        ips/domains, events, commands
+
+
 ## Structure
 
 - entity-extractor：
