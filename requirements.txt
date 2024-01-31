@@ -13,3 +13,4 @@ dill==0.3.7
 base58==2.1.1
 transformers==4.37.0
 flair==0.13.1
+regex==2022.3.2

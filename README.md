@@ -93,8 +93,16 @@ Graph based anomaly detection for malware (part of APT)
 
 - entity-extractor：
 
-    - 
+    - solution 1:
 
+        - Drain parsed logs into structured logs: timestamp + parameterlist + eventtemplate
+        - spacy parse the dependency inside eventemplate ---- form the tree structure
+        - replace the annotation of words
+        - form the graph of malicious behaviour with subject-action-object
+
+    - solution2:
+
+        
 ## Running
 
 ```
