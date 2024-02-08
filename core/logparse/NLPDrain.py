@@ -1,3 +1,16 @@
+'''
+    combine log parser, regex, semantic parser with dependency to build 
+    causal graphs among subject, action, object
+
+    log parser: parse template and variables
+    regex: match ip or domain
+    iocs: common malicious indicitors
+    list of synonyms for actions: action used to define the direction between entities
+    semantic paser: extract the dependency between tokens --- used to decide the relations 
+
+'''
+
+
 import regex as re
 from pathlib import Path
 import pandas as pd
@@ -30,9 +43,12 @@ class Node:
     '''
     def __init__(self, childD=None, depth=0, digitOrtoken=None):
         '''
-        :param childD: 
-        :param depth:
-        :param digitOrtoken: check whether it is number or string type
+        :param childD: a dictionary with index and corresponding token
+        :param depth: 
+        :param digitOrtoken: number of token string
+        
+        description: 
+            the first layer is the length, the following layers are the tokens in tree structure
         '''
         if childD is None:
             childD = dict()
@@ -43,7 +59,7 @@ class Node:
 
 class LogParser:
 
-    def __init__(
+    def __init__(self,
             depth,
             st,
     ):
@@ -52,7 +68,9 @@ class LogParser:
         :param st: similarity threshold
         
         '''
-    
+        self.st = st
+        self.depth = depth
+
     def hasNumbers(self, s):
         return any(char.isdigit() for char in s)
     
@@ -68,7 +86,7 @@ class LogParser:
         seqLen = len(seq)
         if seqLen not in rn.childD:
             return retLogClust
-
+        # check the second layer with parent tokens
         parentn = rn.childD[seqLen]
 
         currentDepth = 1
@@ -92,13 +110,27 @@ class LogParser:
         return retLogClust
         
     def fastMatch(self, logClustL:[Logcluster], seq):
-        '''
+        ''' find the corresponding event template from sequence
         :param logClustL: 
         :param seq: list of tokens in sequential log
         '''
         retLogClust = None
+        maxSim = -1
+        maxNumOfPara = -1
+        maxClust = None
 
+        for logClust in logClustL:
+            curSim, curNumOfPara = self.seqDist(logClust.template, seq)
+            if curSim > maxSim or (curSim == maxSim and curNumOfPara > maxNumOfPara):
+                maxSim = curSim
+                maxNumOfPara = curNumOfPara
+                maxClust = logClust
+
+        # compare with threshold   
+        if maxSim >= self.st: 
+            retLogClust = maxClust
         
+        return retLogClust
 
 
     def seqDist(self, seq1, seq2):
@@ -120,7 +152,6 @@ class LogParser:
         return float(simTokens)/len(seq1), numOfPar
     
 
-
     def parse(self, logName):
         print("Parsing file: " + Path(self.path).joinpath(logName))
         start_time = datetime.now
@@ -132,13 +163,14 @@ class LogParser:
 
 
     def load_data(self):
-    
+        
+
 
     def log_to_dataframe(self,):
 
     
     def gen_logformat_regex(self, logformat):
-        '''
+        ''' based on given logformat to generate the regex that matches the corresponding components
         :param logformat: given format components ---- based on specific log format
         one example would be: "<Date> <Time> - <Level>  \[<Node>:<Component>@<Id>\] - <Content>",
 
@@ -161,5 +193,18 @@ class LogParser:
         return headers, regex
     
 
+    def addSeqToPrefixTree(self, rn: Node, logClust: Logcluster):
+        ''' 
+        :param rn: the Node struct
+        :param logClust: the class of log cluster
+        '''
+        seqLen = len(logClust)
+        if seqLen not in rn.childD:
+            firLayerNode = Node(depth=1, digitOrtoken=seqLen)
+            rn.childD[seqLen] = firLayerNode
+        else:
+            firLayerNode = rn.childD[seqLen]
+        
+        
 
         
