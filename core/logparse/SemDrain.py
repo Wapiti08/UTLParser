@@ -60,16 +60,24 @@ class Node:
 class LogParser:
 
     def __init__(self,
-            depth,
-            st,
+            depth=4,
+            st=0.4,
+            rex = [],
+            path,
+            logName,
     ):
         '''
         :param depth: depth of all leaf nodes
         :param st: similarity threshold
+        :param rex: regular regex to match explicit variables/indicitors
+
         
         '''
         self.st = st
         self.depth = depth
+        self.rex = rex
+        self.logName = logName
+        self.path = path
 
     def hasNumbers(self, s):
         return any(char.isdigit() for char in s)
@@ -109,7 +117,7 @@ class LogParser:
 
         return retLogClust
         
-    def fastMatch(self, logClustL:[Logcluster], seq):
+    def fastMatch(self, logClustL:[Logcluster], seq): # type: ignore
         ''' find the corresponding event template from sequence
         :param logClustL: 
         :param seq: list of tokens in sequential log
@@ -163,12 +171,45 @@ class LogParser:
 
 
     def load_data(self):
+        ''' generate the headers (pandas dataframe) and regex (used for parse logs into components) 
         
+        '''
+        headers, regex = self.gen_logformat_regex(self.log_format)
+        self.df_log = self.log_to_dataframe(
+            Path.joinpath(self.path, self.logName), regex, headers
+        )
 
 
-    def log_to_dataframe(self,):
 
-    
+    def preprocess(self):
+        ''' match the explicit variables or indicitor as the <*>
+        including ip, domain, path ...
+        '''
+        for var_reg in self.rex:
+            line = re.sub(var_reg , "<*>", line)
+        return line
+
+    def log_to_dataframe(self, log_file: Path, regex, headers):
+        ''' write raw log to pandas dataframe, with list and headers
+        
+        '''
+        log_messages = []
+        lcount = 0
+        with log_file.open('r') as fr:
+            for line in fr.readlines():
+                try:
+                    match = regex.search(line.strip())
+                    message = [match.group(header) for header in headers]
+                    log_messages.append(message)
+                    lcount += 1
+                except Exception as e:
+                    logger.warning("Skip line: %s", line)
+        logdf = pd.DataFrame(log_messages, columns = headers)
+        logdf.insert(0, "LineId", None)
+        logdf["LineId"] = [i + 1 for i in range(lcount)]
+        print("Total lines: ", len(logdf))
+        return logdf
+
     def gen_logformat_regex(self, logformat):
         ''' based on given logformat to generate the regex that matches the corresponding components
         :param logformat: given format components ---- based on specific log format
@@ -205,6 +246,10 @@ class LogParser:
         else:
             firLayerNode = rn.childD[seqLen]
         
-        
 
+    def parse(self, logName):
+        # define the parsing file path
+
+        start_time = datetime.now()
+        self.logName = logName
         

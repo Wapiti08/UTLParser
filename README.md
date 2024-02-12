@@ -14,7 +14,7 @@ Graph based anomaly detection for malware (part of APT)
 
 ## Explaination of Dataset
 
-- IoT23 (structured logs):
+- IoT23 (structured logs) --- network traffic:
     - label information
         - attack (part of APT):
             indictors that there was some type of attack from the infected device to another host
@@ -46,16 +46,7 @@ Graph based anomaly detection for malware (part of APT)
         - conn_state ---- port scan
         - feature analysis? --- other features
 
-- MLog:
-
-    - include:
-        - Linux logs /var/log/messages, /var/log/secure 
-        - process accounting records /var/log/pacct , other Linux logs
-        - Apache web server logs /var/log/httpd/access_log, /var/log/httpd/error-log, /var/log/httpd/referer-log and /var/log/httpd/audit_log 
-        - Sendmail /var/log/mailog, 
-        - Squid /var/log/squid/access_log, /var/log/squid/store_log, /var/log/squid/cache_log, etc.
-
-- AIT (fox):
+- AIT (fox) --- pure unstructured logs:
 
     - used for intrusion detection systems, federated learning, alert aggregation
 
@@ -67,6 +58,24 @@ Graph based anomaly detection for malware (part of APT)
         - host log: gather/ host name / logs
         - labels directory: labelling information
         - rules directory: how the labels are assigned
+
+    - launched attacks:
+        - Scans
+        - Webshell upload --- apache
+        - password cracking
+        - privilege escalation --- dnsmasq, apache, audit (internal_server), system.cpu
+        - remote command execution --- dnsmasq,apache, audit (internal_server), system.cpu
+        - data exfiltration --- dnsmasq, audit (internal_share), 
+
+- MLog:
+
+    - include:
+        - Linux logs /var/log/messages, /var/log/secure 
+        - process accounting records /var/log/pacct , other Linux logs
+        - Apache web server logs /var/log/httpd/access_log, /var/log/httpd/error-log, /var/log/httpd/referer-log and /var/log/httpd/audit_log 
+        - Sendmail /var/log/mailog, 
+        - Squid /var/log/squid/access_log, /var/log/squid/store_log, /var/log/squid/cache_log, etc.
+
 
 - Windows (CBS):
     
