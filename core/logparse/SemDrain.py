@@ -18,6 +18,7 @@ import hashlib
 from datetime import datetime
 import spacy
 import logging
+from tqdm import tqdm
 
 # set the configuration
 logging.basicConfig(level=logging.DEBUG,
@@ -45,7 +46,7 @@ class Node:
         '''
         :param childD: a dictionary with index and corresponding token
         :param depth: 
-        :param digitOrtoken: number of token string
+        :param digitOrtoken: number of token string (first layer) or token itself (second layer)
         
         description: 
             the first layer is the length, the following layers are the tokens in tree structure
@@ -63,26 +64,26 @@ class LogParser:
             depth=4,
             st=0.4,
             rex = [],
-            path,
-            logName,
+            indir='./',
+            maxChild=100,
     ):
         '''
         :param depth: depth of all leaf nodes
         :param st: similarity threshold
         :param rex: regular regex to match explicit variables/indicitors
-
+        :param maxChild: the max number of child of an internal node
         
         '''
         self.st = st
         self.depth = depth
         self.rex = rex
-        self.logName = logName
-        self.path = path
+        self.logName = None
+        self.path = indir
 
     def hasNumbers(self, s):
         return any(char.isdigit() for char in s)
     
-    def treeSearch(self, rn: Node, seq):
+    def treeSearch(self, rn: Node, seq:list):
         '''
         :param rn: root node --- Node type
         :param seq: list of sequences of logmessage
@@ -169,6 +170,47 @@ class LogParser:
 
         logger.info("Parsing done. [Time taken: {!s}]".format(datetime.now() - start_time))
 
+    def addSeqToPrefixTree(self, rn: Node, logClust: Logcluster):
+        ''' add sequence to pre-defined tree according to template
+        
+        '''
+        seqLen = len(logClust.logTemplate)
+        # check the first layer with token length
+        if seqLen not in rn.childD:
+            firstLayer = Node(depth=1, digitOrtoken=seqLen)
+            rn.childD[seqLen] = firstLayer
+        else:
+            firstLayer = rn.childD[seqLen]
+        # fill the node tree based on template
+        parentn = firstLayer
+
+        currentDepth = 1
+
+        for token in logClust.logTemplate:
+            # add current log cluster to the leaf node when reaching limitation
+            
+
+
+            # if token not matched in this layer of existing tree
+            if token not in parentn.childD:
+                # check whether digit exists in token
+                if not self.hasNumbers(token):            
+                    # check <*> exists in tree
+                    if "<*>" in parentn.childD:
+                        # check whether length of childD is larger then maxChild
+                        if len(parentn.childD) < self.maxChild:
+                            newNode = Node(depth=currentDepth, digitOrtoken=token)
+                            parentn.childD[token] = newNode
+                            parentn = newNode
+                        else:
+                            parentn = parentn.childD["<*>"]
+                    else:
+
+
+                    # check <*> exists in tree
+
+            # if matched
+
 
     def load_data(self):
         ''' generate the headers (pandas dataframe) and regex (used for parse logs into components) 
@@ -233,6 +275,20 @@ class LogParser:
         regex = re.compile("^" + regex + "$")
         return headers, regex
     
+    def getTemplate(self, seq1, seq2):
+        ''' get event template by matching wildcard and tokens
+        
+        '''
+        assert len(seq1) == len(seq2)
+        retVal = []
+
+        for i, token in enumerate(seq1):
+            if token == seq2[i]:
+                retVal.append(token)
+            else:
+                retVal.append("<*>")
+        
+        return retVal
 
     def addSeqToPrefixTree(self, rn: Node, logClust: Logcluster):
         ''' 
@@ -252,4 +308,33 @@ class LogParser:
 
         start_time = datetime.now()
         self.logName = logName
+        rootNode = Node()
+        logCluL = []
+
+        # load data
+        self.load_data()
+
+        # process line by line
+        for idx, line in tqdm(self.df_log.iterrows(), desc="Processing log lines")
+            # treesearch the logcluster of line
+            logID = line["LineID"]
+            logmessageL = self.preprocess(line["Content"]).strip().split()
+            matchCluster = self.treeSearch(rootNode, logmessageL)
+
+            # not exist, create a new cluster
+            if matchCluster is None:
+
+
+            # add new log message to existing cluster
+        
+                # get template
+
+
+        # define savepath
+
+        # output result
+
+        logger.info("")
+
+
         
