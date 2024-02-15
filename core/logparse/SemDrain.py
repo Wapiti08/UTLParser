@@ -64,7 +64,8 @@ class LogParser:
             depth=4,
             st=0.4,
             rex = [],
-            indir='./',
+            indir="./",
+            outdir="../../data/result/",
             maxChild=100,
     ):
         '''
@@ -79,6 +80,8 @@ class LogParser:
         self.rex = rex
         self.logName = None
         self.path = indir
+        self.maxChild = maxChild
+        self.savePath = outdir
 
     def hasNumbers(self, s):
         return any(char.isdigit() for char in s)
@@ -188,7 +191,12 @@ class LogParser:
 
         for token in logClust.logTemplate:
             # add current log cluster to the leaf node when reaching limitation
-            
+            if currentDepth >= self.depth or currentDepth > seqLen:
+                if len(parentn.childD) == 0:
+                    parentn.childD = [logClust]
+                else:
+                    parentn.childD.append(logClust)
+                break
 
 
             # if token not matched in this layer of existing tree
@@ -205,12 +213,32 @@ class LogParser:
                         else:
                             parentn = parentn.childD["<*>"]
                     else:
+                    # create new node and append as child node
+                        # check maxchild limiation
+                        if len(parentn.childD) + 1 < self.maxChild:
+                            newNode = Node(depth=currentDepth+1, digitOrtoken=token)
+                            parentn.childD[token] = newNode
+                            parentn = newNode
+                        elif len(parentn.childD) + 1 == self.maxChild:
+                            newNode = Node(depth=currentDepth+1, digitOrtoken="<*>")
+                            parentn.childD["<*>"] = newNode
+                        else:
+                            parentn = parentn.childD["<*>"]
 
-
-                    # check <*> exists in tree
+                # check <*> exists in tree
+                else:
+                    if "<*>" not in parentn.childD:
+                        newNode = Node(depth=currentDepth + 1, digitOrtoken="<*>")
+                        parentn.childD["<*>"] = newNode
+                        parentn = newNode
+                    else:
+                        parentn = parentn.childD["<*>"]
 
             # if matched
-
+            else:
+                parentn = parentn.childD[token]
+            
+            currentDepth += 1
 
     def load_data(self):
         ''' generate the headers (pandas dataframe) and regex (used for parse logs into components) 
@@ -220,8 +248,6 @@ class LogParser:
         self.df_log = self.log_to_dataframe(
             Path.joinpath(self.path, self.logName), regex, headers
         )
-
-
 
     def preprocess(self):
         ''' match the explicit variables or indicitor as the <*>
@@ -315,7 +341,7 @@ class LogParser:
         self.load_data()
 
         # process line by line
-        for idx, line in tqdm(self.df_log.iterrows(), desc="Processing log lines")
+        for idx, line in tqdm(self.df_log.iterrows(), desc="Processing log lines"):
             # treesearch the logcluster of line
             logID = line["LineID"]
             logmessageL = self.preprocess(line["Content"]).strip().split()
@@ -323,18 +349,29 @@ class LogParser:
 
             # not exist, create a new cluster
             if matchCluster is None:
-
+                newCluster = Logcluster(logTemplate=logmessageL, logIDL=[logID])
+                logCluL.append(newCluster)
+                self.addSeqToPrefixTree(rootNode, newCluster)
 
             # add new log message to existing cluster
-        
-                # get template
-
+            else:
+                newTemplate = self.getTemplate(logmessageL, matchCluster.logTemplate)
+                matchCluster.logIDL.append(logID)
+                # check whether totally matched, otherwise create a new template
+                if " ".join(newTemplate) != " ".join(matchCluster.logTemplate):
+                    matchCluster.logTemplate = newTemplate
 
         # define savepath
+        if not Path(self.savePath).exists():
+            Path(self.savePath).mkdir(parents=True, exist_ok=True)
 
         # output result
+        self.outputResut(logCluL)
 
-        logger.info("")
+        logger.info("Parsing done. [Time taken: {!s}]".format(datetime.now() - start_time))
 
+
+    def outputResult():
+        pass
 
         
