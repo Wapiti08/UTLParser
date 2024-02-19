@@ -40,34 +40,36 @@ format_dict = {
             "depth":4,
             # filter for domain name match with general domain extension
             "filter": 1,
-            "key":0,
+            "iocs":0,
         },
     },
     "Apache": {
         "org-access": {
-            "log_format": "<IP> -- \[<Time>\] <Context> <Status_Code> <Response_Size> <Referer> <User-Agent>",
+            "log_format": "<Src_IP> - - \[<Time>\] \"<Request_Method> <Content> <HTTP_Version>\" <Status_Code> <Response_Size> \"<Referer>\" \"<User_Agent>\"",
             # match the parameter part
-            "regex": [r"\?[^\s]+"],
+            "regex": [r"\b(?:\d{1,3}\.){3}\d{1,3}\b", r"\?[^\s]+"],
             "st": 0.8,
             "depth": 4,
             "filter":0,
-            "key":0,
+            "iocs":0,
         },
         "audit": {
-            "log_format": "<Type> <Time>: <PID> <UID> <AUID> <SES> <Context>",
+            # "log_format": "type=<Type> msg=audit\(<Time>\): pid=<PID> uid=<UID> auid=<AUID> ses=<SES> msg=\'unit=<Unit> comm=<Comm> exe=<Exe> hostname=<HostName> addr=<Addr> terminal=<Terminal> res=<Res>\'",
+            # "log_format": "type=<Type> msg=audit\(<Time>\): pid=<PID> uid=<UID> auid=<AUID> ses=<SES> msg=\'<Content>\'",
+            "log_format": "type=<Type> msg=audit\(<Time>\): <Content>",
             "regex": [r"\/(?:[\w-]+\/)+[\w-]+"],
             "st":0.8,
             "depth": 6,
             "filter":1,
-            "key":1,
+            "iocs":1,
         },
         "auth": {
-            "log_format": "<Date> <Time> <Component> <Level>\[<PID>\]: <Context>",
+            "log_format": "<Month> <Date> <Time> <Component> <Level>: <Content>",
             "regex": [],
             "st": 0.6,
             "depth": 4,
             "filter": 0,
-            "key":0,
+            "iocs":0,
         },
     }
 }

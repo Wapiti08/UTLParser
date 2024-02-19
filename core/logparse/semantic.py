@@ -2,6 +2,17 @@
     comparison between nltk, spacy, flair for tokenization, semantic role parsing
 
 '''
+import spacy
+import flair
+import nltk
+
+def semantic_role():
+    
+
+def token_parse():
+
+
+
 # dnsmasq
 dns_str = "Jan 14 08:16:58 dnsmasq[14460]: using nameserver 127.0.0.1#53 \
             for domain 228.131.168.192.in-addr.arpa"

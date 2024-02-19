@@ -70,7 +70,7 @@ class LogParser:
             maxChild=100,
             keep_para=True,
             filter=0,
-            key=0,
+            iocs=0,
     ):
         '''
         :param depth: depth of all leaf nodes
@@ -91,7 +91,7 @@ class LogParser:
         self.log_format = log_format
         self.keep_para = keep_para
         self.filter = filter
-        self.key = key
+        self.key = iocs
 
     def hasNumbers(self, s):
         return any(char.isdigit() for char in s)
@@ -300,6 +300,7 @@ class LogParser:
                 regex += "(?P<%s>.*)" % header
                 headers.append(header)
         regex = re.compile("^" + regex + "$")
+
         return headers, regex
     
     def getTemplate(self, seq1, seq2):
