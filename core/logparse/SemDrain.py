@@ -66,15 +66,20 @@ class LogParser:
             rex = [],
             indir="./",
             outdir="../../data/result/",
+            log_format="",
             maxChild=100,
+            filter=0,
+            key=0,
     ):
         '''
         :param depth: depth of all leaf nodes
         :param st: similarity threshold
         :param rex: regular regex to match explicit variables/indicitors
         :param maxChild: the max number of child of an internal node
-        
+        :param filter: bool type: whether has specific filter schema for regex matching
+        :param key: bool type: whehther following key value pair 
         '''
+
         self.st = st
         self.depth = depth
         self.rex = rex
@@ -82,6 +87,9 @@ class LogParser:
         self.path = indir
         self.maxChild = maxChild
         self.savePath = outdir
+        self.log_format = log_format
+        self.filter = filter
+        self.key = key
 
     def hasNumbers(self, s):
         return any(char.isdigit() for char in s)
@@ -163,16 +171,6 @@ class LogParser:
 
         return float(simTokens)/len(seq1), numOfPar
     
-
-    def parse(self, logName):
-        print("Parsing file: " + Path(self.path).joinpath(logName))
-        start_time = datetime.now
-        self.logName = logName
-        rootNode = Node()
-        logCluL = []
-
-        logger.info("Parsing done. [Time taken: {!s}]".format(datetime.now() - start_time))
-
     def addSeqToPrefixTree(self, rn: Node, logClust: Logcluster):
         ''' add sequence to pre-defined tree according to template
         
@@ -197,7 +195,6 @@ class LogParser:
                 else:
                     parentn.childD.append(logClust)
                 break
-
 
             # if token not matched in this layer of existing tree
             if token not in parentn.childD:
@@ -331,7 +328,7 @@ class LogParser:
 
     def parse(self, logName):
         # define the parsing file path
-
+        print("Parsing file: " + Path(self.path).joinpath(logName).as_posix())
         start_time = datetime.now()
         self.logName = logName
         rootNode = Node()
@@ -371,7 +368,7 @@ class LogParser:
         logger.info("Parsing done. [Time taken: {!s}]".format(datetime.now() - start_time))
 
 
-    def outputResult():
-        pass
+    def outputResult(self, logClustL):
+        print(logClustL)
 
         
