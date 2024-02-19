@@ -33,7 +33,7 @@ import flair
 format_dict = {
     "DNS": {
         "dnsmasq": {
-            "log_format": "<Date> <Time> <Component>(\[<PID>\])?: <Content>",
+            "log_format": "<Month> <Date> <Time> dnsmasq\[<PID>\]: <Content>",
             # match the domain, ipv4 and ipv6
             "regex": [r"\b(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}\b", r"\b(?:\d{1,3}\.){3}\d{1,3}\b", r"\b(?:[0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}\b"],
             "st":0.7,

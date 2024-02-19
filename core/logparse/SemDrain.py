@@ -22,7 +22,7 @@ from tqdm import tqdm
 
 # set the configuration
 logging.basicConfig(level=logging.DEBUG,
-                    format='%(asctime)s [%(levelname)s]: %(messsage)s',
+                    format='%(asctime)s [%(levelname)s]: %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S'
                 )
 
@@ -68,6 +68,7 @@ class LogParser:
             outdir="../../data/result/",
             log_format="",
             maxChild=100,
+            keep_para=True,
             filter=0,
             key=0,
     ):
@@ -88,6 +89,7 @@ class LogParser:
         self.maxChild = maxChild
         self.savePath = outdir
         self.log_format = log_format
+        self.keep_para = keep_para
         self.filter = filter
         self.key = key
 
@@ -140,7 +142,7 @@ class LogParser:
         maxClust = None
 
         for logClust in logClustL:
-            curSim, curNumOfPara = self.seqDist(logClust.template, seq)
+            curSim, curNumOfPara = self.seqDist(logClust.logTemplate, seq)
             if curSim > maxSim or (curSim == maxSim and curNumOfPara > maxNumOfPara):
                 maxSim = curSim
                 maxNumOfPara = curNumOfPara
@@ -243,10 +245,10 @@ class LogParser:
         '''
         headers, regex = self.gen_logformat_regex(self.log_format)
         self.df_log = self.log_to_dataframe(
-            Path.joinpath(self.path, self.logName), regex, headers
+            Path(self.path).joinpath(self.logName), regex, headers
         )
 
-    def preprocess(self):
+    def preprocess(self, line):
         ''' match the explicit variables or indicitor as the <*>
         including ip, domain, path ...
         '''
@@ -260,6 +262,7 @@ class LogParser:
         '''
         log_messages = []
         lcount = 0
+
         with log_file.open('r') as fr:
             for line in fr.readlines():
                 try:
@@ -269,6 +272,7 @@ class LogParser:
                     lcount += 1
                 except Exception as e:
                     logger.warning("Skip line: %s", line)
+
         logdf = pd.DataFrame(log_messages, columns = headers)
         logdf.insert(0, "LineId", None)
         logdf["LineId"] = [i + 1 for i in range(lcount)]
@@ -313,18 +317,6 @@ class LogParser:
         
         return retVal
 
-    def addSeqToPrefixTree(self, rn: Node, logClust: Logcluster):
-        ''' 
-        :param rn: the Node struct
-        :param logClust: the class of log cluster
-        '''
-        seqLen = len(logClust)
-        if seqLen not in rn.childD:
-            firLayerNode = Node(depth=1, digitOrtoken=seqLen)
-            rn.childD[seqLen] = firLayerNode
-        else:
-            firLayerNode = rn.childD[seqLen]
-        
 
     def parse(self, logName):
         # define the parsing file path
@@ -336,11 +328,11 @@ class LogParser:
 
         # load data
         self.load_data()
-
+        print(self.df_log)
         # process line by line
         for idx, line in tqdm(self.df_log.iterrows(), desc="Processing log lines"):
             # treesearch the logcluster of line
-            logID = line["LineID"]
+            logID = line["LineId"]
             logmessageL = self.preprocess(line["Content"]).strip().split()
             matchCluster = self.treeSearch(rootNode, logmessageL)
 
@@ -363,12 +355,66 @@ class LogParser:
             Path(self.savePath).mkdir(parents=True, exist_ok=True)
 
         # output result
-        self.outputResut(logCluL)
+        self.outputResult(logCluL)
 
         logger.info("Parsing done. [Time taken: {!s}]".format(datetime.now() - start_time))
 
 
     def outputResult(self, logClustL):
-        print(logClustL)
+        log_templates = [0] * self.df_log.shape[0]
+        log_templateids = [0] * self.df_log.shape[0]
+        df_events = []
+        for logClust in logClustL:
+            template_str = " ".join(logClust.logTemplate)
+            occurrence = len(logClust.logIDL)
+            template_id = hashlib.md5(template_str.encode("utf-8")).hexdigest()[0:8]
+            for logID in logClust.logIDL:
+                logID -= 1
+                log_templates[logID] = template_str
+                log_templateids[logID] = template_id
+            df_events.append([template_id, template_str, occurrence])
 
-        
+        df_event = pd.DataFrame(
+            df_events, columns=["EventId", "EventTemplate", "Occurrences"]
+        )
+        self.df_log["EventId"] = log_templateids
+        self.df_log["EventTemplate"] = log_templates
+        if self.keep_para:
+            self.df_log["ParameterList"] = self.df_log.apply(
+                self.get_parameter_list, axis=1
+            )
+        self.df_log.to_csv(
+            Path(self.savePath).joinpath(self.logName + "_structured.csv"), index=False
+        )
+
+        occ_dict = dict(self.df_log["EventTemplate"].value_counts())
+        df_event = pd.DataFrame()
+        df_event["EventTemplate"] = self.df_log["EventTemplate"].unique()
+        df_event["EventId"] = df_event["EventTemplate"].map(
+            lambda x: hashlib.md5(x.encode("utf-8")).hexdigest()[0:8]
+        )
+        df_event["Occurrences"] = df_event["EventTemplate"].map(occ_dict)
+        df_event.to_csv(
+            Path(self.savePath).joinpath(self.logName + "_templates.csv"),
+            index=False,
+            columns=["EventId", "EventTemplate", "Occurrences"],
+        )
+        # print(self.df_log)
+        print(self.df_log['ParameterList'])
+
+    def get_parameter_list(self, row):
+        template_regex = re.sub(r"<.{1,5}>", "<*>", row["EventTemplate"])
+        if "<*>" not in template_regex:
+            return []
+        template_regex = re.sub(r"([^A-Za-z0-9])", r"\\\1", template_regex)
+        template_regex = re.sub(r"\\ +", r"\\s+", template_regex)
+        template_regex = "^" + template_regex.replace("\<\*\>", "(.*?)") + "$"
+        parameter_list = re.findall(template_regex, row["Content"])
+        parameter_list = parameter_list[0] if parameter_list else ()
+        parameter_list = (
+            list(parameter_list)
+            if isinstance(parameter_list, tuple)
+            else [parameter_list]
+        )
+
+        return parameter_list

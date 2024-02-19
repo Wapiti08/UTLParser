@@ -10,13 +10,22 @@ class TestLogparser(unittest.TestCase):
 
     def setUp(self):
         # test for dns parse
+        self.logformat = uniformat.format_dict
+
+        rex = self.logformat['DNS']['dnsmasq']['regex']
+
+        log_format = self.logformat['DNS']['dnsmasq']['log_format']
+        depth = self.logformat['DNS']['dnsmasq']['depth']
+        st = self.logformat['DNS']['dnsmasq']['st']
+
         self.logparser = LogParser(
-            depth=4,
-            st=0.4,
-            rex = [],
-            indir="../data/",
+            depth=depth,
+            st=st,
+            rex = rex,
+            indir="./data/",
             outdir="../../data/result/",
-            log_format="",
+            log_format=log_format,
+            keep_para=True,
             maxChild=100,
             filter=0,
             key=0,
@@ -27,7 +36,6 @@ class TestLogparser(unittest.TestCase):
         # test for apache audit
 
         # test for apache auth
-        self.logformat = uniformat.format_dict
 
     def test_parse(self):
         self.logparser.parse("dnsmasq.log")
@@ -35,7 +43,16 @@ class TestLogparser(unittest.TestCase):
         # self.assertEqual()
 
     def test_gen_logformat_regex(self,):
-        self.logparser.gen_logformat_regex(self.logformat['DNS']['dnsmasq'])
+        self.logparser.gen_logformat_regex(self.logformat['DNS']['dnsmasq']['log_format'])
+
+    # def test_get_parameter_list(self,):
+    #     # generate df_log
+    #     self.logparser.load_data()
+    #     print(self.logparser.df_log.iloc[3])
+    #     row = self.logparser.df_log.iloc[3]
+    #     result = self.logparser.get_parameter_list(row)
+    #     print(result)
+    #     self.assertEqual(["cdn.cloudflare.net", "2606:4700::6810:db54"], result)
 
 
 if __name__ == "__main__":
