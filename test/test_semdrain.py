@@ -13,23 +13,23 @@ class TestLogparser(unittest.TestCase):
 
         # test for dns parse
 
-        # rex = self.logformat['DNS']['dnsmasq']['regex']
-        # log_format = self.logformat['DNS']['dnsmasq']['log_format']
-        # depth = self.logformat['DNS']['dnsmasq']['depth']
-        # st = self.logformat['DNS']['dnsmasq']['st']
+        rex = self.logformat['DNS']['dnsmasq']['regex']
+        log_format = self.logformat['DNS']['dnsmasq']['log_format']
+        depth = self.logformat['DNS']['dnsmasq']['depth']
+        st = self.logformat['DNS']['dnsmasq']['st']
 
-        # self.logparser = LogParser(
-        #     depth=depth,
-        #     st=st,
-        #     rex = rex,
-        #     indir="./data/",
-        #     outdir="../../data/result/",
-        #     log_format=log_format,
-        #     keep_para=True,
-        #     maxChild=100,
-        #     filter=0,
-        #     key=0,
-        # )
+        self.logparser = LogParser(
+            depth=depth,
+            st=st,
+            rex = rex,
+            indir="./data/",
+            outdir="../../data/result/",
+            log_format=log_format,
+            keep_para=True,
+            maxChild=100,
+            filter=0,
+            iocs=0,
+        )
 
         # test for apache org-access
 
@@ -71,35 +71,36 @@ class TestLogparser(unittest.TestCase):
         # )
 
         # test for apache auth
-        rex = self.logformat['Apache']['auth']['regex']
-        log_format = self.logformat['Apache']['auth']['log_format']
-        depth = self.logformat['Apache']['auth']['depth']
-        st = self.logformat['Apache']['auth']['st']
+        # rex = self.logformat['Apache']['auth']['regex']
+        # log_format = self.logformat['Apache']['auth']['log_format']
+        # depth = self.logformat['Apache']['auth']['depth']
+        # st = self.logformat['Apache']['auth']['st']
 
-        self.logparser = LogParser(
-            depth=depth,
-            st=st,
-            rex = rex,
-            indir="./data/",
-            outdir="../../data/result/",
-            log_format=log_format,
-            keep_para=True,
-            maxChild=100,
-            filter=0,
-            iocs=0,
-        )
+        # self.logparser = LogParser(
+        #     depth=depth,
+        #     st=st,
+        #     rex = rex,
+        #     indir="./data/",
+        #     outdir="../../data/result/",
+        #     log_format=log_format,
+        #     keep_para=True,
+        #     maxChild=100,
+        #     filter=0,
+        #     iocs=0,
+        # )
 
     def test_parse(self):
 
-        # self.logparser.parse("dnsmasq.log")
+        self.logparser.parse("dnsmasq.log")
         # self.logparser.parse("org-access.log")
         # self.logparser.parse("audit.log")
-        self.logparser.parse("auth.log")
+        # self.logparser.parse("auth.log")
 
         # self.assertEqual()
 
     def test_gen_logformat_regex(self,):
-        self.logparser.gen_logformat_regex(self.logformat['Apache']['auth']['log_format'])
+        # self.logparser.gen_logformat_regex(self.logformat['Apache']['auth']['log_format'])
+        self.logparser.gen_logformat_regex(self.logformat['DNS']['dnsmasq']['log_format'])
 
     # def test_get_parameter_list(self,):
     #     # generate df_log
