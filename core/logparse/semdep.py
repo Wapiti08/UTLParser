@@ -28,10 +28,33 @@ nlp = spacy.load("en_core_web_lg")
 class depparse:
     def __init__(self, filepath):
         self.file = filepath
+        self.matcher = DependencyMatcher(nlp.vocab)
+        print(type(self.matcher))
 
-    def depen_parse(self, nlp_obj:spacy.lang.en.English):
-        # define the anchor token ----- extracted from semantic role analysis ---verb
-        pass
+    def depen_parse(self, anchor: spacy.tokens.token.Token, doc:spacy.tokens.doc.Doc):
+        '''
+        :param anchor: the lemma verb token as the root node
+        '''
+        pattern = [
+            # define the anchor token
+            {
+                "RIGHT_ID": "anchor_{}".format(anchor.text),
+                "RIGHT_ATTRS": {"ORTH": anchor.text}
+
+            },
+            # define the rule for matching subject
+            {
+
+            },
+            # define the rule for matching object
+            {
+
+            }
+
+        ]
+        
+        self.matcher.add(anchor, [pattern])
+        matches = self.matcher(doc)
 
     def semantic_parse(self, sen:str):
         doc = nlp(sen)
