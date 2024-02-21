@@ -3,8 +3,8 @@ Graph based anomaly detection for malware (part of APT)
 
 ## Features
 - correlate data from multiple sources (network traffic, system/applications/service logs, process execution status)
+- automatically generate and identify the log format used by log parser
 - extract the entities (obj, sub, action) from events (both structured and unstructured logs)
-- cover both logs from Windows and Linux
 - correlate processes and build process-specific communities
 - graph compression with graph summarization
 - distributed graph-based neural network training

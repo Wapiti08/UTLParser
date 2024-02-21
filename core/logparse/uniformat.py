@@ -54,5 +54,15 @@ format_dict = {
             "filter": 0,
             "iocs":0,
         },
+    "Process": {
+        "sysdig": {
+            "log_format": "<Time> <CPU_ID> <Command> \(<Threat_ID>\) <Event_Direction> <Type> <Arguments>",
+            "regex": [r"\/(?:[\w-]+\/)+[\w-]+", r"\b(?:\d{1,3}\.){3}\d{1,3}[#\d+]+\b"],
+            "st": 0.7,
+            "depth": 4,
+            "filter": 0,
+            "iocs": 1,
+            },
+        },
     }
 }
