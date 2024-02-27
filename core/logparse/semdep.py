@@ -17,14 +17,12 @@ import spacy
 from spacy import displacy
 from spacy.matcher import DependencyMatcher
 from pattern import deppattern
-
+import re
 import flair
 import nltk
 
-relation_dict = {
-    0: "->",
-    1: "<-",
-}
+forward_direction = ["reply", 'forward', "cache"]
+backward_direction = ["query"]
 
 nlp = spacy.load("en_core_web_lg")
 
@@ -48,7 +46,7 @@ class DepParse:
             self.matcher.add(anchor, patterns)
 
         matches = self.matcher(doc)
-        print(matches) # [(4851363122962674176, [6, 0, 10, 9])]
+        print(matches) 
         # Each token_id corresponds to one pattern dict
         match_id, token_ids = matches[0]
         for i in range(len(token_ids)):
@@ -67,14 +65,18 @@ class DepParse:
         
         
         '''
-        target_pos = "VERB"
+        # define all type of verbs
+        target_pos_pattern = 'VB.*|VERB$'
         # if there is no AUX adjacent to left of VERB sub -> obj, otherwise obj <- sub
         for ord, token in enumerate(doc):
-            if token.pos_ == target_pos:
-                if doc[ord-1].pos_ != "AUX":
-                    return token.text, relation_dict[0]
-                else:
-                    return token.text, relation_dict[1]
+            # check whether matching the verb
+            if bool(re.match(target_pos_pattern, token.pos_)):
+                # check whether there is pos before this verb
+                if ord - 1>=0:
+                    if doc[ord-1].pos_ != "AUX":
+                        return token.text, relation_dict[0]
+                    else:
+                        return token.text, relation_dict[1]
     
     def token_parse(self):
         pass
