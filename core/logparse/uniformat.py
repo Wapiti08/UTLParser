@@ -28,11 +28,12 @@ format_dict = {
     },
     "Apache": {
         "org-access": {
-            "log_format": "<Src_IP> - - \[<Time>\] \"<Request_Method> <Content> <HTTP_Version>\" <Status_Code> <Response_Size> \"<Referer>\" \"<User_Agent>\"",
+            # "log_format": "<SRC_IP> - - \[<Time>\] \"<Request_Method> <Content> <HTTP_Version>\" <Status_Code> <Response_Size> \"<Referer>\" \"<User_Agent>\"",
+            "log_format": "<SRC_IP> - - \[<Time>\] \"<Request_Method> <Content> <HTTP_Version>\" <Status_Code> <Response_Size> \"<Referer>\" \"<User_Agent>\"",
             # match the parameter part
             "regex": [r"\b(?:\d{1,3}\.){3}\d{1,3}\b", r"\?[^\s]+"],
             "st": 0.8,
-            "depth": 4,
+            "depth": 5,
             "filter":0,
             "iocs":0,
         },

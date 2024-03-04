@@ -1,11 +1,22 @@
-
+""" 
+@Description: Defined Patterns for Dependency Parsing
+@Author: newt.tan 
+@Date: 2024-02-29 09:34:51 
+@Last Modified by:   newt.tan  
+@Last Modified time: 2024-02-29 09:34:51  
+"""
 
 
 # define general pattern to match common sentence with clear subject, action, object
 # for example: fileA access fileB
 
 class DepPatterns:
-    def __init__(self, anchor):
+    def __init__(self, log_type:str, anchor: str):
+        if log_type.upper() == "DNS":
+            return self.dns_pattern(anchor.lower())
+        
+    
+    def dns_pattern(self):
         verb_text="cached" or "reply"
         dns_cache_pattern = [
             {

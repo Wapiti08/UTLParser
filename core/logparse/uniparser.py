@@ -58,7 +58,7 @@ class Node:
         self.digitOrtoken = digitOrtoken
         
 
-class LogParser:
+class GenLogParser:
 
     def __init__(self,
             depth=4,
@@ -403,6 +403,7 @@ class LogParser:
         # print(self.df_log)
         print(self.df_log['ParameterList'])
 
+
     def get_parameter_list(self, row):
         template_regex = re.sub(r"<.{1,5}>", "<*>", row["EventTemplate"])
         if "<*>" not in template_regex:
@@ -419,3 +420,9 @@ class LogParser:
         )
 
         return parameter_list
+
+    def get_iocs_output(self, parameter_list: list):
+        ''' extract the subject, object from parameters including potential actions
+        
+        '''
+        pass

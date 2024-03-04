@@ -12,10 +12,10 @@ matcher = DependencyMatcher(nlp.vocab)
 
 # matcher.add("using", [pattern])
 dns_str_3 = "cached db.local.clamav.net.cdn.cloudflare.net is 2606:4700::6810:da54"
-dns_str_1 = "query[txt] current.cvd.clamav.net from 172.17.131.81"
+dns_str_2 = "query[txt] current.cvd.clamav.net from 172.17.131.81"
 dns_str_4 = "forwarded database.clamav.net to 192.168.255.254"
-dns_str_5 = "nameserver 127.0.0.1 refused to do a recursive query"
-dns_str_2 = "reply shavar.prod.mozaws.net is 52.89.81.52"
+dns_str_1 = "nameserver 127.0.0.1 refused to do a recursive query"
+dns_str_5 = "reply shavar.prod.mozaws.net is 52.89.81.52"
 
 str_list = []
 str_list.append(dns_str_1)
