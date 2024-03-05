@@ -127,7 +127,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 - IOCs:
 
-    Timestamp, Src_IP, Dst_IP, Proto, Domain, PacketSize, ParaPair (tuple)
+    Timestamp, Src_IP, Dst_IP, Proto or Application, Domain, PacketSize, ParaPair (tuple)
  
  
 ## References

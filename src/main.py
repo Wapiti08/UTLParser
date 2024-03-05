@@ -2,12 +2,23 @@ import sys
 from pathlib import Path
 sys.path.insert(0,Path(sys.path[0]).resolve().parent.as_posix())
 from utils import util
+from core.logparse import kvparser
+from core.logparse import reqparser
+from core.logparse import genparser
+
+def log_type_check(log_name:str):
+    ''' check the processing logic according to the log type
+    
+    audit: key-value
+    access: http request (network traffic)
+    auth/windows/linux: general log type
+    '''
+    pass
+
+def parse_log(log_type:str):
+    pass
 
 
 if __name__ == "__main__":
-    root_path = Path(sys.path[0]).resolve()
-    log_file = root_path.joinpath('data\IoT\iot_23_datasets\iot_23_datasets_small\IoTScenarios',\
-                                  'CTU-IoT-Malware-Capture-35-1\\bro\conn.log.labeled').as_posix()
-    graph = util.graph_from_structure_data(log_file)
-    
-    util.visualize_graph(graph,'..\\test\graph.gml')
+    log_type_check()
+    parse_log()

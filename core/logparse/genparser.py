@@ -279,6 +279,7 @@ class GenLogParser:
         print("Total lines: ", len(logdf))
         return logdf
 
+
     def gen_logformat_regex(self, logformat):
         ''' based on given logformat to generate the regex that matches the corresponding components
         :param logformat: given format components ---- based on specific log format
@@ -421,8 +422,14 @@ class GenLogParser:
 
         return parameter_list
 
-    def get_iocs_output(self, parameter_list: list):
+    def get_iop_output(self, parameter_list: list):
         ''' extract the subject, object from parameters including potential actions
+        
+        '''
+        pass
+
+    def cal_parse_rate(self,):
+        ''' calculate how much logs have been parsed instead of passing
         
         '''
         pass
