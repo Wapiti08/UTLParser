@@ -21,6 +21,9 @@ import calendar
 import re
 from pathlib import Path
 import logging
+import statistics
+
+random.seed = 34
 
 # set the configuration
 logging.basicConfig(level=logging.DEBUG,
@@ -230,17 +233,59 @@ class UniFormat:
         else:
             pass
     
+    def content_length(self, sentence: str):
+        if ":" in sentence:
+            tokens = sentence.rsplit(":",1)
+        else:
+            logger.warn("there is no clear content split indicitor in {}".format(sentence))
+            return None
+        return len(tokens[1])
+    
     def cal_st(self):
+        ''' decide the threshold for similarity matching with variance
+        the larger variance, the lower threshold
         '''
+        threshold = 0
+        token_len_list = []
+        for sen in self.logs:
+            len = self.content_length(sen)
+            if len:
+                token_len_list.append(len)
         
-        '''
+        # calculate the variance
+        var = statistics.variance(token_len_list)
+        if var <= 1:
+            threshold = 0.7
+        elif var <10:
+            threshold = 0.5
+        else:
+            threshold = 0.3
+        return threshold
     
     def cal_depth(self):
+        ''' depends on the complexity: the number of = compared with total token number
+        calculate the variance of rate of = in sentence
         '''
-        
-        '''
+        depth = 4
+        rate_list = []
+        for sen in self.logs:
+            # get the token number
+            len = self.content_length(sen)
+            # get the total equal mark
+            occ = sen.count("=")
+            if len:
+                rate_list.append(round(occ/len, 3))
 
-        
+        rate_var = statistics.variance(rate_list)     
+        if rate_var > 0.05:
+            depth = 7
+        elif rate_var > 0.04:
+            depth = 6
+        elif rate_var >0.03:
+            depth = 5
+        return depth
+            
+
 # the matching format for unstructured logs
 # format_dict = {
 #     "DNS": {
