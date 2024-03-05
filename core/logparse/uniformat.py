@@ -17,6 +17,191 @@ import spacy
 import nltk
 import flair
 import random
+import calendar
+import re
+from pathlib import Path
+
+short_month_name = calendar.month_abbr[1:]
+month_regex = "|".join(short_month_name)
+form_month_regex = r"(\b(" + month_regex + r")\b)"
+
+day_regex = r'\b(?:0[1-9]|[12][0-9]|3[01])\b'
+timestamp_regex = r'\d{2}:\d{2}:\d{2}'
+date_regex=r'\d{4}-\d{2}-\d{2}'
+
+level = "info|warn|error"
+
+dep_map_dict = {
+    "<Month>": ["<Day>"],
+    "<Day>":["<Timestamp>"],
+    "<Timestamp>":["<Level>", "<Component>","<Proto>"],
+    "<Component>":["<Proto>"],
+    ":":["<Content>"],
+    "<Component>":["[<PID>]","<Content>"],
+    "<Proto>": ["[<PID>]", "<Content>"],
+    "[<PID>]": [":"]
+}
+
+pos_com_mapping = {
+    0: ["<Month>", "<Date>", "<>"],
+    1: ["<Day>", "<Timestamp>"],
+    2: ["<Timestamp>"],
+    3: ["<Component>","<Proto>","<Application>"]
+}
+
+component_pool = [
+    "<Timestamp>",
+    "<Day>",
+    "<Month>",
+    "<Date>",
+    "<Content>",
+    "<Level>",
+    "<Component>",
+    "[<PID>]",
+    "<Proto>",'<Application>'
+]
+
+remain_chars = [
+    '-','',',','"',"[","]","(",")"
+]
+
+com_rex_mapping = {
+    "<Month>":[form_month_regex],
+    "<Day>":[day_regex],
+    "<Date>":[date_regex],
+    "<Timestamp>": [timestamp_regex],
+    "<Component>":[r'^[a-zA-Z].*'],
+    "<Proto>":[r'^.*?(?=\[|:)'],
+    "<Application>":[r'^.*?(?=\[|:)'],
+    "<Level>":[level],
+    "[<PID>]":[r'^\d+$',r'\b\d+\b'],
+}
+
+class UniFormat:
+    def __init__(self, log_filename: Path):
+        with Path(log_filename).open("r") as fr:
+            self.logs = fr.readlines()
+
+    def ran_pick(self, num:int):
+        ''' randomly pick num logs to generate the log format 
+
+        ''' 
+        return random.sample(self.logs, num)
+
+    def com_check(self, sentence:str, pos:int, stop_indictor:str, split_num:int, log_format_dict:dict):
+        ''' identify the components according to the regex matching
+        
+        '''
+        # split sentence by first space first
+        tokens = sentence.split(" ",split_num)
+        log_format_dict[pos] = []
+        # only check ending ":"
+        if not tokens[0].endswith(stop_indictor):
+            for com_name, regex_list in com_rex_mapping.items():
+                print("matching {}".format(tokens[0]))
+                matched = [re.search(regex, tokens[0]) for regex in regex_list]
+                print(matched)
+                if any(item is not None for item in matched):
+                    log_format_dict[pos].append(com_name)
+                    print("current log format dict is:", log_format_dict)
+
+            if len(log_format_dict[pos]) == 0:
+                # if no any match, need to add new regex
+                print("need to add new regex to match: {}".format(tokens[0]))
+                return
+            else:
+                pos += 1
+                return self.com_check(tokens[1], pos, stop_indictor, split_num, log_format_dict)
+                
+        else:
+            # check the component of first part
+            ## remove the stop indicitor part
+            token_no_indicitor = tokens[0].replace(stop_indictor,"")
+            print("replacing token from {} to {}".format(tokens[0], token_no_indicitor))
+            # add the stop indictor as the middle component
+            log_format_dict[pos+1] = [":"]
+            # add default second part as the content
+            log_format_dict[pos+2] = ["<Content>"]
+            for com_name, regex_list in com_rex_mapping.items():
+                matched = [re.search(regex, token_no_indicitor) for regex in regex_list]
+                if any(item is not None for item in matched):
+                    # check whether com_name has exsited in pos
+                    if com_name in log_format_dict[pos]:
+                        continue
+                    else:
+                        log_format_dict[pos].append(com_name)
+                        print("current log format dict is:", log_format_dict)
+
+            if len(log_format_dict[pos]) == 0:
+                # if no any match, need to add new regex
+                print("need to add new regex to match: {}".format(tokens[0]))
+                return
+
+        return log_format_dict
+
+
+    def pos_check(self, pos_com_mapping, maybe_log_format_dict):
+        ''' reduce noise and build the graph according to neigh_mapping_dict
+        
+        '''
+        log_format_dict = {}
+        # check the position scope
+        for pos, com_list in maybe_log_format_dict.items():
+            if pos <= (len(pos_com_mapping) - 1):
+                maybe_log_format_dict[pos] = list(set(com_list) & set(pos_com_mapping[pos]))
+            else:
+                break
+
+        log_format_dict = maybe_log_format_dict
+        return log_format_dict
+
+    def dep_check(self, dep_map_dict, maybe_log_format_dict):
+        # check the dependency pattern
+        log_format_dict = {}
+        for pos, com_list in maybe_log_format_dict.items():
+            if pos != len(maybe_log_format_dict) - 1:
+                cur_com = com_list[0]
+                if cur_com in dep_map_dict:
+                    print("checking dependency for {}".format(cur_com))
+                    deps = dep_map_dict[cur_com]
+                    # filter out any incorrect components from the component_list
+                    correct_components = [comp for comp in maybe_log_format_dict[pos+1] if comp in deps]
+                    print("right child is {}".format(correct_components))
+                    # there is right match and not remove
+                    if len(correct_components)>0 & len(correct_components) == maybe_log_format_dict[pos+1]:
+                        # Update the component_list with correct components
+                        continue
+                    # remove wrong prediction then replace with right dependent component
+                    elif len(correct_components) != maybe_log_format_dict[pos+1]:
+                        maybe_log_format_dict[pos+1] = correct_components
+            
+        log_format_dict = maybe_log_format_dict
+        return log_format_dict
+
+    def format_ext(self, log_format_dict:dict):
+        ''' extract the shortest path and format log format
+        
+        '''
+        # choose the shorted path
+
+
+        # format the log format to match the log parser
+        com_list = list(log_format_dict.values())
+        com_list = [com[0] for com in com_list]
+        log_format = " ".join(com_list)
+
+        # remove the space between component and PID
+        # remove the space between PID and :
+        log_format = re.sub(r'(<Component>)\s+(\[<PID>\])', r'\1\2', log_format)
+        # Replace space between [<PID>] and :
+        log_format = re.sub(r'(\[<PID>\])\s+(:)', r'\1\2', log_format)
+
+        if "[" in log_format:
+            log_format = log_format.replace("[","\[")
+            log_format = log_format.replace("]","\]")
+
+        return log_format
+        
 
 # the matching format for unstructured logs
 # format_dict = {
@@ -102,100 +287,3 @@ import random
 #     }
 # }
 
-
-# iocs_rex_mapping = {
-#     "domain": "\b(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}\b",
-#     "ipv4": "\b(?:\d{1,3}\.){3}\d{1,3}\b",
-#     "ipv4 with port": "\b(?:\d{1,3}\.){3}\d{1,3}[#\d+]+\b",
-#     "ipv6": "\b(?:[0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}\b",
-#     "request parameter": "\?[^\s]+",
-# }
-
-# com_rex_mapping = {
-#     "<Month>":
-#     "<Date>":
-#     "<Time>":
-#     "<Component>":
-#     "<Level>":
-#     "<Content>":
-# }
-
-class ComNode:
-    def __init__(self, component_type, value=None):
-        self.component_type = component_type
-        self.value = value
-        self.children = []
-
-    def add_child(self, child):
-        self.children.append(child)
-
-    def __repr__(self):
-        return f"{self.component_type}: {self.value}"
-
-
-def parse_log(log):
-    root = ComNode("Log")
-    current_node = root
-
-    components = log.split()
-    for component in components:
-        if component.startswith("[") and component.endswith("]"):
-            component_type = "Timestamp"
-            value = component.strip("[]")
-        elif "=" in component:
-            component_type = "Key-Value"
-            key, value = component.split("=", 1)
-            current_node.add_child(ComNode("Key", key))
-            current_node.add_child(ComNode("Value", value))
-            continue  # Skip adding this component as a node
-        else:
-            component_type = "Text"
-            value = component
-
-        new_node = ComNode(component_type, value)
-        current_node.add_child(new_node)
-        current_node = new_node
-
-    return root
-
-
-def print_log_tree(node, indent=0):
-    print("  " * indent + str(node))
-    for child in node.children:
-        print_log_tree(child, indent + 1)
-
-
-# Example log
-log = "10.35.35.118 - - [19/Jan/2022:08:41:07 +0000] \"POST /wp-admin/admin-ajax.php HTTP/1.1\" 200 1168 \"https://intranet.price.fox.org/wp-admin/edit.php\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0\""
-
-# Parse the log and print the tree structure
-log_tree = parse_log(log)
-print_log_tree(log_tree)
-
-from collections import defaultdict
-
-class Graph:
-    def __init__(self):
-        self.graph = defaultdict(list)
-
-    def add_edge(self, u, v):
-        self.graph[u].append(v)
-
-    def dfs(self, start_node, visited, sequence):
-        visited.add(start_node)
-        sequence.append(start_node)
-        for neighbor in self.graph[start_node]:
-            if neighbor not in visited:
-                self.dfs(neighbor, visited, sequence)
-
-# Example usage:
-g = Graph()
-g.add_edge("<Timestamp>", "Month")
-g.add_edge("Timestamp", "Day")
-g.add_edge("Month", "Content")
-g.add_edge("Day", "Content")
-
-visited = set()
-sequence = []
-g.dfs("Timestamp", visited, sequence)
-print("General sequential components:", sequence)
