@@ -1,5 +1,5 @@
 """ 
-@Description: undefined 
+@Description: Generate Causal Graph with Multiple Attributes from Unified Output
 @Author: newt.tan 
 @Date: 2024-02-29 09:36:17 
 @Last Modified by:   newt.tan  

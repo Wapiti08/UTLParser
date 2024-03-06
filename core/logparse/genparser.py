@@ -1,4 +1,12 @@
 '''
+ # @ Author: Newt Tan
+ # @ Create Time: 2024-01-31 15:23:57
+ # @ Modified by: Newt Tan
+ # @ Modified time: 2024-03-06 11:11:30
+ # @ Description: General Logs Parsing Module
+ '''
+
+'''
     combine log parser, regex, semantic parser with dependency to build 
     causal graphs among subject, action, object
 
@@ -422,8 +430,9 @@ class GenLogParser:
 
         return parameter_list
 
-    def get_iop_output(self, parameter_list: list):
-        ''' extract the subject, object from parameters including potential actions
+    def get_output(self, ):
+        ''' import extracted data to unified output format:
+            Time, Src_IP, Des_IP, Proto, Domain, Parameters, IOCs, Actions, Status, Direction
         
         '''
         pass
