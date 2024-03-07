@@ -100,6 +100,9 @@ class KVParser:
                 ext_poi[key] = value
 
         return ext_poi
+    
+    def log_parser(self):
+        pass
 
     def get_output(self, log_type:str, app:str):
         ''' define the corresponding mapping from poi to column
@@ -113,6 +116,7 @@ class KVParser:
                 '''
                     ["type", "timestamp", "acct", "exe", "res"]
                 '''
+                
                 column_poi_map = {
                     "Time": ["timestamp"],
                     "Actions":["Type"],
@@ -120,7 +124,7 @@ class KVParser:
                     "Status":["res"],
                     "Direction":"->"
                 }
+
                 for log in self.logs:
-                    
-                    # write data from extracted poi to 
-                
+                    # write data from extracted poi to format output
+

@@ -18,7 +18,9 @@
 
 '''
 
-
+import sys
+from pathlib import Path
+sys.path.insert(0,Path(sys.path[0]).resolve().parent.as_posix())
 import regex as re
 from pathlib import Path
 import pandas as pd
@@ -27,6 +29,7 @@ from datetime import datetime
 import spacy
 import logging
 from tqdm import tqdm
+from core.logparse import uniformat
 
 # set the configuration
 logging.basicConfig(level=logging.DEBUG,
@@ -432,7 +435,7 @@ class GenLogParser:
 
     def get_output(self, ):
         ''' import extracted data to unified output format:
-            Time, Src_IP, Des_IP, Proto, Domain, Parameters, IOCs, Actions, Status, Direction
+            Time, Src_IP, Dest_IP, Proto, Domain, Parameters, IOCs, Actions, Status, Direction
         
         '''
         pass

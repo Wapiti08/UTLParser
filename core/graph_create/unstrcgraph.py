@@ -12,19 +12,20 @@ import networkx as nx
 import matplotlib.pyplot as plt
 from tqdm import tqdm
 from core.graph_create import gfeature
+from core.graph_create import caugraph
 
 
-class GausalGraph:
+class UnstrGausalGraph(caugraph.GausalGraph):
     ''' process raw logs 
     
     '''
     def __init__():
         pass
 
-    def read_output():
+    def log_parse():
         pass
 
-    def causal_graph_create():
+    def causal_graph():
         '''
         edge: 
             label: action name
@@ -36,4 +37,4 @@ class GausalGraph:
         '''
         pass
 
-
+    

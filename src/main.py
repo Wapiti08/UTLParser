@@ -2,23 +2,20 @@ import sys
 from pathlib import Path
 sys.path.insert(0,Path(sys.path[0]).resolve().parent.as_posix())
 from utils import util
-from core.logparse import kvparser
-from core.logparse import reqparser
-from core.logparse import genparser
+from core.logparse import unilogparser
+import yaml
 
-def log_type_check(log_name:str):
-    ''' check the processing logic according to the log type
-    
-    audit: key-value
-    access: http request (network traffic)
-    auth/windows/linux: general log type
-    '''
-    pass
+config = yaml.safe_load("./config.yaml")
 
-def parse_log(log_type:str):
-    pass
+class GraphTrace:
+    def __init__(self, log_name, config):
+        self.log_name = log_name
 
+    def log_parse(self):
+        unilogparser(self.log_name, )
+
+    def causal_graph_create(self,):
+        pass
 
 if __name__ == "__main__":
-    log_type_check()
-    parse_log()
+    pass
