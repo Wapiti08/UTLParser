@@ -12,3 +12,4 @@ log_type:
 POI:
   apache:
     audit: ["type", "timestamp", "acct", "exe", "res"]
+    access: ["Src_IP", "Timestamp", "Parameters","Status", "Actions"]

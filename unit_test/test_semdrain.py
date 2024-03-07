@@ -3,7 +3,7 @@ from pathlib import Path
 sys.path.insert(0, Path(sys.path[0]).parent.as_posix())
 
 import unittest
-from core.logparse.genparser import LogParser
+from core.logparse.genparser import GenLogParser
 import core.logparse.uniformat as uniformat
 
 class TestLogparser(unittest.TestCase):
@@ -57,7 +57,7 @@ class TestLogparser(unittest.TestCase):
         depth = self.logformat['Apache']['audit']['depth']
         st = self.logformat['Apache']['audit']['st']
 
-        self.logparser = LogParser(
+        self.logparser = GenLogParser(
             depth=depth,
             st=st,
             rex = rex,

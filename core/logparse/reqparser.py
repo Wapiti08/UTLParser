@@ -29,7 +29,10 @@ logger = logging.getLogger(__name__)
 
 class ReqParser:
 
-    def __init__(self, poi_list:list, log_filename:Path):
+    def __init__(self, log_filename:Path, poi_list:list):
+        '''
+        
+        '''
         self.PoI = poi_list
         self.format_output = {
             "Time":[],

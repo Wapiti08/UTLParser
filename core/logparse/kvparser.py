@@ -28,7 +28,10 @@ logger = logging.getLogger(__name__)
 
 class KVParser:
 
-    def __init__(self, poi_list:list, log_filename:Path):
+    def __init__(self, log_filename:Path, poi_list:list):
+        '''
+        :param poi_list: for example: ["type", "timestamp", "acct", "exe", "res"]
+        '''
         self.PoI = poi_list
         self.format_output = {
             "Time":[],
@@ -101,8 +104,22 @@ class KVParser:
 
         return ext_poi
     
-    def log_parser(self):
-        pass
+    def log_parse(self, log_name:str):
+        ''' process logs into a list of ioc mapping dict
+        
+        '''
+        # define the sum poi dict to save the extracted poi from per log
+        sum_poi_dict = {}
+        for poc in self.PoI:
+            sum_poi_dict[poc] = []
+
+        for log in tqdm(self.logs, desc="parsing {} logs...".format(log_name)):
+            kv_pairs = self.split_pair(log)
+            poi_dict = self.poi_ext(kv_pairs)
+            for poi, value in poi_dict.items():
+                sum_poi_dict[poi].append(value)
+        
+        return sum_poi_dict
 
     def get_output(self, log_type:str, app:str):
         ''' define the corresponding mapping from poi to column
@@ -113,18 +130,32 @@ class KVParser:
         if app.lower() == "apache":
             if log_type.lower() == "audit":
                 logger.info("generating the format output for {}-{} logs".format(app.lower(), log_type.lower()))
-                '''
-                    ["type", "timestamp", "acct", "exe", "res"]
-                '''
-                
+            
                 column_poi_map = {
-                    "Time": ["timestamp"],
-                    "Actions":["Type"],
+                    "Time": "timestamp",
+                    "Actions":"type",
+                    # only accept two elements to form a tuple
                     "IOCs":["acct","exe"],
-                    "Status":["res"],
+                    "Status":"res",
                     "Direction":"->"
                 }
 
-                for log in self.logs:
-                    # write data from extracted poi to format output
+                sum_poi_dict = self.log_parse(log_type)
+                # write data from extracted poi to format output
+                ## get the length of logs
+                log_num = len(self.logs)
+                for column, _ in self.format_output:
+                    if column == "IOCs":
+                        tuple_0_list = sum_poi_dict[column_poi_map[column][0]]
+                        tuple_1_list = sum_poi_dict[column_poi_map[column][1]]
+                        self.format_output[column] = list(zip(tuple_0_list, tuple_1_list))
+                    elif column == "Direction":
+                        self.format_output[column] = [column_poi_map[column]] * log_num 
+                    # exist poi for this column
+                    elif column in column_poi_map.keys():
+                        self.format_output[column] = sum_poi_dict[column_poi_map[column]]
+                    else:
+                        self.format_output[column] = ["-"] * log_num
+        
+
 
