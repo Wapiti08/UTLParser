@@ -433,12 +433,14 @@ class GenLogParser:
 
         return parameter_list
 
+
     def get_output(self, ):
         ''' import extracted data to unified output format:
             Time, Src_IP, Dest_IP, Proto, Domain, Parameters, IOCs, Actions, Status, Direction
         
         '''
         pass
+
 
     def cal_parse_rate(self,):
         ''' calculate how much logs have been parsed instead of passing

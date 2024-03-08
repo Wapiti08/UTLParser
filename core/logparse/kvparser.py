@@ -84,7 +84,7 @@ class KVParser:
         # Converting the timestamp to a datetime object
         timestamp_datetime = datetime.fromtimestamp(timestamp_float)
         # Formatting datetime object to the desired format
-        return timestamp_datetime.strftime("%d-%m-%Y %H:%M:%S")
+        return timestamp_datetime.strftime("%d-%b-%Y %H:%M:%S")
 
     def poi_ext(self, pairs: list):
         ''' extract poi from pairs split from one sentence
