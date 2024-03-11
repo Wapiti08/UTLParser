@@ -26,3 +26,4 @@ def sani_token(sen:str, patterns:list) -> str:
 
 
     return sani_sen       
+

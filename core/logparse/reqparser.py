@@ -17,6 +17,8 @@ from datetime import datetime
 import logging
 from tqdm import tqdm
 from pathlib import Path
+import pandas as pd
+from urllib.parse import urlparse
 
 # set the configuration
 logging.basicConfig(level=logging.DEBUG,
@@ -30,7 +32,7 @@ logger = logging.getLogger(__name__)
 
 # define the default log format
 log_format = "<SRC_IP> - - \[<Time>\] \"<Request_Method> <Content> <HTTP_Version>\" \
-                <Status_Code> <Response_Size> \"<Referer>\" \"<User_Agent>\"",
+                <Status> <Response_Size> \"<Referer>\" \"<User_Agent>\"",
 
 class ReqParser:
 
@@ -54,6 +56,13 @@ class ReqParser:
         }
         self.logs = Path(log_filename).read_text().splitlines()
     
+    def domain_ext(self, referer_part):
+        ''' 
+        
+        '''
+        parsed_url = urlparse(referer_part)
+        return parsed_url.netloc
+
     def url_para_ext(self, content_part):
         ''' extract the parameters from request content based on question mark
         
@@ -111,17 +120,60 @@ class ReqParser:
         browser_names = re.findall(browser_regex, user_agent_part)
         return browser_names
 
-    def poi_ext(self,):
-        '''
+    def poi_ext(self, regex, headers):
+        ''' match the poi according to component regex
         
+        general poi_list: src_ip, time, request_method, content (parameters),
+            status, referer(domain), user_agent(tool name)
         '''
+        log_messages = []
 
+        for line in self.logs:
+            try:
+                # match every component
+                match = regex.search(line.strip())
+                message = [match.group(header) for header in headers]
+                log_messages.append(message)
+            except Exception as e:
+                logger.warning("Skip line: %s", line)
 
+        logdf = pd.DataFrame(log_messages, columns = headers)
+        logdf.insert(0, 'LineId', None)
+        logdf["LineId"] = logdf.index + 1
+        # extract expected columns based on poi
+        desired_columns = [header for header in headers if any(header.lower() == poi for poi in self.PoI)]
+        print("Total lines: ", len(logdf))
+        logdf = logdf[desired_columns]
+
+        # extract the necessary part based on functions
+        logdf['Time'] = logdf["Time"].apply(lambda x: self.time_parse(x))
+        logdf["Content"] = logdf['Content'].apply(lambda x: self.url_para_ext(x))
+        logdf['Referer'] = logdf['Referer'].apply(lambda x: self.domain_ext(x))
+        logdf["User_Agent"] = logdf["User_Agent"].apply(lambda x: self.user_agent_ext(x))
+
+        return logdf
     
-    def get_output(self,):
+    def get_output(self, log_type:str, app: str):
         '''
         
         '''
+        if app.lower() == "apache":
+            if "access" in log_type.lower():
+                logger.info("generating the format output for {}-{} logs".format(app.lower(), log_type.lower()))
+
+                column_poi_map = {
+                    "Time": "Time",
+                    "Src_IP": "Src_IP",
+                    "Domain": "Referer",
+                    "Parameters":
+                    "Actions":
+                    "Status":
+                }
+
+
+
+        
+
 
     
 

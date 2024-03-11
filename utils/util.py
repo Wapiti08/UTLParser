@@ -19,3 +19,4 @@ def struc_data_read():
 
 def raw_data_read():
     pass
+
