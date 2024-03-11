@@ -30,6 +30,7 @@ import spacy
 import logging
 from tqdm import tqdm
 from core.logparse import uniformat
+from utils import util
 
 # set the configuration
 logging.basicConfig(level=logging.DEBUG,
@@ -80,16 +81,14 @@ class GenLogParser:
             log_format="",
             maxChild=100,
             keep_para=True,
-            filter=0,
-            iocs=0,
+            poi_list=[],
     ):
         '''
         :param depth: depth of all leaf nodes
         :param st: similarity threshold
         :param rex: regular regex to match explicit variables/indicitors
         :param maxChild: the max number of child of an internal node
-        :param filter: bool type: whether has specific filter schema for regex matching
-        :param key: bool type: whehther following key value pair 
+        :param poi_list: timestamp, parameterlist
         '''
 
         self.st = st
@@ -101,8 +100,20 @@ class GenLogParser:
         self.savePath = outdir
         self.log_format = log_format
         self.keep_para = keep_para
-        self.filter = filter
-        self.key = iocs
+        self.PoI = poi_list
+
+        self.format_output = {
+            "Time":[],
+            "Src_IP":[],
+            "Dest_IP":[],
+            "Proto":[],
+            "Domain":[],
+            "Parameters":[],
+            "IOCs":[],
+            "Actions":[],
+            "Status":[],
+            "Direction":[]
+        }
 
     def hasNumbers(self, s):
         return any(char.isdigit() for char in s)
@@ -286,7 +297,7 @@ class GenLogParser:
 
         logdf = pd.DataFrame(log_messages, columns = headers)
         logdf.insert(0, "LineId", None)
-        logdf["LineId"] = [i + 1 for i in range(lcount)]
+        logdf["LineId"] = logdf.index + 1
         print("Total lines: ", len(logdf))
         return logdf
 
@@ -432,6 +443,30 @@ class GenLogParser:
         )
 
         return parameter_list
+
+    def para_check(self, ):
+        ''' remain only parameters like path/domain/ip/username ...
+        
+        '''
+
+    def time_create(self, log_df: pd.DataFrame):
+        ''' assemble the separate time component to unified format
+        
+        '''
+        log_df = util.time_format(log_df)
+        return log_df["Time"]
+
+    def poi_ext(self,):
+        ''' extract the potential action from content
+        
+        '''
+
+        column_poi_map = {
+            "Time": "Time",
+            "Parameters": "Parameters",
+            "Actions": "Content",
+            
+        }
 
 
     def get_output(self, ):

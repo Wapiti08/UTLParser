@@ -298,7 +298,7 @@ class UniFormat:
 format_dict = {
     "DNS": {
         "dnsmasq": {
-            "log_format": "<Month> <Date> <Time> dnsmasq\[<PID>\]: <Content>",
+            "log_format": "<Month> <Date> <Timestamp> dnsmasq\[<PID>\]: <Content>",
             # match the domain, ipv4 and ipv6
             "regex": [r"\b(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}\b", r"\b(?:\d{1,3}\.){3}\d{1,3}[#\d+]+\b", r"\b(?:[0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}\b"],
             "st":0.7,
@@ -330,7 +330,7 @@ format_dict = {
             "iocs":1,
         },
         "auth": {
-            "log_format": "<Month> <Date> <Time> <Component> <Level>: <Content>",
+            "log_format": "<Month> <Date> <Timestamp> <Component> <Level>: <Content>",
             "regex": [],
             "st": 0.6,
             "depth": 4,
