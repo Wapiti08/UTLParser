@@ -165,10 +165,29 @@ class ReqParser:
                     "Time": "Time",
                     "Src_IP": "Src_IP",
                     "Domain": "Referer",
-                    "Parameters":
-                    "Actions":
-                    "Status":
+                    "Parameters": "Content",
+                    "Actions": "Request_Method",
+                    "Status": "Status",
+                    "IOCs": "User_Agent",
+                    "Direction":"->"
                 }
+
+                # generate the regex and headers
+                headers, regex = self.gen_logformat_regex(log_format)
+                logdf = self.poi_ext(regex, headers)
+                log_num = len(logdf)
+
+                for column, _ in self.format_output:
+                    if column in ["Time", "Src_IP", "Status"]:
+                        self.format_output[column] = logdf[column].tolist()
+                    elif column in ["Domain", "Parameters","Actions","IOCs"]:
+                        self.format_output[column] = logdf[column_poi_map[column]].tolist()
+                    elif column == "Direction":
+                        self.format_output[column] = [column_poi_map[column]] * log_num 
+                    else:
+                        self.format_output[column] = ["-"] * log_num
+
+
 
 
 
