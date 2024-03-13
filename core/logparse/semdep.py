@@ -16,7 +16,7 @@ sys.path.insert(0, Path(sys.path[0]).parent.as_posix())
 import spacy
 from spacy import displacy
 from spacy.matcher import DependencyMatcher
-from pattern import deppattern
+from core.pattern import deppattern
 import re
 import flair
 import nltk
@@ -28,8 +28,7 @@ nlp = spacy.load("en_core_web_lg")
 
 
 class DepParse:
-    def __init__(self, filepath:None):
-        self.file = filepath
+    def __init__(self, ):
         self.matcher = DependencyMatcher(nlp.vocab)
     
     def depen_parse(self, anchor_list: list[str], doc:spacy.tokens.doc.Doc):
@@ -61,8 +60,7 @@ class DepParse:
 
 
     def verb_ext(self, doc:spacy.tokens.doc.Doc):
-        ''' according to the pos value return the dependency direction
-        
+        ''' basic rule: according to the pos value return the dependency direction
         
         '''
         # define all type of verbs
@@ -74,9 +72,9 @@ class DepParse:
                 # check whether there is pos before this verb
                 if ord - 1>=0:
                     if doc[ord-1].pos_ != "AUX":
-                        return token.text, relation_dict[0]
+                        return token.text, '->'
                     else:
-                        return token.text, relation_dict[1]
+                        return token.text, '<-'
     
     def token_parse(self):
         pass

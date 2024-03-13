@@ -31,6 +31,11 @@ import logging
 from tqdm import tqdm
 from core.logparse import uniformat
 from utils import util
+from core.logparse.semdep import DepParse
+import spacy
+import yaml
+
+config = yaml.safe_load("./config.yaml")
 
 # set the configuration
 logging.basicConfig(level=logging.DEBUG,
@@ -40,6 +45,7 @@ logging.basicConfig(level=logging.DEBUG,
 
 # create a logger
 logger = logging.getLogger(__name__)
+nlp = spacy.load("en_core_web_lg")
 
 
 class Logcluster:
@@ -114,6 +120,8 @@ class GenLogParser:
             "Status":[],
             "Direction":[]
         }
+
+        self.depparser = DepParse()
 
     def hasNumbers(self, s):
         return any(char.isdigit() for char in s)
@@ -326,6 +334,7 @@ class GenLogParser:
 
         return headers, regex
     
+
     def getTemplate(self, seq1, seq2):
         ''' get event template by matching wildcard and tokens
         
@@ -444,10 +453,47 @@ class GenLogParser:
 
         return parameter_list
 
-    def para_check(self, ):
+    def para_check(self, para_part: list):
         ''' remain only parameters like path/domain/ip/username ...
         
         '''
+        # extract any desriable format of entity node
+        ip4_rex = config["regex"]["ip4"]
+        ip_filter_rex = re.compile(r'\.\d+')
+        domain_rex = config["regex"]["domain"]
+        path_unix = config["regex"]["path_unix"]
+        path_win = config["regex"]["path_win"]
+
+        new_paras = []
+
+        for element in para_part:
+            if element != '':
+                if bool(re.search(ip_filter_rex, element)):
+                    if re.match(ip4_rex, element):
+                        new_paras.append(element)
+                        continue
+                elif "/" in element:
+                    if re.match(path_unix, element):
+                        new_paras.append(element)
+                        continue
+                elif "\\" in element:
+                    if re.match(path_win, element):
+                        new_paras.append(element)
+                elif re.match(domain_rex, element):
+                    new_paras.append(element)
+                else:
+                    continue
+        return new_paras
+
+    def action_ext(self, content_part: str):
+        ''' extract the potential anchor word or direction
+        
+        '''
+        # define the extract verb
+        anchor = ""
+        doc = nlp(content_part)
+        anchor, direction = self.depparser.verb_ext(doc)
+        return anchor, direction
 
     def time_create(self, log_df: pd.DataFrame):
         ''' assemble the separate time component to unified format
@@ -465,7 +511,6 @@ class GenLogParser:
             "Time": "Time",
             "Parameters": "Parameters",
             "Actions": "Content",
-            
         }
 
 

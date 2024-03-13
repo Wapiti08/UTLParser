@@ -47,8 +47,7 @@ class TestLogparser(unittest.TestCase):
             log_format=log_format,
             keep_para=True,
             maxChild=100,
-            filter=0,
-            iocs=0,
+            poi_list=[],
         )
 
         # test for apache audit
@@ -113,17 +112,17 @@ class TestLogparser(unittest.TestCase):
     def test_parse(self):
 
         # self.logparser.parse("dnsmasq.log")
-        self.logparser.parse("org-access.log")
+        # self.logparser.parse("org-access.log")
         # self.logparser.parse("audit.log")
-        # self.logparser.parse("auth.log")
+        self.logparser.parse("auth.log")
         # self.logparser.parse("process.log")
 
         # self.assertEqual()
 
     def test_gen_logformat_regex(self,):
-        # self.logparser.gen_logformat_regex(self.logformat['Apache']['auth']['log_format'])
+        self.logparser.gen_logformat_regex(self.logformat['Apache']['auth']['log_format'])
         # self.logparser.gen_logformat_regex(self.logformat['DNS']['dnsmasq']['log_format'])
-        self.logparser.gen_logformat_regex(self.logformat['Apache']['org-access']['log_format'])
+        # self.logparser.gen_logformat_regex(self.logformat['Apache']['org-access']['log_format'])
         # self.logparser.gen_logformat_regex(self.logformat['Apache']['audit']['log_format'])
 
     # def test_get_parameter_list(self,):
