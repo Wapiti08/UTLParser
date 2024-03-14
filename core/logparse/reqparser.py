@@ -19,7 +19,6 @@ from tqdm import tqdm
 from pathlib import Path
 import pandas as pd
 from urllib.parse import urlparse
-from core.logparse.semdep import DepParse
 
 # set the configuration
 logging.basicConfig(level=logging.DEBUG,
@@ -188,8 +187,7 @@ class ReqParser:
                     else:
                         self.format_output[column] = ["-"] * log_num
 
-
-
+                logger.info("the parsing output is like: {}".format(self.format_output))
 
 
         

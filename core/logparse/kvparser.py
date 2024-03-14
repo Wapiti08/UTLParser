@@ -157,5 +157,6 @@ class KVParser:
                     else:
                         self.format_output[column] = ["-"] * log_num
         
+                logger.info("the parsing output is like: {}".format(self.format_output))
 
 

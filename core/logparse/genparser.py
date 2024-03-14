@@ -294,7 +294,8 @@ class GenLogParser:
         lcount = 0
 
         with log_file.open('r') as fr:
-            for line in fr.readlines():
+            data = fr.readlines()
+            for line in data:
                 try:
                     match = regex.search(line.strip())
                     message = [match.group(header) for header in headers]
@@ -307,6 +308,7 @@ class GenLogParser:
         logdf.insert(0, "LineId", None)
         logdf["LineId"] = logdf.index + 1
         print("Total lines: ", len(logdf))
+        logger.info("The parsing rate is: {:.2%}".format(len(logdf) / len(data) ))
         return logdf
 
 
@@ -486,7 +488,7 @@ class GenLogParser:
         return new_paras
 
     def action_ext(self, content_part: str):
-        ''' extract the potential anchor word or direction
+        ''' extract the potential anchor word, waiting to add more rules on direction
         
         '''
         # define the extract verb
@@ -507,23 +509,34 @@ class GenLogParser:
         
         '''
 
-        column_poi_map = {
-            "Time": "Time",
-            "Parameters": "Parameters",
-            "Actions": "Content",
-        }
+        self.df_log["Content"] = self.df_log["Content"].apply(lambda x: self.action_ext(x)[0])
+        self.df_log["Direction"] = self.df_log["Content"].apply(lambda x: self.action_ext(x)[1])
+        # filter points of interests
+        self.df_log["Parameters"] = self.df_log["Parameters"].apply(lambda x: self.para_check(x))
+        self.df_log['Time'] = self.time_create(self.df_log)
 
 
-    def get_output(self, ):
+    def get_output(self,):
         ''' import extracted data to unified output format:
             Time, Src_IP, Dest_IP, Proto, Domain, Parameters, IOCs, Actions, Status, Direction
         
         '''
-        pass
+        log_num = len(self.df_log)
+        # for general logs, only extract time, parameters, actions
+        column_poi_map = {
+            "Time": "Time",
+            "Parameters": "Parameters",
+            "Actions": "Content",
+            "Direction": 'Direction'
+        }
+
+        for column, _ in self.format_output:
+            if column in ["Time", "Parameters", "Direction"]:
+                self.format_output[column] = self.df_log[column].tolist()
+            elif column == "Actions":
+                self.format_output[column] = self.df_log[column_poi_map[column]].tolist()
+            else:
+                self.format_output[column] = ["-"] * log_num
 
 
-    def cal_parse_rate(self,):
-        ''' calculate how much logs have been parsed instead of passing
-        
-        '''
-        pass
+        logger.info("the parsing output is like: {}".format(self.format_output))

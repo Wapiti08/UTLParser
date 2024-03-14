@@ -69,13 +69,17 @@ class DepParse:
         for ord, token in enumerate(doc):
             # check whether matching the verb
             if bool(re.match(target_pos_pattern, token.pos_)):
-                # check whether there is pos before this verb
+                # rule1: check whether there is pos before this verb 
                 if ord - 1>=0:
                     if doc[ord-1].pos_ != "AUX":
                         return token.text, '->'
                     else:
                         return token.text, '<-'
-    
+                # rule 2: 
+            else:
+                # no verb exists in logs
+                return '-','-'
+
     def token_parse(self):
         pass
 
