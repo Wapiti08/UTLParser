@@ -16,6 +16,9 @@ from datetime import datetime
 import logging
 from tqdm import tqdm
 from pathlib import Path
+import yaml
+from utils import util
+from core.pattern import domaininfo
 
 # set the configuration
 logging.basicConfig(level=logging.DEBUG,
@@ -26,9 +29,11 @@ logging.basicConfig(level=logging.DEBUG,
 # create a logger
 logger = logging.getLogger(__name__)
 
+config = yaml.safe_load("./config.yaml")
+
 class KVParser:
 
-    def __init__(self, log_filename:Path, poi_list:list):
+    def __init__(self, log_filename:Path, poi_list:list, log_type:str, app:str):
         '''
         :param poi_list: for example: ["type", "timestamp", "acct", "exe", "res"]
         '''
@@ -41,11 +46,15 @@ class KVParser:
             "Domain":[],
             "Parameters":[],
             "IOCs":[],
+            "PID":[],
             "Actions":[],
             "Status":[],
             "Direction":[]
         }
+        self.log_type = log_type
+        self.app = app
         self.logs = Path(log_filename).read_text().splitlines()
+
 
     def split_pair(self, sen:str):
         ''' split key-value pair default by space with recursive setting --- 
@@ -53,24 +62,87 @@ class KVParser:
         
         '''
         key_value_pairs = []
-        # check whether there is " or ' in sen
-        if '"' in sen or "'" in sen:
-            # the pattern can avoid splitting problem for " and '
-            pattern = r'(?:[^"\s]+="[^"]*"|[^\'\s]+=\'[^\']*\'|[^"\s]+=[^\s]*)'
-            key_value_pairs = re.findall(pattern, sen)
-            for index, pair in enumerate(key_value_pairs):
-                # check whether there is nested part
-                if ':' in pair:
-                    key, value = pair.split(":", 1)
-                    key_value_pairs[index] = key
-                    nested_pairs = self.split_pair(value)    
-                    key_value_pairs.extend(nested_pairs)
-        else:
-            # implement general split
-            key_value_pairs = sen.split(" ")
+        pattern = r'(?:[^"\s]+="[^"]*"|[^\'\s]+=\'[^\']*\'|[^"\s]+=[^\s]*)'
+        if self.log_type == "audit":
+            # check whether there is " or ' in sen  ---- audit 
+            if '"' in sen or "'" in sen:
+                # the pattern can avoid splitting problem for " and '
+                key_value_pairs = re.findall(pattern, sen)
+                for index, pair in enumerate(key_value_pairs):
+                    # check whether there is nested part
+                    if ':' in pair:
+                        key, value = pair.split(":", 1)
+                        key_value_pairs[index] = key
+                        nested_pairs = self.split_pair(value)    
+                        key_value_pairs.extend(nested_pairs)
+            else:
+                # implement general split
+                key_value_pairs = sen.split(" ")
+
+        elif self.log_type == "process":
+            if self.app == "sysdig":
+                # read specific format
+                proces_format = config["format"][self.log_type][self.app]
+                # create key value pair for previous part
+                regex, headers = util.gen_regex_from_logformat(proces_format)
+                res = self.header_value_pair(sen, regex, headers)
+                if res:
+                    # remove the last content to have second-level split
+                    pre_kv_pairs = res[:-1]
+                    key_value_pairs.extend(pre_kv_pairs)
 
         return key_value_pairs
 
+    def args_parse(self, args:str ):
+        ''' further process args with poi: fd, path and potential sub event
+        
+        '''
+        args_dict = {}
+        # check whether args contains other structure
+        args_tokens = args.split(" ")
+        if not util.is_all_kv_pairs(args_tokens):
+            # match the sub event by matching the ">"
+            if ">" in args_tokens:
+                args_dict["system_call"] = args_tokens[args_tokens.index(">") + 1] 
+        else:
+            for pair in args_tokens:
+                # split key-value pair
+                res = pair.split("=")
+                key, value = res[0], res[1]
+                if key in self.PoI:
+                    args_dict[key] = value
+
+        return args_dict
+
+    def value_check(self, key_name:str):
+        ''' extract only value like path/domain/ip/username by giving the keyname
+        
+        '''
+        ip4_rex = config["regex"]["ip4"]
+        ip_filter_rex = re.compile(r'\.\d+')
+        domain_rex = config["regex"]["domain"]
+        path_unix = config["regex"]["path_unix"]
+        path_win = config["regex"]["path_win"]
+
+
+
+    def header_value_pair(self, sen, regex, headers):
+        ''' generate the key value pair according to headers and regex matching
+        
+        '''
+        kv_pairs = []
+        try:
+            match = regex.search(sen.strip())
+            message = [match.group(header) for header in headers]
+            # generate pairs
+            for header, message in zip(headers, message):
+                kv_pairs.append(f"{header.lower()}={message}")
+
+        except Exception as e:
+            logger.warning("Skip line: %s", sen)
+            return None
+        
+        return kv_pairs
 
     def ext_format_time(self, time_pair: str):
         ''' extract seconds to format time, the example is like:
@@ -115,32 +187,28 @@ class KVParser:
 
         for log in tqdm(self.logs, desc="parsing {} logs...".format(log_name)):
             kv_pairs = self.split_pair(log)
-            poi_dict = self.poi_ext(kv_pairs)
+            if self.log_type == "audit":
+                poi_dict = self.poi_ext(kv_pairs)
+            elif self.log_type == "process":
+                poi_dict = self.poi_ext(kv_pairs[:-1]).update(self.args_parse(kv_pairs[-1]))
+            
             for poi, value in poi_dict.items():
                 sum_poi_dict[poi].append(value)
         
         return sum_poi_dict
 
-    def get_output(self, log_type:str, app:str):
+    def get_output(self,):
         ''' define the corresponding mapping from poi to column
         :param log_type: define the log type
         :param app: define the application name like apache
         '''
+        logger.info("generating the format output for {}-{} logs".format(self.app.lower(), self.log_type.lower()))
         # the mapping dict may be different from logs, consider application and log_type
-        if app.lower() == "apache":
-            if log_type.lower() == "audit":
-                logger.info("generating the format output for {}-{} logs".format(app.lower(), log_type.lower()))
-            
-                column_poi_map = {
-                    "Time": "timestamp",
-                    "Actions":"type",
-                    # only accept two elements to form a tuple
-                    "IOCs":["acct","exe"],
-                    "Status":"res",
-                    "Direction":"->"
-                }
+        column_poi_map = domaininfo[self.app][self.log_type]
 
-                sum_poi_dict = self.log_parse(log_type)
+        if self.app.lower() == "apache":
+            if self.log_type.lower() == "audit":
+                sum_poi_dict = self.log_parse(self.log_type)
                 # write data from extracted poi to format output
                 ## get the length of logs
                 log_num = len(self.logs)
@@ -159,4 +227,9 @@ class KVParser:
         
                 logger.info("the parsing output is like: {}".format(self.format_output))
 
+        elif self.app.lower() == "sysdig":
+            if self.log_type.lower() == "process":
+                sum_poi_dict = self.log_parse(self.log_type)
+                # grab both potential ip direction information and proces call information
+                # process is the src node, pid 
 

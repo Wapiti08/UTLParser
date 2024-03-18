@@ -247,13 +247,12 @@ class UniFormat:
         else:
             logger.warn("there is no clear content split indicitor in {}".format(sentence))
             return None
-        return len(tokens[1])
+        return len(tokens[1].split(" "))
     
-    def cal_st(self):
-        ''' decide the threshold for similarity matching with variance
-        the larger variance, the lower threshold
+    def cal_depth(self, max_len=10, min_len=1):
+        ''' decide the threshold for similarity matching with mean length
         '''
-        threshold = 0
+        depth = 0
         token_len_list = []
         for sen in self.logs:
             len = self.content_length(sen)
@@ -261,20 +260,23 @@ class UniFormat:
                 token_len_list.append(len)
         
         # calculate the variance
-        var = statistics.variance(token_len_list)
-        if var <= 1:
-            threshold = 0.7
-        elif var <10:
-            threshold = 0.5
+        len_mean = round(statistics.mean(token_len_list),1)
+
+        if len_mean <= min_len:
+            depth = 3
+        elif len_mean < max_len:
+            depth = 3 + round((max_len - min_len)/ (len_mean - min_len),1)
         else:
-            threshold = 0.3
-        return threshold
+            depth = 6
+        return depth
     
-    def cal_depth(self):
+
+    def cal_thres(self, max_var=0.3, min_var=0.005):
         ''' depends on the complexity: the number of = compared with total token number
-        calculate the variance of rate of = in sentence
+        calculate the variance of rate of = in sentence, 
+        more complex of structure, the lower the similarity threshold
         '''
-        depth = 4
+        threshold = 0
         rate_list = []
         for sen in self.logs:
             # get the token number
@@ -284,14 +286,15 @@ class UniFormat:
             if len:
                 rate_list.append(round(occ/len, 3))
 
-        rate_var = statistics.variance(rate_list)     
-        if rate_var > 0.05:
-            depth = 7
-        elif rate_var > 0.04:
-            depth = 6
-        elif rate_var >0.03:
-            depth = 5
-        return depth
+        rate_var = statistics.variance(rate_list)   
+
+        if rate_var < min_var:
+            threshold = 0.7
+        elif rate_var < max_var:
+            threshold = 0.7 - round((rate_var - min_var)/(max_var - min_var) * 0.5 ,2)
+        else:
+            threshold = 0.2
+        return threshold
             
 
 # the matching format for unstructured logs

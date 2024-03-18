@@ -9,11 +9,19 @@ regex:
   path_win: [A-Za-z]:\\(?:[^\\/:*?'<>|\r\n]+\\)*[^\\/:*?'<>|\r\n]+
 
 log_type:
-  kv: ["audit"]
+  kv: ["audit", "process"]
   req: ["access"]
-  gen: ["auth"]
+  gen: ["auth", "linux"]
 
 POI:
   apache:
     audit: ["type", "timestamp", "acct", "exe", "res"]
     access: ["Src_IP", "Timestamp", "Parameters", "Status", "Actions"]
+  sysdig: ["time", "proc", "pid", "event_type", "fd", "path"]
+
+format:
+  process:
+    # for testing 
+    sysdig: "<Date> <CPU> <Proc> \(<PID>\) <Dir> <Event_Type> <Args>"
+    # correct one
+    # sysdig: "<Evt_Num> <Date> <CPU> <Proc> \(<PID>\) <Dir> <Event_Type> <Args>"

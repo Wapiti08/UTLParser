@@ -50,6 +50,7 @@ class ReqParser:
             "Domain":[],
             "Parameters":[],
             "IOCs":[],
+            "PID":[],
             "Actions":[],
             "Status":[],
             "Direction":[]

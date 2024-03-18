@@ -116,6 +116,7 @@ class GenLogParser:
             "Domain":[],
             "Parameters":[],
             "IOCs":[],
+            "PID":[],
             "Actions":[],
             "Status":[],
             "Direction":[]
@@ -286,6 +287,15 @@ class GenLogParser:
             line = re.sub(var_reg , "<*>", line)
         return line
 
+    def gen_logformat_regex(self, logformat):
+        ''' based on given logformat to generate the regex that matches the corresponding components
+        :param logformat: given format components ---- based on specific log format
+        one example would be: "<Date> <Time> - <Level>  \[<Node>:<Component>@<Id>\] - <Content>",
+
+        '''
+
+        return util.gen_regex_from_logformat(logformat)
+
     def log_to_dataframe(self, log_file: Path, regex, headers):
         ''' write raw log to pandas dataframe, with list and headers
         
@@ -311,31 +321,6 @@ class GenLogParser:
         logger.info("The parsing rate is: {:.2%}".format(len(logdf) / len(data) ))
         return logdf
 
-
-    def gen_logformat_regex(self, logformat):
-        ''' based on given logformat to generate the regex that matches the corresponding components
-        :param logformat: given format components ---- based on specific log format
-        one example would be: "<Date> <Time> - <Level>  \[<Node>:<Component>@<Id>\] - <Content>",
-
-        '''
-        headers = []
-        # match any context inside <> without < and > themselves
-        splitters = re.split(r"(<[^<>]+>)", logformat)
-        regex = ""
-        for k in range(len(splitters)):
-            if k % 2 == 0:
-                # process the space between adjacent components
-                splitter = re.sub(" +", "\\\s+", splitters[k])
-                regex += splitter
-            else:
-                header = splitters[k].strip("<").strip(">")
-                # create a named capture group
-                regex += "(?P<%s>.*)" % header
-                headers.append(header)
-        regex = re.compile("^" + regex + "$")
-
-        return headers, regex
-    
 
     def getTemplate(self, seq1, seq2):
         ''' get event template by matching wildcard and tokens

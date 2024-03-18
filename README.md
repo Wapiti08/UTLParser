@@ -14,38 +14,6 @@ Graph based anomaly detection for malware (part of APT)
 
 ## Explaination of Dataset
 
-- IoT23 (structured logs) --- network traffic:
-    - label information
-        - attack (part of APT):
-            indictors that there was some type of attack from the infected device to another host
-        - C & C (part of APT):
-            the infected device was connnected to a CC server
-        - DDoS:
-            ddos attack is being executed by the infected device
-        - FileDownload (part of APT):
-            a file is being downloaded to the infected device
-        - HeartBeat (periodic similar connections)
-            packets sent on this connection are used to keep a track on the infected host 
-        - Mirai (botnet)
-            similar patterns
-        - Okiru (botnet)
-            same parameters
-        - PortScan (part of APT)
-        - Torii (botnet)
-            same parameters
-
-    - related field and its number
-        - id.resp_h (5) ----> C & C
-        - id.resp_p (6) ----> Malware, HeartBeat, Port Scan
-        - conn_state (12) ----> Port Scan
-
-    - choosen fields to extract features
-        - ts? -- time series --- dynamic beyasian network
-        - id.orig_h, id.orig_p, id.resp_h, id.resp_p
-        - resp_bytes ---- filedownload
-        - conn_state ---- port scan
-        - feature analysis? --- other features
-
 - AIT (fox) --- pure unstructured logs:
 
     - used for intrusion detection systems, federated learning, alert aggregation
@@ -80,6 +48,45 @@ Graph based anomaly detection for malware (part of APT)
 - Windows (CBS):
     
     - contain information about component installation, removal or servicing events
+
+- Sysdig Process:
+    ```
+    # follow the format like: evt.num, evt.time, evt.cpu, proc.name, thread.tid, evt.dir, evt.type, evt.args
+    - 123 23:40:09.105899621 3 httpd (28599) > switch next=0 pgft_maj=3 pgft_min=619 vm_size=442720 vm_rss=668 vm_swap=7004
+    ```
+
+
+- IoT23 (structured logs) --- network traffic:
+    - label information
+        - attack (part of APT):
+            indictors that there was some type of attack from the infected device to another host
+        - C & C (part of APT):
+            the infected device was connnected to a CC server
+        - DDoS:
+            ddos attack is being executed by the infected device
+        - FileDownload (part of APT):
+            a file is being downloaded to the infected device
+        - HeartBeat (periodic similar connections)
+            packets sent on this connection are used to keep a track on the infected host 
+        - Mirai (botnet)
+            similar patterns
+        - Okiru (botnet)
+            same parameters
+        - PortScan (part of APT)
+        - Torii (botnet)
+            same parameters
+
+    - related field and its number
+        - id.resp_h (5) ----> C & C
+        - id.resp_p (6) ----> Malware, HeartBeat, Port Scan
+        - conn_state (12) ----> Port Scan
+
+    - choosen fields to extract features
+        - ts? -- time series --- dynamic beyasian network
+        - id.orig_h, id.orig_p, id.resp_h, id.resp_p
+        - resp_bytes ---- filedownload
+        - conn_state ---- port scan
+        - feature analysis? --- other features
 
 
 ## Process Modules
