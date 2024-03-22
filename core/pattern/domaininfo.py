@@ -39,8 +39,9 @@ column_poi_map = {
                 # same as the process name
                 "Proto":"process",
                 # if exists
-                "Parameters": ["sub_event"],
+                "Parameters": "sub_event",
                 "IOCs":["fd", "path"],
+                "PID": "pid",
                 "Actions":"type",
                 "Direction":"->",
         }

@@ -92,6 +92,7 @@ Graph based anomaly detection for malware (part of APT)
 ## Process Modules
 
 - DNS process
+
     - log components
 
         timestamp + service_name[id]: message

@@ -83,4 +83,44 @@ def gen_regex_from_logformat(logformat):
     return headers, regex
 
 
+def ip_match(test_string:str):
+    ''' match all
+    
+    '''
+    # check ip with port first
+    ip_port = config["regex"]["ip_with_port"]
+    ipv4 = config["regex"]["ip4"]
+    ipv6 = config["regex"]["ip6"]
 
+    for ip_regex in [ip_port, ipv4, ipv6]:
+        res = re.findall(ip_regex, test_string)
+        if res:
+            return res
+        else:
+            return None
+
+
+def domain_match(test_string:str):
+    ''' signal match check
+    
+    '''
+    domain = config["regex"]["domain"]
+    res = re.match(domain, test_string)
+    if res:
+        return res.group(0)
+    else:
+        return None
+
+
+def path_match(test_string:str):
+    ''' signal match check
+    
+    '''
+    path_win = config["regex"]["path_win"]
+    path_unix = config["regex"]["path_unix"]
+    for path_regex in [path_win, path_unix]:
+        res = re.match(path_regex, test_string)
+        if res:
+            return res.group(0)
+        else:
+            return None

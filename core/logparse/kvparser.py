@@ -103,27 +103,55 @@ class KVParser:
         if not util.is_all_kv_pairs(args_tokens):
             # match the sub event by matching the ">"
             if ">" in args_tokens:
-                args_dict["system_call"] = args_tokens[args_tokens.index(">") + 1] 
+                args_dict["sub_event"] = args_tokens[args_tokens.index(">") + 1] 
         else:
             for pair in args_tokens:
                 # split key-value pair
                 res = pair.split("=")
                 key, value = res[0], res[1]
+                # further process to extract precise values
+                res = self.value_check(value)
                 if key in self.PoI:
-                    args_dict[key] = value
+                    # check the type
+                    if isinstance(res, list):
+                        if len(res) == 2:
+                            args_dict["src_ip"] = res[0]
+                            args_dict["dest_ip"] = res[1]
+                        elif len(res) == 1:
+                            args_dict["path"] = res[0]
+                        else:
+                            args_dict[key] = res
 
         return args_dict
 
-    def value_check(self, key_name:str):
+    def value_check(self, value_string: str):
         ''' extract only value like path/domain/ip/username by giving the keyname
         
         '''
-        ip4_rex = config["regex"]["ip4"]
-        ip_filter_rex = re.compile(r'\.\d+')
-        domain_rex = config["regex"]["domain"]
-        path_unix = config["regex"]["path_unix"]
-        path_win = config["regex"]["path_win"]
 
+        # for process related value check
+        proc_val_pattern = r'^(\d+)\(([^()]+)\)$'
+        res = re.match(proc_val_pattern, value_string)
+        # match ip or ip with port
+        if res:
+            content = res.group(2)
+            # check whether ip or path
+            if "->" in content:
+                # match the src and/or dest ip with port
+                return util.ip_match(content)
+            else:
+                return util.ip_match(value_string)
+
+        # match the path 
+        elif "\\" in value_string or "/" in value_string:
+            return util.path_match(value_string)
+        
+        # match the domain
+        elif "." in value_string:
+            return util.domain_match(value_string)
+        else:
+            # filename
+            return value_string
 
 
     def header_value_pair(self, sen, regex, headers):
@@ -230,6 +258,19 @@ class KVParser:
         elif self.app.lower() == "sysdig":
             if self.log_type.lower() == "process":
                 sum_poi_dict = self.log_parse(self.log_type)
-                # grab both potential ip direction information and proces call information
+                # grab both potential ip direction information and process call information
                 # process is the src node, pid 
-
+                log_num = len(self.logs)
+                for column, _ in self.format_output:
+                    if column in ["Time", "Actions", "Proto", "PID", "Parameters"]:
+                        self.format_output[column] = sum_poi_dict[column_poi_map[column]]
+                    elif column in ["Src_IP", "Dest_IP"]:
+                        # check whether there is corresponding value in fd
+                        if column.lower() in sum_poi_dict.keys():
+                            self.format_output[column] = sum_poi_dict[column.lower()]
+                    elif column == "IOCS":
+                        for index, key_name in enumerate(column_poi_map[column]):
+                            if key_name in sum_poi_dict.keys():
+                                self.format_output[column][index] = sum_poi_dict[key_name]
+                    elif column == "Direction":
+                        self.format_output[column] = [column_poi_map[column]] * log_num 
