@@ -12,9 +12,8 @@ import networkx as nx
 import matplotlib.pyplot as plt
 from tqdm import tqdm
 from core.graph_create import gfeature
-from core.graph_create import caugraph
 
-class StruGrausalGraph(caugraph.GausalGraph):
+class StruGrausalGraph:
     ''' process structured network traffic
     
     '''

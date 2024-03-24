@@ -19,6 +19,7 @@ from pathlib import Path
 import yaml
 from utils import util
 from core.pattern import domaininfo
+import pandas as pd
 
 # set the configuration
 logging.basicConfig(level=logging.DEBUG,
@@ -274,3 +275,7 @@ class KVParser:
                                 self.format_output[column][index] = sum_poi_dict[key_name]
                     elif column == "Direction":
                         self.format_output[column] = [column_poi_map[column]] * log_num 
+
+        pd.DataFrame(self.format_output).to_csv(
+            Path(self.savePath).joinpath(self.logName + "_unifrom.csv"), index=False
+        )

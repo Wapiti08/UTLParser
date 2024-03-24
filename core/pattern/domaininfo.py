@@ -46,6 +46,12 @@ column_poi_map = {
                 "Direction":"->",
         }
 
-               }
+               },
+    "general": {
+            "Time": "Time",
+            "Parameters": "Parameters",
+            "Actions": "Content",
+            "Direction": 'Direction'
+            }
 
                 }

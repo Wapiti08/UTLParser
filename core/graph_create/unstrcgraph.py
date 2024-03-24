@@ -15,7 +15,7 @@ from core.graph_create import gfeature
 from core.graph_create import caugraph
 
 
-class UnstrGausalGraph(caugraph.GausalGraph):
+class UnstrGausalGraph:
     ''' process raw logs 
     
     '''

@@ -34,6 +34,8 @@ from utils import util
 from core.logparse.semdep import DepParse
 import spacy
 import yaml
+from core.pattern import domaininfo
+
 
 config = yaml.safe_load("./config.yaml")
 
@@ -508,12 +510,7 @@ class GenLogParser:
         '''
         log_num = len(self.df_log)
         # for general logs, only extract time, parameters, actions
-        column_poi_map = {
-            "Time": "Time",
-            "Parameters": "Parameters",
-            "Actions": "Content",
-            "Direction": 'Direction'
-        }
+        column_poi_map = domaininfo["general"]
 
         for column, _ in self.format_output:
             if column in ["Time", "Parameters", "Direction"]:
@@ -523,5 +520,8 @@ class GenLogParser:
             else:
                 self.format_output[column] = ["-"] * log_num
 
-
         logger.info("the parsing output is like: {}".format(self.format_output))
+
+        pd.DataFrame(self.format_output).to_csv(
+            Path(self.savePath).joinpath(self.logName + "_unifrom.csv"), index=False
+        )

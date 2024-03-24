@@ -12,19 +12,24 @@ import networkx as nx
 import matplotlib.pyplot as plt
 from tqdm import tqdm
 from core.graph_create import gfeature
-
+import pandas as pd
+from core.pattern import domaininfo
 
 class GausalGraph:
     ''' process raw logs 
     
     '''
-    def __init__():
-        pass
+    def __init__(self, filepath):
+        self.input_file = filepath
 
-    def read_output():
-        pass
-
-    def causal_graph_create():
+    def read_output(self,):
+        ''' read csv file
+        
+        '''
+        df = pd.read_csv(self.input_file)
+        
+        
+    def causal_graph_create(self, ):
         '''
         edge: 
             label: action name
