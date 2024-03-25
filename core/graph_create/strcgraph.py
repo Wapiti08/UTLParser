@@ -1,5 +1,5 @@
 """ 
-@Description: Generate Causal Graph with Multiple Attributes from Unified Output
+@Description: Generate Causal Graph with Multiple Attributes from structured logs
 @Author: newt.tan 
 @Date: 2024-02-29 09:36:17 
 @Last Modified by:   newt.tan  
@@ -17,10 +17,11 @@ class StruGrausalGraph:
     ''' process structured network traffic
     
     '''
-    def __init__(self):
-        pass
+    def __init__(self, graphrule, log_df):
+        self.graphrule = graphrule
+        self.log_df = log_df
 
-    def graph_create(self, bro_log_file):
+    def causal_graph(self,):
         ''' build graph from structured logs --- consider ips and ports only
 
         node value: id.orig_h, id.resp_h
@@ -28,18 +29,14 @@ class StruGrausalGraph:
         edge attributes: ts, resp_bytes, conn_state
         
         '''
-        log_to_df = LogToDataFrame()
-        # keep the ts column
-        conn_df = log_to_df.create_dataframe(bro_log_file,ts_index=False)
+        conn_df = self.log_df
         # extract the initial desired features
         field_list = ['ts', 'id.orig_h', 'id.orig_p', 'id.resp_h', 'id.resp_p', 'resp_bytes', 'conn_state']
         # for testing
         fea_df = conn_df[field_list][:100]
+
         G = nx.MultiDiGraph()
         for _, row in tqdm(fea_df.iterrows(), desc='parsing logs to graphs'):
-            # edges = []
-            # add node with its attribute
-            # if G.has_node(row['id.orig_h']):
 
             G.add_node(row['id.orig_h'], label='orig ip', port=row['id.orig_p'])
             
@@ -50,7 +47,7 @@ class StruGrausalGraph:
         
         # split into connected graphs
         graphs = list(nx.strongly_connected_components(G))
-        print("there are {} full connected graphs from {}".format(len(graphs), bro_log_file))
+        print("there are {} full connected graphs".format(len(graphs)))
         return G
 
     def graph_label(self, G: nx.Graph, node_indicator:str, att_indicitor:str, edge_indicitor:tuple, label:str):

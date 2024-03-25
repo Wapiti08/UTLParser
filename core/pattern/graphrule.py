@@ -90,6 +90,23 @@ graph_attrs_json = {
                 },
             },
         }
+    },
+    "conn": {
+        "node": {
+            "value": ["Src_IP", "Dest_IP"],
+            "attrs": {
+                "port": "IOCs",
+            }
+        },
+        "edge": {
+            "direc": "Direction",
+            "value": "Proto",
+            "attrs": {
+                "timestamp": "Time",
+                "status": "Status",
+                "size": "Parameters"
+            }
+        }
     }
 }
 

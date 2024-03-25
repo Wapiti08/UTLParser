@@ -3,10 +3,13 @@
  # @ Create Time: 2024-03-18 09:53:03
  # @ Modified by: Newt Tan
  # @ Modified time: 2024-03-18 09:54:30
- # @ Description: the mapping dict from uniform format to specific components
+ # @ Description: the mapping dict from uniform format to specific components,
+                used to define the graph rules
  '''
 
-column_poi_map = {
+# define the mapping from uniformed column to components for unstructured logs
+
+unstru_log_poi_map = {
     "apache": {
         # audit log ---- key-value pairs
         "audit": {
@@ -55,3 +58,19 @@ column_poi_map = {
             }
 
                 }
+
+
+# define the mapping from uniformed column to components for structured logs (zeek)
+## classified with log type
+stru_log_poi_map = {
+    "conn": {
+        "Time": "ts",
+        "Src_IP": "id.orig_h",
+        "Dest_IP": "id.resp_h",
+        "Proto": "service",
+        "Parameters": "resp_bytes",
+        "IOCs": ["id.orig_p", "id.resp_p"],
+        "Status": "conn_state",
+        "Direction": "->"
+    }
+}
