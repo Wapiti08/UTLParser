@@ -22,21 +22,7 @@ class GausalGraph:
     '''
     def __init__(self, filepath):
         self.input_file = filepath
-
-    def read_output(self, unified:bool):
-        ''' read csv file
-        
-        '''
-        if unified:
-            # read unified logs from unstructured logs
-            df = pd.read_csv(self.input_file)
-        else:
-            # read structured logs    
-            log_to_df = LogToDataFrame()
-            # keep the ts column
-            df = log_to_df.create_dataframe(self.input_file,ts_index=False)
-
-        return df
+        self.df = pd.read_csv(self.input_file)
 
     def causal_graph_create(self, structured: bool):
         ''' go to separate process logics

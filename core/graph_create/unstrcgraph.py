@@ -24,8 +24,30 @@ class UnstrGausalGraph:
         self.log_df = log_df
         self.log_type = log_type
 
-    def temp_graph(self, T):
-        pass
+    def temp_graph(self, G:nx.classes.digraph.DiGraph, T):
+        ''' extract temporal subgraphs by matching time T
+        
+        '''
+        subgraphs = []
+        for u, v, edge in G.edges(data=True):
+            # extract the attribute element
+            if 'timestamp' in edge and edge['timestamp'] == T:
+                temp_graph = nx.MultiDiGraph()
+                temp_graph.add_edge(u,v, **edge)
+                subgraphs.extend(nx.connected_components(temp_graph))
+
+        return subgraphs
+
+    def comm_detect(self, G::nx.classes.digraph.DiGraph):
+        ''' extract independent activity graphs
+        
+        '''
+        # make the graph undirected in order to extract independent communities
+        UG = G.to_undirected()
+        comm_graphs = []
+        comm_graphs = [G.subgraph(c) for c in nx.connected_components(UG)]
+        logger.info("Detect {} independent attack activities".format(len(comm_graphs)))
+        return comm_graphs
 
     def anomaly_score(self,):
         pass
@@ -56,7 +78,7 @@ class UnstrGausalGraph:
         ''' according to defined node/edge value, attrs to build directed graphs with 
         multiple attrs
         '''
-        G = nx.DiGraph()
+        G = nx.MultiDiGraph()
         # create node value and attrs
         node_value_key = self.graphrule[self.log_type]["node"]["value"]
         node_attr_key = self.graphrule[self.log_type]["node"]["attrs"]

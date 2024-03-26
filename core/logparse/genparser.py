@@ -510,9 +510,9 @@ class GenLogParser:
         '''
         log_num = len(self.df_log)
         # for general logs, only extract time, parameters, actions
-        column_poi_map = domaininfo["general"]
+        column_poi_map = domaininfo.unstru_log_poi_map["general"]
 
-        for column, _ in self.format_output:
+        for column, _ in self.format_output.items():
             if column in ["Time", "Parameters", "Direction"]:
                 self.format_output[column] = self.df_log[column].tolist()
             elif column == "Actions":

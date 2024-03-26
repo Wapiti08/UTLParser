@@ -19,6 +19,7 @@ from tqdm import tqdm
 from pathlib import Path
 import pandas as pd
 from urllib.parse import urlparse
+from core.pattern import domaininfo
 
 # set the configuration
 logging.basicConfig(level=logging.DEBUG,
@@ -158,27 +159,17 @@ class ReqParser:
         '''
         
         '''
+        logger.info("generating the format output for {}-{} logs".format(app.lower(), log_type.lower()))
+        column_poi_map = domaininfo.unstru_log_poi_map[self.app][self.log_type]
+
         if app.lower() == "apache":
             if "access" in log_type.lower():
-                logger.info("generating the format output for {}-{} logs".format(app.lower(), log_type.lower()))
-
-                column_poi_map = {
-                    "Time": "Time",
-                    "Src_IP": "Src_IP",
-                    "Domain": "Referer",
-                    "Parameters": "Content",
-                    "Actions": "Request_Method",
-                    "Status": "Status",
-                    "IOCs": "User_Agent",
-                    "Direction":"->"
-                }
-
                 # generate the regex and headers
                 headers, regex = self.gen_logformat_regex(log_format)
                 logdf = self.poi_ext(regex, headers)
                 log_num = len(logdf)
 
-                for column, _ in self.format_output:
+                for column, _ in self.format_output.items():
                     if column in ["Time", "Src_IP", "Status"]:
                         self.format_output[column] = logdf[column].tolist()
                     elif column in ["Domain", "Parameters","Actions","IOCs"]:

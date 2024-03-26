@@ -6,7 +6,6 @@
 @Last Modified time: 2024-02-29 09:36:17  
 """
 
-from zat.log_to_dataframe import LogToDataFrame
 import spacy
 import networkx as nx
 import matplotlib.pyplot as plt
@@ -21,6 +20,7 @@ class StruGrausalGraph:
         self.graphrule = graphrule
         self.log_df = log_df
 
+
     def causal_graph(self,):
         ''' build graph from structured logs --- consider ips and ports only
 
@@ -29,14 +29,10 @@ class StruGrausalGraph:
         edge attributes: ts, resp_bytes, conn_state
         
         '''
-        conn_df = self.log_df
         # extract the initial desired features
-        field_list = ['ts', 'id.orig_h', 'id.orig_p', 'id.resp_h', 'id.resp_p', 'resp_bytes', 'conn_state']
-        # for testing
-        fea_df = conn_df[field_list][:100]
 
         G = nx.MultiDiGraph()
-        for _, row in tqdm(fea_df.iterrows(), desc='parsing logs to graphs'):
+        for _, row in tqdm(self.log_df.iterrows(), desc='parsing logs to graphs'):
 
             G.add_node(row['id.orig_h'], label='orig ip', port=row['id.orig_p'])
             

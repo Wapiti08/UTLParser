@@ -108,17 +108,6 @@ Graph based anomaly detection for malware (part of APT)
 
 ## Structure
 
-- entity-extractor：
-
-    - solution 1:
-
-        - Drain parsed logs into structured logs: timestamp + parameterlist + eventtemplate
-        - spacy parse the dependency inside eventemplate ---- form the tree structure
-        - replace the annotation of words
-        - form the graph of malicious behaviour with subject-action-object
-
-    - solution2:
-
         
 ## Running
 
@@ -137,7 +126,15 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
     Timestamp, Src_IP, Dst_IP, Proto or Application, Domain, PacketSize, ParaPair (tuple)
  
- 
+## Next Plan
+
+- Build Temporal Graph Neural Networks
+
+    - reduce the graph size to some extent: suitable for low-memory cost training
+    - capable of process heterogeneous graph attributes
+    - capable of capture the changes between temporal graphs
+    - capable of measuring normal and abnormal behaviour in unsupervised way
+
 ## References
 
 - EULER: Detecting Network Lateral Movement via Scalable Temporal Link Prediction

@@ -18,6 +18,8 @@ POI:
     audit: ["type", "timestamp", "acct", "exe", "res"]
     access: ["Src_IP", "Timestamp", "Parameters", "Status", "Actions"]
   sysdig: ["time", "proc", "pid", "event_type", "fd", "path"]
+  zeek:
+    conn: ['ts', 'id.orig_h', 'id.orig_p', 'id.resp_h', 'id.resp_p', 'resp_bytes', 'conn_state']
 
 format:
   process:

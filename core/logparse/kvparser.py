@@ -233,7 +233,7 @@ class KVParser:
         '''
         logger.info("generating the format output for {}-{} logs".format(self.app.lower(), self.log_type.lower()))
         # the mapping dict may be different from logs, consider application and log_type
-        column_poi_map = domaininfo[self.app][self.log_type]
+        column_poi_map = domaininfo.unstru_log_poi_map[self.app][self.log_type]
 
         if self.app.lower() == "apache":
             if self.log_type.lower() == "audit":
@@ -241,7 +241,7 @@ class KVParser:
                 # write data from extracted poi to format output
                 ## get the length of logs
                 log_num = len(self.logs)
-                for column, _ in self.format_output:
+                for column, _ in self.format_output.items():
                     if column == "IOCs":
                         tuple_0_list = sum_poi_dict[column_poi_map[column][0]]
                         tuple_1_list = sum_poi_dict[column_poi_map[column][1]]
@@ -262,7 +262,7 @@ class KVParser:
                 # grab both potential ip direction information and process call information
                 # process is the src node, pid 
                 log_num = len(self.logs)
-                for column, _ in self.format_output:
+                for column, _ in self.format_output.items():
                     if column in ["Time", "Actions", "Proto", "PID", "Parameters"]:
                         self.format_output[column] = sum_poi_dict[column_poi_map[column]]
                     elif column in ["Src_IP", "Dest_IP"]:

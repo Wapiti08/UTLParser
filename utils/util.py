@@ -19,13 +19,6 @@ config = yaml.safe_load("./config.yaml")
 
 nlp = spacy.load("en_core_web_lg")
 
-def struc_data_read():
-    pass
-
-
-def raw_data_read():
-    pass
-
 def is_key_value_pair(element:str):
     # Define a regular expression pattern to match key-value pairs
     key_value_pattern = re.compile(r'^\w+=\S+$')
