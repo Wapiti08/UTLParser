@@ -11,6 +11,16 @@ import networkx as nx
 import matplotlib.pyplot as plt
 from tqdm import tqdm
 from core.graph_create import gfeature
+import logging
+
+# set the configuration
+logging.basicConfig(level=logging.DEBUG,
+                    format='%(asctime)s [%(levelname)s]: %(message)s',
+                    datefmt='%Y-%m-%d %H:%M:%S'
+                )
+
+# create a logger
+logger = logging.getLogger(__name__)
 
 class StruGrausalGraph:
     ''' process structured network traffic
@@ -32,18 +42,27 @@ class StruGrausalGraph:
         # extract the initial desired features
 
         G = nx.MultiDiGraph()
+        # create node value and attrs
+        node_value_key = self.graphrule[self.log_type]["node"]["value"]
+        node_attr_key = self.graphrule[self.log_type]["node"]["attrs"]
+
+        # create edge value and attrs
+        edge_value_key = self.graphrule[self.log_type]["edge"]["value"]
+        edge_attr_key = self.graphrule[self.log_type]["edge"]["attrs"]
+
+        # load the direction
+        dire_key = self.graphrule[self.log_type]["edge"]["direc"]
+
         for _, row in tqdm(self.log_df.iterrows(), desc='parsing logs to graphs'):
 
-            G.add_node(row['id.orig_h'], label='orig ip', port=row['id.orig_p'])
             
-            G.add_node(row['id.resp_h'], label='resp ip', port=row['id.resp_p'])
-            # G.nodes[row['id.resp_h']]['port'].append(row['id.resp_p'])
-            # add edge
-            G.add_edge(row['id.orig_h'], row['id.resp_h'], label=row['ts'], resp_bytes=row['resp_bytes'], conn_state=row['conn_state'])
+
+            # G.add_node(row[node_value_key[0]], port=row['id.orig_p']) 
+            # G.add_node(row[node_value_key[1]], port=row['id.resp_p'])
+            # # G.nodes[row['id.resp_h']]['port'].append(row['id.resp_p'])
+            # # add edge
+            # G.add_edge(row['id.orig_h'], row['id.resp_h'], label=row['ts'], resp_bytes=row['resp_bytes'], conn_state=row['conn_state'])
         
-        # split into connected graphs
-        graphs = list(nx.strongly_connected_components(G))
-        print("there are {} full connected graphs".format(len(graphs)))
         return G
 
     def graph_label(self, G: nx.Graph, node_indicator:str, att_indicitor:str, edge_indicitor:tuple, label:str):

@@ -12,6 +12,17 @@ import networkx as nx
 import matplotlib.pyplot as plt
 from tqdm import tqdm
 from core.graph_create import gfeature
+from datetime import datetime
+import logging
+
+# set the configuration
+logging.basicConfig(level=logging.DEBUG,
+                    format='%(asctime)s [%(levelname)s]: %(message)s',
+                    datefmt='%Y-%m-%d %H:%M:%S'
+                )
+
+# create a logger
+logger = logging.getLogger(__name__)
 
 class UnstrGausalGraph:
     ''' build causal graphs from originally unstructured logs, include methods
@@ -24,28 +35,17 @@ class UnstrGausalGraph:
         self.log_df = log_df
         self.log_type = log_type
 
-    def temp_graph(self, G:nx.classes.digraph.DiGraph, T):
+    def temp_graph(self, G:nx.classes.digraph.DiGraph, T:datetime):
         ''' extract temporal subgraphs by matching time T
         
         '''
-        subgraphs = []
-        for u, v, edge in G.edges(data=True):
-            # extract the attribute element
-            if 'timestamp' in edge and edge['timestamp'] == T:
-                temp_graph = nx.MultiDiGraph()
-                temp_graph.add_edge(u,v, **edge)
-                subgraphs.extend(nx.connected_components(temp_graph))
+        return gfeature.temp_graph_ext(G, T)
 
-        return subgraphs
-
-    def comm_detect(self, G::nx.classes.digraph.DiGraph):
+    def comm_detect(self, G:nx.classes.digraph.DiGraph):
         ''' extract independent activity graphs
         
         '''
-        # make the graph undirected in order to extract independent communities
-        UG = G.to_undirected()
-        comm_graphs = []
-        comm_graphs = [G.subgraph(c) for c in nx.connected_components(UG)]
+        comm_graphs = gfeature.comm_graph_ext(G)
         logger.info("Detect {} independent attack activities".format(len(comm_graphs)))
         return comm_graphs
 
@@ -72,7 +72,6 @@ class UnstrGausalGraph:
                 return value[0], value[1]
         
         return None
-
 
     def causal_graph(self, ):
         ''' according to defined node/edge value, attrs to build directed graphs with 
