@@ -106,13 +106,18 @@ class UniFormat:
 
     def ran_pick(self, num:int):
         ''' randomly pick num logs to generate the log format 
-
+        :param num: default 10
         ''' 
         return random.sample(self.logs, num)
 
     def com_check(self, sentence:str, pos:int, stop_indictor:str, split_num:int, log_format_dict:dict):
         ''' identify the components according to the regex matching
-        
+        :param sentence: single log 
+        :param pos: the position or index of potential component, initially 0
+        :param stop_indictor: the indictor that splits context with other parts, default :
+        :param split_num: how many times to split by indictor, default 1
+        :param log_format_dict: the dictionary that saves {pos: component}
+
         '''
         # split sentence by first space first
         tokens = sentence.split(" ",split_num)
@@ -122,7 +127,6 @@ class UniFormat:
             if not tokens[0].endswith(stop_indictor):
                 for com_name, regex_list in com_rex_mapping.items():
                     matched = [re.search(regex, tokens[0]) for regex in regex_list]
-                    print(matched)
                     if any(item is not None for item in matched):
                         log_format_dict[pos].append(com_name)
 
@@ -149,14 +153,15 @@ class UniFormat:
                             continue
                         else:
                             log_format_dict[pos].append(com_name)
-                            print("current log format dict is:", log_format_dict)
+                            logger.info("current log format dict is:", log_format_dict)
 
                 if len(log_format_dict[pos]) == 0:
                     return
         else:
-            print("Currently not support stop_indicitor with {}".format(stop_indictor))
+            logger.warn("Currently not support stop_indicitor with {}".format(stop_indictor))
 
-        return log_format_dict
+        maybe_log_format_dict = log_format_dict
+        return maybe_log_format_dict
 
     def pos_check(self, pos_com_mapping, maybe_log_format_dict):
         ''' reduce noise and build the graph according to neigh_mapping_dict
@@ -194,10 +199,35 @@ class UniFormat:
                     # picked wrong component
                     else:
                         return
-                    
 
         log_format_dict = maybe_log_format_dict
         return log_format_dict
+
+    def com_rule_check(self, maybe_log_format_dict):
+        ''' conduct both depedency and position check
+        
+        '''
+        log_format_dict = {} 
+        log_format_dict = self.dep_check(dep_map_dict, maybe_log_format_dict)
+        log_format_dict = self.pos_check(pos_com_mapping, log_format_dict)
+        for key,value in log_format_dict.items():
+            # keep only the first option
+            if len(value) >= 2:
+                log_format_dict[key] = value[:1]
+        return log_format_dict
+
+    def final_format(self, log_format_list:list):
+        ''' choose the shorted path as the most general log format
+        :param log_format_list: calculated list of log_format_dict for every choosen logs 
+        '''
+        # all the same formats, choose any one
+        all_dicts_equal = all(d == log_format_list[0] for d in log_format_list)
+
+        if all_dicts_equal:
+            return log_format_list[0]
+        # different formats choose the shortest to increase generality
+        else:
+            return min(log_format_list, key=len)
 
     def special_space_remove(self, log_format):
         if "[PID]" in log_format:
@@ -212,7 +242,7 @@ class UniFormat:
         return log_format
 
     def format_ext(self, log_format_dict:dict):
-        ''' extract log format
+        ''' shape log format string from dict
         
         '''
 
@@ -230,16 +260,6 @@ class UniFormat:
         logger.info("Extracted log format is: \n {}".format(log_format))
         return log_format
         
-    def final_format(self, log_format_list:list):
-        # choose the shorted path as the most general log format
-        if len(log_format_list) == 1:
-            return log_format_list[0]
-        # all the same formats, choose any one
-        elif len(set(log_format_list)) == 1:
-            return log_format_list[0]
-        # different formats:
-        else:
-            pass
     
     def content_length(self, sentence: str):
         if ":" in sentence:
@@ -296,59 +316,3 @@ class UniFormat:
             threshold = 0.2
         return threshold
             
-
-# the matching format for unstructured logs
-format_dict = {
-    "DNS": {
-        "dnsmasq": {
-            "log_format": "<Month> <Date> <Timestamp> dnsmasq\[<PID>\]: <Content>",
-            # match the domain, ipv4 and ipv6
-            "regex": [r"\b(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}\b", r"\b(?:\d{1,3}\.){3}\d{1,3}[#\d+]+\b", r"\b(?:[0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}\b"],
-            "st":0.7,
-            "depth":4,
-            # filter for domain name match with general domain extension
-            "filter": 1,
-            "iocs":0,
-        },
-    },
-    "Apache": {
-        "org-access": {
-            # "log_format": "<SRC_IP> - - \[<Time>\] \"<Request_Method> <Content> <HTTP_Version>\" <Status_Code> <Response_Size> \"<Referer>\" \"<User_Agent>\"",
-            "log_format": "<SRC_IP> - - \[<Time>\] \"<Request_Method> <Content> <HTTP_Version>\" <Status_Code> <Response_Size> \"<Referer>\" \"<User_Agent>\"",
-            # match the parameter part
-            "regex": [r"\b(?:\d{1,3}\.){3}\d{1,3}\b", r"\?[^\s]+"],
-            "st": 0.8,
-            "depth": 5,
-            "filter":0,
-            "iocs":0,
-        },
-        "audit": {
-            # "log_format": "type=<Type> msg=audit\(<Time>\): pid=<PID> uid=<UID> auid=<AUID> ses=<SES> msg=\'unit=<Unit> comm=<Comm> exe=<Exe> hostname=<HostName> addr=<Addr> terminal=<Terminal> res=<Res>\'",
-            # "log_format": "type=<Type> msg=audit\(<Time>\): pid=<PID> uid=<UID> auid=<AUID> ses=<SES> msg=\'<Content>\'",
-            "log_format": "type=<Type> msg=audit\(<Time>\): <Content>",
-            "regex": [r"\/(?:[\w-]+\/)+[\w-]+"],
-            "st":0.8,
-            "depth": 6,
-            "filter":1,
-            "iocs":1,
-        },
-        "auth": {
-            "log_format": "<Month> <Date> <Timestamp> <Component> <Level>: <Content>",
-            "regex": [],
-            "st": 0.6,
-            "depth": 4,
-            "filter": 0,
-            "iocs":0,
-        },
-    "Process": {
-        "sysdig": {
-            "log_format": "<Time> <CPU_ID> <Command> \(<Threat_ID>\) <Event_Direction> <Type> <Arguments>",
-            "regex": [r"\/(?:[\w-]+\/)+[\w-]+", r"\b(?:\d{1,3}\.){3}\d{1,3}[#\d+]+\b"],
-            "st": 0.7,
-            "depth": 4,
-            "filter": 0,
-            "iocs": 1,
-            },
-        },
-    }
-}

@@ -61,13 +61,13 @@ class StrLogParser:
         datetime_obj = datetime.fromtimestamp(timestamp)
         return datetime_obj.strftime("%d-%b-%Y %H:%M:%S")
 
-    def log_parse(self, log_name:str ):
+    def log_parse(self,):
         ''' extract necessary columns according to poi list, save computation resource
         
         '''
         return self.df[self.PoI].to_dict()
 
-    def get_output(self, log_type:str, app;str):
+    def get_output(self, log_type:str, app:str):
 
         logger.info("generating the format output for {}-{} logs".format(app.lower(), log_type.lower()))
         column_poi_map = domaininfo.stru_log_poi_map[self.app][self.log_type]

@@ -11,7 +11,7 @@ regex:
 log_type:
   kv: ["audit", "process"]
   req: ["access"]
-  gen: ["auth", "linux"]
+  gen: ["auth", "linux", "dns"]
 
 POI:
   apache:
