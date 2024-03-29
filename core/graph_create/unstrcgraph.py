@@ -104,7 +104,6 @@ class UnstrGausalGraph:
                         for i in range(node_len):
                             nodes.append((nodes[i], {key: row[value][i]}))
 
-            
             # check the direction and build the edge
             if row[dire_key] in ["->", "-"] :
                 # create the edges
