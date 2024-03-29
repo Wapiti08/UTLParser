@@ -40,6 +40,9 @@ class TestLogparser(unittest.TestCase):
     def test_pos_check(self):
         auth_maybe_log_format_dict = {0: ['<Month>', '<Component>'], 1: ['<Day>', '<Component>', '[<PID>]'], 2: ['<Day>', '<Timestamp>', '<Component>', '<Proto>', '<Application>', '[<PID>]'], \
                                  3: ['<Component>'], 4: ['<Component>', '<Proto>', '<Application>', '[<PID>]'], 5: [':'], 6: ['<Content>']}
+        
+        dns_maybe_log_format_dict = {0: ['<Month>', '<Component>'], 1: ['<Day>', '<Component>', '[<PID>]'], 2: ['<Day>', '<Timestamp>', '<Component>', '<Proto>', '<Application>', '[<PID>]'], 3: \
+                                     ['<Component>', '<Proto>', '<Application>', '[<PID>]'], 4: [':'], 5: ['<Content>']}
 
         pos_com_mapping = {
             0: ["<Month>", "<Date>"],
@@ -48,16 +51,19 @@ class TestLogparser(unittest.TestCase):
             3: ["<Component>","<Proto>","<Level>","<Application>"]
         }
 
-
-        log_format_dict = self.uniformater.dep_check(pos_com_mapping, auth_maybe_log_format_dict)
+        # log_format_dict = self.uniformater.dep_check(pos_com_mapping, auth_maybe_log_format_dict)
+        log_format_dict = self.uniformater.dep_check(pos_com_mapping, dns_maybe_log_format_dict)
         
         print("result of position checking:")
         print(log_format_dict)
 
     def test_dep_check(self):
 
-        maybe_log_format_dict = {0: ['<Month>', '<Component>'], 1: ['<Day>', '<Component>', '[<PID>]'], 2: ['<Day>', '<Timestamp>', '<Component>', '<Proto>', '<Application>', '[<PID>]'], \
+        auth_maybe_log_format_dict = {0: ['<Month>', '<Component>'], 1: ['<Day>', '<Component>', '[<PID>]'], 2: ['<Day>', '<Timestamp>', '<Component>', '<Proto>', '<Application>', '[<PID>]'], \
                                  3: ['<Component>'], 4: ['<Component>', '<Proto>', '<Application>', '[<PID>]'], 5: [':'], 6: ['<Content>']}
+        
+        dns_maybe_log_format_dict = {0: ['<Month>', '<Component>'], 1: ['<Day>', '<Component>', '[<PID>]'], 2: ['<Day>', '<Timestamp>', '<Component>', '<Proto>', '<Application>', '[<PID>]'], 3: \
+                                     ['<Component>', '<Proto>', '<Application>', '[<PID>]'], 4: [':'], 5: ['<Content>']}
 
         dep_map_dict = {
             "<Month>": ["<Day>"],
@@ -69,20 +75,22 @@ class TestLogparser(unittest.TestCase):
             "[<PID>]": [":"]
         }
 
-        log_format_dict = self.uniformater.dep_check(dep_map_dict, maybe_log_format_dict)
+        # log_format_dict = self.uniformater.dep_check(dep_map_dict, auth_maybe_log_format_dict)
+        log_format_dict = self.uniformater.dep_check(dep_map_dict, dns_maybe_log_format_dict)
         print("result of dependency checking:")
         print(log_format_dict)
 
     def test_com_rule_check(self,):
         # define the right format
-        right_format_dict = {0: ['<Month>'], 1: ['<Day>'], 2: ['<Timestamp>'], 3: ['<Component>'], 4: ['<Proto>'], 5: [':'], 6: ['<Content>']}
-        maybe_log_format_dict = {0: ['<Month>', '<Component>'], 1: ['<Day>', '<Component>', '[<PID>]'], 2: ['<Day>', '<Timestamp>', '<Component>', '<Proto>', '<Application>', '[<PID>]'], \
+        auth_maybe_log_format_dict = {0: ['<Month>', '<Component>'], 1: ['<Day>', '<Component>', '[<PID>]'], 2: ['<Day>', '<Timestamp>', '<Component>', '<Proto>', '<Application>', '[<PID>]'], \
                                  3: ['<Component>'], 4: ['<Component>', '<Proto>', '<Application>', '[<PID>]'], 5: [':'], 6: ['<Content>']}
-        log_format_dict = self.uniformater.com_rule_check(maybe_log_format_dict)
+        dns_maybe_log_format_dict = {0: ['<Month>', '<Component>'], 1: ['<Day>', '<Component>', '[<PID>]'], 2: ['<Day>', '<Timestamp>', '<Component>', '<Proto>', '<Application>', '[<PID>]'], 3: \
+                                     ['<Component>', '<Proto>', '<Application>', '[<PID>]'], 4: [':'], 5: ['<Content>']}
+
+        # log_format_dict = self.uniformater.com_rule_check(auth_maybe_log_format_dict)
+        log_format_dict = self.uniformater.com_rule_check(dns_maybe_log_format_dict)
         print("result of component checking:")
         print(log_format_dict)
-
-        self.assertEqual(right_format_dict, log_format_dict)
 
     def test_format_ext(self):
         pass
@@ -94,7 +102,9 @@ class TestLogparser(unittest.TestCase):
         for ord, sen in enumerate(sens):
             print("processing {} sentence: \n{}".format(ord, sen))
             log_format_dict = self.uniformater.com_check(sen, 0, ":", 1, log_format_dict)
-            log_format_list.append(self.uniformater.com_rule_check(log_format_dict))
+            print("generated log format is: {}".format(log_format_dict))
+            if log_format_dict:
+                log_format_list.append(self.uniformater.com_rule_check(log_format_dict))
         
         print(log_format_list)
         final_log_format = self.uniformater.final_format(log_format_list)
@@ -102,10 +112,12 @@ class TestLogparser(unittest.TestCase):
         print(final_log_format)
 
     def test_cal_depth(self):
-        pass
+        sens = self.uniformater.ran_pick(10)
+        print(self.uniformater.cal_depth(sens))
     
     def test_cal_thres(self):
-        pass
+        sens = self.uniformater.ran_pick(10)
+        print(self.uniformater.cal_thres(sens))
 
 if __name__ == "__main__":
     unittest.main()

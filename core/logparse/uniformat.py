@@ -58,8 +58,8 @@ dep_map_dict = {
     "<Day>":["<Timestamp>"],
     "<Timestamp>":["<Level>", "<Component>", "<Proto>"],
     "<Component>":["<Proto>","<Application>"],
-    ":":["<Content>"],
     "<Proto>": ["[<PID>]", "<Content>",":"],
+    ":":["<Content>"],
     "[<PID>]": [":"]
 }
 
@@ -119,6 +119,7 @@ class UniFormat:
         :param log_format_dict: the dictionary that saves {pos: component}
 
         '''
+        logger.info("component checking for log format dict")
         # split sentence by first space first
         tokens = sentence.split(" ",split_num)
         log_format_dict[pos] = []
@@ -167,6 +168,8 @@ class UniFormat:
         ''' reduce noise and build the graph according to neigh_mapping_dict
         
         '''
+        logger.info("position checking for log format dict: \n{}".format(maybe_log_format_dict))
+
         log_format_dict = {}
         # check the position scope
         for pos, com_list in maybe_log_format_dict.items():
@@ -174,13 +177,15 @@ class UniFormat:
                 maybe_log_format_dict[pos] = list(set(com_list) & set(pos_com_mapping[pos]))
             else:
                 break
-
+        
+        logger.info("result is: \n {}".format(maybe_log_format_dict))
         log_format_dict = maybe_log_format_dict
         return log_format_dict
 
     def dep_check(self, dep_map_dict, maybe_log_format_dict):
         # check the dependency pattern
         log_format_dict = {}
+        logger.info("dependency checking for log format dict: \n{}".format(maybe_log_format_dict))
         for pos, com_list in maybe_log_format_dict.items():
             if pos != len(maybe_log_format_dict) - 1:
                 cur_com = com_list[0]
@@ -196,10 +201,13 @@ class UniFormat:
                         # remove wrong prediction then replace with right dependent component
                         else:
                             maybe_log_format_dict[pos+1] = correct_components
+                            print(maybe_log_format_dict)
+                    
                     # picked wrong component
                     else:
-                        return
-
+                        continue
+                    
+        logger.info("result is: \n {}".format(maybe_log_format_dict))
         log_format_dict = maybe_log_format_dict
         return log_format_dict
 
@@ -269,12 +277,12 @@ class UniFormat:
             return None
         return len(tokens[1].split(" "))
     
-    def cal_depth(self, max_len=10, min_len=1):
+    def cal_depth(self, sens, max_len=10, min_len=1):
         ''' decide the threshold for similarity matching with mean length
         '''
         depth = 0
         token_len_list = []
-        for sen in self.logs:
+        for sen in sens:
             len = self.content_length(sen)
             if len:
                 token_len_list.append(len)
@@ -285,20 +293,22 @@ class UniFormat:
         if len_mean <= min_len:
             depth = 3
         elif len_mean < max_len:
-            depth = 3 + round((max_len - min_len)/ (len_mean - min_len),1)
+            depth = 3 + int((max_len - min_len)/ (len_mean - min_len))
         else:
             depth = 6
+
+        logger.info("calculated depth is: {}".format(depth))
         return depth
     
 
-    def cal_thres(self, max_var=0.3, min_var=0.005):
+    def cal_thres(self, sens, max_var=0.3, min_var=0.005):
         ''' depends on the complexity: the number of = compared with total token number
         calculate the variance of rate of = in sentence, 
         more complex of structure, the lower the similarity threshold
         '''
         threshold = 0
         rate_list = []
-        for sen in self.logs:
+        for sen in sens:
             # get the token number
             len = self.content_length(sen)
             # get the total equal mark
@@ -314,5 +324,7 @@ class UniFormat:
             threshold = 0.7 - round((rate_var - min_var)/(max_var - min_var) * 0.5 ,2)
         else:
             threshold = 0.2
+        
+        logger.info("calculated threshold is: {}".format(threshold))
         return threshold
             
