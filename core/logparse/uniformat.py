@@ -21,15 +21,13 @@
         %evt.num %evt.time %evt.cpu %proc.name (%thread.tid) %evt.dir %evt.type %evt.args
 
 '''
-import spacy
-import nltk
-import flair
 import random
 import calendar
 import re
 from pathlib import Path
 import logging
 import statistics
+from utils import util
 
 random.seed = 34
 
@@ -277,23 +275,32 @@ class UniFormat:
             return None
         return len(tokens[1].split(" "))
     
-    def cal_depth(self, sens, max_len=10, min_len=1):
+    def cal_depth(self, sens, max_len=10, min_len=3, a=0.5):
         ''' decide the threshold for similarity matching with mean length
         '''
         depth = 0
         token_len_list = []
+        occ_list=[]
+
         for sen in sens:
             len = self.content_length(sen)
+            occ = sen.count("=")
             if len:
                 token_len_list.append(len)
-        
+            if occ:
+                occ_list.append(occ)
+
         # calculate the variance
-        len_mean = round(statistics.mean(token_len_list),1)
+        len_mean = round(statistics.mean(token_len_list),2)
+        if occ_list == []:
+            occ_mean = 0
+        else:
+            occ_mean = round(statistics.mean(occ_list),2)
 
         if len_mean <= min_len:
             depth = 3
         elif len_mean < max_len:
-            depth = 3 + int((max_len - min_len)/ (len_mean - min_len))
+            depth = 3 + int((1-a)*((max_len - min_len)/ (len_mean - min_len)) + a * occ_mean)
         else:
             depth = 6
 
@@ -301,7 +308,7 @@ class UniFormat:
         return depth
     
 
-    def cal_thres(self, sens, max_var=0.3, min_var=0.005):
+    def cal_thres(self, sens, max_var=0.28, min_var=0):
         ''' depends on the complexity: the number of = compared with total token number
         calculate the variance of rate of = in sentence, 
         more complex of structure, the lower the similarity threshold
@@ -316,14 +323,14 @@ class UniFormat:
             if len:
                 rate_list.append(round(occ/len, 3))
 
-        rate_var = statistics.variance(rate_list)   
-
-        if rate_var < min_var:
-            threshold = 0.7
-        elif rate_var < max_var:
-            threshold = 0.7 - round((rate_var - min_var)/(max_var - min_var) * 0.5 ,2)
-        else:
+        rate_var = statistics.variance(rate_list)  
+        
+        if rate_var == min_var:
             threshold = 0.2
+        elif rate_var < max_var:
+            threshold = 0.2 + rate_var * (0.6) / max_var - min_var
+        else:
+            threshold = 0.8
         
         logger.info("calculated threshold is: {}".format(threshold))
         return threshold

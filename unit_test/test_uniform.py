@@ -20,13 +20,13 @@ class TestLogparser(unittest.TestCase):
 
     def setUp(self) -> None:
         # test for linux syslog, dns, auth logs
-        syslog_file = Path('./data/syslog.3')
+        syslog_file = Path('./data/syslog.log')
         dns_file = Path('./data/dnsmasq.log')
         auth_file = Path('./data/auth.log')
         
-        # self.uniformater = UniFormat(syslog_file)
+        self.uniformater = UniFormat(syslog_file)
         # self.uniformater = UniFormat(dns_file)
-        self.uniformater = UniFormat(auth_file)
+        # self.uniformater = UniFormat(auth_file)
 
 
     def test_com_check(self):
@@ -44,6 +44,9 @@ class TestLogparser(unittest.TestCase):
         dns_maybe_log_format_dict = {0: ['<Month>', '<Component>'], 1: ['<Day>', '<Component>', '[<PID>]'], 2: ['<Day>', '<Timestamp>', '<Component>', '<Proto>', '<Application>', '[<PID>]'], 3: \
                                      ['<Component>', '<Proto>', '<Application>', '[<PID>]'], 4: [':'], 5: ['<Content>']}
 
+        sys_maybe_log_format_dict = {0: ['<Month>', '<Component>'], 1: ['<Day>', '<Component>', '[<PID>]'], 2: ['<Day>', '<Timestamp>', '<Component>', '<Proto>', '<Application>', '[<PID>]'], \
+                 3: ['<Component>'], 4: ['<Component>'], 5: [':'], 6: ['<Content>']}
+
         pos_com_mapping = {
             0: ["<Month>", "<Date>"],
             1: ["<Day>", "<Timestamp>"],
@@ -51,8 +54,7 @@ class TestLogparser(unittest.TestCase):
             3: ["<Component>","<Proto>","<Level>","<Application>"]
         }
 
-        # log_format_dict = self.uniformater.dep_check(pos_com_mapping, auth_maybe_log_format_dict)
-        log_format_dict = self.uniformater.dep_check(pos_com_mapping, dns_maybe_log_format_dict)
+        log_format_dict = self.uniformater.dep_check(pos_com_mapping, sys_maybe_log_format_dict)
         
         print("result of position checking:")
         print(log_format_dict)
@@ -65,6 +67,9 @@ class TestLogparser(unittest.TestCase):
         dns_maybe_log_format_dict = {0: ['<Month>', '<Component>'], 1: ['<Day>', '<Component>', '[<PID>]'], 2: ['<Day>', '<Timestamp>', '<Component>', '<Proto>', '<Application>', '[<PID>]'], 3: \
                                      ['<Component>', '<Proto>', '<Application>', '[<PID>]'], 4: [':'], 5: ['<Content>']}
 
+        sys_maybe_log_format_dict = {0: ['<Month>', '<Component>'], 1: ['<Day>', '<Component>', '[<PID>]'], 2: ['<Day>', '<Timestamp>', '<Component>', '<Proto>', '<Application>', '[<PID>]'], \
+                 3: ['<Component>'], 4: ['<Component>'], 5: [':'], 6: ['<Content>']}
+
         dep_map_dict = {
             "<Month>": ["<Day>"],
             "<Day>":["<Timestamp>"],
@@ -75,8 +80,7 @@ class TestLogparser(unittest.TestCase):
             "[<PID>]": [":"]
         }
 
-        # log_format_dict = self.uniformater.dep_check(dep_map_dict, auth_maybe_log_format_dict)
-        log_format_dict = self.uniformater.dep_check(dep_map_dict, dns_maybe_log_format_dict)
+        log_format_dict = self.uniformater.dep_check(dep_map_dict, sys_maybe_log_format_dict)
         print("result of dependency checking:")
         print(log_format_dict)
 
@@ -87,8 +91,11 @@ class TestLogparser(unittest.TestCase):
         dns_maybe_log_format_dict = {0: ['<Month>', '<Component>'], 1: ['<Day>', '<Component>', '[<PID>]'], 2: ['<Day>', '<Timestamp>', '<Component>', '<Proto>', '<Application>', '[<PID>]'], 3: \
                                      ['<Component>', '<Proto>', '<Application>', '[<PID>]'], 4: [':'], 5: ['<Content>']}
 
-        # log_format_dict = self.uniformater.com_rule_check(auth_maybe_log_format_dict)
-        log_format_dict = self.uniformater.com_rule_check(dns_maybe_log_format_dict)
+        sys_maybe_log_format_dict = {0: ['<Month>', '<Component>'], 1: ['<Day>', '<Component>', '[<PID>]'], 2: ['<Day>', '<Timestamp>', '<Component>', '<Proto>', '<Application>', '[<PID>]'], \
+                 3: ['<Component>'], 4: ['<Component>'], 5: [':'], 6: ['<Content>']}
+
+
+        log_format_dict = self.uniformater.com_rule_check(sys_maybe_log_format_dict)
         print("result of component checking:")
         print(log_format_dict)
 

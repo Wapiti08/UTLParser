@@ -14,6 +14,7 @@ import pandas as pd
 from datetime import datetime
 import re
 import yaml
+import math
 
 config = yaml.safe_load("./config.yaml")
 
@@ -31,6 +32,12 @@ def is_all_kv_pairs(args:list):
             return False
     
     return True
+
+def round_up_if_decimal(x):
+    if isinstance(x, float) and x % 1 != 0:  
+        return math.ceil(x)  
+    else:
+        return x
 
 def time_format(log_df: pd.DataFrame):
     ''' convert any combination of <Month> <Day>/<Date> <Timestamp> <Year> 

@@ -35,7 +35,8 @@ class GausalGraph:
         else:
             G= unstrcgraph.UnstrGausalGraph(graphrule=graphrule.graph_attrs_json, log_df=df)            
 
-    def visualize_graph()
+    def visualize_graph():
+        pass
     
 
 
