@@ -50,7 +50,9 @@ class KVParser:
             "PID":[],
             "Actions":[],
             "Status":[],
-            "Direction":[]
+            "Direction":[],
+            "Label":[]
+
         }
         self.log_type = log_type
         self.app = app
@@ -226,7 +228,7 @@ class KVParser:
         
         return sum_poi_dict
 
-    def get_output(self,):
+    def get_output(self, label: int):
         ''' define the corresponding mapping from poi to column
         :param log_type: define the log type
         :param app: define the application name like apache
@@ -248,6 +250,8 @@ class KVParser:
                         self.format_output[column] = list(zip(tuple_0_list, tuple_1_list))
                     elif column == "Direction":
                         self.format_output[column] = [column_poi_map[column]] * log_num 
+                    elif column == "Label":
+                        self.format_output[column] = [label] * log_num
                     # exist poi for this column
                     elif column in column_poi_map.keys():
                         self.format_output[column] = sum_poi_dict[column_poi_map[column]]
@@ -269,6 +273,8 @@ class KVParser:
                         # check whether there is corresponding value in fd
                         if column.lower() in sum_poi_dict.keys():
                             self.format_output[column] = sum_poi_dict[column.lower()]
+                    elif column == "Label":
+                        self.format_output[column] = [label] * log_num
                     elif column == "IOCS":
                         for index, key_name in enumerate(column_poi_map[column]):
                             if key_name in sum_poi_dict.keys():

@@ -25,8 +25,8 @@ class TestLogparser(unittest.TestCase):
         auth_file = Path('./data/auth.log')
         
         # self.uniformater = UniFormat(syslog_file)
-        self.uniformater = UniFormat(dns_file)
-        # self.uniformater = UniFormat(auth_file)
+        # self.uniformater = UniFormat(dns_file)
+        self.uniformater = UniFormat(auth_file)
 
 
     def test_com_check(self):
@@ -118,6 +118,11 @@ class TestLogparser(unittest.TestCase):
     def test_cal_thres(self):
         sens = self.uniformater.ran_pick(10)
         print(self.uniformater.cal_thres(sens))
+    
+    def test_format_ext(self):
+        log_format_dict = {0: ['<Month>'], 1: ['<Day>'], 2: ['<Timestamp>'], 3: ['<Component>'], 4: [':'], 5: ['<Content>']}
+        print(self.uniformater.format_ext(log_format_dict))
+
 
 if __name__ == "__main__":
     unittest.main()
@@ -127,38 +132,25 @@ if __name__ == "__main__":
 format_dict = {
     "DNS": {
         "dnsmasq": {
-            "log_format": "<Month> <Date> <Timestamp> dnsmasq\[<PID>\]: <Content>",
+            "log_format": "<Month> <Date> <Timestamp> <Component>: <Content>",
             # match the domain, ipv4 and ipv6
             "st":0.7,
-            "depth":4,
+            "depth":5,
         },
     },
     "Apache": {
-        "org-access": {
-            # "log_format": "<SRC_IP> - - \[<Time>\] \"<Request_Method> <Content> <HTTP_Version>\" <Status_Code> <Response_Size> \"<Referer>\" \"<User_Agent>\"",
-            "log_format": "<SRC_IP> - - \[<Time>\] \"<Request_Method> <Content> <HTTP_Version>\" <Status_Code> <Response_Size> \"<Referer>\" \"<User_Agent>\"",
-            # match the parameter part
-            "st": 0.8,
-            "depth": 5,
-        },
-        "audit": {
-            # "log_format": "type=<Type> msg=audit\(<Time>\): pid=<PID> uid=<UID> auid=<AUID> ses=<SES> msg=\'unit=<Unit> comm=<Comm> exe=<Exe> hostname=<HostName> addr=<Addr> terminal=<Terminal> res=<Res>\'",
-            # "log_format": "type=<Type> msg=audit\(<Time>\): pid=<PID> uid=<UID> auid=<AUID> ses=<SES> msg=\'<Content>\'",
-            "log_format": "type=<Type> msg=audit\(<Time>\): <Content>",
-            "st":0.8,
-            "depth": 6,
-        },
         "auth": {
-            "log_format": "<Month> <Date> <Timestamp> <Component> <Level>: <Content>",
-            "st": 0.6,
-            "depth": 4,
-        },
-    "Process": {
-        "sysdig": {
-            "log_format": "<Time> <CPU_ID> <Command> \(<Threat_ID>\) <Event_Direction> <Type> <Arguments>",
+            "log_format": "<Month> <Day> <Timestamp> <Component>: <Content>",
             "st": 0.7,
             "depth": 4,
-            },
         },
+    "Linux": {
+        "syslog":{
+            "log_format": "<Month> <Day> <Timestamp> <Component>: <Content>",
+            "st": 0.7,
+            "depth":5,
+        }
+    }
+
     }
 }

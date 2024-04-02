@@ -31,10 +31,12 @@ class GausalGraph:
         df = self.read_output(structured)
 
         if structured:
-            strcgraph.StruGrausalGraph(graphrule=graphrule.graph_attrs_json, log_df=df)
+            G = strcgraph.StruGrausalGraph(graphrule=graphrule.graph_attrs_json, log_df=df)
         else:
-            unstrcgraph.UnstrGausalGraph(graphrule=graphrule.graph_attrs_json, log_df=df)            
+            G= unstrcgraph.UnstrGausalGraph(graphrule=graphrule.graph_attrs_json, log_df=df)            
 
+    def visualize_graph()
+    
 
 
 

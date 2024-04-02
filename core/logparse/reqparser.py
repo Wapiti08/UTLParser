@@ -54,7 +54,9 @@ class ReqParser:
             "PID":[],
             "Actions":[],
             "Status":[],
-            "Direction":[]
+            "Direction":[],
+            "Label":[]
+
         }
         self.logs = Path(log_filename).read_text().splitlines()
     
@@ -155,15 +157,15 @@ class ReqParser:
 
         return logdf
     
-    def get_output(self, log_type:str, app: str):
+    def get_output(self, label:int):
         '''
         
         '''
-        logger.info("generating the format output for {}-{} logs".format(app.lower(), log_type.lower()))
+        logger.info("generating the format output for {}-{} logs".format(self.app.lower(), self.log_type.lower()))
         column_poi_map = domaininfo.unstru_log_poi_map[self.app][self.log_type]
 
-        if app.lower() == "apache":
-            if "access" in log_type.lower():
+        if self.app.lower() == "apache":
+            if "access" in self.log_type.lower():
                 # generate the regex and headers
                 headers, regex = self.gen_logformat_regex(log_format)
                 logdf = self.poi_ext(regex, headers)
@@ -176,6 +178,8 @@ class ReqParser:
                         self.format_output[column] = logdf[column_poi_map[column]].tolist()
                     elif column == "Direction":
                         self.format_output[column] = [column_poi_map[column]] * log_num 
+                    elif column == "Label":
+                        self.format_output[column] = [label] * log_num
                     else:
                         self.format_output[column] = ["-"] * log_num
 

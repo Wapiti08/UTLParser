@@ -46,7 +46,8 @@ class StrLogParser:
             "PID":[],
             "Actions":[],
             "Status":[],
-            "Direction":[]
+            "Direction":[],
+            "Label":[]
         }
         self.log_type = log_type
         self.app = app

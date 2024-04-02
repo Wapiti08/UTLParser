@@ -121,7 +121,8 @@ class GenLogParser:
             "PID":[],
             "Actions":[],
             "Status":[],
-            "Direction":[]
+            "Direction":[],
+            "Label":[]
         }
 
         self.depparser = DepParse()
@@ -503,10 +504,10 @@ class GenLogParser:
         self.df_log['Time'] = self.time_create(self.df_log)
 
 
-    def get_output(self,):
+    def get_output(self, label: int):
         ''' import extracted data to unified output format:
             Time, Src_IP, Dest_IP, Proto, Domain, Parameters, IOCs, Actions, Status, Direction
-        
+        :param label: label information is given based on whether reading malicious log records
         '''
         log_num = len(self.df_log)
         # for general logs, only extract time, parameters, actions
@@ -517,6 +518,8 @@ class GenLogParser:
                 self.format_output[column] = self.df_log[column].tolist()
             elif column == "Actions":
                 self.format_output[column] = self.df_log[column_poi_map[column]].tolist()
+            elif column == "Label":
+                self.format_output[column] = [label] * log_num
             else:
                 self.format_output[column] = ["-"] * log_num
 

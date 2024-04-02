@@ -89,7 +89,7 @@ class StruGrausalGraph:
                 attrs_dict.update({key: row[value]})
             edges.extend([(pair, attrs_dict) for pair in pairs])
 
-            #  G.add_node(row[node_value_key[0]], port=row['id.orig_p']) 
+            # G.add_node(row[node_value_key[0]], port=row['id.orig_p']) 
             # G.add_node(row[node_value_key[1]], port=row['id.resp_p'])
             # # G.nodes[row['id.resp_h']]['port'].append(row['id.resp_p'])
             # # add edge
@@ -100,8 +100,6 @@ class StruGrausalGraph:
         G.add_edges_from(edges)
 
         return G
-
-
            
 
     def graph_label(self, G: nx.Graph, node_indicator:str, att_indicitor:str, edge_indicitor:tuple, label:str):
