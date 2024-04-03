@@ -1,4 +1,4 @@
-# GraphTrace
+# UTLParser
 Toward Unified Temporal Causal Graph Construction with Semantic Log Parser
 
 ## Features
