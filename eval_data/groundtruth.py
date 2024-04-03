@@ -7,3 +7,5 @@
  ''' 
 
 
+# make sure of genlogparser to generate initial structured csv and manually correct them
+
