@@ -1,5 +1,5 @@
 # GraphTrace
-Graph based anomaly detection for malware (part of APT)
+Toward Unified Temporal Causal Graph Construction with Semantic Log Parser
 
 ## Features
 - correlate data from multiple sources (network traffic, system/applications/service logs, process execution status)
