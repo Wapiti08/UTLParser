@@ -112,6 +112,7 @@ class UnstrGausalGraph:
                 for key, value in edge_attr_key.items():
                     attrs_dict.update({key: row[value]})
                 edges.extend([(pair, attrs_dict) for pair in pairs])
+                
             elif row[dire_key] == "<-":
                 attrs_dict = {}
                 pairs = list(zip(nodes[1::2], nodes[::2]))

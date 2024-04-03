@@ -24,9 +24,9 @@ class TestLogparser(unittest.TestCase):
         dns_file = Path('./data/dnsmasq.log')
         auth_file = Path('./data/auth.log')
         
-        self.uniformater = UniFormat(syslog_file)
+        # self.uniformater = UniFormat(syslog_file)
         # self.uniformater = UniFormat(dns_file)
-        # self.uniformater = UniFormat(auth_file)
+        self.uniformater = UniFormat(auth_file)
 
 
     def test_com_check(self):
@@ -54,7 +54,7 @@ class TestLogparser(unittest.TestCase):
             3: ["<Component>","<Proto>","<Level>","<Application>"]
         }
 
-        log_format_dict = self.uniformater.dep_check(pos_com_mapping, sys_maybe_log_format_dict)
+        log_format_dict = self.uniformater.dep_check(pos_com_mapping, auth_maybe_log_format_dict)
         
         print("result of position checking:")
         print(log_format_dict)
@@ -95,7 +95,7 @@ class TestLogparser(unittest.TestCase):
                  3: ['<Component>'], 4: ['<Component>'], 5: [':'], 6: ['<Content>']}
 
 
-        log_format_dict = self.uniformater.com_rule_check(sys_maybe_log_format_dict)
+        log_format_dict = self.uniformater.com_rule_check(auth_maybe_log_format_dict)
         print("result of component checking:")
         print(log_format_dict)
 
