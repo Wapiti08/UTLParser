@@ -7,10 +7,7 @@ Toward Unified Temporal Causal Graph Construction with Semantic Log Parser
 - extract the entities (obj, sub, action) from events (both structured and unstructured logs)
 - correlate processes and build process-specific communities
 - graph compression with graph summarization
-- distributed graph-based neural network training
 - creation of causal and provenance graphs
-- graph training with mutiple attributes for nodes and edges
-
 
 ## Explaination of Dataset
 
@@ -114,9 +111,6 @@ Toward Unified Temporal Causal Graph Construction with Semantic Log Parser
 ```
 # download large language library
 python(3) -m spacy download en_core_web_lg
-# for rust compiler 
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-
 
 ```
 
@@ -134,9 +128,3 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
     - capable of process heterogeneous graph attributes
     - capable of capture the changes between temporal graphs
     - capable of measuring normal and abnormal behaviour in unsupervised way
-
-## References
-
-- EULER: Detecting Network Lateral Movement via Scalable Temporal Link Prediction
-
-- EXTRACTOR: Extracting Attack Behavior from Threat Reports
