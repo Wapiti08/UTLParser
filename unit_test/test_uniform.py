@@ -141,23 +141,41 @@ format_dict = {
         "dnsmasq": {
             "log_format": "<Month> <Date> <Timestamp> <Component>: <Content>",
             # match the domain, ipv4 and ipv6
-            "st":0.7,
-            "depth":5,
+            "st":0.3,
+            # right
+            'depth':4,
         },
     },
     "Apache": {
         "auth": {
             "log_format": "<Month> <Day> <Timestamp> <Component>: <Content>",
+            # match the ip, port, id
+            "st": 0.2,
+            "depth": 4,
+        },
+        "access": {
+            "log_format": "<Month> <Day> <Timestamp> <Component>: <Content>",
+            # match the ip, port, id
             "st": 0.7,
             "depth": 4,
         },
+    },
     "Linux": {
         "syslog":{
             "log_format": "<Month> <Day> <Timestamp> <Component>: <Content>",
+            # match path
+            "regex": [config.regex['path_unix'],config.regex['domain']],
+            "st": 0.2,
+            "depth":6,
+        }
+    },
+    "Sysdig": {
+        "process":{
+            "log_format": "<Month> <Day> <Timestamp> <Component>: <Content>",
+            # match path
             "st": 0.7,
             "depth":5,
         }
     }
 
-    }
 }
