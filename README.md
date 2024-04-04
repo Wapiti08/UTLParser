@@ -2,13 +2,11 @@
 ![Authour](https://img.shields.io/badge/Author-Wapiti08-blue.svg) 
 ![Python](https://img.shields.io/badge/Python3-3.9.6-brightgreen.svg) 
 ![License](https://img.shields.io/badge/license-MIT3.0-green.svg)
+![Testing Environment](https://img.shields.io/badge/macOS-14.2.1-golden.svg)
 
 ---
 
-
 Toward Unified Temporal Causal Graph Construction with Semantic Log Parser
-
-
 
 ## Features
 - correlate data from multiple sources (network traffic, system/applications/service logs, process execution status)
