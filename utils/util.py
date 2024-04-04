@@ -75,8 +75,8 @@ def gen_regex_from_logformat(logformat):
             regex += splitter
         else:
             header = splitters[k].strip("<").strip(">")
-            # create a named capture group
-            regex += "(?P<%s>.*)" % header
+            # create a named capture group --- match only once or zero to avoid conflicts
+            regex += "(?P<%s>.*?)" % header
             headers.append(header)
     regex = re.compile("^" + regex + "$")
 

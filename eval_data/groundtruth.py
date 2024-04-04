@@ -25,25 +25,18 @@ format_dict = {
     },
     "Apache": {
         "auth": {
-            "log_format": "<Month> <Day> <Timestamp> <Component>: <Content>",
+            "log_format": "<Month> <Day> <Timestamp> <Component> <Proto>: <Content>",
             # match the ip, port, id
             "regex": [config.regex['ip4'],config.regex['port'],config.regex['id']],
             "st": 0.2,
             "depth": 4,
         },
-        "access": {
-            "log_format": "<Month> <Day> <Timestamp> <Component>: <Content>",
-            # match the ip, port, id
-            "regex": [config.regex['ip4'],config.regex['port'],config.regex['id']],
-            "st": 0.7,
-            "depth": 4,
-        },
     },
     "Linux": {
         "syslog":{
-            "log_format": "<Month> <Day> <Timestamp> <Component>: <Content>",
+            "log_format": "<Month> <Day> <Timestamp> <Component> <Proto>: <Content>",
             # match path
-            "regex": [config.regex['path_unix'],config.regex['domain']],
+            "regex": [config.regex['path_unix'],config.regex['domain'],config.regex['ip_with_port'],config.regex['ip4']],
             "st": 0.2,
             "depth":6,
         }
@@ -51,7 +44,7 @@ format_dict = {
 }
 
 # use genlogparser to generate initial structured csv and manually correct them
-def genlog_output(datafile: str, app:str, log_type:str):
+def genlog_output(datafile: str, app:str, log_type:str, outputfile:str):
     '''
     
     '''
@@ -64,17 +57,26 @@ def genlog_output(datafile: str, app:str, log_type:str):
         depth=depth,
             st=st,
             rex = rex,
-            indir="./data/",
-            outdir="../../data/result/",
+            indir=datafile,
+            outdir=outputfile,
             log_format=log_format,
             keep_para=True,
             maxChild=100,
             poi_list=[],
     )
 
-    logparser.parse()
-    
-
+    logparser.parse("{}.log".format(log_type))
 
 # use script to generate ground truth data for audit data
 def kvlog_output():
+    pass
+
+
+if __name__ == "__main__":
+    log_apps = ["DNS", "Apache", "Linux"]
+    log_types = ["dnsmasq", "auth", "syslog"]
+    cur_path = Path.cwd()
+    for app, type in zip(log_apps, log_types):
+        input_data_path = cur_path.joinpath("data").as_posix()
+        output_data_path = cur_path.joinpath("data", "result").as_posix()
+        genlog_output(input_data_path, app, type, output_data_path)

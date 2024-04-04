@@ -20,23 +20,23 @@ format_dict = {
     },
     "Apache": {
         "auth": {
-            "log_format": "<Month> <Day> <Timestamp> <Component>: <Content>",
+            "log_format": "<Month> <Day> <Timestamp> <Component> <Proto>: <Content>",
             # match the ip, port, id
             "regex": [config.regex['ip4'],config.regex['port'],config.regex['id']],
             "st": 0.2,
             "depth": 4,
         },
-        "access": {
-            "log_format": "<Month> <Day> <Timestamp> <Component>: <Content>",
-            # match the ip, port, id
-            "regex": [config.regex['ip4'],config.regex['port'],config.regex['id']],
-            "st": 0.7,
-            "depth": 4,
-        },
+        # "access": {
+        #     "log_format": "<Month> <Day> <Timestamp> <Component>: <Content>",
+        #     # match the ip, port, id
+        #     "regex": [config.regex['ip4'],config.regex['port'],config.regex['id']],
+        #     "st": 0.7,
+        #     "depth": 4,
+        # },
     },
     "Linux": {
         "syslog":{
-            "log_format": "<Month> <Day> <Timestamp> <Component>: <Content>",
+            "log_format": "<Month> <Day> <Timestamp> <Component> <Proto>: <Content>",
             # match path
             "regex": [config.regex['path_unix'],config.regex['domain']],
             "st": 0.2,

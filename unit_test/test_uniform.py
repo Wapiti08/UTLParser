@@ -24,9 +24,9 @@ class TestLogparser(unittest.TestCase):
         dns_file = Path('./data/dnsmasq.log')
         auth_file = Path('./data/auth.log')
         
-        # self.uniformater = UniFormat(syslog_file)
+        self.uniformater = UniFormat(syslog_file)
         # self.uniformater = UniFormat(dns_file)
-        self.uniformater = UniFormat(auth_file)
+        # self.uniformater = UniFormat(auth_file)
 
 
     def test_com_check(self):
@@ -54,7 +54,7 @@ class TestLogparser(unittest.TestCase):
             3: ["<Component>","<Proto>","<Level>","<Application>"]
         }
 
-        log_format_dict = self.uniformater.dep_check(pos_com_mapping, auth_maybe_log_format_dict)
+        log_format_dict = self.uniformater.dep_check(pos_com_mapping, sys_maybe_log_format_dict)
         
         print("result of position checking:")
         print(log_format_dict)
@@ -95,7 +95,7 @@ class TestLogparser(unittest.TestCase):
                  3: ['<Component>'], 4: ['<Component>'], 5: [':'], 6: ['<Content>']}
 
 
-        log_format_dict = self.uniformater.com_rule_check(auth_maybe_log_format_dict)
+        log_format_dict = self.uniformater.com_rule_check(sys_maybe_log_format_dict)
         print("result of component checking:")
         print(log_format_dict)
 
@@ -127,8 +127,10 @@ class TestLogparser(unittest.TestCase):
         print(self.uniformater.cal_thres(sens))
     
     def test_format_ext(self):
-        log_format_dict = {0: ['<Month>'], 1: ['<Day>'], 2: ['<Timestamp>'], 3: ['<Component>'], 4: [':'], 5: ['<Content>']}
-        print(self.uniformater.format_ext(log_format_dict))
+        dns_log_format_dict = {0: ['<Month>'], 1: ['<Day>'], 2: ['<Timestamp>'], 3: ['<Component>'], 4: [':'], 5: ['<Content>']}
+        sys_log_format_dict = {0: ['<Month>'], 1: ['<Day>'], 2: ['<Timestamp>'], 3: ['<Component>'], 4: ['<Proto>'], 5: [':'], 6: ['<Content>']}
+        # print(self.uniformater.format_ext(dns_log_format_dict))
+        print(self.uniformater.format_ext(sys_log_format_dict))
 
 
 if __name__ == "__main__":
@@ -148,7 +150,7 @@ format_dict = {
     },
     "Apache": {
         "auth": {
-            "log_format": "<Month> <Day> <Timestamp> <Component>: <Content>",
+            "log_format": "<Month> <Day> <Timestamp> <Component> <Proto>: <Content>",
             # match the ip, port, id
             "st": 0.2,
             "depth": 4,
@@ -162,9 +164,8 @@ format_dict = {
     },
     "Linux": {
         "syslog":{
-            "log_format": "<Month> <Day> <Timestamp> <Component>: <Content>",
+            "log_format": "<Month> <Day> <Timestamp> <Component> <Proto>: <Content>",
             # match path
-            "regex": [config.regex['path_unix'],config.regex['domain']],
             "st": 0.2,
             "depth":6,
         }

@@ -28,6 +28,7 @@ from pathlib import Path
 import logging
 import statistics
 from utils import util
+import statistics
 
 random.seed = 34
 
@@ -49,13 +50,14 @@ day_regex = r'\b(?:0[1-9]|[12][0-9]|3[01])\b'
 timestamp_regex = r'\d{2}:\d{2}:\d{2}'
 date_regex=r'\d{4}-\d{2}-\d{2}'
 
-level = "info|warn|error"
+level = "info|warn|error|kernal"
 
 dep_map_dict = {
     "<Month>": ["<Day>"],
     "<Day>":["<Timestamp>"],
     "<Timestamp>":["<Level>", "<Component>", "<Proto>"],
-    "<Component>":["<Proto>","<Application>"],
+    "<Component>":["<Proto>","<Application>","<Level>"],
+    "<Level>":["Proto"],
     "<Proto>": ["[<PID>]", "<Content>",":"],
     ":":["<Content>"],
     "[<PID>]": [":"]
@@ -90,7 +92,7 @@ com_rex_mapping = {
     "<Date>":[date_regex],
     "<Timestamp>": [timestamp_regex],
     "<Component>":[r'^\s*([^ ]+).*'],
-    "<Proto>":[r'^.*?(?=\[|:)'],
+    "<Proto>":[r'^.*(?=\[)',r'^.*(?=\:)'],
     "<Application>":[r'^.*?(?=\[|:)'],
     "<Level>":[level],
     "[<PID>]":[r'^\d+$',r'\b\d+\b'],
@@ -125,7 +127,8 @@ class UniFormat:
         if stop_indictor ==":":
             if not tokens[0].endswith(stop_indictor):
                 for com_name, regex_list in com_rex_mapping.items():
-                    matched = [re.search(regex, tokens[0]) for regex in regex_list]
+                    # matched = [re.search(regex, tokens[0]) for regex in regex_list]
+                    matched = [re.match(regex, tokens[0]) for regex in regex_list]
                     if any(item is not None for item in matched):
                         log_format_dict[pos].append(com_name)
 
@@ -223,7 +226,7 @@ class UniFormat:
         return log_format_dict
 
     def final_format(self, log_format_list:list):
-        ''' choose the shorted path as the most general log format
+        ''' choose the common path as the most general log format
         :param log_format_list: calculated list of log_format_dict for every choosen logs 
         '''
         # all the same formats, choose any one
@@ -231,9 +234,11 @@ class UniFormat:
 
         if all_dicts_equal:
             return log_format_list[0]
-        # different formats choose the shortest to increase generality
+        # different formats choose the longest to increase generality
         else:
-            return min(log_format_list, key=len)
+            # return max(log_format_list, key=len)
+            # return the most common length
+            return statistics.mode(map(len, log_format_list))
 
     def special_space_remove(self, log_format):
         if "[PID]" in log_format:
