@@ -73,8 +73,9 @@ class KVParser:
                 key_value_pairs = re.findall(pattern, sen)
                 for index, pair in enumerate(key_value_pairs):
                     # check whether there is nested part
-                    if ':' in pair:
-                        key, value = pair.split(":", 1)
+                    if '):' in pair:
+                        # split the last :
+                        key, value = pair.rsplit(":", 1)
                         key_value_pairs[index] = key
                         nested_pairs = self.split_pair(value)    
                         key_value_pairs.extend(nested_pairs)
