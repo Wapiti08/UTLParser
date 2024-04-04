@@ -1,5 +1,14 @@
 # UTLParser
+![Authour](https://img.shields.io/badge/Author-Wapiti08-blue.svg) 
+![Python](https://img.shields.io/badge/Python3-3.9.6-brightgreen.svg) 
+![License](https://img.shields.io/badge/license-MIT3.0-green.svg)
+
+---
+
+
 Toward Unified Temporal Causal Graph Construction with Semantic Log Parser
+
+
 
 ## Features
 - correlate data from multiple sources (network traffic, system/applications/service logs, process execution status)
@@ -109,6 +118,11 @@ Toward Unified Temporal Causal Graph Construction with Semantic Log Parser
 ## Running
 
 ```
+# create virtual environment
+python -m virtualenv env
+# under linux
+source env/bin/activate
+pip3 install -r requirements.txt
 # download large language library
 python(3) -m spacy download en_core_web_lg
 
