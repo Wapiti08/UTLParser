@@ -80,21 +80,29 @@ def kv_template(content:list):
     # Initialize an empty list to store the extracted values
     template_list = []
     values_list = []
-
     # Iterate over each string in the list
     for string in content:
         if string != '':
             if "'" in string:
                 string = string.replace("'",'')
-            # Split the string into key and value parts
-            key, value = string.rsplit('=', 1)  # Split only at the first '='
-            values_list.append(value)
-            # Replace the value with '<*>'
-            value = '<*>'
-            # Append the modified key-value pair to the template list
-            template_list.append(f"{key}={value}")
-
+                # have further split
+                sub_pairs = string.split(" ")
+                for pair in sub_pairs:
+                    key, value = pair.rsplit('=', 1)
+                    values_list.append(value)
+                    value = '<*>'
+                    template_list.append(f"{key}={value}")
+            else:
+                # Split the string into key and value parts
+                key, value = string.rsplit('=', 1)  # Split only at the first '='
+            
+                values_list.append(value)
+                # Replace the value with '<*>'
+                value = '<*>'
+                # Append the modified key-value pair to the template list
+                template_list.append(f"{key}={value}")
             # Append the original value to the values list
+                
     template = " ".join(template_list)
     return template, values_list
 
