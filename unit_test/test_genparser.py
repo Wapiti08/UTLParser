@@ -77,6 +77,9 @@ class TestLogparser(unittest.TestCase):
         #     poi_list=[],
         # )
 
+        cur_path = Path.cwd()
+        indir = cur_path.joinpath("data").as_posix()
+        outdir = cur_path.joinpath("data","result").as_posix()
         # test for linux syslog
         rex = format_dict['Linux']['syslog']['regex']
         log_format = format_dict['Linux']['syslog']['log_format']
@@ -87,9 +90,10 @@ class TestLogparser(unittest.TestCase):
             depth=depth,
             st=st,
             rex = rex,
-            indir="./data/",
-            outdir="../../data/result/",
+            indir=indir,
+            outdir=outdir,
             log_format=log_format,
+            log_name="syslog.log",
             keep_para=True,
             maxChild=100,
             poi_list=[],
@@ -136,7 +140,32 @@ class TestLogparser(unittest.TestCase):
     #     result = self.logparser.get_parameter_list(row)
     #     print(result)
     #     self.assertEqual(["cdn.cloudflare.net", "2606:4700::6810:db54"], result)
+    def test_get_output(self):
+        cur_path = Path.cwd()
+        indir = cur_path.joinpath("data").as_posix()
+        outdir = cur_path.joinpath("data","result").as_posix()
+        # test for linux syslog
+        rex = format_dict['Linux']['syslog']['regex']
+        log_format = format_dict['Linux']['syslog']['log_format']
+        depth = format_dict['Linux']['syslog']['depth']
+        st = format_dict['Linux']['syslog']['st']
 
+        self.logparser = GenLogParser(
+            depth=depth,
+            st=st,
+            rex = rex,
+            indir=indir,
+            outdir=outdir,
+            log_format=log_format,
+            log_name="syslog.log",
+            keep_para=True,
+            maxChild=100,
+            poi_list=[],
+        )
+        self.logparser.load_data()
+        self.logparser.parse("syslog.log")
+        self.logparser.poi_ext()
+        self.logparser.get_output(0)
 
 if __name__ == "__main__":
     unittest.main()

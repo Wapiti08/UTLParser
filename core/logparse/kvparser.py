@@ -20,6 +20,7 @@ import yaml
 from utils import util
 from core.pattern import domaininfo
 import pandas as pd
+import config
 
 # set the configuration
 logging.basicConfig(level=logging.DEBUG,
@@ -30,7 +31,6 @@ logging.basicConfig(level=logging.DEBUG,
 # create a logger
 logger = logging.getLogger(__name__)
 
-config = yaml.safe_load("./config.yaml")
 
 class KVParser:
 
@@ -86,7 +86,7 @@ class KVParser:
         elif self.log_type == "process":
             if self.app == "sysdig":
                 # read specific format
-                proces_format = config["format"][self.log_type][self.app]
+                proces_format = config.format[self.log_type][self.app]
                 # create key value pair for previous part
                 regex, headers = util.gen_regex_from_logformat(proces_format)
                 res = self.header_value_pair(sen, regex, headers)

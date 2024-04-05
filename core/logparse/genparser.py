@@ -35,9 +35,7 @@ from core.logparse.semdep import DepParse
 import spacy
 import yaml
 from core.pattern import domaininfo
-
-
-config = yaml.safe_load("./config.yaml")
+import config
 
 # set the configuration
 logging.basicConfig(level=logging.DEBUG,
@@ -87,6 +85,7 @@ class GenLogParser:
             indir="./",
             outdir="../../data/result/",
             log_format="",
+            log_name="",
             maxChild=100,
             keep_para=True,
             poi_list=[],
@@ -96,13 +95,13 @@ class GenLogParser:
         :param st: similarity threshold
         :param rex: regular regex to match explicit variables/indicitors
         :param maxChild: the max number of child of an internal node
-        :param poi_list: timestamp, parameterlist
+        :param poi_list: timestamp, Parameters
         '''
 
         self.st = st
         self.depth = depth
         self.rex = rex
-        self.logName = None
+        self.logName = log_name
         self.path = indir
         self.maxChild = maxChild
         self.savePath = outdir
@@ -403,7 +402,7 @@ class GenLogParser:
         self.df_log["EventId"] = log_templateids
         self.df_log["EventTemplate"] = log_templates
         if self.keep_para:
-            self.df_log["ParameterList"] = self.df_log.apply(
+            self.df_log["Parameters"] = self.df_log.apply(
                 self.get_parameter_list, axis=1
             )
         self.df_log.to_csv(
@@ -423,7 +422,7 @@ class GenLogParser:
             columns=["EventId", "EventTemplate", "Occurrences"],
         )
         # print(self.df_log)
-        print(self.df_log['ParameterList'])
+        print(self.df_log['Parameters'])
 
 
     def get_parameter_list(self, row):
@@ -448,11 +447,11 @@ class GenLogParser:
         
         '''
         # extract any desriable format of entity node
-        ip4_rex = config["regex"]["ip4"]
+        ip4_rex = config.regex["ip4"]
         ip_filter_rex = re.compile(r'\.\d+')
-        domain_rex = config["regex"]["domain"]
-        path_unix = config["regex"]["path_unix"]
-        path_win = config["regex"]["path_win"]
+        domain_rex = config.regex["domain"]
+        path_unix = config.regex["path_unix"]
+        path_win = config.regex["path_win"]
 
         new_paras = []
 
@@ -482,7 +481,12 @@ class GenLogParser:
         # define the extract verb
         anchor = ""
         doc = nlp(content_part)
-        anchor, direction = self.depparser.verb_ext(doc)
+        try:
+            anchor, direction = self.depparser.verb_ext(doc)
+        except Exception as e:
+            print(e)
+            print(content_part)
+            return '-', '-'
         return anchor, direction
 
     def time_create(self, log_df: pd.DataFrame):
@@ -500,6 +504,7 @@ class GenLogParser:
         self.df_log["Content"] = self.df_log["Content"].apply(lambda x: self.action_ext(x)[0])
         self.df_log["Direction"] = self.df_log["Content"].apply(lambda x: self.action_ext(x)[1])
         # filter points of interests
+        print(self.df_log.columns)
         self.df_log["Parameters"] = self.df_log["Parameters"].apply(lambda x: self.para_check(x))
         self.df_log['Time'] = self.time_create(self.df_log)
 

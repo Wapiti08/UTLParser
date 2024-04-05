@@ -18,8 +18,6 @@ from spacy import displacy
 from spacy.matcher import DependencyMatcher
 from core.pattern import deppattern
 import re
-import flair
-import nltk
 
 forward_direction = ["reply", 'forward', "cache"]
 backward_direction = ["query"]
