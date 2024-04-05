@@ -1,0 +1,34 @@
+EventId,EventTemplate
+451712eb,"<*> uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=""root"" exe=""/usr/sbin/cron"" hostname=? addr=? terminal=cron res=success'"
+f5859e38,"<*> uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=""root"" exe=""/usr/sbin/cron"" hostname=? addr=? terminal=cron res=success'"
+681276a9,<*> uid=0 old-auid=4294967295 auid=0 tty=(none) old-ses=4294967295 <*> <*>
+6f7ed6df,"<*> uid=0 auid=0 <*> msg='op=PAM:session_open acct=""root"" exe=""/usr/sbin/cron"" hostname=? addr=? terminal=cron res=success'"
+00290cda,"<*> uid=0 auid=0 <*> msg='op=PAM:setcred acct=""root"" exe=""/usr/sbin/cron"" hostname=? addr=? terminal=cron res=success'"
+13d87495,"<*> uid=0 auid=0 <*> msg='op=PAM:session_close acct=""root"" exe=""/usr/sbin/cron"" hostname=? addr=? terminal=cron res=success'"
+b295a08b,"pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=phpsessionclean comm=""systemd"" exe=""/lib/systemd/systemd"" hostname=? addr=? terminal=? res=success'"
+fc005a8a,"pid=1 uid=0 auid=4294967295 ses=4294967295 <*> comm=""systemd"" exe=""/lib/systemd/systemd"" hostname=? addr=? terminal=? res=success'"
+3af47c23,"pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=apt-daily comm=""systemd"" exe=""/lib/systemd/systemd"" hostname=? addr=? terminal=? res=success'"
+2f7082b2,<*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*>
+e8ffe641,<*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*>
+0c9c36e2,proctitle=61707061726D6F725F706172736572002D72002D54002D57002F6574632F61707061726D6F722E642F7362696E2E6468636C69656E74
+7a8ad74d,"pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=motd-news comm=""systemd"" exe=""/lib/systemd/systemd"" hostname=? addr=? terminal=? res=success'"
+ccfe4d7a,<*> uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting <*> <*> <*> <*> terminal=ssh res=success'
+b95a547f,<*> uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred <*> <*> <*> <*> terminal=ssh res=success'
+066ecdc0,<*> uid=0 old-auid=4294967295 <*> tty=(none) old-ses=4294967295 <*> <*>
+e303d237,"<*> uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting <*> exe=""/lib/systemd/systemd"" hostname=? addr=? terminal=? res=success'"
+af559fb4,"<*> uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred <*> exe=""/lib/systemd/systemd"" hostname=? addr=? terminal=? res=success'"
+f0a38cda,"<*> <*> <*> <*> <*> <*> exe=""/lib/systemd/systemd"" hostname=? addr=? terminal=? res=success'"
+108494d5,<*> <*> auid=1001 ses=89 <*> <*> <*> <*> <*> terminal=ssh res=success'
+6fd71d1f,<*> <*> auid=1001 ses=89 <*> <*> <*> <*> <*> terminal=/dev/pts/0 res=success'
+e577f637,<*> <*> auid=1001 ses=89 <*> <*> <*> <*>
+f7409d4e,"<*> <*> auid=1001 ses=89 msg='op=PAM:setcred acct=""root"" <*> hostname=? addr=? terminal=/dev/pts/0 res=success'"
+6925fbfd,"<*> <*> auid=1001 ses=89 msg='op=PAM:session_open acct=""root"" <*> hostname=? addr=? terminal=/dev/pts/0 res=success'"
+c92b7d40,"<*> <*> auid=1001 ses=89 msg='op=PAM:session_close acct=""root"" <*> hostname=? addr=? terminal=/dev/pts/0 res=success'"
+ba2494f7,<*> uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting <*> <*> hostname=172.17.130.196 addr=172.17.130.196 terminal=ssh res=success'
+8f57cbc1,<*> uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred <*> <*> hostname=172.17.130.196 addr=172.17.130.196 terminal=ssh res=success'
+d399008b,<*> <*> <*> <*> <*> <*> <*> hostname=172.17.130.196 addr=172.17.130.196 terminal=ssh res=success'
+3a676ea9,<*> <*> <*> <*> <*> <*> <*> <*> <*> terminal=/dev/pts/0 res=success'
+de1af8bf,<*> <*> <*> <*> <*> <*> <*> <*>
+ba33fc14,"<*> <*> <*> <*> msg='op=PAM:setcred acct=""root"" <*> hostname=? addr=? terminal=/dev/pts/0 res=success'"
+1ac119bd,"<*> <*> <*> <*> msg='op=PAM:session_open acct=""root"" <*> hostname=? addr=? terminal=/dev/pts/0 res=success'"
+31db9bea,"<*> <*> <*> <*> msg='op=PAM:session_close acct=""root"" <*> hostname=? addr=? terminal=/dev/pts/0 res=success'"

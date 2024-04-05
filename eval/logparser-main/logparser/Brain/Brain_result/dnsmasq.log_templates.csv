@@ -1,0 +1,9 @@
+EventId,EventTemplate,Occurrences
+E0,"('query[A]', '<*>', 'from', '<*>')",624
+E1,"('forwarded', '<*>', 'to', '<*>')",637
+E2,"('reply', '<*>', 'is', '<*>')",661
+E3,"('query[AAAA]', '<*>', 'from', '<*>')",20
+E4,"('cached', 'mail', 'is', '<*>')",4
+E5,"('cached', 'db.local.clamav.net.cdn.cloudflare.net', 'is', '<*>')",28
+E6,"('query[TXT]', 'current.cvd.clamav.net', 'from', '<*>')",12
+E7,"('cached', 'db.local.clamav.net', 'is', '<CNAME>')",14

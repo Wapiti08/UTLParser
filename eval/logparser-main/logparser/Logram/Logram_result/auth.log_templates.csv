@@ -1,0 +1,8 @@
+EventId,EventTemplate
+e5980f71,pam_unix(cron:session): session opened for user root by (uid=0)
+6e704123,pam_unix(cron:session): session closed for user root
+0ce98313,<*> <*> <*> <*>
+be2214fc,<*> <*> <*> <*> <*> <*>
+9d892b9c,<*> <*> <*> <*> <*> <*> <*> <*> <*>
+b56b4e62,pam_unix(cron:session): session opened for user <*> <*> <*>
+ba07081a,pam_unix(cron:session): session closed for user <*>

@@ -1,0 +1,97 @@
+EventId,EventTemplate,Occurrences
+E0,"('(root)', 'CMD', '(', 'cd', '<*>')",120
+E1,"('(root)', 'CMD', '(test', '-x', '<*>')",6
+E2,"('Starting', 'Message', 'of', 'the', 'Day...')",10
+E3,"('Started', 'Message', 'of', 'the', 'Day.')",10
+E4,"('Starting', 'Daily', 'apt', 'download', 'activities...')",10
+E5,"('Started', 'Daily', 'apt', 'download', 'activities.')",10
+E6,"('<*>', 'udev', 'Kernel', 'Device', '<*>')",4
+E7,"('<*>', 'OpenBSD', 'Secure', 'Shell', '<*>')",4
+E8,"('<*>', 'systemd[1]:', 'Detected', 'virtualization', 'kvm.')",1
+E9,"('<*>', 'systemd[1]:', 'Detected', 'architecture', '<*>')",1
+E10,"('[system]', 'Successfully', 'activated', 'service', ""'org.freedesktop.hostname1'"")",1
+E11,"('Changed', 'host', 'name', 'to', '<*>')",3
+E12,"('<*>', 'systemd[1]:', 'Stopping', 'Journal', 'Service...')",1
+E13,"('<*>', 'systemd[1]:', 'Stopped', 'Journal', 'Service.')",1
+E14,"('<*>', 'systemd[1]:', 'Starting', 'Journal', 'Service...')",1
+E15,"('<*>', 'systemd[1]:', 'Started', 'Journal', 'Service.')",1
+E16,"('debug:', 'running', '/usr/lib/os-probes/50mounted-tests', 'on', '/dev/vda14')",2
+E17,"('debug:', 'os', 'detected', 'by', '/usr/lib/os-probes/50mounted-tests')",2
+E18,"('debug:', 'Not', 'on', 'UEFI', 'platform')",2
+E19,"('Starting', 'Cleanup', 'of', 'Temporary', 'Directories...')",5
+E20,"('Started', 'Cleanup', 'of', 'Temporary', 'Directories.')",5
+E21,"('<*>', 'net_ratelimit:', '<*>', 'callbacks', 'suppressed')",2
+E22,"('<*>', 'hrtimer:', 'interrupt', 'took', '<*>', 'ns')",1
+E23,"('<*>', 'LSB:', 'automatic', 'crash', 'report', '<*>')",4
+E24,"('<*>', '/dev/vda15', 'is', 'a', '<*>', '<*>')",6
+E25,"('message', 'repeated', '<*>', 'times:', '[', 'Reloading.]')",4
+E26,"('<*>', 'Flush', 'Journal', 'to', 'Persistent', 'Storage.')",2
+E27,"('<*>', 'Flush', 'Journal', 'to', 'Persistent', 'Storage...')",2
+E28,"('*', 'Recording', 'successful', 'boot', 'for', 'GRUB')",1
+E29,"('debug:', '/dev/vda14', 'type', 'not', 'recognised;', 'skipping')",2
+E30,"('debug:', 'running', '<*>', 'on', 'mounted', '/dev/vda15')",24
+E31,"('<*>', 'neighbour:', 'arp_cache:', 'neighbor', 'table', 'overflow!')",15
+E32,"('Starting', 'Daily', 'apt', 'upgrade', 'and', 'clean', 'activities...')",5
+E33,"('Started', 'Daily', 'apt', 'upgrade', 'and', 'clean', 'activities.')",5
+E34,"('*', 'Stopping', 'automatic', 'crash', 'report', 'generation:', 'apport')",1
+E35,"('*', 'Starting', 'automatic', 'crash', 'report', 'generation:', 'apport')",1
+E36,"('Network', 'configuration', 'changed,', 'trying', 'to', 'establish', 'connection.')",34
+E37,"('Synchronized', 'to', 'time', 'server', '<*>', '<*>', '(ntp.ubuntu.com).')",35
+E38,"('<*>', 'Link', 'is', 'not', 'managed', 'by', 'us')",6
+E39,"('.', 'IN', 'DS', '<*>', '<*>', '<*>', '<*>')",2
+E40,"('<*>', 'LSB:', 'Record', 'successful', 'boot', 'for', 'GRUB...')",2
+E41,"('<*>', 'LSB:', 'Record', 'successful', 'boot', 'for', 'GRUB.')",2
+E42,"('(root)', 'CMD', '(', 'test', '-x', '<*>', '--crond)')",5
+E43,"('<*>', 'Reloaded', 'configuration')",3
+E44,"('<*>', 'Gained', 'IPv6LL')",3
+E45,"('Stopping', 'Network', 'Service...')",1
+E46,"('Stopped', 'Network', 'Service.')",1
+E47,"('Starting', 'Network', 'Service...')",1
+E48,"('Started', 'Network', 'Service.')",1
+E49,"('Starting', 'Hostname', 'Service...')",1
+E50,"('Started', 'Hostname', 'Service.')",1
+E51,"('message', 'repeated', '<*>', 'times:', '[', '[system]', 'Reloaded', 'configuration]')",2
+E52,"('<*>', 'systemd-journald[412]:', 'Received', 'SIGTERM', 'from', 'PID', '<*>', '(systemd).')",1
+E53,"('debug:', '/dev/vda15', 'is', 'not', 'a', 'QNX4', 'partition:', 'exiting')",2
+E54,"('debug:', '/dev/vda15', 'is', 'not', 'a', 'BeFS', 'partition:', 'exiting')",2
+E55,"('debug:', '/dev/vda15', 'is', 'not', 'an', 'HFS+', 'partition:', 'exiting')",2
+E56,"('Reloading.',)",8
+E57,"('...done.',)",3
+E58,"('Reexecuting.',)",1
+E59,"('<*>', 'systemd:', '<*>', 'output', 'lines', 'suppressed', 'due', 'to', 'ratelimiting')",1
+E60,"('Timed', 'out', 'waiting', 'for', 'reply', 'from', '<*>', '<*>', '(ntp.ubuntu.com).')",1
+E61,"('<*>', 'systemd[1]:', 'systemd', '<*>', 'running', 'in', 'system', 'mode.', '(+PAM', '+AUDIT', '+SELINUX', '+IMA', '+APPARMOR', '+SMACK', '+SYSVINIT', '+UTMP', '+LIBCRYPTSETUP', '+GCRYPT', '+GNUTLS', '+ACL', '+XZ', '+LZ4', '+SECCOMP', '+BLKID', '+ELFUTILS', '+KMOD', '-IDN2', '+IDN', '-PCRE2', 'default-hierarchy=', 'hybrid)')",1
+E62,"('Enumeration', 'completed')",1
+E63,"('ens7:', 'Configured')",11
+E64,"('ens6:', 'Configured')",11
+E65,"('ens3:', 'Configured')",11
+E66,"('https:', '<*>')",8
+E67,"('Stopping', 'Network', 'Name', '<*>')",1
+E68,"('Stopped', 'Network', 'Name', '<*>')",1
+E69,"('Stopping', 'Network', 'Time', '<*>')",1
+E70,"('Stopped', 'Network', 'Time', '<*>')",1
+E71,"('<*>', 'IPv6', 'successfully', 'enabled')",3
+E72,"('Starting', 'Network', 'Name', '<*>')",1
+E73,"('Started', 'Network', 'Name', '<*>')",1
+E74,"('Starting', 'Network', 'Time', '<*>')",1
+E75,"('Started', 'Network', 'Time', '<*>')",1
+E76,"('<*>', 'DHCPv4', 'address', '<*>')",3
+E77,"('Positive', 'Trust', 'Anchors:', '')",1
+E78,"('Using', 'system', 'hostname', ""'inet-firewall'."")",1
+E79,"('Starting', 'Discard', 'unused', 'blocks...')",1
+E80,"('Started', 'Discard', 'unused', 'blocks.')",1
+E81,"('<*>', 'IPv4:', 'martian', 'source', '<*>', 'from', '<*>', 'on', 'dev', 'ens7')",1
+E82,"('<*>', 'IPv4:', 'martian', 'source', '<*>', 'from', '<*>', 'on', 'dev', 'ens6')",270
+E83,"('[origin', 'software=', '""rsyslogd""', 'swVersion=', '<*>', 'x-pid=', '<*>', 'x-info=', '""http:', '<*>')",1
+E84,"('<*>', 'll', 'header:', '<*>', 'fa', '<*>', '<*>', '<*>', 'fa', '<*>', 'fa', '<*>', '<*>', '<*>', '<*>', '<*>', '<*>', '<*>', '..>.....>.....')",1
+E85,"('<*>', 'll', 'header:', '<*>', 'fa', '<*>', '<*>', '<*>', '<*>', 'bf', 'fa', '<*>', '<*>', '<*>', '<*>', '<*>', '<*>', '<*>', '..>.....>.e...')",270
+E86,"('[system]', 'Activating', 'via', 'systemd:', 'service', 'name=', ""'org.freedesktop.hostname1'"", 'unit=', ""'dbus-org.freedesktop.hostname1.service'"", 'requested', 'by', ""':"", '<*>', '(uid=', '<*>', 'pid=', '<*>', 'comm=', '""/lib/systemd/systemd-networkd', '""', 'label=', '""unconfined"")')",1
+E87,"('Negative', 'trust', 'anchors:', '10.in-addr.arpa', '16.172.in-addr.arpa', '17.172.in-addr.arpa', '18.172.in-addr.arpa', '19.172.in-addr.arpa', '20.172.in-addr.arpa', '21.172.in-addr.arpa', '22.172.in-addr.arpa', '23.172.in-addr.arpa', '24.172.in-addr.arpa', '25.172.in-addr.arpa', '26.172.in-addr.arpa', '27.172.in-addr.arpa', '28.172.in-addr.arpa', '29.172.in-addr.arpa', '30.172.in-addr.arpa', '31.172.in-addr.arpa', '<*>', 'd.f.ip6.arpa', 'corp', 'home', 'internal', 'intranet', 'lan', 'local', 'private', 'test')",1
+E88,"('<*>', 'SGI', 'XFS', 'with', 'ACLs,', 'security', 'attributes,', 'realtime,', 'no', 'debug', 'enabled')",1
+E89,"('footprint', 'of', 'MicroK8s', 'to', 'make', 'it', 'the', 'smallest', 'full', '<*>', 'around.')",8
+E90,"('(root)', 'CMD', '(if', '[', '-x', '/usr/share/mdadm/checkarray', ']', '&&', '[', '$(date', '+%d)', '-le', '<*>', '];', 'then', '/usr/share/mdadm/checkarray', '--cron', '--all', '--idle', '--quiet;', 'fi)')",1
+E91,"('*', 'Super-optimized', 'for', 'small', 'spaces', '-', 'read', 'how', 'we', 'shrank', 'the', 'memory')",8
+E92,"('<*>', 'inet-fw', 'REJECT', 'IN=', 'ens3', 'OUT=', 'MAC=', 'fa:', '<*>', '<*>', '<*>', '<*>', '<*>', 'fa:', '<*>', '<*>', '<*>', '<*>', '<*>', '<*>', '<*>', 'SRC=', '<*>', 'DST=', '<*>', 'LEN=', '<*>', 'TOS=', '<*>', 'PREC=', '<*>', 'TTL=', '<*>', 'ID=', '<*>', 'DF', 'PROTO=', 'TCP', 'SPT=', '<*>', 'DPT=', '<*>', 'WINDOW=', '<*>', 'RES=', '<*>', 'RST', 'URGP=', '<*>')",2
+E93,"('<*>', 'dmz-fw', 'REJECT', 'IN=', 'ens6', 'OUT=', 'MAC=', 'fa:', '<*>', '<*>', '<*>', '<*>', 'bf:', 'fa:', '<*>', '<*>', '<*>', '<*>', '<*>', '<*>', '<*>', 'SRC=', '<*>', 'DST=', '<*>', 'LEN=', '<*>', 'TOS=', '<*>', 'PREC=', '<*>', 'TTL=', '<*>', 'ID=', '<*>', 'DF', 'PROTO=', 'TCP', 'SPT=', '<*>', 'DPT=', '<*>', 'WINDOW=', '<*>', 'RES=', '<*>', 'SYN', 'URGP=', '<*>')",12
+E94,"('<*>', 'inet-fw', 'REJECT', 'IN=', 'ens3', 'OUT=', 'MAC=', 'fa:', '<*>', '<*>', '<*>', '<*>', '<*>', 'fa:', '<*>', '<*>', '<*>', '<*>', '<*>', '<*>', '<*>', 'SRC=', '<*>', 'DST=', '<*>', 'LEN=', '<*>', 'TOS=', '<*>', 'PREC=', '<*>', 'TTL=', '<*>', 'ID=', '<*>', 'DF', 'PROTO=', 'TCP', 'SPT=', '<*>', 'DPT=', '<*>', 'WINDOW=', '<*>', 'RES=', '<*>', 'SYN', 'URGP=', '<*>')",10
+E95,"('<*>', 'nf_conntrack:', 'default', 'automatic', 'helper', 'assignment', 'has', 'been', 'turned', 'off', 'for', 'security', 'reasons', 'and', 'CT-based', 'firewall', 'rule', 'not', 'found.', 'Use', 'the', 'iptables', 'CT', 'target', 'to', 'attach', 'helpers', 'instead.')",1

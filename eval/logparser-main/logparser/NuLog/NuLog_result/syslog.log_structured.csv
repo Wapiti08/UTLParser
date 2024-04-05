@@ -1,0 +1,1046 @@
+EventId,EventTemplate
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+4ebfb0b42c3fb439b6585fd15188af55,Starting Message of the Day...
+345a768ea312fdcc99ada6b7fd7e4bb0,Started Message of the Day.
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+be2214fc970b4df22b09d15fd3b5b9ae,<*> <*> <*> <*> <*> <*>
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+b37fee6f1fae30def83c4b42df5f435f,Starting Daily apt download activities...
+43d542ce159789a1f82549f2b2871bf6,Started Daily apt download activities.
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+fb964613f8158b17308bb24ce3e1bf1d,(root) CMD (test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.daily ))
+76b18ae278ae35bdf26701a91e2e751e,Starting Daily apt upgrade and clean activities...
+faea341132d4e19097d845079f8a05f0,[system] Reloaded configuration
+3248b19c6886e486c006a2b081800611,message repeated <*> times: [ [system] <*> <*>
+c39f54407f0c68cbb1afdfb8a34f2437,Reloading.
+bf368172b3f6bd823ff1d6a4d5770b0d,Stopping LSB: automatic crash report <*>
+9b13a3567034917125f3fb20884a7d37,* Stopping automatic crash report <*> <*>
+5917eca7dfb2a409c94a219cab866e36,...done.
+2c5db9b81c916b082e66d0e355aa708a,Stopped LSB: automatic crash report <*>
+c39f54407f0c68cbb1afdfb8a34f2437,Reloading.
+8db997486bfbfb0ba2134f89f977af29,message repeated <*> times: [ <*>
+98cf3f98320ddb18155f29aede97a460,Starting LSB: automatic crash report <*>
+7350df49ee3e56a7299af1bdadd6fee0,* Starting automatic crash report <*> <*>
+5917eca7dfb2a409c94a219cab866e36,...done.
+0e4bf7f15e9fc93b80f1d278269180d9,Started LSB: automatic crash report <*>
+c39f54407f0c68cbb1afdfb8a34f2437,Reloading.
+8db997486bfbfb0ba2134f89f977af29,message repeated <*> times: [ <*>
+0b39f9b6f4f6c324fc982e57ef87436f,Stopping <*> <*> <*> <*>
+0f9148a705940639809d4f2fe1950162,Stopped <*> <*> <*> <*>
+6676b47e4a4a6998517800212be2e1f3,Starting <*> <*> <*> <*>
+7b076feb7fca0b8f15c93b0bba2047c7,Started <*> <*> <*> <*>
+c39f54407f0c68cbb1afdfb8a34f2437,Reloading.
+8db997486bfbfb0ba2134f89f977af29,message repeated <*> times: [ <*>
+a100ffe23bd472185cca8cb08148674a,Stopping OpenBSD Secure Shell <*>
+29f786bb44cb8fffd8a861f36c65b042,Stopped OpenBSD Secure Shell <*>
+ecbf5a658f24be47ea6eeac291294d9f,Starting OpenBSD Secure Shell <*>
+892c51c5e437fad2c67e51ca644aa74d,Started OpenBSD Secure Shell <*>
+c39f54407f0c68cbb1afdfb8a34f2437,Reloading.
+faea341132d4e19097d845079f8a05f0,[system] Reloaded configuration
+80e33e68863884b9a95cd680753424b1,message repeated <*> times: [ [system] Reloaded <*>
+ff52c40c09db1af28b94617a0f985648,<*>
+d1cd25b5c6d2201065aa221ad447fd97,<*> <*> <*> <*> <*> <*> <*> to <*>
+cccc0dbee5b83fc7e3e63a319bcc97ba,<*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*>
+fb1951956456dee1a45a176a6859d102,<*> <*> <*> <*> <*>
+fb1951956456dee1a45a176a6859d102,<*> <*> <*> <*> <*>
+d4606850e7d68209c2d6b10f30d1949f,"Network configuration changed, trying to establish connection."
+1799bdac8a47d91d9d4dc8c57ed42eb3,Stopping Network Service...
+fcf987af1efcc76c7d523ced31c66a43,Synchronized to time server <*> (ntp.ubuntu.com).
+d4606850e7d68209c2d6b10f30d1949f,"Network configuration changed, trying to establish connection."
+fcf987af1efcc76c7d523ced31c66a43,Synchronized to time server <*> (ntp.ubuntu.com).
+bf159122821123bb3fe72f1d3427e0e3,Stopped Network Service.
+19157299578f90f90b62dfa0a08dc8f3,Starting Network Service...
+dd59dd5b5d201438ec7b425fb5d5424e,<*> Gained <*>
+dd59dd5b5d201438ec7b425fb5d5424e,<*> Gained <*>
+dd59dd5b5d201438ec7b425fb5d5424e,<*> Gained <*>
+d4606850e7d68209c2d6b10f30d1949f,"Network configuration changed, trying to establish connection."
+dede275dedbf944828553c5d54f5dcc0,<*> <*>
+a31cdf378572d17f884354a310606578,Started Network Service.
+28e9d1a3938068a4f8951c8d3798d553,Stopping Network Name <*>
+d136f4df644f54c586851c05ebca3811,<*> <*> successfully enabled
+fda80c60028e0f469d12bd924f11ecc3,lo: Link is not managed by us
+580dcfd645fdfbbb17cb46faf28f1640,<*> Link is not managed by us
+580dcfd645fdfbbb17cb46faf28f1640,<*> Link is not managed by us
+90a6b180725233227ee023166f542a71,Stopped Network Name <*>
+2a0773a1c9cd38231934bb64309a52fd,Starting Network Name <*>
+fcf987af1efcc76c7d523ced31c66a43,Synchronized to time server <*> (ntp.ubuntu.com).
+d136f4df644f54c586851c05ebca3811,<*> <*> successfully enabled
+fda80c60028e0f469d12bd924f11ecc3,lo: Link is not managed by us
+580dcfd645fdfbbb17cb46faf28f1640,<*> Link is not managed by us
+d136f4df644f54c586851c05ebca3811,<*> <*> successfully enabled
+fda80c60028e0f469d12bd924f11ecc3,lo: Link is not managed by us
+d4606850e7d68209c2d6b10f30d1949f,"Network configuration changed, trying to establish connection."
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+1fcfe327b54ef26f904c9af24abe8cd1,<*> ll header: <*> fa <*> <*> <*> <*> <*> fa <*> <*> <*> <*> <*> <*> <*>        <*>
+be2214fc970b4df22b09d15fd3b5b9ae,<*> <*> <*> <*> <*> <*>
+80aa27b80de69ae8ec83f3586282bea3,[system] <*> <*> <*> <*> <*> <*> <*> by <*> <*> <*> <*> <*> <*>
+2e322db0f793b87e1b575bee3c672ef5,Starting <*> Service...
+be2214fc970b4df22b09d15fd3b5b9ae,<*> <*> <*> <*> <*> <*>
+be2214fc970b4df22b09d15fd3b5b9ae,<*> <*> <*> <*> <*> <*>
+73fdbf33a08fbcc102ab7240d3a61504,<*> Configured
+73fdbf33a08fbcc102ab7240d3a61504,<*> Configured
+73fdbf33a08fbcc102ab7240d3a61504,<*> Configured
+fcf987af1efcc76c7d523ced31c66a43,Synchronized to time server <*> (ntp.ubuntu.com).
+a4ec7e5b32929eefabc61a5e97e31a93,<*> <*> <*>
+8d7c0e6bc833e2b6bf53b13839d4234d,<*> <*> <*> <*> <*> <*> <*>
+8d7c0e6bc833e2b6bf53b13839d4234d,<*> <*> <*> <*> <*> <*> <*>
+cccc0dbee5b83fc7e3e63a319bcc97ba,<*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*>
+0ce98313a32c5a52423d4d0c18259bf8,<*> <*> <*> <*>
+04d4761887b7c718d9de816597448e17,Started Network Name <*>
+8c9e9166e4586d7ed34def1e30fd7274,Stopping Network Time Synchronization...
+5b6dee56ae433bd51beaec8139de921b,[system] <*> <*> <*> <*>
+251593e663aba1aaa5515c01fbc1ce9d,Started <*> Service.
+bc0748d1adb54e93f3e62ca428f6b512,Stopped Network Time Synchronization.
+3b9fdd46d3bdcc804f38b368f0bcfa06,Starting Network Time Synchronization...
+2f1031583d3c0c13a94ac9af98022414,<*> <*> <*> to <*>
+2f1031583d3c0c13a94ac9af98022414,<*> <*> <*> to <*>
+2f1031583d3c0c13a94ac9af98022414,<*> <*> <*> to <*>
+2e9be645726b9cee00c96357cecab115,Started Network Time Synchronization.
+f8d4e7632baa8e8cfa93f1b8a6c43c44,Stopped <*> Journal to Persistent <*>
+77b469d101958982afc79cedac109c3e,Stopping <*> Journal to Persistent <*>
+86c83199312820b939e7de88cf6db809,<*> <*> Stopping Journal Service...
+de1af8bf017f53f3ba2f7e8cc31f7440,<*> <*> <*> <*> <*> <*> <*> <*>
+c896d2759fdc8af94e8a7f0666b85cf3,<*> <*> <*> Journal Service.
+b1c5dcae949c5cfd4b9bf344f7edc8fb,<*> <*> Starting Journal Service...
+281d3e5925acf683a2aef81e016f9b9e,<*> <*> Started Journal Service.
+c173423440769274b17ab461b1f016af,Starting Flush Journal to Persistent <*>
+4215059561465d3d0639fd17148deb4c,Started Flush Journal to Persistent <*>
+fcf987af1efcc76c7d523ced31c66a43,Synchronized to time server <*> (ntp.ubuntu.com).
+faea341132d4e19097d845079f8a05f0,[system] Reloaded configuration
+c39f54407f0c68cbb1afdfb8a34f2437,Reloading.
+428e0a201bcc564bbd5e78ba081ea725,Stopping LSB: <*> <*> <*> for <*>
+275324e5ff8bd3feb4f121d4d641ac58,Stopped LSB: <*> <*> <*> for <*>
+c39f54407f0c68cbb1afdfb8a34f2437,Reloading.
+8db997486bfbfb0ba2134f89f977af29,message repeated <*> times: [ <*>
+69b061f3b1740b568a7eb9a3d6c83e5b,Starting LSB: <*> <*> <*> for <*>
+776e1ac2143da2066d33426fcba962d8,* <*> <*> <*> for <*>
+5917eca7dfb2a409c94a219cab866e36,...done.
+1d0e4654d5bc3a291dd968137c18c14d,Started LSB: <*> <*> <*> for <*>
+2f7082b2ab9da38ff588d1636dae7070,<*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*>
+7b827905bc45d4a37fd0131503f2bf35,debug: running <*> on <*>
+2ce56fd92f78857d1cff8c5b2b774730,debug: <*> <*> not <*> <*>
+6a8dafab7706f9c3065f9331a930be41,debug: <*> detected by <*>
+4e0c994d7fcd3763c4e2797ee4746c13,debug: running <*> on mounted <*>
+2fe57be09b7a4d352dde7deef4f383ea,debug: Not on <*> <*>
+4e0c994d7fcd3763c4e2797ee4746c13,debug: running <*> on mounted <*>
+2c667c41b8104f4a364e301aca3b47fb,debug: <*> is a <*> partition
+4e0c994d7fcd3763c4e2797ee4746c13,debug: running <*> on mounted <*>
+49ca839f711df315a0f3f691a33b12dc,debug: <*> is not a <*> partition: exiting
+4e0c994d7fcd3763c4e2797ee4746c13,debug: running <*> on mounted <*>
+39eb5d2f4e2cb52317dbc5a8e8cdac83,debug: <*> is not <*> <*> partition: exiting
+4e0c994d7fcd3763c4e2797ee4746c13,debug: running <*> on mounted <*>
+2c667c41b8104f4a364e301aca3b47fb,debug: <*> is a <*> partition
+4e0c994d7fcd3763c4e2797ee4746c13,debug: running <*> on mounted <*>
+2c667c41b8104f4a364e301aca3b47fb,debug: <*> is a <*> partition
+4e0c994d7fcd3763c4e2797ee4746c13,debug: running <*> on mounted <*>
+4e0c994d7fcd3763c4e2797ee4746c13,debug: running <*> on mounted <*>
+4e0c994d7fcd3763c4e2797ee4746c13,debug: running <*> on mounted <*>
+4e0c994d7fcd3763c4e2797ee4746c13,debug: running <*> on mounted <*>
+8f94183530f17cffd423a3ca1041b9ce,debug: <*> is not a BeFS partition: exiting
+4e0c994d7fcd3763c4e2797ee4746c13,debug: running <*> on mounted <*>
+4e0c994d7fcd3763c4e2797ee4746c13,debug: running <*> on mounted <*>
+c39f54407f0c68cbb1afdfb8a34f2437,Reloading.
+7b827905bc45d4a37fd0131503f2bf35,debug: running <*> on <*>
+2ce56fd92f78857d1cff8c5b2b774730,debug: <*> <*> not <*> <*>
+6a8dafab7706f9c3065f9331a930be41,debug: <*> detected by <*>
+4e0c994d7fcd3763c4e2797ee4746c13,debug: running <*> on mounted <*>
+2fe57be09b7a4d352dde7deef4f383ea,debug: Not on <*> <*>
+4e0c994d7fcd3763c4e2797ee4746c13,debug: running <*> on mounted <*>
+2c667c41b8104f4a364e301aca3b47fb,debug: <*> is a <*> partition
+4e0c994d7fcd3763c4e2797ee4746c13,debug: running <*> on mounted <*>
+49ca839f711df315a0f3f691a33b12dc,debug: <*> is not a <*> partition: exiting
+4e0c994d7fcd3763c4e2797ee4746c13,debug: running <*> on mounted <*>
+39eb5d2f4e2cb52317dbc5a8e8cdac83,debug: <*> is not <*> <*> partition: exiting
+4e0c994d7fcd3763c4e2797ee4746c13,debug: running <*> on mounted <*>
+2c667c41b8104f4a364e301aca3b47fb,debug: <*> is a <*> partition
+4e0c994d7fcd3763c4e2797ee4746c13,debug: running <*> on mounted <*>
+2c667c41b8104f4a364e301aca3b47fb,debug: <*> is a <*> partition
+4e0c994d7fcd3763c4e2797ee4746c13,debug: running <*> on mounted <*>
+4e0c994d7fcd3763c4e2797ee4746c13,debug: running <*> on mounted <*>
+4e0c994d7fcd3763c4e2797ee4746c13,debug: running <*> on mounted <*>
+4e0c994d7fcd3763c4e2797ee4746c13,debug: running <*> on mounted <*>
+8f94183530f17cffd423a3ca1041b9ce,debug: <*> is not a BeFS partition: exiting
+4e0c994d7fcd3763c4e2797ee4746c13,debug: running <*> on mounted <*>
+4e0c994d7fcd3763c4e2797ee4746c13,debug: running <*> on mounted <*>
+be35dfa1c7fddcee2b11262db86f6214,Started Daily apt upgrade and clean activities.
+6b7cf6966856eca260c942d5e2ad6f30,(root) CMD (   test -x /etc/cron.daily/popularity-contest && /etc/cron.daily/popularity-contest --crond)
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+038a758d7d0c089de2c4e192a7668bc2,Starting Cleanup of Temporary Directories...
+2044779795cb64878bd9900bdce7c992,Started Cleanup of Temporary Directories.
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+fb1951956456dee1a45a176a6859d102,<*> <*> <*> <*> <*>
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+b37fee6f1fae30def83c4b42df5f435f,Starting Daily apt download activities...
+43d542ce159789a1f82549f2b2871bf6,Started Daily apt download activities.
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+d4606850e7d68209c2d6b10f30d1949f,"Network configuration changed, trying to establish connection."
+73fdbf33a08fbcc102ab7240d3a61504,<*> Configured
+fcf987af1efcc76c7d523ced31c66a43,Synchronized to time server <*> (ntp.ubuntu.com).
+d4606850e7d68209c2d6b10f30d1949f,"Network configuration changed, trying to establish connection."
+73fdbf33a08fbcc102ab7240d3a61504,<*> Configured
+fcf987af1efcc76c7d523ced31c66a43,Synchronized to time server <*> (ntp.ubuntu.com).
+d4606850e7d68209c2d6b10f30d1949f,"Network configuration changed, trying to establish connection."
+73fdbf33a08fbcc102ab7240d3a61504,<*> Configured
+fcf987af1efcc76c7d523ced31c66a43,Synchronized to time server <*> (ntp.ubuntu.com).
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+4ebfb0b42c3fb439b6585fd15188af55,Starting Message of the Day...
+345a768ea312fdcc99ada6b7fd7e4bb0,Started Message of the Day.
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+89ed58f1ae20914db6067790b6ce3f28,(root) CMD <*> [ -x <*> <*> && [ <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*>
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+b37fee6f1fae30def83c4b42df5f435f,Starting Daily apt download activities...
+43d542ce159789a1f82549f2b2871bf6,Started Daily apt download activities.
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+d4606850e7d68209c2d6b10f30d1949f,"Network configuration changed, trying to establish connection."
+73fdbf33a08fbcc102ab7240d3a61504,<*> Configured
+fcf987af1efcc76c7d523ced31c66a43,Synchronized to time server <*> (ntp.ubuntu.com).
+d4606850e7d68209c2d6b10f30d1949f,"Network configuration changed, trying to establish connection."
+73fdbf33a08fbcc102ab7240d3a61504,<*> Configured
+fcf987af1efcc76c7d523ced31c66a43,Synchronized to time server <*> (ntp.ubuntu.com).
+d4606850e7d68209c2d6b10f30d1949f,"Network configuration changed, trying to establish connection."
+73fdbf33a08fbcc102ab7240d3a61504,<*> Configured
+fcf987af1efcc76c7d523ced31c66a43,Synchronized to time server <*> (ntp.ubuntu.com).
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+fb964613f8158b17308bb24ce3e1bf1d,(root) CMD (test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.daily ))
+de1af8bf017f53f3ba2f7e8cc31f7440,<*> <*> <*> <*> <*> <*> <*> <*>
+76b18ae278ae35bdf26701a91e2e751e,Starting Daily apt upgrade and clean activities...
+be35dfa1c7fddcee2b11262db86f6214,Started Daily apt upgrade and clean activities.
+cad13ea28b1fd581a4df81d26b886319,(root) CMD (test -x /usr/sbin/anacron || ( cd / && run-parts --report <*> ))
+6b7cf6966856eca260c942d5e2ad6f30,(root) CMD (   test -x /etc/cron.daily/popularity-contest && /etc/cron.daily/popularity-contest --crond)
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+038a758d7d0c089de2c4e192a7668bc2,Starting Cleanup of Temporary Directories...
+4ebfb0b42c3fb439b6585fd15188af55,Starting Message of the Day...
+2044779795cb64878bd9900bdce7c992,Started Cleanup of Temporary Directories.
+c8769e3ff2b9285f908500ae1d423ac3,* Super-optimized for small spaces - read how we shrank the memory
+19cff9a51b569592ea4588d4e4342f15,footprint of <*> to make it the smallest full <*> around.
+ff52c40c09db1af28b94617a0f985648,<*>
+345a768ea312fdcc99ada6b7fd7e4bb0,Started Message of the Day.
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+bd4f4408def5482ece9fb4ea94d415f4,<*> inet-fw REJECT <*> OUT= <*> <*> <*> <*> <*> <*> <*> <*> DF PROTO=TCP <*> <*> <*> <*> <*> <*>
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+b37fee6f1fae30def83c4b42df5f435f,Starting Daily apt download activities...
+43d542ce159789a1f82549f2b2871bf6,Started Daily apt download activities.
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+d4606850e7d68209c2d6b10f30d1949f,"Network configuration changed, trying to establish connection."
+73fdbf33a08fbcc102ab7240d3a61504,<*> Configured
+fcf987af1efcc76c7d523ced31c66a43,Synchronized to time server <*> (ntp.ubuntu.com).
+4ebfb0b42c3fb439b6585fd15188af55,Starting Message of the Day...
+d4606850e7d68209c2d6b10f30d1949f,"Network configuration changed, trying to establish connection."
+73fdbf33a08fbcc102ab7240d3a61504,<*> Configured
+fcf987af1efcc76c7d523ced31c66a43,Synchronized to time server <*> (ntp.ubuntu.com).
+c8769e3ff2b9285f908500ae1d423ac3,* Super-optimized for small spaces - read how we shrank the memory
+19cff9a51b569592ea4588d4e4342f15,footprint of <*> to make it the smallest full <*> around.
+ff52c40c09db1af28b94617a0f985648,<*>
+345a768ea312fdcc99ada6b7fd7e4bb0,Started Message of the Day.
+d4606850e7d68209c2d6b10f30d1949f,"Network configuration changed, trying to establish connection."
+73fdbf33a08fbcc102ab7240d3a61504,<*> Configured
+fcf987af1efcc76c7d523ced31c66a43,Synchronized to time server <*> (ntp.ubuntu.com).
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+b37fee6f1fae30def83c4b42df5f435f,Starting Daily apt download activities...
+43d542ce159789a1f82549f2b2871bf6,Started Daily apt download activities.
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+547efc5342f2e7b5162c40b89bc991fb,Starting <*> <*> <*>
+5de360fd78b381ffb52f46ac749a02bd,Started <*> <*> <*>
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+4ebfb0b42c3fb439b6585fd15188af55,Starting Message of the Day...
+c8769e3ff2b9285f908500ae1d423ac3,* Super-optimized for small spaces - read how we shrank the memory
+19cff9a51b569592ea4588d4e4342f15,footprint of <*> to make it the smallest full <*> around.
+ff52c40c09db1af28b94617a0f985648,<*>
+345a768ea312fdcc99ada6b7fd7e4bb0,Started Message of the Day.
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+d4606850e7d68209c2d6b10f30d1949f,"Network configuration changed, trying to establish connection."
+73fdbf33a08fbcc102ab7240d3a61504,<*> Configured
+fcf987af1efcc76c7d523ced31c66a43,Synchronized to time server <*> (ntp.ubuntu.com).
+d4606850e7d68209c2d6b10f30d1949f,"Network configuration changed, trying to establish connection."
+73fdbf33a08fbcc102ab7240d3a61504,<*> Configured
+fcf987af1efcc76c7d523ced31c66a43,Synchronized to time server <*> (ntp.ubuntu.com).
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+d4606850e7d68209c2d6b10f30d1949f,"Network configuration changed, trying to establish connection."
+73fdbf33a08fbcc102ab7240d3a61504,<*> Configured
+fcf987af1efcc76c7d523ced31c66a43,Synchronized to time server <*> (ntp.ubuntu.com).
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+fb964613f8158b17308bb24ce3e1bf1d,(root) CMD (test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.daily ))
+76b18ae278ae35bdf26701a91e2e751e,Starting Daily apt upgrade and clean activities...
+be35dfa1c7fddcee2b11262db86f6214,Started Daily apt upgrade and clean activities.
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+6b7cf6966856eca260c942d5e2ad6f30,(root) CMD (   test -x /etc/cron.daily/popularity-contest && /etc/cron.daily/popularity-contest --crond)
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+038a758d7d0c089de2c4e192a7668bc2,Starting Cleanup of Temporary Directories...
+2044779795cb64878bd9900bdce7c992,Started Cleanup of Temporary Directories.
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+d4606850e7d68209c2d6b10f30d1949f,"Network configuration changed, trying to establish connection."
+73fdbf33a08fbcc102ab7240d3a61504,<*> Configured
+fcf987af1efcc76c7d523ced31c66a43,Synchronized to time server <*> (ntp.ubuntu.com).
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+d4606850e7d68209c2d6b10f30d1949f,"Network configuration changed, trying to establish connection."
+73fdbf33a08fbcc102ab7240d3a61504,<*> Configured
+fcf987af1efcc76c7d523ced31c66a43,Synchronized to time server <*> (ntp.ubuntu.com).
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+d4606850e7d68209c2d6b10f30d1949f,"Network configuration changed, trying to establish connection."
+73fdbf33a08fbcc102ab7240d3a61504,<*> Configured
+fcf987af1efcc76c7d523ced31c66a43,Synchronized to time server <*> (ntp.ubuntu.com).
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+4ebfb0b42c3fb439b6585fd15188af55,Starting Message of the Day...
+c8769e3ff2b9285f908500ae1d423ac3,* Super-optimized for small spaces - read how we shrank the memory
+19cff9a51b569592ea4588d4e4342f15,footprint of <*> to make it the smallest full <*> around.
+ff52c40c09db1af28b94617a0f985648,<*>
+345a768ea312fdcc99ada6b7fd7e4bb0,Started Message of the Day.
+b37fee6f1fae30def83c4b42df5f435f,Starting Daily apt download activities...
+43d542ce159789a1f82549f2b2871bf6,Started Daily apt download activities.
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+d4606850e7d68209c2d6b10f30d1949f,"Network configuration changed, trying to establish connection."
+73fdbf33a08fbcc102ab7240d3a61504,<*> Configured
+fcf987af1efcc76c7d523ced31c66a43,Synchronized to time server <*> (ntp.ubuntu.com).
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+d4606850e7d68209c2d6b10f30d1949f,"Network configuration changed, trying to establish connection."
+73fdbf33a08fbcc102ab7240d3a61504,<*> Configured
+fcf987af1efcc76c7d523ced31c66a43,Synchronized to time server <*> (ntp.ubuntu.com).
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+d4606850e7d68209c2d6b10f30d1949f,"Network configuration changed, trying to establish connection."
+73fdbf33a08fbcc102ab7240d3a61504,<*> Configured
+fcf987af1efcc76c7d523ced31c66a43,Synchronized to time server <*> (ntp.ubuntu.com).
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+b37fee6f1fae30def83c4b42df5f435f,Starting Daily apt download activities...
+43d542ce159789a1f82549f2b2871bf6,Started Daily apt download activities.
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+4ebfb0b42c3fb439b6585fd15188af55,Starting Message of the Day...
+c8769e3ff2b9285f908500ae1d423ac3,* Super-optimized for small spaces - read how we shrank the memory
+19cff9a51b569592ea4588d4e4342f15,footprint of <*> to make it the smallest full <*> around.
+ff52c40c09db1af28b94617a0f985648,<*>
+345a768ea312fdcc99ada6b7fd7e4bb0,Started Message of the Day.
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+fb964613f8158b17308bb24ce3e1bf1d,(root) CMD (test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.daily ))
+76b18ae278ae35bdf26701a91e2e751e,Starting Daily apt upgrade and clean activities...
+be35dfa1c7fddcee2b11262db86f6214,Started Daily apt upgrade and clean activities.
+6b7cf6966856eca260c942d5e2ad6f30,(root) CMD (   test -x /etc/cron.daily/popularity-contest && /etc/cron.daily/popularity-contest --crond)
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+038a758d7d0c089de2c4e192a7668bc2,Starting Cleanup of Temporary Directories...
+2044779795cb64878bd9900bdce7c992,Started Cleanup of Temporary Directories.
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+d4606850e7d68209c2d6b10f30d1949f,"Network configuration changed, trying to establish connection."
+73fdbf33a08fbcc102ab7240d3a61504,<*> Configured
+fcf987af1efcc76c7d523ced31c66a43,Synchronized to time server <*> (ntp.ubuntu.com).
+26ece04256f45ff018f1383e39b72a8a,<*> dmz-fw REJECT <*> OUT= <*> <*> <*> <*> <*> <*> <*> <*> DF PROTO=TCP <*> <*> <*> <*> SYN <*>
+26ece04256f45ff018f1383e39b72a8a,<*> dmz-fw REJECT <*> OUT= <*> <*> <*> <*> <*> <*> <*> <*> DF PROTO=TCP <*> <*> <*> <*> SYN <*>
+26ece04256f45ff018f1383e39b72a8a,<*> dmz-fw REJECT <*> OUT= <*> <*> <*> <*> <*> <*> <*> <*> DF PROTO=TCP <*> <*> <*> <*> SYN <*>
+26ece04256f45ff018f1383e39b72a8a,<*> dmz-fw REJECT <*> OUT= <*> <*> <*> <*> <*> <*> <*> <*> DF PROTO=TCP <*> <*> <*> <*> SYN <*>
+26ece04256f45ff018f1383e39b72a8a,<*> dmz-fw REJECT <*> OUT= <*> <*> <*> <*> <*> <*> <*> <*> DF PROTO=TCP <*> <*> <*> <*> SYN <*>
+26ece04256f45ff018f1383e39b72a8a,<*> dmz-fw REJECT <*> OUT= <*> <*> <*> <*> <*> <*> <*> <*> DF PROTO=TCP <*> <*> <*> <*> SYN <*>
+26ece04256f45ff018f1383e39b72a8a,<*> dmz-fw REJECT <*> OUT= <*> <*> <*> <*> <*> <*> <*> <*> DF PROTO=TCP <*> <*> <*> <*> SYN <*>
+26ece04256f45ff018f1383e39b72a8a,<*> dmz-fw REJECT <*> OUT= <*> <*> <*> <*> <*> <*> <*> <*> DF PROTO=TCP <*> <*> <*> <*> SYN <*>
+26ece04256f45ff018f1383e39b72a8a,<*> dmz-fw REJECT <*> OUT= <*> <*> <*> <*> <*> <*> <*> <*> DF PROTO=TCP <*> <*> <*> <*> SYN <*>
+26ece04256f45ff018f1383e39b72a8a,<*> dmz-fw REJECT <*> OUT= <*> <*> <*> <*> <*> <*> <*> <*> DF PROTO=TCP <*> <*> <*> <*> SYN <*>
+149ec352ac178fe6f720145986a2c499,<*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*>  <*> <*> not <*> <*> <*> <*> <*> <*> <*> <*> <*> <*>
+26ece04256f45ff018f1383e39b72a8a,<*> dmz-fw REJECT <*> OUT= <*> <*> <*> <*> <*> <*> <*> <*> DF PROTO=TCP <*> <*> <*> <*> SYN <*>
+8caf1ee5571427ca6a77075e1d093a32,<*> neighbour: arp_cache: neighbor table overflow!
+8caf1ee5571427ca6a77075e1d093a32,<*> neighbour: arp_cache: neighbor table overflow!
+8caf1ee5571427ca6a77075e1d093a32,<*> neighbour: arp_cache: neighbor table overflow!
+8caf1ee5571427ca6a77075e1d093a32,<*> neighbour: arp_cache: neighbor table overflow!
+8caf1ee5571427ca6a77075e1d093a32,<*> neighbour: arp_cache: neighbor table overflow!
+8caf1ee5571427ca6a77075e1d093a32,<*> neighbour: arp_cache: neighbor table overflow!
+8caf1ee5571427ca6a77075e1d093a32,<*> neighbour: arp_cache: neighbor table overflow!
+8caf1ee5571427ca6a77075e1d093a32,<*> neighbour: arp_cache: neighbor table overflow!
+8caf1ee5571427ca6a77075e1d093a32,<*> neighbour: arp_cache: neighbor table overflow!
+8caf1ee5571427ca6a77075e1d093a32,<*> neighbour: arp_cache: neighbor table overflow!
+fb1951956456dee1a45a176a6859d102,<*> <*> <*> <*> <*>
+8caf1ee5571427ca6a77075e1d093a32,<*> neighbour: arp_cache: neighbor table overflow!
+8caf1ee5571427ca6a77075e1d093a32,<*> neighbour: arp_cache: neighbor table overflow!
+8caf1ee5571427ca6a77075e1d093a32,<*> neighbour: arp_cache: neighbor table overflow!
+8caf1ee5571427ca6a77075e1d093a32,<*> neighbour: arp_cache: neighbor table overflow!
+8caf1ee5571427ca6a77075e1d093a32,<*> neighbour: arp_cache: neighbor table overflow!
+26ece04256f45ff018f1383e39b72a8a,<*> dmz-fw REJECT <*> OUT= <*> <*> <*> <*> <*> <*> <*> <*> DF PROTO=TCP <*> <*> <*> <*> SYN <*>
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+c87e97bdcbb372448673112cd2e22c46,<*> inet-fw REJECT <*> OUT= <*> <*> <*> <*> <*> <*> <*> <*> DF PROTO=TCP <*> <*> <*> <*> SYN <*>
+c87e97bdcbb372448673112cd2e22c46,<*> inet-fw REJECT <*> OUT= <*> <*> <*> <*> <*> <*> <*> <*> DF PROTO=TCP <*> <*> <*> <*> SYN <*>
+c87e97bdcbb372448673112cd2e22c46,<*> inet-fw REJECT <*> OUT= <*> <*> <*> <*> <*> <*> <*> <*> DF PROTO=TCP <*> <*> <*> <*> SYN <*>
+c87e97bdcbb372448673112cd2e22c46,<*> inet-fw REJECT <*> OUT= <*> <*> <*> <*> <*> <*> <*> <*> DF PROTO=TCP <*> <*> <*> <*> SYN <*>
+c87e97bdcbb372448673112cd2e22c46,<*> inet-fw REJECT <*> OUT= <*> <*> <*> <*> <*> <*> <*> <*> DF PROTO=TCP <*> <*> <*> <*> SYN <*>
+c87e97bdcbb372448673112cd2e22c46,<*> inet-fw REJECT <*> OUT= <*> <*> <*> <*> <*> <*> <*> <*> DF PROTO=TCP <*> <*> <*> <*> SYN <*>
+c87e97bdcbb372448673112cd2e22c46,<*> inet-fw REJECT <*> OUT= <*> <*> <*> <*> <*> <*> <*> <*> DF PROTO=TCP <*> <*> <*> <*> SYN <*>
+c87e97bdcbb372448673112cd2e22c46,<*> inet-fw REJECT <*> OUT= <*> <*> <*> <*> <*> <*> <*> <*> DF PROTO=TCP <*> <*> <*> <*> SYN <*>
+c87e97bdcbb372448673112cd2e22c46,<*> inet-fw REJECT <*> OUT= <*> <*> <*> <*> <*> <*> <*> <*> DF PROTO=TCP <*> <*> <*> <*> SYN <*>
+c87e97bdcbb372448673112cd2e22c46,<*> inet-fw REJECT <*> OUT= <*> <*> <*> <*> <*> <*> <*> <*> DF PROTO=TCP <*> <*> <*> <*> SYN <*>
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+d4606850e7d68209c2d6b10f30d1949f,"Network configuration changed, trying to establish connection."
+73fdbf33a08fbcc102ab7240d3a61504,<*> Configured
+fcf987af1efcc76c7d523ced31c66a43,Synchronized to time server <*> (ntp.ubuntu.com).
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+d4606850e7d68209c2d6b10f30d1949f,"Network configuration changed, trying to establish connection."
+73fdbf33a08fbcc102ab7240d3a61504,<*> Configured
+fcf987af1efcc76c7d523ced31c66a43,Synchronized to time server <*> (ntp.ubuntu.com).
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+b37fee6f1fae30def83c4b42df5f435f,Starting Daily apt download activities...
+43d542ce159789a1f82549f2b2871bf6,Started Daily apt download activities.
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+4ebfb0b42c3fb439b6585fd15188af55,Starting Message of the Day...
+c8769e3ff2b9285f908500ae1d423ac3,* Super-optimized for small spaces - read how we shrank the memory
+19cff9a51b569592ea4588d4e4342f15,footprint of <*> to make it the smallest full <*> around.
+ff52c40c09db1af28b94617a0f985648,<*>
+345a768ea312fdcc99ada6b7fd7e4bb0,Started Message of the Day.
+d4606850e7d68209c2d6b10f30d1949f,"Network configuration changed, trying to establish connection."
+73fdbf33a08fbcc102ab7240d3a61504,<*> Configured
+fcf987af1efcc76c7d523ced31c66a43,Synchronized to time server <*> (ntp.ubuntu.com).
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+d4606850e7d68209c2d6b10f30d1949f,"Network configuration changed, trying to establish connection."
+73fdbf33a08fbcc102ab7240d3a61504,<*> Configured
+fcf987af1efcc76c7d523ced31c66a43,Synchronized to time server <*> (ntp.ubuntu.com).
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+d4606850e7d68209c2d6b10f30d1949f,"Network configuration changed, trying to establish connection."
+73fdbf33a08fbcc102ab7240d3a61504,<*> Configured
+fcf987af1efcc76c7d523ced31c66a43,Synchronized to time server <*> (ntp.ubuntu.com).
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+b37fee6f1fae30def83c4b42df5f435f,Starting Daily apt download activities...
+43d542ce159789a1f82549f2b2871bf6,Started Daily apt download activities.
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+fb964613f8158b17308bb24ce3e1bf1d,(root) CMD (test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.daily ))
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+76b18ae278ae35bdf26701a91e2e751e,Starting Daily apt upgrade and clean activities...
+be35dfa1c7fddcee2b11262db86f6214,Started Daily apt upgrade and clean activities.
+6b7cf6966856eca260c942d5e2ad6f30,(root) CMD (   test -x /etc/cron.daily/popularity-contest && /etc/cron.daily/popularity-contest --crond)
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+038a758d7d0c089de2c4e192a7668bc2,Starting Cleanup of Temporary Directories...
+2044779795cb64878bd9900bdce7c992,Started Cleanup of Temporary Directories.
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+b37fee6f1fae30def83c4b42df5f435f,Starting Daily apt download activities...
+43d542ce159789a1f82549f2b2871bf6,Started Daily apt download activities.
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+d4606850e7d68209c2d6b10f30d1949f,"Network configuration changed, trying to establish connection."
+73fdbf33a08fbcc102ab7240d3a61504,<*> Configured
+fcf987af1efcc76c7d523ced31c66a43,Synchronized to time server <*> (ntp.ubuntu.com).
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+4ebfb0b42c3fb439b6585fd15188af55,Starting Message of the Day...
+c8769e3ff2b9285f908500ae1d423ac3,* Super-optimized for small spaces - read how we shrank the memory
+19cff9a51b569592ea4588d4e4342f15,footprint of <*> to make it the smallest full <*> around.
+ff52c40c09db1af28b94617a0f985648,<*>
+345a768ea312fdcc99ada6b7fd7e4bb0,Started Message of the Day.
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+d4606850e7d68209c2d6b10f30d1949f,"Network configuration changed, trying to establish connection."
+73fdbf33a08fbcc102ab7240d3a61504,<*> Configured
+fcf987af1efcc76c7d523ced31c66a43,Synchronized to time server <*> (ntp.ubuntu.com).
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+d4606850e7d68209c2d6b10f30d1949f,"Network configuration changed, trying to establish connection."
+73fdbf33a08fbcc102ab7240d3a61504,<*> Configured
+fcf987af1efcc76c7d523ced31c66a43,Synchronized to time server <*> (ntp.ubuntu.com).
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+4ebfb0b42c3fb439b6585fd15188af55,Starting Message of the Day...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+c8769e3ff2b9285f908500ae1d423ac3,* Super-optimized for small spaces - read how we shrank the memory
+19cff9a51b569592ea4588d4e4342f15,footprint of <*> to make it the smallest full <*> around.
+ff52c40c09db1af28b94617a0f985648,<*>
+345a768ea312fdcc99ada6b7fd7e4bb0,Started Message of the Day.
+bd4f4408def5482ece9fb4ea94d415f4,<*> inet-fw REJECT <*> OUT= <*> <*> <*> <*> <*> <*> <*> <*> DF PROTO=TCP <*> <*> <*> <*> <*> <*>
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+9bc93eaa765a7d0e865e699dc039cd82,<*> <*> martian source <*> from <*> on dev <*>
+9214a671c3bbe639a80968e290f7f802,<*> ll header: <*> fa <*> <*> <*> <*> bf fa <*> <*> <*> <*> <*> <*> <*>        ..>.....>.e...
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+d4606850e7d68209c2d6b10f30d1949f,"Network configuration changed, trying to establish connection."
+73fdbf33a08fbcc102ab7240d3a61504,<*> Configured
+fcf987af1efcc76c7d523ced31c66a43,Synchronized to time server <*> (ntp.ubuntu.com).
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+d4606850e7d68209c2d6b10f30d1949f,"Network configuration changed, trying to establish connection."
+73fdbf33a08fbcc102ab7240d3a61504,<*> Configured
+a2bed697c4df70c07ff76ee030a46b74,<*> <*> <*> for <*> from <*> (ntp.ubuntu.com).
+fcf987af1efcc76c7d523ced31c66a43,Synchronized to time server <*> (ntp.ubuntu.com).
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+d4606850e7d68209c2d6b10f30d1949f,"Network configuration changed, trying to establish connection."
+73fdbf33a08fbcc102ab7240d3a61504,<*> Configured
+fcf987af1efcc76c7d523ced31c66a43,Synchronized to time server <*> (ntp.ubuntu.com).
+aaa3a01b7a8e566dedc3551bdd9daf90,(root) CMD (   cd / && run-parts --report /etc/cron.hourly)

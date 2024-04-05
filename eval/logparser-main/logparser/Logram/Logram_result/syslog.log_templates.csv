@@ -1,0 +1,60 @@
+EventId,EventTemplate
+c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+4ebfb0b4,Starting Message of the Day...
+345a768e,Started Message of the Day.
+be2214fc,<*> <*> <*> <*> <*> <*>
+b37fee6f,Starting Daily apt download activities...
+43d542ce,Started Daily apt download activities.
+d56fe086,(root) CMD <*> <*> <*> <*> ( cd / && run-parts --report <*> <*>
+3bbba500,Starting Daily apt upgrade <*> <*> activities...
+a4ec7e5b,<*> <*> <*>
+de1af8bf,<*> <*> <*> <*> <*> <*> <*> <*>
+c39f5440,Reloading.
+8d7c0e6b,<*> <*> <*> <*> <*> <*> <*>
+5917eca7,...done.
+fb195195,<*> <*> <*> <*> <*>
+408fb1a8,Reexecuting.
+9d892b9c,<*> <*> <*> <*> <*> <*> <*> <*> <*>
+cccc0dbe,<*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*>
+cfa0a3dd,Network configuration changed trying to establish connection.
+fcf987af,Synchronized to time server <*> (ntp.ubuntu.com).
+d7e5ae8a,Enumeration completed
+0ce98313,<*> <*> <*> <*>
+1e76d2e5,<*> IPv4: martian source <*> <*> <*> on dev <*>
+691bab7d,<*> ll header: 00000000: fa 16 3e <*> <*> <*> fa 16 3e f8 <*> <*> 08 00 <*>
+f18edf6e,<*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*>
+7468a9a0,ens7: Configured
+d5ddf9bc,ens6: Configured
+f06dcd81,ens3: Configured
+9203e833,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).
+2f7082b2,<*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*>
+6ad038df,debug: running <*> <*> <*>
+48017415,debug: running <*> on mounted /dev/vda15
+cca3da23,debug: <*> <*> <*> <*> <*>
+fa789a48,debug: <*> <*> <*> <*> <*> <*> <*>
+40039889,Started Daily apt upgrade <*> <*> activities.
+73d54915,(root) CMD ( <*> <*> <*> <*> <*> <*>
+468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+4c863842,<*> IPv4: martian source <*> from 10.9.0.10 on dev ens6
+033f474c,<*> IPv4: martian source <*> from 10.9.0.18 on dev ens6
+14c39e34,<*> IPv4: martian source <*> from 10.9.0.14 on dev ens6
+4268e80d,<*> IPv4: martian source 192.0.73.2 from 10.9.0.10 on dev ens6
+81d04995,<*> IPv4: martian source 209.51.188.233 from 10.9.0.10 on dev ens6
+faae5ddb,<*> IPv4: martian source 10.35.35.206 from 10.9.0.6 on dev ens6
+1b38a9e0,(root) CMD <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*>
+73d6de92,<*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*>
+f402feb7,https://ubuntu.com/blog/microk8s-memory-optimisation
+0353406a,<*> <*> <*> <*> <*> <*> <*> <*> <*> TOS=0x00 PREC=0x00 <*> <*> DF PROTO=TCP <*> <*> <*> <*> <*> <*>
+1d555a22,<*> IPv4: martian source 192.0.73.2 from 10.9.0.22 on dev ens6
+05c588d1,<*> IPv4: martian source 10.35.35.206 from 10.9.0.14 on dev ens6
+bb2e84d9,<*> IPv4: martian source <*> from 10.9.0.22 on dev ens6
+c8515775,<*> IPv4: martian source 10.35.35.206 from 10.9.0.22 on dev ens6
+20344b32,<*> IPv4: martian source 192.0.73.2 from 10.9.0.18 on dev ens6
+9f44a0a8,<*> <*> <*> IN=ens6 OUT= MAC=fa:16:3e:c3:c5:bf:fa:16:3e:f8:65:07:08:00 SRC=172.17.130.196 DST=172.17.128.1 LEN=60 TOS=0x00 PREC=0x00 <*> <*> DF PROTO=TCP <*> <*> <*> RES=0x00 SYN URGP=0
+1a7b6c65,<*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*>
+7b227947,<*> <*> <*> IN=ens6 OUT= <*> <*> <*> LEN=60 TOS=0x00 PREC=0x00 <*> <*> DF PROTO=TCP <*> <*> <*> RES=0x00 SYN URGP=0
+8caf1ee5,<*> neighbour: arp_cache: neighbor table overflow!
+45c99541,<*> <*> <*> IN=ens3 OUT= MAC=fa:16:3e:1d:25:9e:fa:16:3e:8e:cb:cb:08:00 SRC=192.168.130.77 DST=192.168.128.4 LEN=60 TOS=0x00 PREC=0x00 <*> <*> DF PROTO=TCP <*> <*> <*> RES=0x00 SYN URGP=0
+dde92818,<*> IPv4: martian source 192.0.73.2 from 10.9.0.6 on dev ens6
+3c694f23,<*> <*> <*> <*> <*> <*> 91.189.91.157:123 (ntp.ubuntu.com).

@@ -1,0 +1,5 @@
+Dataset,F1_measure,Accuracy
+DNS,0.999982,0.988000
+Apache1,0.653799,0.341000
+Apache2,0.999996,0.997326
+Linux,0.994291,0.397129

@@ -1,0 +1,7 @@
+EventId,EventTemplate,Occurrences
+E0,"('pam_unix(cron:session):', 'session', 'opened', 'for', 'user', '<*>', 'by', '<*>')",372
+E1,"('pam_unix(cron:session):', 'session', 'closed', 'for', 'user', '<*>')",372
+E2,"('Server', 'listening', 'on', '<*>', 'port', '<*>')",1
+E3,"('Server', 'listening', 'on', '::', 'port', '<*>')",1
+E4,"('Received', 'signal', '<*>', 'terminating.')",1
+E5,"('Did', 'not', 'receive', 'identification', 'string', 'from', '<*>', 'port', '<*>')",1

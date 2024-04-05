@@ -1,0 +1,1046 @@
+LineId,Content,EventId,EventTemplate
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+3,Starting Message of the Day...,4ebfb0b4,Starting Message of the Day...
+4,Started Message of the Day.,345a768e,Started Message of the Day.
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+8,[76398.724224] hrtimer: interrupt took 15172948 ns,be2214fc,<*> <*> <*> <*> <*> <*>
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+10,Starting Daily apt download activities...,b37fee6f,Starting Daily apt download activities...
+11,Started Daily apt download activities.,43d542ce,Started Daily apt download activities.
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+13,(root) CMD (test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.daily )),d56fe086,(root) CMD <*> <*> <*> <*> ( cd / && run-parts --report <*> <*>
+14,Starting Daily apt upgrade and clean activities...,3bbba500,Starting Daily apt upgrade <*> <*> activities...
+15,[system] Reloaded configuration,a4ec7e5b,<*> <*> <*>
+16,message repeated 3 times: [ [system] Reloaded configuration],de1af8bf,<*> <*> <*> <*> <*> <*> <*> <*>
+17,Reloading.,c39f5440,Reloading.
+18,Stopping LSB: automatic crash report generation...,be2214fc,<*> <*> <*> <*> <*> <*>
+19,* Stopping automatic crash report generation: apport,8d7c0e6b,<*> <*> <*> <*> <*> <*> <*>
+20,...done.,5917eca7,...done.
+21,Stopped LSB: automatic crash report generation.,be2214fc,<*> <*> <*> <*> <*> <*>
+17,Reloading.,c39f5440,Reloading.
+23,message repeated 4 times: [ Reloading.],be2214fc,<*> <*> <*> <*> <*> <*>
+24,Starting LSB: automatic crash report generation...,be2214fc,<*> <*> <*> <*> <*> <*>
+25,* Starting automatic crash report generation: apport,8d7c0e6b,<*> <*> <*> <*> <*> <*> <*>
+20,...done.,5917eca7,...done.
+27,Started LSB: automatic crash report generation.,be2214fc,<*> <*> <*> <*> <*> <*>
+17,Reloading.,c39f5440,Reloading.
+29,message repeated 3 times: [ Reloading.],be2214fc,<*> <*> <*> <*> <*> <*>
+30,Stopping udev Kernel Device Manager...,fb195195,<*> <*> <*> <*> <*>
+31,Stopped udev Kernel Device Manager.,fb195195,<*> <*> <*> <*> <*>
+32,Starting udev Kernel Device Manager...,fb195195,<*> <*> <*> <*> <*>
+33,Started udev Kernel Device Manager.,fb195195,<*> <*> <*> <*> <*>
+17,Reloading.,c39f5440,Reloading.
+35,message repeated 4 times: [ Reloading.],be2214fc,<*> <*> <*> <*> <*> <*>
+36,Stopping OpenBSD Secure Shell server...,fb195195,<*> <*> <*> <*> <*>
+37,Stopped OpenBSD Secure Shell server.,fb195195,<*> <*> <*> <*> <*>
+38,Starting OpenBSD Secure Shell server...,fb195195,<*> <*> <*> <*> <*>
+39,Started OpenBSD Secure Shell server.,fb195195,<*> <*> <*> <*> <*>
+17,Reloading.,c39f5440,Reloading.
+41,[system] Reloaded configuration,a4ec7e5b,<*> <*> <*>
+42,message repeated 9 times: [ [system] Reloaded configuration],de1af8bf,<*> <*> <*> <*> <*> <*> <*> <*>
+43,Reexecuting.,408fb1a8,Reexecuting.
+44,[81881.919135] systemd: 29 output lines suppressed due to ratelimiting,9d892b9c,<*> <*> <*> <*> <*> <*> <*> <*> <*>
+45,[81881.927118] systemd[1]: systemd 237 running in system mode. (+PAM +AUDIT +SELINUX +IMA +APPARMOR +SMACK +SYSVINIT +UTMP +LIBCRYPTSETUP +GCRYPT +GNUTLS +ACL +XZ +LZ4 +SECCOMP +BLKID +ELFUTILS +KMOD -IDN2 +IDN -PCRE2 default-hierarchy=hybrid),cccc0dbe,<*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*>
+46,[81881.927213] systemd[1]: Detected virtualization kvm.,fb195195,<*> <*> <*> <*> <*>
+47,[81881.927223] systemd[1]: Detected architecture x86-64.,fb195195,<*> <*> <*> <*> <*>
+48,"Network configuration changed, trying to establish connection.",cfa0a3dd,Network configuration changed trying to establish connection.
+49,Stopping Network Service...,a4ec7e5b,<*> <*> <*>
+50,Synchronized to time server 91.189.89.198:123 (ntp.ubuntu.com).,fcf987af,Synchronized to time server <*> (ntp.ubuntu.com).
+48,"Network configuration changed, trying to establish connection.",cfa0a3dd,Network configuration changed trying to establish connection.
+52,Synchronized to time server 91.189.89.198:123 (ntp.ubuntu.com).,fcf987af,Synchronized to time server <*> (ntp.ubuntu.com).
+53,Stopped Network Service.,a4ec7e5b,<*> <*> <*>
+54,Starting Network Service...,a4ec7e5b,<*> <*> <*>
+55,ens7: Gained IPv6LL,a4ec7e5b,<*> <*> <*>
+56,ens6: Gained IPv6LL,a4ec7e5b,<*> <*> <*>
+57,ens3: Gained IPv6LL,a4ec7e5b,<*> <*> <*>
+48,"Network configuration changed, trying to establish connection.",cfa0a3dd,Network configuration changed trying to establish connection.
+59,Enumeration completed,d7e5ae8a,Enumeration completed
+60,Started Network Service.,a4ec7e5b,<*> <*> <*>
+61,Stopping Network Name Resolution...,0ce98313,<*> <*> <*> <*>
+62,ens7: IPv6 successfully enabled,0ce98313,<*> <*> <*> <*>
+63,lo: Link is not managed by us,8d7c0e6b,<*> <*> <*> <*> <*> <*> <*>
+64,ens3: Link is not managed by us,8d7c0e6b,<*> <*> <*> <*> <*> <*> <*>
+65,ens6: Link is not managed by us,8d7c0e6b,<*> <*> <*> <*> <*> <*> <*>
+66,Stopped Network Name Resolution.,0ce98313,<*> <*> <*> <*>
+67,Starting Network Name Resolution...,0ce98313,<*> <*> <*> <*>
+68,Synchronized to time server 91.189.89.198:123 (ntp.ubuntu.com).,fcf987af,Synchronized to time server <*> (ntp.ubuntu.com).
+69,ens6: IPv6 successfully enabled,0ce98313,<*> <*> <*> <*>
+70,lo: Link is not managed by us,8d7c0e6b,<*> <*> <*> <*> <*> <*> <*>
+71,ens3: Link is not managed by us,8d7c0e6b,<*> <*> <*> <*> <*> <*> <*>
+72,ens3: IPv6 successfully enabled,0ce98313,<*> <*> <*> <*>
+73,lo: Link is not managed by us,8d7c0e6b,<*> <*> <*> <*> <*> <*> <*>
+48,"Network configuration changed, trying to establish connection.",cfa0a3dd,Network configuration changed trying to establish connection.
+75,"[81882.266596] IPv4: martian source 10.35.32.1 from 10.35.32.2, on dev ens7",1e76d2e5,<*> IPv4: martian source <*> <*> <*> on dev <*>
+76,[81882.266627] ll header: 00000000: fa 16 3e 0a fa 83 fa 16 3e f8 09 b3 08 00        ..>.....>.....,691bab7d,<*> ll header: 00000000: fa 16 3e <*> <*> <*> fa 16 3e f8 <*> <*> 08 00 <*>
+77,ens7: DHCPv4 address 10.35.32.1/19 via 10.35.32.1,be2214fc,<*> <*> <*> <*> <*> <*>
+78,"[system] Activating via systemd: service name='org.freedesktop.hostname1' unit='dbus-org.freedesktop.hostname1.service' requested by ':1.101' (uid=100 pid=21647 comm=""/lib/systemd/systemd-networkd "" label=""unconfined"")",f18edf6e,<*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*>
+79,Starting Hostname Service...,a4ec7e5b,<*> <*> <*>
+80,ens6: DHCPv4 address 172.17.128.1/18 via 172.17.128.1,be2214fc,<*> <*> <*> <*> <*> <*>
+81,ens3: DHCPv4 address 192.168.128.4/17 via 192.168.128.1,be2214fc,<*> <*> <*> <*> <*> <*>
+82,ens7: Configured,7468a9a0,ens7: Configured
+83,ens6: Configured,d5ddf9bc,ens6: Configured
+84,ens3: Configured,f06dcd81,ens3: Configured
+85,Synchronized to time server 91.189.89.198:123 (ntp.ubuntu.com).,fcf987af,Synchronized to time server <*> (ntp.ubuntu.com).
+86,Positive Trust Anchors:,a4ec7e5b,<*> <*> <*>
+87,. IN DS 19036 8 2 49aac11d7b6f6446702e54a1607371607a1a41855200fd2ce1cdde32f24e8fb5,8d7c0e6b,<*> <*> <*> <*> <*> <*> <*>
+88,. IN DS 20326 8 2 e06d44b80b8f1d39a95c0b0d7c65d08458e880409bbc683457104237c7f8ec8d,8d7c0e6b,<*> <*> <*> <*> <*> <*> <*>
+89,Negative trust anchors: 10.in-addr.arpa 16.172.in-addr.arpa 17.172.in-addr.arpa 18.172.in-addr.arpa 19.172.in-addr.arpa 20.172.in-addr.arpa 21.172.in-addr.arpa 22.172.in-addr.arpa 23.172.in-addr.arpa 24.172.in-addr.arpa 25.172.in-addr.arpa 26.172.in-addr.arpa 27.172.in-addr.arpa 28.172.in-addr.arpa 29.172.in-addr.arpa 30.172.in-addr.arpa 31.172.in-addr.arpa 168.192.in-addr.arpa d.f.ip6.arpa corp home internal intranet lan local private test,cccc0dbe,<*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*>
+90,Using system hostname 'inet-firewall'.,0ce98313,<*> <*> <*> <*>
+91,Started Network Name Resolution.,0ce98313,<*> <*> <*> <*>
+92,Stopping Network Time Synchronization...,0ce98313,<*> <*> <*> <*>
+93,[system] Successfully activated service 'org.freedesktop.hostname1',fb195195,<*> <*> <*> <*> <*>
+94,Started Hostname Service.,a4ec7e5b,<*> <*> <*>
+95,Stopped Network Time Synchronization.,0ce98313,<*> <*> <*> <*>
+96,Starting Network Time Synchronization...,0ce98313,<*> <*> <*> <*>
+97,Changed host name to 'host-10-35-32-1',fb195195,<*> <*> <*> <*> <*>
+98,Changed host name to 'host-172-17-128-1',fb195195,<*> <*> <*> <*> <*>
+99,Changed host name to 'host-192-168-128-4',fb195195,<*> <*> <*> <*> <*>
+100,Started Network Time Synchronization.,0ce98313,<*> <*> <*> <*>
+101,Stopped Flush Journal to Persistent Storage.,be2214fc,<*> <*> <*> <*> <*> <*>
+102,Stopping Flush Journal to Persistent Storage...,be2214fc,<*> <*> <*> <*> <*> <*>
+103,[81882.489447] systemd[1]: Stopping Journal Service...,fb195195,<*> <*> <*> <*> <*>
+104,[81882.490124] systemd-journald[412]: Received SIGTERM from PID 1 (systemd).,de1af8bf,<*> <*> <*> <*> <*> <*> <*> <*>
+105,[81882.530934] systemd[1]: Stopped Journal Service.,fb195195,<*> <*> <*> <*> <*>
+106,[81882.533098] systemd[1]: Starting Journal Service...,fb195195,<*> <*> <*> <*> <*>
+107,[81882.562720] systemd[1]: Started Journal Service.,fb195195,<*> <*> <*> <*> <*>
+108,Starting Flush Journal to Persistent Storage...,be2214fc,<*> <*> <*> <*> <*> <*>
+109,Started Flush Journal to Persistent Storage.,be2214fc,<*> <*> <*> <*> <*> <*>
+110,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).,9203e833,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).
+111,[system] Reloaded configuration,a4ec7e5b,<*> <*> <*>
+17,Reloading.,c39f5440,Reloading.
+113,Stopping LSB: Record successful boot for GRUB...,8d7c0e6b,<*> <*> <*> <*> <*> <*> <*>
+114,Stopped LSB: Record successful boot for GRUB.,8d7c0e6b,<*> <*> <*> <*> <*> <*> <*>
+17,Reloading.,c39f5440,Reloading.
+116,message repeated 2 times: [ Reloading.],be2214fc,<*> <*> <*> <*> <*> <*>
+117,Starting LSB: Record successful boot for GRUB...,8d7c0e6b,<*> <*> <*> <*> <*> <*> <*>
+118,* Recording successful boot for GRUB,be2214fc,<*> <*> <*> <*> <*> <*>
+20,...done.,5917eca7,...done.
+120,Started LSB: Record successful boot for GRUB.,8d7c0e6b,<*> <*> <*> <*> <*> <*> <*>
+121,"[81909.168503] SGI XFS with ACLs, security attributes, realtime, no debug enabled",2f7082b2,<*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*>
+122,debug: running /usr/lib/os-probes/50mounted-tests on /dev/vda14,6ad038df,debug: running <*> <*> <*>
+123,debug: /dev/vda14 type not recognised; skipping,be2214fc,<*> <*> <*> <*> <*> <*>
+124,debug: os detected by /usr/lib/os-probes/50mounted-tests,fb195195,<*> <*> <*> <*> <*>
+125,debug: running /usr/lib/os-probes/mounted/05efi on mounted /dev/vda15,48017415,debug: running <*> on mounted /dev/vda15
+126,debug: Not on UEFI platform,fb195195,<*> <*> <*> <*> <*>
+127,debug: running /usr/lib/os-probes/mounted/10freedos on mounted /dev/vda15,48017415,debug: running <*> on mounted /dev/vda15
+128,debug: /dev/vda15 is a FAT32 partition,cca3da23,debug: <*> <*> <*> <*> <*>
+129,debug: running /usr/lib/os-probes/mounted/10qnx on mounted /dev/vda15,48017415,debug: running <*> on mounted /dev/vda15
+130,debug: /dev/vda15 is not a QNX4 partition: exiting,fa789a48,debug: <*> <*> <*> <*> <*> <*> <*>
+131,debug: running /usr/lib/os-probes/mounted/20macosx on mounted /dev/vda15,48017415,debug: running <*> on mounted /dev/vda15
+132,debug: /dev/vda15 is not an HFS+ partition: exiting,fa789a48,debug: <*> <*> <*> <*> <*> <*> <*>
+133,debug: running /usr/lib/os-probes/mounted/20microsoft on mounted /dev/vda15,48017415,debug: running <*> on mounted /dev/vda15
+134,debug: /dev/vda15 is a FAT32 partition,cca3da23,debug: <*> <*> <*> <*> <*>
+135,debug: running /usr/lib/os-probes/mounted/30utility on mounted /dev/vda15,48017415,debug: running <*> on mounted /dev/vda15
+136,debug: /dev/vda15 is a FAT32 partition,cca3da23,debug: <*> <*> <*> <*> <*>
+137,debug: running /usr/lib/os-probes/mounted/40lsb on mounted /dev/vda15,48017415,debug: running <*> on mounted /dev/vda15
+138,debug: running /usr/lib/os-probes/mounted/70hurd on mounted /dev/vda15,48017415,debug: running <*> on mounted /dev/vda15
+139,debug: running /usr/lib/os-probes/mounted/80minix on mounted /dev/vda15,48017415,debug: running <*> on mounted /dev/vda15
+140,debug: running /usr/lib/os-probes/mounted/83haiku on mounted /dev/vda15,48017415,debug: running <*> on mounted /dev/vda15
+141,debug: /dev/vda15 is not a BeFS partition: exiting,fa789a48,debug: <*> <*> <*> <*> <*> <*> <*>
+142,debug: running /usr/lib/os-probes/mounted/90linux-distro on mounted /dev/vda15,48017415,debug: running <*> on mounted /dev/vda15
+143,debug: running /usr/lib/os-probes/mounted/90solaris on mounted /dev/vda15,48017415,debug: running <*> on mounted /dev/vda15
+17,Reloading.,c39f5440,Reloading.
+145,debug: running /usr/lib/os-probes/50mounted-tests on /dev/vda14,6ad038df,debug: running <*> <*> <*>
+146,debug: /dev/vda14 type not recognised; skipping,be2214fc,<*> <*> <*> <*> <*> <*>
+147,debug: os detected by /usr/lib/os-probes/50mounted-tests,fb195195,<*> <*> <*> <*> <*>
+148,debug: running /usr/lib/os-probes/mounted/05efi on mounted /dev/vda15,48017415,debug: running <*> on mounted /dev/vda15
+149,debug: Not on UEFI platform,fb195195,<*> <*> <*> <*> <*>
+150,debug: running /usr/lib/os-probes/mounted/10freedos on mounted /dev/vda15,48017415,debug: running <*> on mounted /dev/vda15
+151,debug: /dev/vda15 is a FAT32 partition,cca3da23,debug: <*> <*> <*> <*> <*>
+152,debug: running /usr/lib/os-probes/mounted/10qnx on mounted /dev/vda15,48017415,debug: running <*> on mounted /dev/vda15
+153,debug: /dev/vda15 is not a QNX4 partition: exiting,fa789a48,debug: <*> <*> <*> <*> <*> <*> <*>
+154,debug: running /usr/lib/os-probes/mounted/20macosx on mounted /dev/vda15,48017415,debug: running <*> on mounted /dev/vda15
+155,debug: /dev/vda15 is not an HFS+ partition: exiting,fa789a48,debug: <*> <*> <*> <*> <*> <*> <*>
+156,debug: running /usr/lib/os-probes/mounted/20microsoft on mounted /dev/vda15,48017415,debug: running <*> on mounted /dev/vda15
+157,debug: /dev/vda15 is a FAT32 partition,cca3da23,debug: <*> <*> <*> <*> <*>
+158,debug: running /usr/lib/os-probes/mounted/30utility on mounted /dev/vda15,48017415,debug: running <*> on mounted /dev/vda15
+159,debug: /dev/vda15 is a FAT32 partition,cca3da23,debug: <*> <*> <*> <*> <*>
+160,debug: running /usr/lib/os-probes/mounted/40lsb on mounted /dev/vda15,48017415,debug: running <*> on mounted /dev/vda15
+161,debug: running /usr/lib/os-probes/mounted/70hurd on mounted /dev/vda15,48017415,debug: running <*> on mounted /dev/vda15
+162,debug: running /usr/lib/os-probes/mounted/80minix on mounted /dev/vda15,48017415,debug: running <*> on mounted /dev/vda15
+163,debug: running /usr/lib/os-probes/mounted/83haiku on mounted /dev/vda15,48017415,debug: running <*> on mounted /dev/vda15
+164,debug: /dev/vda15 is not a BeFS partition: exiting,fa789a48,debug: <*> <*> <*> <*> <*> <*> <*>
+165,debug: running /usr/lib/os-probes/mounted/90linux-distro on mounted /dev/vda15,48017415,debug: running <*> on mounted /dev/vda15
+166,debug: running /usr/lib/os-probes/mounted/90solaris on mounted /dev/vda15,48017415,debug: running <*> on mounted /dev/vda15
+167,Started Daily apt upgrade and clean activities.,40039889,Started Daily apt upgrade <*> <*> activities.
+168,(root) CMD (   test -x /etc/cron.daily/popularity-contest && /etc/cron.daily/popularity-contest --crond),73d54915,(root) CMD ( <*> <*> <*> <*> <*> <*>
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+170,"[84946.263483] IPv4: martian source 142.251.39.3 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+171,[84946.263498] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+172,Starting Cleanup of Temporary Directories...,fb195195,<*> <*> <*> <*> <*>
+173,Started Cleanup of Temporary Directories.,fb195195,<*> <*> <*> <*> <*>
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+175,"[91362.162336] IPv4: martian source 99.86.237.99 from 10.9.0.10, on dev ens6",4c863842,<*> IPv4: martian source <*> from 10.9.0.10 on dev ens6
+176,[91362.162449] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+177,"[91362.162525] IPv4: martian source 99.86.237.99 from 10.9.0.10, on dev ens6",4c863842,<*> IPv4: martian source <*> from 10.9.0.10 on dev ens6
+178,[91362.162535] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+179,"[91362.162602] IPv4: martian source 99.86.237.99 from 10.9.0.10, on dev ens6",4c863842,<*> IPv4: martian source <*> from 10.9.0.10 on dev ens6
+180,[91362.162608] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+182,"[91531.471254] IPv4: martian source 81.3.192.89 from 10.9.0.18, on dev ens6",033f474c,<*> IPv4: martian source <*> from 10.9.0.18 on dev ens6
+183,[91531.471278] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+184,"[91531.471289] IPv4: martian source 81.3.192.89 from 10.9.0.18, on dev ens6",033f474c,<*> IPv4: martian source <*> from 10.9.0.18 on dev ens6
+185,[91531.471291] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+186,"[91705.284891] IPv4: martian source 151.101.193.44 from 10.9.0.18, on dev ens6",033f474c,<*> IPv4: martian source <*> from 10.9.0.18 on dev ens6
+187,[91705.285016] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+188,"[91705.285029] IPv4: martian source 151.101.193.44 from 10.9.0.18, on dev ens6",033f474c,<*> IPv4: martian source <*> from 10.9.0.18 on dev ens6
+189,[91705.285035] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+190,"[91866.562868] IPv4: martian source 13.32.12.43 from 10.9.0.18, on dev ens6",033f474c,<*> IPv4: martian source <*> from 10.9.0.18 on dev ens6
+191,[91866.563113] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+192,"[91866.563158] IPv4: martian source 13.32.12.43 from 10.9.0.18, on dev ens6",033f474c,<*> IPv4: martian source <*> from 10.9.0.18 on dev ens6
+193,[91866.563173] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+194,"[91898.814219] IPv4: martian source 15.188.95.229 from 10.9.0.18, on dev ens6",033f474c,<*> IPv4: martian source <*> from 10.9.0.18 on dev ens6
+195,[91898.814389] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+196,"[91898.814409] IPv4: martian source 15.188.95.229 from 10.9.0.18, on dev ens6",033f474c,<*> IPv4: martian source <*> from 10.9.0.18 on dev ens6
+197,[91898.814416] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+198,"[92293.297692] IPv4: martian source 96.16.152.79 from 10.9.0.18, on dev ens6",033f474c,<*> IPv4: martian source <*> from 10.9.0.18 on dev ens6
+199,[92293.297711] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+200,"[92293.297756] IPv4: martian source 96.16.152.79 from 10.9.0.18, on dev ens6",033f474c,<*> IPv4: martian source <*> from 10.9.0.18 on dev ens6
+201,[92293.297758] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+202,"[92345.291831] IPv4: martian source 151.101.129.44 from 10.9.0.18, on dev ens6",033f474c,<*> IPv4: martian source <*> from 10.9.0.18 on dev ens6
+203,[92345.292006] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+204,"[93032.724531] IPv4: martian source 178.249.97.99 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+205,[93032.724671] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+206,"[93032.724697] IPv4: martian source 178.249.97.99 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+207,[93032.724708] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+208,"[93033.033321] IPv4: martian source 178.249.97.98 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+209,[93033.033327] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+210,"[93461.169430] IPv4: martian source 142.251.39.3 from 10.9.0.14, on dev ens6",14c39e34,<*> IPv4: martian source <*> from 10.9.0.14 on dev ens6
+211,[93461.169589] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+212,"[93848.584000] IPv4: martian source 192.0.73.2 from 10.9.0.10, on dev ens6",4268e80d,<*> IPv4: martian source 192.0.73.2 from 10.9.0.10 on dev ens6
+213,[93848.584018] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+214,"[93848.584023] IPv4: martian source 192.0.73.2 from 10.9.0.10, on dev ens6",4268e80d,<*> IPv4: martian source 192.0.73.2 from 10.9.0.10 on dev ens6
+215,[93848.584024] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+216,"[93848.584026] IPv4: martian source 192.0.73.2 from 10.9.0.10, on dev ens6",4268e80d,<*> IPv4: martian source 192.0.73.2 from 10.9.0.10 on dev ens6
+217,[93848.584027] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+218,"[93848.584030] IPv4: martian source 192.0.73.2 from 10.9.0.10, on dev ens6",4268e80d,<*> IPv4: martian source 192.0.73.2 from 10.9.0.10 on dev ens6
+219,[93848.584031] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+220,"[93848.584033] IPv4: martian source 192.0.73.2 from 10.9.0.10, on dev ens6",4268e80d,<*> IPv4: martian source 192.0.73.2 from 10.9.0.10 on dev ens6
+221,[93848.584034] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+222,"[93848.584036] IPv4: martian source 192.0.73.2 from 10.9.0.10, on dev ens6",4268e80d,<*> IPv4: martian source 192.0.73.2 from 10.9.0.10 on dev ens6
+223,[93848.584037] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+224,"[93848.584074] IPv4: martian source 192.0.73.2 from 10.9.0.10, on dev ens6",4268e80d,<*> IPv4: martian source 192.0.73.2 from 10.9.0.10 on dev ens6
+225,[93848.584075] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+227,"[95334.009487] IPv4: martian source 192.0.73.2 from 10.9.0.10, on dev ens6",4268e80d,<*> IPv4: martian source 192.0.73.2 from 10.9.0.10 on dev ens6
+228,[95334.009567] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+229,"[95334.009953] IPv4: martian source 192.0.73.2 from 10.9.0.10, on dev ens6",4268e80d,<*> IPv4: martian source 192.0.73.2 from 10.9.0.10 on dev ens6
+230,[95334.009956] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+231,"[95334.009968] IPv4: martian source 192.0.73.2 from 10.9.0.10, on dev ens6",4268e80d,<*> IPv4: martian source 192.0.73.2 from 10.9.0.10 on dev ens6
+232,[95334.009970] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+235,"[102908.805163] IPv4: martian source 99.86.237.63 from 10.9.0.14, on dev ens6",14c39e34,<*> IPv4: martian source <*> from 10.9.0.14 on dev ens6
+236,[102908.805209] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+237,"[103030.653543] IPv4: martian source 209.51.188.233 from 10.9.0.10, on dev ens6",81d04995,<*> IPv4: martian source 209.51.188.233 from 10.9.0.10 on dev ens6
+238,[103030.653670] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+239,"[103030.654575] IPv4: martian source 209.51.188.233 from 10.9.0.10, on dev ens6",81d04995,<*> IPv4: martian source 209.51.188.233 from 10.9.0.10 on dev ens6
+240,[103030.654580] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+241,"[103030.654592] IPv4: martian source 209.51.188.233 from 10.9.0.10, on dev ens6",81d04995,<*> IPv4: martian source 209.51.188.233 from 10.9.0.10 on dev ens6
+242,[103030.654594] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+243,"[103030.655150] IPv4: martian source 209.51.188.233 from 10.9.0.10, on dev ens6",81d04995,<*> IPv4: martian source 209.51.188.233 from 10.9.0.10 on dev ens6
+244,[103030.655162] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+245,"[103030.655171] IPv4: martian source 209.51.188.233 from 10.9.0.10, on dev ens6",81d04995,<*> IPv4: martian source 209.51.188.233 from 10.9.0.10 on dev ens6
+246,[103030.655177] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+247,"[103030.655185] IPv4: martian source 209.51.188.233 from 10.9.0.10, on dev ens6",81d04995,<*> IPv4: martian source 209.51.188.233 from 10.9.0.10 on dev ens6
+248,[103030.655190] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+249,"[103030.655198] IPv4: martian source 209.51.188.233 from 10.9.0.10, on dev ens6",81d04995,<*> IPv4: martian source 209.51.188.233 from 10.9.0.10 on dev ens6
+250,[103030.655203] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+251,"[103030.655251] IPv4: martian source 209.51.188.233 from 10.9.0.10, on dev ens6",81d04995,<*> IPv4: martian source 209.51.188.233 from 10.9.0.10 on dev ens6
+252,[103030.655257] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+253,"[103030.655282] IPv4: martian source 209.51.188.233 from 10.9.0.10, on dev ens6",81d04995,<*> IPv4: martian source 209.51.188.233 from 10.9.0.10 on dev ens6
+254,[103030.655291] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+255,"[103030.655347] IPv4: martian source 209.51.188.233 from 10.9.0.10, on dev ens6",81d04995,<*> IPv4: martian source 209.51.188.233 from 10.9.0.10 on dev ens6
+256,[103030.655356] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+257,[103556.380414] net_ratelimit: 6 callbacks suppressed,fb195195,<*> <*> <*> <*> <*>
+258,"[103556.380435] IPv4: martian source 34.96.106.200 from 10.9.0.10, on dev ens6",4c863842,<*> IPv4: martian source <*> from 10.9.0.10 on dev ens6
+259,[103556.380458] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+260,"[103556.436458] IPv4: martian source 13.32.12.48 from 10.9.0.10, on dev ens6",4c863842,<*> IPv4: martian source <*> from 10.9.0.10 on dev ens6
+261,[103556.436495] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+262,"[103556.436510] IPv4: martian source 13.32.12.48 from 10.9.0.10, on dev ens6",4c863842,<*> IPv4: martian source <*> from 10.9.0.10 on dev ens6
+263,[103556.436514] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+264,"[103556.436520] IPv4: martian source 13.32.12.48 from 10.9.0.10, on dev ens6",4c863842,<*> IPv4: martian source <*> from 10.9.0.10 on dev ens6
+265,[103556.436524] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+266,"[103556.817174] IPv4: martian source 34.102.176.152 from 10.9.0.10, on dev ens6",4c863842,<*> IPv4: martian source <*> from 10.9.0.10 on dev ens6
+267,[103556.817178] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+268,"[104019.500394] IPv4: martian source 151.101.193.111 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+269,[104019.500548] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+270,"[104019.500564] IPv4: martian source 151.101.193.111 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+271,[104019.500571] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+272,"[104022.375129] IPv4: martian source 151.101.193.111 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+273,[104022.375220] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+274,"[104022.375232] IPv4: martian source 151.101.193.111 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+275,[104022.375236] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+276,"[104028.043078] IPv4: martian source 13.107.6.156 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+277,[104028.043102] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+278,"[104030.024926] IPv4: martian source 69.192.160.59 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+279,[104030.024931] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+280,"[104030.025422] IPv4: martian source 69.192.160.59 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+281,[104030.025427] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+282,"[104030.025433] IPv4: martian source 69.192.160.59 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+283,[104030.025435] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+284,"[104451.639709] IPv4: martian source 104.103.95.142 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+285,[104451.639812] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+286,"[104451.639827] IPv4: martian source 104.103.95.142 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+287,[104451.639832] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+288,"[104622.259264] IPv4: martian source 152.199.21.175 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+289,[104622.259291] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+290,"[104622.259306] IPv4: martian source 152.199.21.175 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+291,[104622.259308] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+292,"[104622.259358] IPv4: martian source 152.199.21.175 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+293,[104622.259360] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+294,"[105395.528548] IPv4: martian source 10.35.35.206 from 10.9.0.6, on dev ens6",faae5ddb,<*> IPv4: martian source 10.35.35.206 from 10.9.0.6 on dev ens6
+295,[105395.528667] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+296,"[105760.595271] IPv4: martian source 10.35.35.206 from 10.9.0.6, on dev ens6",faae5ddb,<*> IPv4: martian source 10.35.35.206 from 10.9.0.6 on dev ens6
+297,[105760.595392] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+299,"[106348.080030] IPv4: martian source 2.17.5.104 from 10.9.0.14, on dev ens6",14c39e34,<*> IPv4: martian source <*> from 10.9.0.14 on dev ens6
+300,[106348.080138] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+301,"[106348.080153] IPv4: martian source 2.17.5.104 from 10.9.0.14, on dev ens6",14c39e34,<*> IPv4: martian source <*> from 10.9.0.14 on dev ens6
+302,[106348.080171] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+303,"[107391.813435] IPv4: martian source 142.250.180.226 from 10.9.0.10, on dev ens6",4c863842,<*> IPv4: martian source <*> from 10.9.0.10 on dev ens6
+304,[107391.813516] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+305,"[107391.813542] IPv4: martian source 142.250.180.226 from 10.9.0.10, on dev ens6",4c863842,<*> IPv4: martian source <*> from 10.9.0.10 on dev ens6
+306,[107391.813546] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+10,Starting Daily apt download activities...,b37fee6f,Starting Daily apt download activities...
+11,Started Daily apt download activities.,43d542ce,Started Daily apt download activities.
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+312,"[117507.651605] IPv4: martian source 91.198.174.192 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+313,[117507.651684] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+315,"[120658.599671] IPv4: martian source 46.249.52.248 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+316,[120658.599813] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+317,"[120782.650486] IPv4: martian source 104.121.179.211 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+318,[120782.650577] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+319,"[120782.650650] IPv4: martian source 104.121.179.211 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+320,[120782.650655] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+321,"[120783.651849] IPv4: martian source 104.121.179.211 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+322,[120783.651872] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+323,"[120783.651879] IPv4: martian source 104.121.179.211 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+324,[120783.651883] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+48,"Network configuration changed, trying to establish connection.",cfa0a3dd,Network configuration changed trying to establish connection.
+82,ens7: Configured,7468a9a0,ens7: Configured
+110,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).,9203e833,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).
+48,"Network configuration changed, trying to establish connection.",cfa0a3dd,Network configuration changed trying to establish connection.
+83,ens6: Configured,d5ddf9bc,ens6: Configured
+110,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).,9203e833,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).
+48,"Network configuration changed, trying to establish connection.",cfa0a3dd,Network configuration changed trying to establish connection.
+84,ens3: Configured,f06dcd81,ens3: Configured
+110,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).,9203e833,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).
+335,"[126399.653340] IPv4: martian source 99.86.237.76 from 10.9.0.10, on dev ens6",4c863842,<*> IPv4: martian source <*> from 10.9.0.10 on dev ens6
+336,[126399.653406] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+337,"[126399.653710] IPv4: martian source 99.86.237.76 from 10.9.0.10, on dev ens6",4c863842,<*> IPv4: martian source <*> from 10.9.0.10 on dev ens6
+338,[126399.653716] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+3,Starting Message of the Day...,4ebfb0b4,Starting Message of the Day...
+4,Started Message of the Day.,345a768e,Started Message of the Day.
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+347,(root) CMD (if [ -x /usr/share/mdadm/checkarray ] && [ $(date +%d) -le 7 ]; then /usr/share/mdadm/checkarray --cron --all --idle --quiet; fi),1b38a9e0,(root) CMD <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*>
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+10,Starting Daily apt download activities...,b37fee6f,Starting Daily apt download activities...
+11,Started Daily apt download activities.,43d542ce,Started Daily apt download activities.
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+48,"Network configuration changed, trying to establish connection.",cfa0a3dd,Network configuration changed trying to establish connection.
+82,ens7: Configured,7468a9a0,ens7: Configured
+110,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).,9203e833,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).
+48,"Network configuration changed, trying to establish connection.",cfa0a3dd,Network configuration changed trying to establish connection.
+84,ens3: Configured,f06dcd81,ens3: Configured
+110,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).,9203e833,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).
+48,"Network configuration changed, trying to establish connection.",cfa0a3dd,Network configuration changed trying to establish connection.
+83,ens6: Configured,d5ddf9bc,ens6: Configured
+110,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).,9203e833,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+365,(root) CMD (test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.daily )),d56fe086,(root) CMD <*> <*> <*> <*> ( cd / && run-parts --report <*> <*>
+366,"[origin software=""rsyslogd"" swVersion=""8.32.0"" x-pid=""931"" x-info=""http://www.rsyslog.com""] rsyslogd was HUPed",de1af8bf,<*> <*> <*> <*> <*> <*> <*> <*>
+367,Starting Daily apt upgrade and clean activities...,3bbba500,Starting Daily apt upgrade <*> <*> activities...
+368,Started Daily apt upgrade and clean activities.,40039889,Started Daily apt upgrade <*> <*> activities.
+369,(root) CMD (test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.weekly )),d56fe086,(root) CMD <*> <*> <*> <*> ( cd / && run-parts --report <*> <*>
+370,(root) CMD (   test -x /etc/cron.daily/popularity-contest && /etc/cron.daily/popularity-contest --crond),73d54915,(root) CMD ( <*> <*> <*> <*> <*> <*>
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+372,Starting Cleanup of Temporary Directories...,fb195195,<*> <*> <*> <*> <*>
+3,Starting Message of the Day...,4ebfb0b4,Starting Message of the Day...
+374,Started Cleanup of Temporary Directories.,fb195195,<*> <*> <*> <*> <*>
+375,* Super-optimized for small spaces - read how we shrank the memory,73d6de92,<*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*>
+376,footprint of MicroK8s to make it the smallest full K8s around.,2f7082b2,<*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*>
+377,https://ubuntu.com/blog/microk8s-memory-optimisation,f402feb7,https://ubuntu.com/blog/microk8s-memory-optimisation
+4,Started Message of the Day.,345a768e,Started Message of the Day.
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+381,"[178532.441720] IPv4: martian source 13.32.2.77 from 10.9.0.10, on dev ens6",4c863842,<*> IPv4: martian source <*> from 10.9.0.10 on dev ens6
+382,[178532.441754] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+383,"[178817.473148] IPv4: martian source 13.32.2.77 from 10.9.0.10, on dev ens6",4c863842,<*> IPv4: martian source <*> from 10.9.0.10 on dev ens6
+384,[178817.473166] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+385,[179564.364199] inet-fw REJECT IN=ens3 OUT= MAC=fa:16:3e:1d:25:9e:fa:16:3e:a5:f6:15:08:00 SRC=96.46.183.20 DST=192.168.128.4 LEN=40 TOS=0x00 PREC=0x00 TTL=48 ID=58789 DF PROTO=TCP SPT=443 DPT=39194 WINDOW=0 RES=0x00 RST URGP=0,0353406a,<*> <*> <*> <*> <*> <*> <*> <*> <*> TOS=0x00 PREC=0x00 <*> <*> DF PROTO=TCP <*> <*> <*> <*> <*> <*>
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+387,"[181386.343565] IPv4: martian source 142.250.180.194 from 10.9.0.10, on dev ens6",4c863842,<*> IPv4: martian source <*> from 10.9.0.10 on dev ens6
+388,[181386.343584] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+389,"[184359.846937] IPv4: martian source 10.35.35.206 from 10.9.0.6, on dev ens6",faae5ddb,<*> IPv4: martian source 10.35.35.206 from 10.9.0.6 on dev ens6
+390,[184359.847006] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+392,"[185664.896294] IPv4: martian source 13.32.12.107 from 10.9.0.14, on dev ens6",14c39e34,<*> IPv4: martian source <*> from 10.9.0.14 on dev ens6
+393,[185664.896418] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+394,"[187419.130287] IPv4: martian source 94.245.192.43 from 10.9.0.14, on dev ens6",14c39e34,<*> IPv4: martian source <*> from 10.9.0.14 on dev ens6
+395,[187419.130305] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+396,"[187419.130337] IPv4: martian source 94.245.192.43 from 10.9.0.14, on dev ens6",14c39e34,<*> IPv4: martian source <*> from 10.9.0.14 on dev ens6
+397,[187419.130338] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+398,"[187420.603781] IPv4: martian source 13.32.10.46 from 10.9.0.14, on dev ens6",14c39e34,<*> IPv4: martian source <*> from 10.9.0.14 on dev ens6
+399,[187420.603786] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+401,"[188890.914821] IPv4: martian source 13.32.12.107 from 10.9.0.14, on dev ens6",14c39e34,<*> IPv4: martian source <*> from 10.9.0.14 on dev ens6
+402,[188890.914886] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+403,"[188890.914932] IPv4: martian source 13.32.12.107 from 10.9.0.14, on dev ens6",14c39e34,<*> IPv4: martian source <*> from 10.9.0.14 on dev ens6
+404,[188890.914937] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+405,"[190272.945742] IPv4: martian source 192.0.73.2 from 10.9.0.22, on dev ens6",1d555a22,<*> IPv4: martian source 192.0.73.2 from 10.9.0.22 on dev ens6
+406,[190272.945805] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+407,"[192111.554836] IPv4: martian source 10.35.35.206 from 10.9.0.6, on dev ens6",faae5ddb,<*> IPv4: martian source 10.35.35.206 from 10.9.0.6 on dev ens6
+408,[192111.555030] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+409,"[192111.555048] IPv4: martian source 10.35.35.206 from 10.9.0.6, on dev ens6",faae5ddb,<*> IPv4: martian source 10.35.35.206 from 10.9.0.6 on dev ens6
+410,[192111.555055] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+412,"[194984.224658] IPv4: martian source 192.0.73.2 from 10.9.0.10, on dev ens6",4268e80d,<*> IPv4: martian source 192.0.73.2 from 10.9.0.10 on dev ens6
+413,[194984.224821] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+414,"[194984.224842] IPv4: martian source 192.0.73.2 from 10.9.0.10, on dev ens6",4268e80d,<*> IPv4: martian source 192.0.73.2 from 10.9.0.10 on dev ens6
+415,[194984.224847] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+416,"[194984.224856] IPv4: martian source 192.0.73.2 from 10.9.0.10, on dev ens6",4268e80d,<*> IPv4: martian source 192.0.73.2 from 10.9.0.10 on dev ens6
+417,[194984.224861] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+418,"[194984.224870] IPv4: martian source 192.0.73.2 from 10.9.0.10, on dev ens6",4268e80d,<*> IPv4: martian source 192.0.73.2 from 10.9.0.10 on dev ens6
+419,[194984.224881] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+420,"[194984.224889] IPv4: martian source 192.0.73.2 from 10.9.0.10, on dev ens6",4268e80d,<*> IPv4: martian source 192.0.73.2 from 10.9.0.10 on dev ens6
+421,[194984.224894] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+422,"[194984.224910] IPv4: martian source 192.0.73.2 from 10.9.0.10, on dev ens6",4268e80d,<*> IPv4: martian source 192.0.73.2 from 10.9.0.10 on dev ens6
+423,[194984.224914] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+424,"[194984.224929] IPv4: martian source 192.0.73.2 from 10.9.0.10, on dev ens6",4268e80d,<*> IPv4: martian source 192.0.73.2 from 10.9.0.10 on dev ens6
+425,[194984.224934] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+426,"[194984.224942] IPv4: martian source 192.0.73.2 from 10.9.0.10, on dev ens6",4268e80d,<*> IPv4: martian source 192.0.73.2 from 10.9.0.10 on dev ens6
+427,[194984.224947] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+428,"[194984.224955] IPv4: martian source 192.0.73.2 from 10.9.0.10, on dev ens6",4268e80d,<*> IPv4: martian source 192.0.73.2 from 10.9.0.10 on dev ens6
+429,[194984.224959] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+10,Starting Daily apt download activities...,b37fee6f,Starting Daily apt download activities...
+11,Started Daily apt download activities.,43d542ce,Started Daily apt download activities.
+433,"[198033.135980] IPv4: martian source 23.36.163.228 from 10.9.0.10, on dev ens6",4c863842,<*> IPv4: martian source <*> from 10.9.0.10 on dev ens6
+434,[198033.136007] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+435,"[198033.136066] IPv4: martian source 23.36.163.228 from 10.9.0.10, on dev ens6",4c863842,<*> IPv4: martian source <*> from 10.9.0.10 on dev ens6
+436,[198033.136068] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+437,"[198033.136309] IPv4: martian source 23.36.163.228 from 10.9.0.10, on dev ens6",4c863842,<*> IPv4: martian source <*> from 10.9.0.10 on dev ens6
+438,[198033.136310] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+439,"[198387.960094] IPv4: martian source 31.13.84.4 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+440,[198387.960233] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+441,"[198387.960253] IPv4: martian source 31.13.84.4 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+442,[198387.960262] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+443,"[198555.990907] IPv4: martian source 104.244.42.200 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+444,[198555.991002] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+445,"[198555.991016] IPv4: martian source 104.244.42.200 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+446,[198555.991020] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+48,"Network configuration changed, trying to establish connection.",cfa0a3dd,Network configuration changed trying to establish connection.
+84,ens3: Configured,f06dcd81,ens3: Configured
+110,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).,9203e833,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).
+3,Starting Message of the Day...,4ebfb0b4,Starting Message of the Day...
+48,"Network configuration changed, trying to establish connection.",cfa0a3dd,Network configuration changed trying to establish connection.
+82,ens7: Configured,7468a9a0,ens7: Configured
+110,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).,9203e833,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).
+456,* Super-optimized for small spaces - read how we shrank the memory,73d6de92,<*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*>
+457,footprint of MicroK8s to make it the smallest full K8s around.,2f7082b2,<*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*>
+377,https://ubuntu.com/blog/microk8s-memory-optimisation,f402feb7,https://ubuntu.com/blog/microk8s-memory-optimisation
+4,Started Message of the Day.,345a768e,Started Message of the Day.
+48,"Network configuration changed, trying to establish connection.",cfa0a3dd,Network configuration changed trying to establish connection.
+83,ens6: Configured,d5ddf9bc,ens6: Configured
+110,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).,9203e833,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+464,"[207989.903875] IPv4: martian source 96.16.138.210 from 10.9.0.10, on dev ens6",4c863842,<*> IPv4: martian source <*> from 10.9.0.10 on dev ens6
+465,[207989.904040] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+466,"[207989.904114] IPv4: martian source 96.16.138.210 from 10.9.0.10, on dev ens6",4c863842,<*> IPv4: martian source <*> from 10.9.0.10 on dev ens6
+467,[207989.904121] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+10,Starting Daily apt download activities...,b37fee6f,Starting Daily apt download activities...
+11,Started Daily apt download activities.,43d542ce,Started Daily apt download activities.
+472,"[215502.755439] IPv4: martian source 142.250.180.238 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+473,[215502.755507] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+474,"[215679.175607] IPv4: martian source 31.13.84.4 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+475,[215679.175751] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+476,"[215679.175804] IPv4: martian source 31.13.84.4 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+477,[215679.175816] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+482,Starting Discard unused blocks...,0ce98313,<*> <*> <*> <*>
+483,Started Discard unused blocks.,0ce98313,<*> <*> <*> <*>
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+3,Starting Message of the Day...,4ebfb0b4,Starting Message of the Day...
+486,* Super-optimized for small spaces - read how we shrank the memory,73d6de92,<*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*>
+487,footprint of MicroK8s to make it the smallest full K8s around.,2f7082b2,<*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*>
+377,https://ubuntu.com/blog/microk8s-memory-optimisation,f402feb7,https://ubuntu.com/blog/microk8s-memory-optimisation
+4,Started Message of the Day.,345a768e,Started Message of the Day.
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+48,"Network configuration changed, trying to establish connection.",cfa0a3dd,Network configuration changed trying to establish connection.
+82,ens7: Configured,7468a9a0,ens7: Configured
+110,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).,9203e833,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).
+48,"Network configuration changed, trying to establish connection.",cfa0a3dd,Network configuration changed trying to establish connection.
+84,ens3: Configured,f06dcd81,ens3: Configured
+110,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).,9203e833,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+48,"Network configuration changed, trying to establish connection.",cfa0a3dd,Network configuration changed trying to establish connection.
+83,ens6: Configured,d5ddf9bc,ens6: Configured
+110,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).,9203e833,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+505,(root) CMD (test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.daily )),d56fe086,(root) CMD <*> <*> <*> <*> ( cd / && run-parts --report <*> <*>
+506,Starting Daily apt upgrade and clean activities...,3bbba500,Starting Daily apt upgrade <*> <*> activities...
+507,Started Daily apt upgrade and clean activities.,40039889,Started Daily apt upgrade <*> <*> activities.
+508,"[255760.956983] IPv4: martian source 192.229.220.206 from 10.9.0.10, on dev ens6",4c863842,<*> IPv4: martian source <*> from 10.9.0.10 on dev ens6
+509,[255760.957108] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+510,"[255760.957269] IPv4: martian source 192.229.220.206 from 10.9.0.10, on dev ens6",4c863842,<*> IPv4: martian source <*> from 10.9.0.10 on dev ens6
+511,[255760.957292] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+512,"[255760.957330] IPv4: martian source 192.229.220.206 from 10.9.0.10, on dev ens6",4c863842,<*> IPv4: martian source <*> from 10.9.0.10 on dev ens6
+513,[255760.957341] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+514,"[255760.957365] IPv4: martian source 192.229.220.206 from 10.9.0.10, on dev ens6",4c863842,<*> IPv4: martian source <*> from 10.9.0.10 on dev ens6
+515,[255760.957366] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+516,"[255760.957643] IPv4: martian source 192.229.220.206 from 10.9.0.10, on dev ens6",4c863842,<*> IPv4: martian source <*> from 10.9.0.10 on dev ens6
+517,[255760.957653] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+518,"[255760.958335] IPv4: martian source 192.229.220.206 from 10.9.0.10, on dev ens6",4c863842,<*> IPv4: martian source <*> from 10.9.0.10 on dev ens6
+519,[255760.958358] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+520,(root) CMD (   test -x /etc/cron.daily/popularity-contest && /etc/cron.daily/popularity-contest --crond),73d54915,(root) CMD ( <*> <*> <*> <*> <*> <*>
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+522,"[257083.684092] IPv4: martian source 104.18.8.146 from 10.9.0.14, on dev ens6",14c39e34,<*> IPv4: martian source <*> from 10.9.0.14 on dev ens6
+523,[257083.684234] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+524,"[260182.862505] IPv4: martian source 10.35.35.206 from 10.9.0.14, on dev ens6",05c588d1,<*> IPv4: martian source 10.35.35.206 from 10.9.0.14 on dev ens6
+525,[260182.862664] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+526,"[260182.862684] IPv4: martian source 10.35.35.206 from 10.9.0.14, on dev ens6",05c588d1,<*> IPv4: martian source 10.35.35.206 from 10.9.0.14 on dev ens6
+527,[260182.862691] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+528,Starting Cleanup of Temporary Directories...,fb195195,<*> <*> <*> <*> <*>
+529,Started Cleanup of Temporary Directories.,fb195195,<*> <*> <*> <*> <*>
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+531,"[262986.396140] IPv4: martian source 54.173.95.250 from 10.9.0.10, on dev ens6",4c863842,<*> IPv4: martian source <*> from 10.9.0.10 on dev ens6
+532,[262986.396245] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+533,"[262986.396261] IPv4: martian source 54.173.95.250 from 10.9.0.10, on dev ens6",4c863842,<*> IPv4: martian source <*> from 10.9.0.10 on dev ens6
+534,[262986.396266] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+535,"[263771.492163] IPv4: martian source 162.247.242.19 from 10.9.0.10, on dev ens6",4c863842,<*> IPv4: martian source <*> from 10.9.0.10 on dev ens6
+536,[263771.492308] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+538,"[265222.790683] IPv4: martian source 192.0.73.2 from 10.9.0.10, on dev ens6",4268e80d,<*> IPv4: martian source 192.0.73.2 from 10.9.0.10 on dev ens6
+539,[265222.790798] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+540,"[265222.790814] IPv4: martian source 192.0.73.2 from 10.9.0.10, on dev ens6",4268e80d,<*> IPv4: martian source 192.0.73.2 from 10.9.0.10 on dev ens6
+541,[265222.790824] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+542,"[265222.790854] IPv4: martian source 192.0.73.2 from 10.9.0.10, on dev ens6",4268e80d,<*> IPv4: martian source 192.0.73.2 from 10.9.0.10 on dev ens6
+543,[265222.790866] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+544,"[265222.791084] IPv4: martian source 192.0.73.2 from 10.9.0.10, on dev ens6",4268e80d,<*> IPv4: martian source 192.0.73.2 from 10.9.0.10 on dev ens6
+545,[265222.791092] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+546,"[265222.791137] IPv4: martian source 192.0.73.2 from 10.9.0.10, on dev ens6",4268e80d,<*> IPv4: martian source 192.0.73.2 from 10.9.0.10 on dev ens6
+547,[265222.791148] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+548,"[265222.791185] IPv4: martian source 192.0.73.2 from 10.9.0.10, on dev ens6",4268e80d,<*> IPv4: martian source 192.0.73.2 from 10.9.0.10 on dev ens6
+549,[265222.791193] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+550,"[265222.791205] IPv4: martian source 192.0.73.2 from 10.9.0.10, on dev ens6",4268e80d,<*> IPv4: martian source 192.0.73.2 from 10.9.0.10 on dev ens6
+551,[265222.791211] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+552,"[265222.791389] IPv4: martian source 192.0.73.2 from 10.9.0.10, on dev ens6",4268e80d,<*> IPv4: martian source 192.0.73.2 from 10.9.0.10 on dev ens6
+553,[265222.791405] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+554,"[265222.791417] IPv4: martian source 192.0.73.2 from 10.9.0.10, on dev ens6",4268e80d,<*> IPv4: martian source 192.0.73.2 from 10.9.0.10 on dev ens6
+555,[265222.791423] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+556,"[265222.791436] IPv4: martian source 192.0.73.2 from 10.9.0.10, on dev ens6",4268e80d,<*> IPv4: martian source 192.0.73.2 from 10.9.0.10 on dev ens6
+557,[265222.791442] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+561,"[278356.143110] IPv4: martian source 54.171.230.55 from 10.9.0.10, on dev ens6",4c863842,<*> IPv4: martian source <*> from 10.9.0.10 on dev ens6
+562,[278356.143238] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+48,"Network configuration changed, trying to establish connection.",cfa0a3dd,Network configuration changed trying to establish connection.
+82,ens7: Configured,7468a9a0,ens7: Configured
+110,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).,9203e833,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+48,"Network configuration changed, trying to establish connection.",cfa0a3dd,Network configuration changed trying to establish connection.
+84,ens3: Configured,f06dcd81,ens3: Configured
+110,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).,9203e833,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).
+571,"[284691.400543] IPv4: martian source 142.251.39.14 from 10.9.0.22, on dev ens6",bb2e84d9,<*> IPv4: martian source <*> from 10.9.0.22 on dev ens6
+572,[284691.400698] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+573,"[284982.100285] IPv4: martian source 92.123.26.211 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+574,[284982.100305] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+575,"[284982.100321] IPv4: martian source 92.123.26.211 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+576,[284982.100323] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+577,"[284985.472052] IPv4: martian source 31.13.84.36 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+578,[284985.472058] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+579,"[284985.472067] IPv4: martian source 31.13.84.36 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+580,[284985.472068] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+581,"[284985.472154] IPv4: martian source 31.13.84.36 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+582,[284985.472156] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+583,"[284985.472187] IPv4: martian source 31.13.84.36 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+584,[284985.472189] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+585,"[285056.164473] IPv4: martian source 13.32.11.77 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+586,[285056.164512] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+587,"[285056.164522] IPv4: martian source 13.32.11.77 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+588,[285056.164524] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+589,"[285061.872444] IPv4: martian source 142.251.39.3 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+590,[285061.872577] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+592,"[286502.346432] IPv4: martian source 104.17.6.210 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+593,[286502.346473] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+48,"Network configuration changed, trying to establish connection.",cfa0a3dd,Network configuration changed trying to establish connection.
+83,ens6: Configured,d5ddf9bc,ens6: Configured
+110,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).,9203e833,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).
+597,"[288691.133914] IPv4: martian source 10.35.35.206 from 10.9.0.22, on dev ens6",c8515775,<*> IPv4: martian source 10.35.35.206 from 10.9.0.22 on dev ens6
+598,[288691.134001] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+599,"[288691.134019] IPv4: martian source 10.35.35.206 from 10.9.0.22, on dev ens6",c8515775,<*> IPv4: martian source 10.35.35.206 from 10.9.0.22 on dev ens6
+600,[288691.134024] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+3,Starting Message of the Day...,4ebfb0b4,Starting Message of the Day...
+603,* Super-optimized for small spaces - read how we shrank the memory,73d6de92,<*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*>
+604,footprint of MicroK8s to make it the smallest full K8s around.,2f7082b2,<*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*>
+377,https://ubuntu.com/blog/microk8s-memory-optimisation,f402feb7,https://ubuntu.com/blog/microk8s-memory-optimisation
+4,Started Message of the Day.,345a768e,Started Message of the Day.
+10,Starting Daily apt download activities...,b37fee6f,Starting Daily apt download activities...
+11,Started Daily apt download activities.,43d542ce,Started Daily apt download activities.
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+611,"[298098.569379] IPv4: martian source 104.103.90.10 from 10.9.0.22, on dev ens6",bb2e84d9,<*> IPv4: martian source <*> from 10.9.0.22 on dev ens6
+612,[298098.569538] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+613,"[298098.569576] IPv4: martian source 104.103.90.10 from 10.9.0.22, on dev ens6",bb2e84d9,<*> IPv4: martian source <*> from 10.9.0.22 on dev ens6
+614,[298098.569589] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+615,"[298442.857044] IPv4: martian source 13.236.114.21 from 10.9.0.10, on dev ens6",4c863842,<*> IPv4: martian source <*> from 10.9.0.10 on dev ens6
+616,[298442.857143] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+617,"[298442.857156] IPv4: martian source 13.236.114.21 from 10.9.0.10, on dev ens6",4c863842,<*> IPv4: martian source <*> from 10.9.0.10 on dev ens6
+618,[298442.857160] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+619,"[299147.011178] IPv4: martian source 142.251.39.3 from 10.9.0.14, on dev ens6",14c39e34,<*> IPv4: martian source <*> from 10.9.0.14 on dev ens6
+620,[299147.011334] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+621,"[299715.782098] IPv4: martian source 142.251.39.3 from 10.9.0.14, on dev ens6",14c39e34,<*> IPv4: martian source <*> from 10.9.0.14 on dev ens6
+622,[299715.782204] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+623,"[299891.555556] IPv4: martian source 10.35.35.206 from 10.9.0.14, on dev ens6",05c588d1,<*> IPv4: martian source 10.35.35.206 from 10.9.0.14 on dev ens6
+624,[299891.555659] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+626,"[300345.942683] IPv4: martian source 10.35.35.206 from 10.9.0.14, on dev ens6",05c588d1,<*> IPv4: martian source 10.35.35.206 from 10.9.0.14 on dev ens6
+627,[300345.942839] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+628,"[300345.942864] IPv4: martian source 10.35.35.206 from 10.9.0.14, on dev ens6",05c588d1,<*> IPv4: martian source 10.35.35.206 from 10.9.0.14 on dev ens6
+629,[300345.942870] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+630,"[300345.943039] IPv4: martian source 10.35.35.206 from 10.9.0.14, on dev ens6",05c588d1,<*> IPv4: martian source 10.35.35.206 from 10.9.0.14 on dev ens6
+631,[300345.943041] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+633,"[304091.061506] IPv4: martian source 23.213.169.94 from 10.9.0.14, on dev ens6",14c39e34,<*> IPv4: martian source <*> from 10.9.0.14 on dev ens6
+634,[304091.061647] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+635,"[304091.061669] IPv4: martian source 23.213.169.94 from 10.9.0.14, on dev ens6",14c39e34,<*> IPv4: martian source <*> from 10.9.0.14 on dev ens6
+636,[304091.061676] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+637,"[304466.287580] IPv4: martian source 188.65.124.91 from 10.9.0.14, on dev ens6",14c39e34,<*> IPv4: martian source <*> from 10.9.0.14 on dev ens6
+638,[304466.287739] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+48,"Network configuration changed, trying to establish connection.",cfa0a3dd,Network configuration changed trying to establish connection.
+82,ens7: Configured,7468a9a0,ens7: Configured
+110,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).,9203e833,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+48,"Network configuration changed, trying to establish connection.",cfa0a3dd,Network configuration changed trying to establish connection.
+84,ens3: Configured,f06dcd81,ens3: Configured
+110,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).,9203e833,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+48,"Network configuration changed, trying to establish connection.",cfa0a3dd,Network configuration changed trying to establish connection.
+83,ens6: Configured,d5ddf9bc,ens6: Configured
+110,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).,9203e833,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+10,Starting Daily apt download activities...,b37fee6f,Starting Daily apt download activities...
+11,Started Daily apt download activities.,43d542ce,Started Daily apt download activities.
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+3,Starting Message of the Day...,4ebfb0b4,Starting Message of the Day...
+660,* Super-optimized for small spaces - read how we shrank the memory,73d6de92,<*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*>
+661,footprint of MicroK8s to make it the smallest full K8s around.,2f7082b2,<*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*>
+377,https://ubuntu.com/blog/microk8s-memory-optimisation,f402feb7,https://ubuntu.com/blog/microk8s-memory-optimisation
+4,Started Message of the Day.,345a768e,Started Message of the Day.
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+665,(root) CMD (test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.daily )),d56fe086,(root) CMD <*> <*> <*> <*> ( cd / && run-parts --report <*> <*>
+666,Starting Daily apt upgrade and clean activities...,3bbba500,Starting Daily apt upgrade <*> <*> activities...
+667,Started Daily apt upgrade and clean activities.,40039889,Started Daily apt upgrade <*> <*> activities.
+668,(root) CMD (   test -x /etc/cron.daily/popularity-contest && /etc/cron.daily/popularity-contest --crond),73d54915,(root) CMD ( <*> <*> <*> <*> <*> <*>
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+670,"[345101.947940] IPv4: martian source 142.251.39.3 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+671,[345101.947981] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+672,"[346081.939986] IPv4: martian source 142.251.39.3 from 10.9.0.10, on dev ens6",4c863842,<*> IPv4: martian source <*> from 10.9.0.10 on dev ens6
+673,[346081.940043] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+674,"[346208.134088] IPv4: martian source 99.86.247.36 from 10.9.0.10, on dev ens6",4c863842,<*> IPv4: martian source <*> from 10.9.0.10 on dev ens6
+675,[346208.134176] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+676,"[346208.134243] IPv4: martian source 99.86.247.36 from 10.9.0.10, on dev ens6",4c863842,<*> IPv4: martian source <*> from 10.9.0.10 on dev ens6
+677,[346208.134249] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+678,Starting Cleanup of Temporary Directories...,fb195195,<*> <*> <*> <*> <*>
+679,Started Cleanup of Temporary Directories.,fb195195,<*> <*> <*> <*> <*>
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+681,"[350382.598252] IPv4: martian source 151.101.2.217 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+682,[350382.598280] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+683,"[350385.238246] IPv4: martian source 92.123.17.93 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+684,[350385.238293] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+686,"[350618.859708] IPv4: martian source 68.232.35.38 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+687,[350618.859846] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+688,"[350618.859913] IPv4: martian source 68.232.35.38 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+689,[350618.859920] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+690,"[350824.721252] IPv4: martian source 185.180.12.15 from 10.9.0.18, on dev ens6",033f474c,<*> IPv4: martian source <*> from 10.9.0.18 on dev ens6
+691,[350824.721342] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+692,"[350824.721389] IPv4: martian source 185.180.12.15 from 10.9.0.18, on dev ens6",033f474c,<*> IPv4: martian source <*> from 10.9.0.18 on dev ens6
+693,[350824.721396] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+694,"[351215.295995] IPv4: martian source 192.0.73.2 from 10.9.0.10, on dev ens6",4268e80d,<*> IPv4: martian source 192.0.73.2 from 10.9.0.10 on dev ens6
+695,[351215.296100] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+696,"[351215.296162] IPv4: martian source 192.0.73.2 from 10.9.0.10, on dev ens6",4268e80d,<*> IPv4: martian source 192.0.73.2 from 10.9.0.10 on dev ens6
+697,[351215.296167] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+698,"[351215.296174] IPv4: martian source 192.0.73.2 from 10.9.0.10, on dev ens6",4268e80d,<*> IPv4: martian source 192.0.73.2 from 10.9.0.10 on dev ens6
+699,[351215.296178] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+700,"[351215.296735] IPv4: martian source 192.0.73.2 from 10.9.0.10, on dev ens6",4268e80d,<*> IPv4: martian source 192.0.73.2 from 10.9.0.10 on dev ens6
+701,[351215.296737] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+702,"[351215.301276] IPv4: martian source 192.0.73.2 from 10.9.0.10, on dev ens6",4268e80d,<*> IPv4: martian source 192.0.73.2 from 10.9.0.10 on dev ens6
+703,[351215.301279] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+704,"[351215.301295] IPv4: martian source 192.0.73.2 from 10.9.0.10, on dev ens6",4268e80d,<*> IPv4: martian source 192.0.73.2 from 10.9.0.10 on dev ens6
+705,[351215.301297] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+706,"[351215.301323] IPv4: martian source 192.0.73.2 from 10.9.0.10, on dev ens6",4268e80d,<*> IPv4: martian source 192.0.73.2 from 10.9.0.10 on dev ens6
+707,[351215.301324] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+708,"[351215.301370] IPv4: martian source 192.0.73.2 from 10.9.0.10, on dev ens6",4268e80d,<*> IPv4: martian source 192.0.73.2 from 10.9.0.10 on dev ens6
+709,[351215.301371] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+710,"[351427.353802] IPv4: martian source 142.251.39.3 from 10.9.0.18, on dev ens6",033f474c,<*> IPv4: martian source <*> from 10.9.0.18 on dev ens6
+711,[351427.353911] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+712,"[352674.514472] IPv4: martian source 142.250.180.238 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+713,[352674.514620] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+714,"[352796.896573] IPv4: martian source 99.80.253.169 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+715,[352796.896699] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+716,"[352796.896719] IPv4: martian source 99.80.253.169 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+717,[352796.896723] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+718,"[352901.524489] IPv4: martian source 87.250.251.119 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+719,[352901.524653] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+721,"[354249.049812] IPv4: martian source 142.251.39.3 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+722,[354249.049899] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+723,"[354550.188468] IPv4: martian source 67.217.80.55 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+724,[354550.188573] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+725,"[354550.188586] IPv4: martian source 67.217.80.55 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+726,[354550.188590] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+728,"[357803.101221] IPv4: martian source 192.0.73.2 from 10.9.0.18, on dev ens6",20344b32,<*> IPv4: martian source 192.0.73.2 from 10.9.0.18 on dev ens6
+729,[357803.101255] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+730,"[357803.101267] IPv4: martian source 192.0.73.2 from 10.9.0.18, on dev ens6",20344b32,<*> IPv4: martian source 192.0.73.2 from 10.9.0.18 on dev ens6
+731,[357803.101269] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+732,"[357803.101276] IPv4: martian source 192.0.73.2 from 10.9.0.18, on dev ens6",20344b32,<*> IPv4: martian source 192.0.73.2 from 10.9.0.18 on dev ens6
+733,[357803.101277] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+734,"[357803.101291] IPv4: martian source 192.0.73.2 from 10.9.0.18, on dev ens6",20344b32,<*> IPv4: martian source 192.0.73.2 from 10.9.0.18 on dev ens6
+735,[357803.101293] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+736,"[357803.101300] IPv4: martian source 192.0.73.2 from 10.9.0.18, on dev ens6",20344b32,<*> IPv4: martian source 192.0.73.2 from 10.9.0.18 on dev ens6
+737,[357803.101302] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+738,"[357803.101344] IPv4: martian source 192.0.73.2 from 10.9.0.18, on dev ens6",20344b32,<*> IPv4: martian source 192.0.73.2 from 10.9.0.18 on dev ens6
+739,[357803.101346] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+740,"[358416.139248] IPv4: martian source 192.0.73.2 from 10.9.0.22, on dev ens6",1d555a22,<*> IPv4: martian source 192.0.73.2 from 10.9.0.22 on dev ens6
+741,[358416.139264] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+742,"[358416.139271] IPv4: martian source 192.0.73.2 from 10.9.0.22, on dev ens6",1d555a22,<*> IPv4: martian source 192.0.73.2 from 10.9.0.22 on dev ens6
+743,[358416.139272] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+48,"Network configuration changed, trying to establish connection.",cfa0a3dd,Network configuration changed trying to establish connection.
+82,ens7: Configured,7468a9a0,ens7: Configured
+110,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).,9203e833,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).
+747,[360311.180573] dmz-fw REJECT IN=ens6 OUT= MAC=fa:16:3e:c3:c5:bf:fa:16:3e:f8:65:07:08:00 SRC=172.17.130.196 DST=172.17.128.1 LEN=60 TOS=0x00 PREC=0x00 TTL=63 ID=49363 DF PROTO=TCP SPT=35526 DPT=80 WINDOW=64240 RES=0x00 SYN URGP=0,9f44a0a8,<*> <*> <*> IN=ens6 OUT= MAC=fa:16:3e:c3:c5:bf:fa:16:3e:f8:65:07:08:00 SRC=172.17.130.196 DST=172.17.128.1 LEN=60 TOS=0x00 PREC=0x00 <*> <*> DF PROTO=TCP <*> <*> <*> RES=0x00 SYN URGP=0
+748,[360311.180644] dmz-fw REJECT IN=ens6 OUT= MAC=fa:16:3e:c3:c5:bf:fa:16:3e:f8:65:07:08:00 SRC=172.17.130.196 DST=172.17.128.1 LEN=60 TOS=0x00 PREC=0x00 TTL=63 ID=61195 DF PROTO=TCP SPT=37810 DPT=443 WINDOW=64240 RES=0x00 SYN URGP=0,9f44a0a8,<*> <*> <*> IN=ens6 OUT= MAC=fa:16:3e:c3:c5:bf:fa:16:3e:f8:65:07:08:00 SRC=172.17.130.196 DST=172.17.128.1 LEN=60 TOS=0x00 PREC=0x00 <*> <*> DF PROTO=TCP <*> <*> <*> RES=0x00 SYN URGP=0
+749,[360311.185107] dmz-fw REJECT IN=ens6 OUT= MAC=fa:16:3e:c3:c5:bf:fa:16:3e:f8:65:07:08:00 SRC=172.17.130.196 DST=172.17.128.1 LEN=60 TOS=0x00 PREC=0x00 TTL=63 ID=35270 DF PROTO=TCP SPT=48246 DPT=995 WINDOW=64240 RES=0x00 SYN URGP=0,9f44a0a8,<*> <*> <*> IN=ens6 OUT= MAC=fa:16:3e:c3:c5:bf:fa:16:3e:f8:65:07:08:00 SRC=172.17.130.196 DST=172.17.128.1 LEN=60 TOS=0x00 PREC=0x00 <*> <*> DF PROTO=TCP <*> <*> <*> RES=0x00 SYN URGP=0
+750,[360311.185187] dmz-fw REJECT IN=ens6 OUT= MAC=fa:16:3e:c3:c5:bf:fa:16:3e:f8:65:07:08:00 SRC=172.17.130.196 DST=172.17.128.1 LEN=60 TOS=0x00 PREC=0x00 TTL=63 ID=25889 DF PROTO=TCP SPT=36158 DPT=8080 WINDOW=64240 RES=0x00 SYN URGP=0,9f44a0a8,<*> <*> <*> IN=ens6 OUT= MAC=fa:16:3e:c3:c5:bf:fa:16:3e:f8:65:07:08:00 SRC=172.17.130.196 DST=172.17.128.1 LEN=60 TOS=0x00 PREC=0x00 <*> <*> DF PROTO=TCP <*> <*> <*> RES=0x00 SYN URGP=0
+751,[360311.185231] dmz-fw REJECT IN=ens6 OUT= MAC=fa:16:3e:c3:c5:bf:fa:16:3e:f8:65:07:08:00 SRC=172.17.130.196 DST=172.17.128.1 LEN=60 TOS=0x00 PREC=0x00 TTL=63 ID=54853 DF PROTO=TCP SPT=37816 DPT=443 WINDOW=64240 RES=0x00 SYN URGP=0,9f44a0a8,<*> <*> <*> IN=ens6 OUT= MAC=fa:16:3e:c3:c5:bf:fa:16:3e:f8:65:07:08:00 SRC=172.17.130.196 DST=172.17.128.1 LEN=60 TOS=0x00 PREC=0x00 <*> <*> DF PROTO=TCP <*> <*> <*> RES=0x00 SYN URGP=0
+752,[360311.185280] dmz-fw REJECT IN=ens6 OUT= MAC=fa:16:3e:c3:c5:bf:fa:16:3e:f8:65:07:08:00 SRC=172.17.130.196 DST=172.17.128.1 LEN=60 TOS=0x00 PREC=0x00 TTL=63 ID=30760 DF PROTO=TCP SPT=35206 DPT=23 WINDOW=64240 RES=0x00 SYN URGP=0,9f44a0a8,<*> <*> <*> IN=ens6 OUT= MAC=fa:16:3e:c3:c5:bf:fa:16:3e:f8:65:07:08:00 SRC=172.17.130.196 DST=172.17.128.1 LEN=60 TOS=0x00 PREC=0x00 <*> <*> DF PROTO=TCP <*> <*> <*> RES=0x00 SYN URGP=0
+753,[360311.185320] dmz-fw REJECT IN=ens6 OUT= MAC=fa:16:3e:c3:c5:bf:fa:16:3e:f8:65:07:08:00 SRC=172.17.130.196 DST=172.17.128.1 LEN=60 TOS=0x00 PREC=0x00 TTL=63 ID=34174 DF PROTO=TCP SPT=48916 DPT=8888 WINDOW=64240 RES=0x00 SYN URGP=0,9f44a0a8,<*> <*> <*> IN=ens6 OUT= MAC=fa:16:3e:c3:c5:bf:fa:16:3e:f8:65:07:08:00 SRC=172.17.130.196 DST=172.17.128.1 LEN=60 TOS=0x00 PREC=0x00 <*> <*> DF PROTO=TCP <*> <*> <*> RES=0x00 SYN URGP=0
+754,[360311.185398] dmz-fw REJECT IN=ens6 OUT= MAC=fa:16:3e:c3:c5:bf:fa:16:3e:f8:65:07:08:00 SRC=172.17.130.196 DST=172.17.128.1 LEN=60 TOS=0x00 PREC=0x00 TTL=63 ID=51387 DF PROTO=TCP SPT=33226 DPT=5900 WINDOW=64240 RES=0x00 SYN URGP=0,9f44a0a8,<*> <*> <*> IN=ens6 OUT= MAC=fa:16:3e:c3:c5:bf:fa:16:3e:f8:65:07:08:00 SRC=172.17.130.196 DST=172.17.128.1 LEN=60 TOS=0x00 PREC=0x00 <*> <*> DF PROTO=TCP <*> <*> <*> RES=0x00 SYN URGP=0
+755,[360311.185444] dmz-fw REJECT IN=ens6 OUT= MAC=fa:16:3e:c3:c5:bf:fa:16:3e:f8:65:07:08:00 SRC=172.17.130.196 DST=172.17.128.1 LEN=60 TOS=0x00 PREC=0x00 TTL=63 ID=44088 DF PROTO=TCP SPT=34780 DPT=554 WINDOW=64240 RES=0x00 SYN URGP=0,9f44a0a8,<*> <*> <*> IN=ens6 OUT= MAC=fa:16:3e:c3:c5:bf:fa:16:3e:f8:65:07:08:00 SRC=172.17.130.196 DST=172.17.128.1 LEN=60 TOS=0x00 PREC=0x00 <*> <*> DF PROTO=TCP <*> <*> <*> RES=0x00 SYN URGP=0
+756,[360311.185515] dmz-fw REJECT IN=ens6 OUT= MAC=fa:16:3e:c3:c5:bf:fa:16:3e:f8:65:07:08:00 SRC=172.17.130.196 DST=172.17.128.1 LEN=60 TOS=0x00 PREC=0x00 TTL=63 ID=8457 DF PROTO=TCP SPT=41732 DPT=110 WINDOW=64240 RES=0x00 SYN URGP=0,9f44a0a8,<*> <*> <*> IN=ens6 OUT= MAC=fa:16:3e:c3:c5:bf:fa:16:3e:f8:65:07:08:00 SRC=172.17.130.196 DST=172.17.128.1 LEN=60 TOS=0x00 PREC=0x00 <*> <*> DF PROTO=TCP <*> <*> <*> RES=0x00 SYN URGP=0
+757,[360311.239243] nf_conntrack: default automatic helper assignment has been turned off for security reasons and CT-based  firewall rule not found. Use the iptables CT target to attach helpers instead.,1a7b6c65,<*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*>
+758,[360322.444640] dmz-fw REJECT IN=ens6 OUT= MAC=fa:16:3e:c3:c5:bf:fa:16:3e:f8:65:07:08:00 SRC=172.17.130.196 DST=10.35.32.1 LEN=60 TOS=0x00 PREC=0x00 TTL=63 ID=26629 DF PROTO=TCP SPT=57424 DPT=80 WINDOW=64240 RES=0x00 SYN URGP=0,7b227947,<*> <*> <*> IN=ens6 OUT= <*> <*> <*> LEN=60 TOS=0x00 PREC=0x00 <*> <*> DF PROTO=TCP <*> <*> <*> RES=0x00 SYN URGP=0
+759,[360325.310188] neighbour: arp_cache: neighbor table overflow!,8caf1ee5,<*> neighbour: arp_cache: neighbor table overflow!
+760,[360325.310235] neighbour: arp_cache: neighbor table overflow!,8caf1ee5,<*> neighbour: arp_cache: neighbor table overflow!
+761,[360325.310270] neighbour: arp_cache: neighbor table overflow!,8caf1ee5,<*> neighbour: arp_cache: neighbor table overflow!
+762,[360325.310297] neighbour: arp_cache: neighbor table overflow!,8caf1ee5,<*> neighbour: arp_cache: neighbor table overflow!
+763,[360325.310326] neighbour: arp_cache: neighbor table overflow!,8caf1ee5,<*> neighbour: arp_cache: neighbor table overflow!
+764,[360325.310372] neighbour: arp_cache: neighbor table overflow!,8caf1ee5,<*> neighbour: arp_cache: neighbor table overflow!
+765,[360325.403520] neighbour: arp_cache: neighbor table overflow!,8caf1ee5,<*> neighbour: arp_cache: neighbor table overflow!
+766,[360325.403602] neighbour: arp_cache: neighbor table overflow!,8caf1ee5,<*> neighbour: arp_cache: neighbor table overflow!
+767,[360325.403672] neighbour: arp_cache: neighbor table overflow!,8caf1ee5,<*> neighbour: arp_cache: neighbor table overflow!
+768,[360325.403720] neighbour: arp_cache: neighbor table overflow!,8caf1ee5,<*> neighbour: arp_cache: neighbor table overflow!
+769,[360342.407045] net_ratelimit: 427 callbacks suppressed,fb195195,<*> <*> <*> <*> <*>
+770,[360342.407065] neighbour: arp_cache: neighbor table overflow!,8caf1ee5,<*> neighbour: arp_cache: neighbor table overflow!
+771,[360342.606946] neighbour: arp_cache: neighbor table overflow!,8caf1ee5,<*> neighbour: arp_cache: neighbor table overflow!
+772,[360342.607042] neighbour: arp_cache: neighbor table overflow!,8caf1ee5,<*> neighbour: arp_cache: neighbor table overflow!
+773,[360342.607748] neighbour: arp_cache: neighbor table overflow!,8caf1ee5,<*> neighbour: arp_cache: neighbor table overflow!
+774,[360344.228619] neighbour: arp_cache: neighbor table overflow!,8caf1ee5,<*> neighbour: arp_cache: neighbor table overflow!
+775,[360529.123040] dmz-fw REJECT IN=ens6 OUT= MAC=fa:16:3e:c3:c5:bf:fa:16:3e:f8:65:07:08:00 SRC=172.17.130.196 DST=172.17.128.1 LEN=60 TOS=0x00 PREC=0x00 TTL=63 ID=56003 DF PROTO=TCP SPT=46988 DPT=80 WINDOW=64240 RES=0x00 SYN URGP=0,9f44a0a8,<*> <*> <*> IN=ens6 OUT= MAC=fa:16:3e:c3:c5:bf:fa:16:3e:f8:65:07:08:00 SRC=172.17.130.196 DST=172.17.128.1 LEN=60 TOS=0x00 PREC=0x00 <*> <*> DF PROTO=TCP <*> <*> <*> RES=0x00 SYN URGP=0
+776,"[360786.984100] IPv4: martian source 52.202.9.160 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+777,[360786.984199] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+778,"[360949.221658] IPv4: martian source 69.16.175.10 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+779,[360949.221721] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+780,"[360949.221756] IPv4: martian source 69.16.175.10 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+781,[360949.221768] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+782,"[361205.656380] IPv4: martian source 93.184.220.70 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+783,[361205.656518] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+784,"[361205.656537] IPv4: martian source 93.184.220.70 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+785,[361205.656543] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+786,"[361362.660917] IPv4: martian source 152.199.21.141 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+787,[361362.661023] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+788,"[361362.661036] IPv4: martian source 152.199.21.141 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+789,[361362.661041] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+790,"[361362.661048] IPv4: martian source 152.199.21.141 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+791,[361362.661052] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+793,[361390.939924] inet-fw REJECT IN=ens3 OUT= MAC=fa:16:3e:1d:25:9e:fa:16:3e:8e:cb:cb:08:00 SRC=192.168.130.77 DST=192.168.128.4 LEN=60 TOS=0x00 PREC=0x00 TTL=64 ID=47576 DF PROTO=TCP SPT=44792 DPT=135 WINDOW=64860 RES=0x00 SYN URGP=0,45c99541,<*> <*> <*> IN=ens3 OUT= MAC=fa:16:3e:1d:25:9e:fa:16:3e:8e:cb:cb:08:00 SRC=192.168.130.77 DST=192.168.128.4 LEN=60 TOS=0x00 PREC=0x00 <*> <*> DF PROTO=TCP <*> <*> <*> RES=0x00 SYN URGP=0
+794,[361390.942211] inet-fw REJECT IN=ens3 OUT= MAC=fa:16:3e:1d:25:9e:fa:16:3e:8e:cb:cb:08:00 SRC=192.168.130.77 DST=192.168.128.4 LEN=60 TOS=0x00 PREC=0x00 TTL=64 ID=40703 DF PROTO=TCP SPT=38642 DPT=139 WINDOW=64860 RES=0x00 SYN URGP=0,45c99541,<*> <*> <*> IN=ens3 OUT= MAC=fa:16:3e:1d:25:9e:fa:16:3e:8e:cb:cb:08:00 SRC=192.168.130.77 DST=192.168.128.4 LEN=60 TOS=0x00 PREC=0x00 <*> <*> DF PROTO=TCP <*> <*> <*> RES=0x00 SYN URGP=0
+795,[361390.943253] inet-fw REJECT IN=ens3 OUT= MAC=fa:16:3e:1d:25:9e:fa:16:3e:8e:cb:cb:08:00 SRC=192.168.130.77 DST=192.168.128.4 LEN=60 TOS=0x00 PREC=0x00 TTL=64 ID=32457 DF PROTO=TCP SPT=59766 DPT=554 WINDOW=64860 RES=0x00 SYN URGP=0,45c99541,<*> <*> <*> IN=ens3 OUT= MAC=fa:16:3e:1d:25:9e:fa:16:3e:8e:cb:cb:08:00 SRC=192.168.130.77 DST=192.168.128.4 LEN=60 TOS=0x00 PREC=0x00 <*> <*> DF PROTO=TCP <*> <*> <*> RES=0x00 SYN URGP=0
+796,[361390.943402] inet-fw REJECT IN=ens3 OUT= MAC=fa:16:3e:1d:25:9e:fa:16:3e:8e:cb:cb:08:00 SRC=192.168.130.77 DST=192.168.128.4 LEN=60 TOS=0x00 PREC=0x00 TTL=64 ID=51050 DF PROTO=TCP SPT=52262 DPT=21 WINDOW=64860 RES=0x00 SYN URGP=0,45c99541,<*> <*> <*> IN=ens3 OUT= MAC=fa:16:3e:1d:25:9e:fa:16:3e:8e:cb:cb:08:00 SRC=192.168.130.77 DST=192.168.128.4 LEN=60 TOS=0x00 PREC=0x00 <*> <*> DF PROTO=TCP <*> <*> <*> RES=0x00 SYN URGP=0
+797,[361390.943494] inet-fw REJECT IN=ens3 OUT= MAC=fa:16:3e:1d:25:9e:fa:16:3e:8e:cb:cb:08:00 SRC=192.168.130.77 DST=192.168.128.4 LEN=60 TOS=0x00 PREC=0x00 TTL=64 ID=1108 DF PROTO=TCP SPT=40232 DPT=256 WINDOW=64860 RES=0x00 SYN URGP=0,45c99541,<*> <*> <*> IN=ens3 OUT= MAC=fa:16:3e:1d:25:9e:fa:16:3e:8e:cb:cb:08:00 SRC=192.168.130.77 DST=192.168.128.4 LEN=60 TOS=0x00 PREC=0x00 <*> <*> DF PROTO=TCP <*> <*> <*> RES=0x00 SYN URGP=0
+798,[361390.943567] inet-fw REJECT IN=ens3 OUT= MAC=fa:16:3e:1d:25:9e:fa:16:3e:8e:cb:cb:08:00 SRC=192.168.130.77 DST=192.168.128.4 LEN=60 TOS=0x00 PREC=0x00 TTL=64 ID=6065 DF PROTO=TCP SPT=47836 DPT=5900 WINDOW=64860 RES=0x00 SYN URGP=0,45c99541,<*> <*> <*> IN=ens3 OUT= MAC=fa:16:3e:1d:25:9e:fa:16:3e:8e:cb:cb:08:00 SRC=192.168.130.77 DST=192.168.128.4 LEN=60 TOS=0x00 PREC=0x00 <*> <*> DF PROTO=TCP <*> <*> <*> RES=0x00 SYN URGP=0
+799,[361390.943652] inet-fw REJECT IN=ens3 OUT= MAC=fa:16:3e:1d:25:9e:fa:16:3e:8e:cb:cb:08:00 SRC=192.168.130.77 DST=192.168.128.4 LEN=60 TOS=0x00 PREC=0x00 TTL=64 ID=929 DF PROTO=TCP SPT=58754 DPT=199 WINDOW=64860 RES=0x00 SYN URGP=0,45c99541,<*> <*> <*> IN=ens3 OUT= MAC=fa:16:3e:1d:25:9e:fa:16:3e:8e:cb:cb:08:00 SRC=192.168.130.77 DST=192.168.128.4 LEN=60 TOS=0x00 PREC=0x00 <*> <*> DF PROTO=TCP <*> <*> <*> RES=0x00 SYN URGP=0
+800,[361390.943764] inet-fw REJECT IN=ens3 OUT= MAC=fa:16:3e:1d:25:9e:fa:16:3e:8e:cb:cb:08:00 SRC=192.168.130.77 DST=192.168.128.4 LEN=60 TOS=0x00 PREC=0x00 TTL=64 ID=52170 DF PROTO=TCP SPT=49530 DPT=3389 WINDOW=64860 RES=0x00 SYN URGP=0,45c99541,<*> <*> <*> IN=ens3 OUT= MAC=fa:16:3e:1d:25:9e:fa:16:3e:8e:cb:cb:08:00 SRC=192.168.130.77 DST=192.168.128.4 LEN=60 TOS=0x00 PREC=0x00 <*> <*> DF PROTO=TCP <*> <*> <*> RES=0x00 SYN URGP=0
+801,[361390.943894] inet-fw REJECT IN=ens3 OUT= MAC=fa:16:3e:1d:25:9e:fa:16:3e:8e:cb:cb:08:00 SRC=192.168.130.77 DST=192.168.128.4 LEN=60 TOS=0x00 PREC=0x00 TTL=64 ID=6658 DF PROTO=TCP SPT=43044 DPT=53 WINDOW=64860 RES=0x00 SYN URGP=0,45c99541,<*> <*> <*> IN=ens3 OUT= MAC=fa:16:3e:1d:25:9e:fa:16:3e:8e:cb:cb:08:00 SRC=192.168.130.77 DST=192.168.128.4 LEN=60 TOS=0x00 PREC=0x00 <*> <*> DF PROTO=TCP <*> <*> <*> RES=0x00 SYN URGP=0
+802,[361390.944122] inet-fw REJECT IN=ens3 OUT= MAC=fa:16:3e:1d:25:9e:fa:16:3e:8e:cb:cb:08:00 SRC=192.168.130.77 DST=192.168.128.4 LEN=60 TOS=0x00 PREC=0x00 TTL=64 ID=57592 DF PROTO=TCP SPT=36326 DPT=23 WINDOW=64860 RES=0x00 SYN URGP=0,45c99541,<*> <*> <*> IN=ens3 OUT= MAC=fa:16:3e:1d:25:9e:fa:16:3e:8e:cb:cb:08:00 SRC=192.168.130.77 DST=192.168.128.4 LEN=60 TOS=0x00 PREC=0x00 <*> <*> DF PROTO=TCP <*> <*> <*> RES=0x00 SYN URGP=0
+803,"[361433.020699] IPv4: martian source 104.244.42.195 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+804,[361433.020785] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+805,"[361433.020796] IPv4: martian source 104.244.42.195 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+806,[361433.020809] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+807,"[361544.274653] IPv4: martian source 104.244.42.194 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+808,[361544.274740] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+809,"[361604.268198] IPv4: martian source 152.199.21.141 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+810,[361604.268316] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+811,"[361604.268345] IPv4: martian source 152.199.21.141 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+812,[361604.268355] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+813,"[361604.279988] IPv4: martian source 104.244.42.195 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+814,[361604.279993] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+815,"[361604.280000] IPv4: martian source 104.244.42.195 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+816,[361604.280001] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+817,"[361605.281967] IPv4: martian source 104.244.42.1 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+818,[361605.281994] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+819,"[361605.282059] IPv4: martian source 104.244.42.1 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+820,[361605.282070] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+821,"[361823.382967] IPv4: martian source 104.244.42.67 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+822,[361823.383086] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+823,"[361823.383108] IPv4: martian source 104.244.42.67 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+824,[361823.383113] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+825,"[362002.268473] IPv4: martian source 104.244.42.1 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+826,[362002.268515] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+48,"Network configuration changed, trying to establish connection.",cfa0a3dd,Network configuration changed trying to establish connection.
+83,ens6: Configured,d5ddf9bc,ens6: Configured
+110,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).,9203e833,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+831,"[365189.354616] IPv4: martian source 10.35.35.206 from 10.9.0.6, on dev ens6",faae5ddb,<*> IPv4: martian source 10.35.35.206 from 10.9.0.6 on dev ens6
+832,[365189.354728] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+48,"Network configuration changed, trying to establish connection.",cfa0a3dd,Network configuration changed trying to establish connection.
+84,ens3: Configured,f06dcd81,ens3: Configured
+110,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).,9203e833,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+10,Starting Daily apt download activities...,b37fee6f,Starting Daily apt download activities...
+11,Started Daily apt download activities.,43d542ce,Started Daily apt download activities.
+839,"[371489.831820] IPv4: martian source 31.13.84.4 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+840,[371489.831967] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+841,"[371489.831987] IPv4: martian source 31.13.84.4 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+842,[371489.831992] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+844,"[374997.958192] IPv4: martian source 151.101.193.2 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+845,[374997.958275] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+846,"[374997.958290] IPv4: martian source 151.101.193.2 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+847,[374997.958295] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+848,"[375167.703614] IPv4: martian source 31.13.84.51 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+849,[375167.703733] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+850,"[375167.703805] IPv4: martian source 31.13.84.51 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+851,[375167.703813] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+852,"[375383.066308] IPv4: martian source 151.101.193.2 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+853,[375383.066471] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+854,"[375386.062943] IPv4: martian source 31.13.84.4 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+855,[375386.062950] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+856,"[375386.062958] IPv4: martian source 31.13.84.4 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+857,[375386.062960] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+858,"[375436.038528] IPv4: martian source 54.87.179.213 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+859,[375436.038637] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+861,"[377252.255688] IPv4: martian source 192.0.73.2 from 10.9.0.6, on dev ens6",dde92818,<*> IPv4: martian source 192.0.73.2 from 10.9.0.6 on dev ens6
+862,[377252.255708] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+863,"[377252.255750] IPv4: martian source 192.0.73.2 from 10.9.0.6, on dev ens6",dde92818,<*> IPv4: martian source 192.0.73.2 from 10.9.0.6 on dev ens6
+864,[377252.255752] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+865,"[377252.255790] IPv4: martian source 192.0.73.2 from 10.9.0.6, on dev ens6",dde92818,<*> IPv4: martian source 192.0.73.2 from 10.9.0.6 on dev ens6
+866,[377252.255792] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+868,"[382403.126286] IPv4: martian source 10.35.35.206 from 10.9.0.22, on dev ens6",c8515775,<*> IPv4: martian source 10.35.35.206 from 10.9.0.22 on dev ens6
+869,[382403.126409] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+870,"[382579.990800] IPv4: martian source 10.35.35.206 from 10.9.0.22, on dev ens6",c8515775,<*> IPv4: martian source 10.35.35.206 from 10.9.0.22 on dev ens6
+871,[382579.990833] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+872,"[382579.990845] IPv4: martian source 10.35.35.206 from 10.9.0.22, on dev ens6",c8515775,<*> IPv4: martian source 10.35.35.206 from 10.9.0.22 on dev ens6
+873,[382579.990847] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+875,"[385802.217570] IPv4: martian source 13.32.12.13 from 10.9.0.14, on dev ens6",14c39e34,<*> IPv4: martian source <*> from 10.9.0.14 on dev ens6
+876,[385802.217695] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+877,"[385802.220237] IPv4: martian source 13.32.12.13 from 10.9.0.14, on dev ens6",14c39e34,<*> IPv4: martian source <*> from 10.9.0.14 on dev ens6
+878,[385802.220241] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+880,"[386696.733549] IPv4: martian source 10.35.35.206 from 10.9.0.22, on dev ens6",c8515775,<*> IPv4: martian source 10.35.35.206 from 10.9.0.22 on dev ens6
+881,[386696.733637] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+882,"[386696.733649] IPv4: martian source 10.35.35.206 from 10.9.0.22, on dev ens6",c8515775,<*> IPv4: martian source 10.35.35.206 from 10.9.0.22 on dev ens6
+883,[386696.733653] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+884,"[386696.733659] IPv4: martian source 10.35.35.206 from 10.9.0.22, on dev ens6",c8515775,<*> IPv4: martian source 10.35.35.206 from 10.9.0.22 on dev ens6
+885,[386696.733663] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+886,"[387388.099149] IPv4: martian source 10.35.35.206 from 10.9.0.22, on dev ens6",c8515775,<*> IPv4: martian source 10.35.35.206 from 10.9.0.22 on dev ens6
+887,[387388.099249] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+888,"[387388.099306] IPv4: martian source 10.35.35.206 from 10.9.0.22, on dev ens6",c8515775,<*> IPv4: martian source 10.35.35.206 from 10.9.0.22 on dev ens6
+889,[387388.099312] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+890,"[389118.282844] IPv4: martian source 10.35.35.206 from 10.9.0.22, on dev ens6",c8515775,<*> IPv4: martian source 10.35.35.206 from 10.9.0.22 on dev ens6
+891,[389118.282867] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+892,"[389118.282875] IPv4: martian source 10.35.35.206 from 10.9.0.22, on dev ens6",c8515775,<*> IPv4: martian source 10.35.35.206 from 10.9.0.22 on dev ens6
+893,[389118.282877] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+894,"[389395.780275] IPv4: martian source 10.35.35.206 from 10.9.0.22, on dev ens6",c8515775,<*> IPv4: martian source 10.35.35.206 from 10.9.0.22 on dev ens6
+895,[389395.780367] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+3,Starting Message of the Day...,4ebfb0b4,Starting Message of the Day...
+900,* Super-optimized for small spaces - read how we shrank the memory,73d6de92,<*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*>
+901,footprint of MicroK8s to make it the smallest full K8s around.,2f7082b2,<*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*>
+377,https://ubuntu.com/blog/microk8s-memory-optimisation,f402feb7,https://ubuntu.com/blog/microk8s-memory-optimisation
+4,Started Message of the Day.,345a768e,Started Message of the Day.
+48,"Network configuration changed, trying to establish connection.",cfa0a3dd,Network configuration changed trying to establish connection.
+82,ens7: Configured,7468a9a0,ens7: Configured
+110,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).,9203e833,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+48,"Network configuration changed, trying to establish connection.",cfa0a3dd,Network configuration changed trying to establish connection.
+83,ens6: Configured,d5ddf9bc,ens6: Configured
+110,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).,9203e833,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+48,"Network configuration changed, trying to establish connection.",cfa0a3dd,Network configuration changed trying to establish connection.
+84,ens3: Configured,f06dcd81,ens3: Configured
+110,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).,9203e833,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+10,Starting Daily apt download activities...,b37fee6f,Starting Daily apt download activities...
+11,Started Daily apt download activities.,43d542ce,Started Daily apt download activities.
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+923,(root) CMD (test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.daily )),d56fe086,(root) CMD <*> <*> <*> <*> ( cd / && run-parts --report <*> <*>
+924,"[427017.085970] IPv4: martian source 104.96.91.161 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+925,[427017.086000] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+926,Starting Daily apt upgrade and clean activities...,3bbba500,Starting Daily apt upgrade <*> <*> activities...
+927,Started Daily apt upgrade and clean activities.,40039889,Started Daily apt upgrade <*> <*> activities.
+928,(root) CMD (   test -x /etc/cron.daily/popularity-contest && /etc/cron.daily/popularity-contest --crond),73d54915,(root) CMD ( <*> <*> <*> <*> <*> <*>
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+930,Starting Cleanup of Temporary Directories...,fb195195,<*> <*> <*> <*> <*>
+931,Started Cleanup of Temporary Directories.,fb195195,<*> <*> <*> <*> <*>
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+933,"[435700.816775] IPv4: martian source 91.198.174.208 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+934,[435700.816796] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+935,"[435700.816841] IPv4: martian source 91.198.174.208 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+936,[435700.816843] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+937,"[435700.816879] IPv4: martian source 91.198.174.208 from 10.9.0.6, on dev ens6",468dcf38,<*> IPv4: martian source <*> from 10.9.0.6 on dev ens6
+938,[435700.816880] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+10,Starting Daily apt download activities...,b37fee6f,Starting Daily apt download activities...
+11,Started Daily apt download activities.,43d542ce,Started Daily apt download activities.
+942,"[439575.226005] IPv4: martian source 63.33.83.132 from 10.9.0.18, on dev ens6",033f474c,<*> IPv4: martian source <*> from 10.9.0.18 on dev ens6
+943,[439575.226131] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+944,"[439583.650220] IPv4: martian source 35.170.84.146 from 10.9.0.18, on dev ens6",033f474c,<*> IPv4: martian source <*> from 10.9.0.18 on dev ens6
+945,[439583.650224] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+946,"[439584.483085] IPv4: martian source 99.86.237.71 from 10.9.0.18, on dev ens6",033f474c,<*> IPv4: martian source <*> from 10.9.0.18 on dev ens6
+947,[439584.483143] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+948,"[439590.896475] IPv4: martian source 3.133.252.109 from 10.9.0.18, on dev ens6",033f474c,<*> IPv4: martian source <*> from 10.9.0.18 on dev ens6
+949,[439590.896494] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+48,"Network configuration changed, trying to establish connection.",cfa0a3dd,Network configuration changed trying to establish connection.
+82,ens7: Configured,7468a9a0,ens7: Configured
+110,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).,9203e833,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).
+953,"[439705.349821] IPv4: martian source 94.245.192.57 from 10.9.0.18, on dev ens6",033f474c,<*> IPv4: martian source <*> from 10.9.0.18 on dev ens6
+954,[439705.349917] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+955,"[439705.349960] IPv4: martian source 94.245.192.57 from 10.9.0.18, on dev ens6",033f474c,<*> IPv4: martian source <*> from 10.9.0.18 on dev ens6
+956,[439705.349965] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+957,"[439705.350075] IPv4: martian source 104.103.72.123 from 10.9.0.18, on dev ens6",033f474c,<*> IPv4: martian source <*> from 10.9.0.18 on dev ens6
+958,[439705.350077] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+959,"[439861.304533] IPv4: martian source 2.21.172.123 from 10.9.0.18, on dev ens6",033f474c,<*> IPv4: martian source <*> from 10.9.0.18 on dev ens6
+960,[439861.304563] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+961,"[439861.304575] IPv4: martian source 2.21.172.123 from 10.9.0.18, on dev ens6",033f474c,<*> IPv4: martian source <*> from 10.9.0.18 on dev ens6
+962,[439861.304576] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+3,Starting Message of the Day...,4ebfb0b4,Starting Message of the Day...
+965,* Super-optimized for small spaces - read how we shrank the memory,73d6de92,<*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*>
+966,footprint of MicroK8s to make it the smallest full K8s around.,2f7082b2,<*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*>
+377,https://ubuntu.com/blog/microk8s-memory-optimisation,f402feb7,https://ubuntu.com/blog/microk8s-memory-optimisation
+4,Started Message of the Day.,345a768e,Started Message of the Day.
+969,"[442050.645684] IPv4: martian source 23.47.209.169 from 10.9.0.18, on dev ens6",033f474c,<*> IPv4: martian source <*> from 10.9.0.18 on dev ens6
+970,[442050.645768] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+971,"[442051.749064] IPv4: martian source 104.84.101.98 from 10.9.0.18, on dev ens6",033f474c,<*> IPv4: martian source <*> from 10.9.0.18 on dev ens6
+972,[442051.749390] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+973,"[442051.749411] IPv4: martian source 104.84.101.98 from 10.9.0.18, on dev ens6",033f474c,<*> IPv4: martian source <*> from 10.9.0.18 on dev ens6
+974,[442051.749416] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+975,"[442503.541673] IPv4: martian source 104.84.101.98 from 10.9.0.18, on dev ens6",033f474c,<*> IPv4: martian source <*> from 10.9.0.18 on dev ens6
+976,[442503.541779] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+977,"[442593.347322] IPv4: martian source 151.101.194.137 from 10.9.0.18, on dev ens6",033f474c,<*> IPv4: martian source <*> from 10.9.0.18 on dev ens6
+978,[442593.347340] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+979,"[442593.347378] IPv4: martian source 151.101.194.137 from 10.9.0.18, on dev ens6",033f474c,<*> IPv4: martian source <*> from 10.9.0.18 on dev ens6
+980,[442593.347402] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+48,"Network configuration changed, trying to establish connection.",cfa0a3dd,Network configuration changed trying to establish connection.
+83,ens6: Configured,d5ddf9bc,ens6: Configured
+110,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).,9203e833,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+48,"Network configuration changed, trying to establish connection.",cfa0a3dd,Network configuration changed trying to establish connection.
+84,ens3: Configured,f06dcd81,ens3: Configured
+110,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).,9203e833,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+989,"[449422.321808] IPv4: martian source 23.35.237.151 from 10.9.0.18, on dev ens6",033f474c,<*> IPv4: martian source <*> from 10.9.0.18 on dev ens6
+990,[449422.321930] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+991,"[449868.572594] IPv4: martian source 15.236.176.210 from 10.9.0.18, on dev ens6",033f474c,<*> IPv4: martian source <*> from 10.9.0.18 on dev ens6
+992,[449868.572737] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+993,"[450010.503547] IPv4: martian source 23.47.222.184 from 10.9.0.18, on dev ens6",033f474c,<*> IPv4: martian source <*> from 10.9.0.18 on dev ens6
+994,[450010.503668] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+996,"[453202.691201] IPv4: martian source 90.216.148.77 from 10.9.0.10, on dev ens6",4c863842,<*> IPv4: martian source <*> from 10.9.0.10 on dev ens6
+997,[453202.691318] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+998,"[453527.874866] IPv4: martian source 23.7.202.241 from 10.9.0.18, on dev ens6",033f474c,<*> IPv4: martian source <*> from 10.9.0.18 on dev ens6
+999,[453527.874970] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+1000,"[453527.874984] IPv4: martian source 23.7.202.241 from 10.9.0.18, on dev ens6",033f474c,<*> IPv4: martian source <*> from 10.9.0.18 on dev ens6
+1001,[453527.874987] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+1002,"[453739.275359] IPv4: martian source 90.216.148.77 from 10.9.0.10, on dev ens6",4c863842,<*> IPv4: martian source <*> from 10.9.0.10 on dev ens6
+1003,[453739.275458] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+3,Starting Message of the Day...,4ebfb0b4,Starting Message of the Day...
+1005,"[454278.436956] IPv4: martian source 66.102.1.156 from 10.9.0.18, on dev ens6",033f474c,<*> IPv4: martian source <*> from 10.9.0.18 on dev ens6
+1006,[454278.437059] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+1007,* Super-optimized for small spaces - read how we shrank the memory,73d6de92,<*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*>
+1008,footprint of MicroK8s to make it the smallest full K8s around.,2f7082b2,<*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*>
+377,https://ubuntu.com/blog/microk8s-memory-optimisation,f402feb7,https://ubuntu.com/blog/microk8s-memory-optimisation
+4,Started Message of the Day.,345a768e,Started Message of the Day.
+1011,[454905.923003] inet-fw REJECT IN=ens3 OUT= MAC=fa:16:3e:1d:25:9e:fa:16:3e:a5:f6:15:08:00 SRC=91.198.174.192 DST=192.168.128.4 LEN=40 TOS=0x00 PREC=0x00 TTL=54 ID=0 DF PROTO=TCP SPT=443 DPT=51442 WINDOW=0 RES=0x00 RST URGP=0,0353406a,<*> <*> <*> <*> <*> <*> <*> <*> <*> TOS=0x00 PREC=0x00 <*> <*> DF PROTO=TCP <*> <*> <*> <*> <*> <*>
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+1013,"[455314.539994] IPv4: martian source 192.0.73.2 from 10.9.0.18, on dev ens6",20344b32,<*> IPv4: martian source 192.0.73.2 from 10.9.0.18 on dev ens6
+1014,[455314.540099] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+1015,"[455314.540115] IPv4: martian source 192.0.73.2 from 10.9.0.18, on dev ens6",20344b32,<*> IPv4: martian source 192.0.73.2 from 10.9.0.18 on dev ens6
+1016,[455314.540122] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+1018,"[459386.658082] IPv4: martian source 99.86.237.43 from 10.9.0.10, on dev ens6",4c863842,<*> IPv4: martian source <*> from 10.9.0.10 on dev ens6
+1019,[459386.658098] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+1020,"[459541.529753] IPv4: martian source 192.0.73.2 from 10.9.0.10, on dev ens6",4268e80d,<*> IPv4: martian source 192.0.73.2 from 10.9.0.10 on dev ens6
+1021,[459541.529800] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+1022,"[459541.529809] IPv4: martian source 192.0.73.2 from 10.9.0.10, on dev ens6",4268e80d,<*> IPv4: martian source 192.0.73.2 from 10.9.0.10 on dev ens6
+1023,[459541.529810] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+1024,"[459541.529813] IPv4: martian source 192.0.73.2 from 10.9.0.10, on dev ens6",4268e80d,<*> IPv4: martian source 192.0.73.2 from 10.9.0.10 on dev ens6
+1025,[459541.529814] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+1026,"[461374.731660] IPv4: martian source 13.32.2.77 from 10.9.0.22, on dev ens6",bb2e84d9,<*> IPv4: martian source <*> from 10.9.0.22 on dev ens6
+1027,[461374.731708] ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00        ..>.....>.e...,98076bc4,<*> ll header: 00000000: fa 16 3e c3 c5 bf fa 16 3e f8 65 07 08 00 ..>.....>.e...
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+48,"Network configuration changed, trying to establish connection.",cfa0a3dd,Network configuration changed trying to establish connection.
+82,ens7: Configured,7468a9a0,ens7: Configured
+110,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).,9203e833,Synchronized to time server 91.189.91.157:123 (ntp.ubuntu.com).
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+48,"Network configuration changed, trying to establish connection.",cfa0a3dd,Network configuration changed trying to establish connection.
+83,ens6: Configured,d5ddf9bc,ens6: Configured
+1039,Timed out waiting for reply from 91.189.91.157:123 (ntp.ubuntu.com).,3c694f23,<*> <*> <*> <*> <*> <*> 91.189.91.157:123 (ntp.ubuntu.com).
+1040,Synchronized to time server 91.189.89.199:123 (ntp.ubuntu.com).,fcf987af,Synchronized to time server <*> (ntp.ubuntu.com).
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
+48,"Network configuration changed, trying to establish connection.",cfa0a3dd,Network configuration changed trying to establish connection.
+84,ens3: Configured,f06dcd81,ens3: Configured
+1044,Synchronized to time server 91.189.89.199:123 (ntp.ubuntu.com).,fcf987af,Synchronized to time server <*> (ntp.ubuntu.com).
+1,(root) CMD (   cd / && run-parts --report /etc/cron.hourly),c8b6b98e,(root) CMD ( cd / && run-parts --report /etc/cron.hourly)
