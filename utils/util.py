@@ -47,15 +47,13 @@ def time_format(log_df: pd.DataFrame):
     # check whether year exists in column, otherwise choose current year for default
     if "Year" not in log_df.columns:
         log_df["Year"] = len(log_df) * [datetime.now().year]
-    print(log_df.columns)
     if "Day" in log_df.columns:
-        cols = ["Year", "Month", "Day", "Timestamp"]
-        log_df["Time"] = pd.to_datetime(log_df[cols].rename(columns=))
+        log_df["Time"] = pd.to_datetime(log_df[["Year", "Month", "Day", "Timestamp"]].astype(str).apply(' '.join, axis=1))
     elif "Date" in log_df.columns:
-        log_df["Time"] = pd.to_datetime(log_df[["Year", "Month", "Date", "Timestamp"]])
+        log_df["Time"] = pd.to_datetime(log_df[["Year", "Month", "Date", "Timestamp"]].astype(str).apply(' '.join, axis=1))
     
     # format the time
-    log_df['Time'] = log_df["Time"].dt.strftime("%d-%b-%Y %H:%M:%S")
+    log_df['Time'] = log_df["Time"].dt.strftime("%Y-%d-%b %H:%M:%S")
 
     return log_df
 

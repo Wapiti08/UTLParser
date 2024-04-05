@@ -141,6 +141,7 @@ class TestLogparser(unittest.TestCase):
     #     print(result)
     #     self.assertEqual(["cdn.cloudflare.net", "2606:4700::6810:db54"], result)
     def test_get_output(self):
+        
         cur_path = Path.cwd()
         indir = cur_path.joinpath("data").as_posix()
         outdir = cur_path.joinpath("data","result").as_posix()
