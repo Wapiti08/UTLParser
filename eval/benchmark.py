@@ -1,3 +1,6 @@
+import sys
+from pathlib import Path
+sys.path.insert(0, Path(sys.path[0]).parent.as_posix())
 import pandas as pd
 from scipy.special import comb
 
@@ -20,11 +23,8 @@ def evaluate(groundtruth, parsedresult):
     df_groundtruth = pd.read_csv(groundtruth)
     df_parsedlog = pd.read_csv(parsedresult)
     # Remove invalid groundtruth event Ids
-    non_empty_log_ids = df_groundtruth[~df_groundtruth["EventId"].isnull()].index
-    df_groundtruth = df_groundtruth.loc[non_empty_log_ids]
-    df_parsedlog = df_parsedlog.loc[non_empty_log_ids]
     (precision, recall, f_measure, accuracy) = get_accuracy(
-        df_groundtruth["EventId"], df_parsedlog["EventId"]
+        df_groundtruth["EventTemplate"], df_parsedlog["EventTemplate"]
     )
     print(
         "Precision: {:.4f}, Recall: {:.4f}, F1_measure: {:.4f}, Parsing_Accuracy: {:.4f}".format(
@@ -67,11 +67,11 @@ def get_accuracy(series_groundtruth, series_parsedlog, debug=False):
 
     accurate_pairs = 0
     accurate_events = 0  # determine how many lines are correctly parsed
-    for parsed_eventId in series_parsedlog_valuecounts.index:
-        logIds = series_parsedlog[series_parsedlog == parsed_eventId].index
+    for parsed_eventtemplate in series_parsedlog_valuecounts.index:
+        logIds = series_parsedlog[series_parsedlog == parsed_eventtemplate].index
         series_groundtruth_logId_valuecounts = series_groundtruth[logIds].value_counts()
         error_eventIds = (
-            parsed_eventId,
+            parsed_eventtemplate,
             series_groundtruth_logId_valuecounts.index.tolist(),
         )
         error = True
@@ -94,9 +94,17 @@ def get_accuracy(series_groundtruth, series_parsedlog, debug=False):
         for count in series_groundtruth_logId_valuecounts:
             if count > 1:
                 accurate_pairs += comb(count, 2)
-
+    
     precision = float(accurate_pairs) / parsed_pairs
     recall = float(accurate_pairs) / real_pairs
     f_measure = 2 * precision * recall / (precision + recall)
     accuracy = float(accurate_events) / series_groundtruth.size
     return precision, recall, f_measure, accuracy
+
+
+if __name__ == "__main__":
+    cur_path = Path.cwd()
+    groundtruth = cur_path.parent.joinpath("eval_data","data", "result", "syslog.log_structured_corr.csv").as_posix()
+    # parsedresult = cur_path.parent.joinpath("eval_data","data", "result", "audit.log_structured.csv").as_posix()
+    parsedresult = cur_path.parent.joinpath("eval_data","data", "result", "syslog.log_structured.csv").as_posix()
+    evaluate(groundtruth, parsedresult)

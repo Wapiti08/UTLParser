@@ -38,7 +38,7 @@ format_dict = {
             # match the ip, port, id
             "regex": [config.regex['ip4'],config.regex['port'],config.regex['id']],
             "st": 0.2,
-            "depth": 4,
+            "depth": 6,
         },
     },
     "Linux": {
@@ -158,19 +158,19 @@ def kvlog_output(datafile: str, app:str, log_type:str, outputfile:str):
         df.to_csv(outputfile)
 
 if __name__ == "__main__":
-    # log_apps = ["Apache"]
-    # log_types = ["audit"]
+    log_apps = ["Apache"]
+    log_types = ["audit"]
     # log_apps = ["DNS", "Apache", "Linux"]
     # log_types = ["dnsmasq", "auth", "syslog"
     cur_path = Path.cwd()
-    # for app, type in zip(log_apps, log_types):
-    #     input_data_path = cur_path.joinpath("data").as_posix()
-    #     output_data_path = cur_path.joinpath("data", "result").as_posix()
-    #     genlog_output(input_data_path, app, type, output_data_path)
+    for app, type in zip(log_apps, log_types):
+        input_data_path = cur_path.joinpath("data").as_posix()
+        output_data_path = cur_path.joinpath("data", "result").as_posix()
+        genlog_output(input_data_path, app, type, output_data_path)
 
 
     # sen = '''type=SERVICE_START msg=audit(1642207163.978:391): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=phpsessionclean comm="systemd" exe="/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'''
     # print(kv_split(sen))
-    input_data_path = cur_path.joinpath("data", "audit.log").as_posix()
-    output_data_path = cur_path.joinpath("data", "result", "audit.log_structured.csv").as_posix()
-    kvlog_output(input_data_path, 'Apache',"audit", output_data_path)
+    # input_data_path = cur_path.joinpath("data", "audit.log").as_posix()
+    # output_data_path = cur_path.joinpath("data", "result", "audit.log_structured.csv").as_posix()
+    # kvlog_output(input_data_path, 'Apache',"audit", output_data_path)

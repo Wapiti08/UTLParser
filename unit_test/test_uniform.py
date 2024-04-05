@@ -23,10 +23,12 @@ class TestLogparser(unittest.TestCase):
         syslog_file = Path('./data/syslog.log')
         dns_file = Path('./data/dnsmasq.log')
         auth_file = Path('./data/auth.log')
+        audit_file = Path('./data/audit.log')
         
-        self.uniformater = UniFormat(syslog_file)
+        # self.uniformater = UniFormat(syslog_file)
         # self.uniformater = UniFormat(dns_file)
         # self.uniformater = UniFormat(auth_file)
+        self.uniformater = UniFormat(audit_file)
 
 
     def test_com_check(self):
