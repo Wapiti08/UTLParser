@@ -59,32 +59,15 @@ class TestLogparser(unittest.TestCase):
 
     def setUp(self):
         
-        # test for dns log
-        # rex = format_dict['DNS']['dnsmasq']['regex']
-        # log_format = format_dict['DNS']['dnsmasq']['log_format']
-        # depth = format_dict['DNS']['dnsmasq']['depth']
-        # st = format_dict['DNS']['dnsmasq']['st']
-
-        # self.logparser = GenLogParser(
-        #     depth=depth,
-        #     st=st,
-        #     rex = rex,
-        #     indir="./data/",
-        #     outdir="../../data/result/",
-        #     log_format=log_format,
-        #     keep_para=True,
-        #     maxChild=100,
-        #     poi_list=[],
-        # )
-
         cur_path = Path.cwd()
         indir = cur_path.joinpath("data").as_posix()
         outdir = cur_path.joinpath("data","result").as_posix()
-        # test for linux syslog
-        rex = format_dict['Linux']['syslog']['regex']
-        log_format = format_dict['Linux']['syslog']['log_format']
-        depth = format_dict['Linux']['syslog']['depth']
-        st = format_dict['Linux']['syslog']['st']
+
+        # test for dns log
+        rex = format_dict['DNS']['dnsmasq']['regex']
+        log_format = format_dict['DNS']['dnsmasq']['log_format']
+        depth = format_dict['DNS']['dnsmasq']['depth']
+        st = format_dict['DNS']['dnsmasq']['st']
 
         self.logparser = GenLogParser(
             depth=depth,
@@ -93,11 +76,31 @@ class TestLogparser(unittest.TestCase):
             indir=indir,
             outdir=outdir,
             log_format=log_format,
-            log_name="syslog.log",
+            log_name="dnsmasq.log",
             keep_para=True,
             maxChild=100,
             poi_list=[],
         )
+
+        
+        # test for linux syslog
+        # rex = format_dict['Linux']['syslog']['regex']
+        # log_format = format_dict['Linux']['syslog']['log_format']
+        # depth = format_dict['Linux']['syslog']['depth']
+        # st = format_dict['Linux']['syslog']['st']
+
+        # self.logparser = GenLogParser(
+        #     depth=depth,
+        #     st=st,
+        #     rex = rex,
+        #     indir=indir,
+        #     outdir=outdir,
+        #     log_format=log_format,
+        #     log_name="syslog.log",
+        #     keep_para=True,
+        #     maxChild=100,
+        #     poi_list=[],
+        # )
 
         # test for apache auth
         # rex = format_dict['Apache']['auth']['regex']
@@ -120,9 +123,9 @@ class TestLogparser(unittest.TestCase):
 
     def test_parse(self):
 
-        # self.logparser.parse("dnsmasq.log")
+        self.logparser.parse("dnsmasq.log")
         # self.logparser.parse("auth.log")
-        self.logparser.parse("syslog.log")
+        # self.logparser.parse("syslog.log")
 
         # self.assertEqual()
 
@@ -145,11 +148,18 @@ class TestLogparser(unittest.TestCase):
         cur_path = Path.cwd()
         indir = cur_path.joinpath("data").as_posix()
         outdir = cur_path.joinpath("data","result").as_posix()
-        # test for linux syslog
-        rex = format_dict['Linux']['syslog']['regex']
-        log_format = format_dict['Linux']['syslog']['log_format']
-        depth = format_dict['Linux']['syslog']['depth']
-        st = format_dict['Linux']['syslog']['st']
+
+        # # test for linux syslog
+        # rex = format_dict['Linux']['syslog']['regex']
+        # log_format = format_dict['Linux']['syslog']['log_format']
+        # depth = format_dict['Linux']['syslog']['depth']
+        # st = format_dict['Linux']['syslog']['st']
+
+        # test for dns logs
+        rex = format_dict['DNS']['dnsmasq']['regex']
+        log_format = format_dict['DNS']['dnsmasq']['log_format']
+        depth = format_dict['DNS']['dnsmasq']['depth']
+        st = format_dict['DNS']['dnsmasq']['st']
 
         self.logparser = GenLogParser(
             depth=depth,
@@ -158,15 +168,19 @@ class TestLogparser(unittest.TestCase):
             indir=indir,
             outdir=outdir,
             log_format=log_format,
-            log_name="syslog.log",
+            # log_name="syslog.log",
+            log_name="dnsmasq.log",
             keep_para=True,
             maxChild=100,
             poi_list=[],
         )
         self.logparser.load_data()
-        self.logparser.parse("syslog.log")
+        # self.logparser.parse("syslog.log")
+        self.logparser.parse("dnsmasq.log")
         self.logparser.poi_ext()
         self.logparser.get_output(0)
+
+
 
 if __name__ == "__main__":
     unittest.main()

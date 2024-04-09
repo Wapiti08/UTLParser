@@ -53,7 +53,7 @@ def time_format(log_df: pd.DataFrame):
         log_df["Time"] = pd.to_datetime(log_df[["Year", "Month", "Date", "Timestamp"]].astype(str).apply(' '.join, axis=1))
     
     # format the time
-    log_df['Time'] = log_df["Time"].dt.strftime("%Y-%d-%b %H:%M:%S")
+    log_df['Time'] = log_df["Time"].dt.strftime("%Y-%b-%d %H:%M:%S")
 
     return log_df
 

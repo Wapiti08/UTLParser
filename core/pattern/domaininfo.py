@@ -56,7 +56,6 @@ unstru_log_poi_map = {
             "Actions": "Content",
             "Direction": 'Direction'
             }
-
                 }
 
 
