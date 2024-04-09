@@ -234,6 +234,8 @@ class KVParser:
         :param log_type: define the log type
         :param app: define the application name like apache
         '''
+        start_time = datetime.now() 
+
         logger.info("generating the format output for {}-{} logs".format(self.app.lower(), self.log_type.lower()))
         # the mapping dict may be different from logs, consider application and log_type
         column_poi_map = domaininfo.unstru_log_poi_map[self.app][self.log_type]
@@ -286,3 +288,4 @@ class KVParser:
         pd.DataFrame(self.format_output).to_csv(
             Path(self.savePath).joinpath(self.logName + "_unifrom.csv"), index=False
         )
+        logger.info("Unified Output is Done. [Time taken: {!s}]".format(datetime.now() - start_time))

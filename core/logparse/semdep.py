@@ -18,6 +18,13 @@ from spacy import displacy
 from spacy.matcher import DependencyMatcher
 from core.pattern import deppattern
 import re
+# import nltk
+# from nltk.tokenize import word_tokenize
+# from nltk import pos_tag
+
+# # Download the necessary NLTK resources (POS tagger data)
+# nltk.download('punkt')
+# nltk.download('averaged_perceptron_tagger')
 
 forward_direction = ["reply", 'forward', "cache"]
 backward_direction = ["query"]
@@ -29,14 +36,14 @@ class DepParse:
     def __init__(self, ):
         self.matcher = DependencyMatcher(nlp.vocab)
     
-    def depen_parse(self, anchor_list: list[str], doc:spacy.tokens.doc.Doc):
+    def depen_parse(self, anchor_list: list[str], log_type:str, doc:spacy.tokens.doc.Doc):
         ''' according to different anchor to design different patterns
         :param anchor: the lemma verb token as the root node
         '''
         # consider direct dependent without AUX
         for anchor in anchor_list:
             patterns = []
-            patterner = deppattern.DepPatterns(anchor=anchor)
+            patterner = deppattern.DepPatterns(log_type=log_type, anchor=anchor)
             for pat in vars(patterner):
                 patterns.append(pat)
             
@@ -63,10 +70,11 @@ class DepParse:
         '''
         # define all type of verbs
         target_pos_pattern = 'VB.*|VERB$'
+        
         # if there is no AUX adjacent to left of VERB sub -> obj, otherwise obj <- sub
         for ord, token in enumerate(doc):
             # check whether matching the verb
-            if bool(re.match(target_pos_pattern, token.pos_)):
+            if bool(re.search(target_pos_pattern, token.pos_)):
                 # rule1: check whether there is pos before this verb 
                 if ord - 1>=0:
                     if doc[ord-1].pos_ != "AUX":
@@ -77,6 +85,21 @@ class DepParse:
             else:
                 # no verb exists in logs
                 return '-','-'
+
+    # def nlp_verb_ext(self, sentence:str):
+
+
+    #     # Sample sentence
+
+    #     # Tokenize the sentence
+    #     tokens = word_tokenize(sentence)
+
+    #     # Tag each token with its POS tag
+    #     pos_tags = pos_tag(tokens)
+        
+    #     # Print the POS tags
+    #     print(pos_tags)
+    #     return pos_tags
 
     def token_parse(self):
         pass

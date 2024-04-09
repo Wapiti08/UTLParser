@@ -161,6 +161,8 @@ class ReqParser:
         '''
         
         '''
+        start_time = datetime.now() 
+
         logger.info("generating the format output for {}-{} logs".format(self.app.lower(), self.log_type.lower()))
         column_poi_map = domaininfo.unstru_log_poi_map[self.app][self.log_type]
 
@@ -190,7 +192,7 @@ class ReqParser:
             Path(self.savePath).joinpath(self.logName + "_unifrom.csv"), index=False
         )
 
+        logger.info("Unified Output is Done. [Time taken: {!s}]".format(datetime.now() - start_time))
 
-    
 
     

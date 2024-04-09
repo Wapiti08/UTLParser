@@ -446,32 +446,26 @@ class GenLogParser:
         ''' remain only parameters like path/domain/ip/username ...
         
         '''
-        # extract any desriable format of entity node
-        ip4_rex = config.regex["ip4"]
-        ip_filter_rex = re.compile(r'\.\d+')
-        domain_rex = config.regex["domain"]
-        path_unix = config.regex["path_unix"]
-        path_win = config.regex["path_win"]
-
         new_paras = []
 
         for element in para_part:
             if element != '':
-                if bool(re.search(ip_filter_rex, element)):
-                    if re.match(ip4_rex, element):
-                        new_paras.append(element)
-                        continue
-                elif "/" in element:
-                    if re.match(path_unix, element):
-                        new_paras.append(element)
-                        continue
-                elif "\\" in element:
-                    if re.match(path_win, element):
-                        new_paras.append(element)
-                elif re.match(domain_rex, element):
-                    new_paras.append(element)
-                else:
-                    continue
+                ip_match = util.ip_match(element)
+                if ip_match:
+                    new_paras.extend(ip_match)
+
+                if "/" in element or "\\" in element:
+                    path_match = util.path_match(element)
+                    if path_match:
+                        new_paras.extend(path_match)
+                
+                domain_match = util.domain_match(element)
+
+                if domain_match:
+                    new_paras.extend(domain_match)
+
+                new_paras.append(element)
+
         return new_paras
 
     def action_ext(self, content_part: str):
@@ -480,17 +474,17 @@ class GenLogParser:
         '''
         # define the extract verb
         anchor = ""
-        doc = nlp(content_part)
+        clean_content = util.token_filter(content_part)
+        doc = nlp(clean_content)
         try:
             anchor, direction = self.depparser.verb_ext(doc)
+            return anchor, direction
         except Exception as e:
-            print(e)
-            print(content_part)
+            logger.warn("raise error {} when extracting verb from {}".format(e, content_part))
             return '-', '-'
-        return anchor, direction
 
     def time_create(self, log_df: pd.DataFrame):
-        ''' assemble the separate time component to unified format
+        ''' assemble the separate time  component to unified format
         
         '''
         log_df = util.time_format(log_df)
@@ -504,7 +498,6 @@ class GenLogParser:
         self.df_log["Content"] = self.df_log["Content"].apply(lambda x: self.action_ext(x)[0])
         self.df_log["Direction"] = self.df_log["Content"].apply(lambda x: self.action_ext(x)[1])
         # filter points of interests
-        print(self.df_log.columns)
         self.df_log["Parameters"] = self.df_log["Parameters"].apply(lambda x: self.para_check(x))
         self.df_log['Time'] = self.time_create(self.df_log)
 
@@ -514,6 +507,7 @@ class GenLogParser:
             Time, Src_IP, Dest_IP, Proto, Domain, Parameters, IOCs, Actions, Status, Direction
         :param label: label information is given based on whether reading malicious log records
         '''
+        start_time = datetime.now() 
         log_num = len(self.df_log)
         # for general logs, only extract time, parameters, actions
         column_poi_map = domaininfo.unstru_log_poi_map["general"]
@@ -533,3 +527,5 @@ class GenLogParser:
         pd.DataFrame(self.format_output).to_csv(
             Path(self.savePath).joinpath(self.logName + "_unifrom.csv"), index=False
         )
+
+        logger.info("Unified Output is Done. [Time taken: {!s}]".format(datetime.now() - start_time))

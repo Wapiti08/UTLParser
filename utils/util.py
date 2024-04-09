@@ -4,7 +4,9 @@
 @Time        : 2023/11/24 14:51
 @File        : util.py
 """
-
+import sys
+from pathlib import Path
+sys.path.insert(0,Path(sys.path[0]).resolve().parent.as_posix())
 from zat.log_to_dataframe import LogToDataFrame
 import spacy
 import networkx as nx
@@ -13,10 +15,8 @@ from tqdm import tqdm
 import pandas as pd
 from datetime import datetime
 import re
-import yaml
-import math
+import config
 
-config = yaml.safe_load("./config.yaml")
 
 nlp = spacy.load("en_core_web_lg")
 
@@ -33,11 +33,6 @@ def is_all_kv_pairs(args:list):
     
     return True
 
-def round_up_if_decimal(x):
-    if isinstance(x, float) and x % 1 != 0:  
-        return math.ceil(x)  
-    else:
-        return x
 
 def time_format(log_df: pd.DataFrame):
     ''' convert any combination of <Month> <Day>/<Date> <Timestamp> <Year> 
@@ -57,6 +52,12 @@ def time_format(log_df: pd.DataFrame):
 
     return log_df
 
+def token_filter(token:str):
+    if "[" in token:
+        extra_part_rex = r'\[.*?\] '
+        return re.sub(extra_part_rex, '', token)
+    else:
+        return token
 
 def gen_regex_from_logformat(logformat):
     ''' based on given logformat to generate the regex that matches the corresponding components
@@ -87,40 +88,47 @@ def ip_match(test_string:str):
     ''' match all
     
     '''
+    match_list = []
     # check ip with port first
-    ip_port = config["regex"]["ip_with_port"]
-    ipv4 = config["regex"]["ip4"]
-    ipv6 = config["regex"]["ip6"]
+    ip_port = config.regex["ip_with_port"]
+    ipv4 = config.regex["ip4"]
+    ipv6 = config.regex["ip6"]
 
     for ip_regex in [ip_port, ipv4, ipv6]:
-        res = re.findall(ip_regex, test_string)
+        res = re.search(ip_regex, test_string)
         if res:
-            return res
+            for ip in re.findall(ip_regex, test_string): 
+                match_list.append(ip)
+            return match_list
         else:
             return None
-
-
-def domain_match(test_string:str):
-    ''' signal match check
-    
-    '''
-    domain = config["regex"]["domain"]
-    res = re.match(domain, test_string)
-    if res:
-        return res.group(0)
-    else:
-        return None
-
 
 def path_match(test_string:str):
     ''' signal match check
     
     '''
-    path_win = config["regex"]["path_win"]
-    path_unix = config["regex"]["path_unix"]
+    match_list = []
+    path_win = config.regex["path_win"]
+    path_unix = config.regex["path_unix"]
     for path_regex in [path_win, path_unix]:
-        res = re.match(path_regex, test_string)
+        res = re.search(path_regex, test_string)
         if res:
-            return res.group(0)
+            for path in re.findall(path_regex, test_string):
+                match_list.append(path)
+            return match_list
         else:
             return None
+
+def domain_match(test_string:str):
+    ''' signal match check
+    
+    '''
+    match_list = []
+    domain_rex = config.regex["domain"]
+    res = re.search(domain_rex, test_string)
+    if res:
+        for domain in re.findall(domain_rex, test_string):
+            match_list.append(domain)
+        return match_list
+    else:
+        return None
