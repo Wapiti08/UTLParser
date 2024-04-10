@@ -44,8 +44,8 @@ class DepParse:
             if len(matches) != 0:
                 # Each token_id corresponds to one pattern dict
                 match_id, token_ids = matches[0]
-                for i in range(len(token_ids)):
-                    print(self.matcher.get(match_id)[1][0][i]["RIGHT_ID"] + ":", doc[token_ids[i]].text)
+                # for i in range(len(token_ids)):
+                    # print(self.matcher.get(match_id)[1][0][i]["RIGHT_ID"] + ":", doc[token_ids[i]].text)
                 # check whether the subject and object is in increasing order
                 if len(token_ids) == 3:
                     if token_ids[2] > token_ids[1]:

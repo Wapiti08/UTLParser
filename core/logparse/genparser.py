@@ -478,15 +478,14 @@ class GenLogParser:
         doc = nlp(clean_content)
         # check available verb with basic rule
         veb_res = self.depparser.verb_ext(doc)
-        # check pre-define dependency pattern
-        dep_res = self.depparser.depen_parse(doc)
-
         if veb_res:        
             return veb_res[0], veb_res[1]
-        elif dep_res:
+        # check pre-define dependency pattern
+        dep_res = self.depparser.depen_parse(doc)
+        if dep_res:
             return dep_res[0], dep_res[1]
-        else:
-            return '-', '-'
+        
+        return '-', '-'
 
     def time_create(self, log_df: pd.DataFrame):
         ''' assemble the separate time  component to unified format

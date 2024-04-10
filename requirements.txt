@@ -11,3 +11,4 @@ base58==2.1.1
 flair==0.13.1
 regex==2022.3.2
 torchvision==1.10.0
+pyvis==0.3.2

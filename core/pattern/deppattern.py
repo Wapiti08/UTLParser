@@ -19,7 +19,7 @@ class DepPatterns:
         ''' define specific dependency patterns for dns logs --- limited verbs
         
         '''
-        if self.log_type.lower() == "dns":
+        if "dns" in self.log_type.lower():
             anchors = []
             patterns = []
             for anchor in ["cached", "reply","forwarded", "query"]:
