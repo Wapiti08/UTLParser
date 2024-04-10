@@ -63,7 +63,7 @@ for str in str_list:
     print("parsing log: \n {}".format(str))
     patterns = []
     doc = nlp(dns_str_1)
-    displacy.serve(doc,port=8080)
+    # displacy.serve(doc,port=8080)
 
     # print out semantic role
     for token in doc:

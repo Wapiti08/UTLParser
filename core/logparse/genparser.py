@@ -124,7 +124,7 @@ class GenLogParser:
             "Label":[]
         }
 
-        self.depparser = DepParse()
+        self.depparser = DepParse(log_name.split(".")[0])
 
     def hasNumbers(self, s):
         return any(char.isdigit() for char in s)
@@ -476,11 +476,16 @@ class GenLogParser:
         anchor = ""
         clean_content = util.token_filter(content_part)
         doc = nlp(clean_content)
-        try:
-            anchor, direction = self.depparser.verb_ext(doc)
-            return anchor, direction
-        except Exception as e:
-            logger.warn("raise error {} when extracting verb from {}".format(e, content_part))
+        # check available verb with basic rule
+        veb_res = self.depparser.verb_ext(doc)
+        # check pre-define dependency pattern
+        dep_res = self.depparser.depen_parse(doc)
+
+        if veb_res:        
+            return veb_res[0], veb_res[1]
+        elif dep_res:
+            return dep_res[0], dep_res[1]
+        else:
             return '-', '-'
 
     def time_create(self, log_df: pd.DataFrame):

@@ -7,7 +7,6 @@
 """
 
 '''
-    comparison between nltk, spacy, flair for tokenization, semantic role parsing
 
 '''
 import sys
@@ -18,13 +17,7 @@ from spacy import displacy
 from spacy.matcher import DependencyMatcher
 from core.pattern import deppattern
 import re
-# import nltk
-# from nltk.tokenize import word_tokenize
-# from nltk import pos_tag
 
-# # Download the necessary NLTK resources (POS tagger data)
-# nltk.download('punkt')
-# nltk.download('averaged_perceptron_tagger')
 
 forward_direction = ["reply", 'forward', "cache"]
 backward_direction = ["query"]
@@ -33,31 +26,39 @@ nlp = spacy.load("en_core_web_lg")
 
 
 class DepParse:
-    def __init__(self, ):
+    def __init__(self, log_type:str ):
         self.matcher = DependencyMatcher(nlp.vocab)
-    
-    def depen_parse(self, anchor_list: list[str], log_type:str, doc:spacy.tokens.doc.Doc):
+        self.log_type = log_type
+
+    def depen_parse(self, doc:spacy.tokens.doc.Doc):
         ''' according to different anchor to design different patterns
-        :param anchor: the lemma verb token as the root node
+        :param anchor: the original verb token
         '''
-        # consider direct dependent without AUX
-        for anchor in anchor_list:
-            patterns = []
-            patterner = deppattern.DepPatterns(log_type=log_type, anchor=anchor)
-            for pat in vars(patterner):
-                patterns.append(pat)
-            
-            self.matcher.add(anchor, patterns)
-
-        matches = self.matcher(doc)
-        print(matches) 
-        # Each token_id corresponds to one pattern dict
-        match_id, token_ids = matches[0]
-        for i in range(len(token_ids)):
-            print(patterns[i]["RIGHT_ID"] + ":", doc[token_ids[i]].text)
-
+        deppatterner = deppattern.DepPatterns(log_type=self.log_type)
+        res= deppatterner.default_dep_pattern()
+        if res:
+            anchors, patterns = res
+            for anchor, pattern in zip(anchors, patterns):
+                self.matcher.add(anchor, [pattern])
+            matches = self.matcher(doc)
+            if len(matches) != 0:
+                # Each token_id corresponds to one pattern dict
+                match_id, token_ids = matches[0]
+                for i in range(len(token_ids)):
+                    print(self.matcher.get(match_id)[1][0][i]["RIGHT_ID"] + ":", doc[token_ids[i]].text)
+                # check whether the subject and object is in increasing order
+                if len(token_ids) == 3:
+                    if token_ids[2] > token_ids[1]:
+                        return doc[token_ids[0]].text, "->"
+                    else:
+                        return doc[token_ids[0]].text, "<-"
+        else:
+            return None
 
     def semantic_parse(self, sen:str):
+        ''' visualize the dependency of tokens in sentence
+        
+        '''
         doc = nlp(sen)
         for token in doc:
             print(token.text, token.idx, token.lemma_, token.pos_, token.dep_, token.tag_)    
@@ -66,7 +67,7 @@ class DepParse:
 
     def verb_ext(self, doc:spacy.tokens.doc.Doc):
         ''' basic rule: according to the pos value return the dependency direction
-        
+        not suitable for dns
         '''
         # define all type of verbs
         target_pos_pattern = 'VB.*|VERB$'
@@ -81,25 +82,10 @@ class DepParse:
                         return token.text, '->'
                     else:
                         return token.text, '<-'
-                # rule 2: 
             else:
                 # no verb exists in logs
-                return '-','-'
+                return None
 
-    # def nlp_verb_ext(self, sentence:str):
-
-
-    #     # Sample sentence
-
-    #     # Tokenize the sentence
-    #     tokens = word_tokenize(sentence)
-
-    #     # Tag each token with its POS tag
-    #     pos_tags = pos_tag(tokens)
-        
-    #     # Print the POS tags
-    #     print(pos_tags)
-    #     return pos_tags
 
     def token_parse(self):
         pass
