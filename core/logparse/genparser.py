@@ -29,7 +29,6 @@ from datetime import datetime
 import spacy
 import logging
 from tqdm import tqdm
-from core.logparse import uniformat
 from utils import util
 from core.logparse.semdep import DepParse
 import spacy
@@ -350,7 +349,6 @@ class GenLogParser:
 
         # load data
         self.load_data()
-        print(self.df_log)
         # process line by line
         for idx, line in tqdm(self.df_log.iterrows(), desc="Processing log lines"):
             # treesearch the logcluster of line
@@ -453,17 +451,18 @@ class GenLogParser:
                 ip_match = util.ip_match(element)
                 if ip_match:
                     new_paras.extend(ip_match)
-
+                    continue
                 if "/" in element or "\\" in element:
                     path_match = util.path_match(element)
                     if path_match:
                         new_paras.extend(path_match)
-                
+                        continue
                 domain_match = util.domain_match(element)
 
                 if domain_match:
                     new_paras.extend(domain_match)
-
+                    continue
+                
                 new_paras.append(element)
 
         return new_paras
@@ -473,7 +472,6 @@ class GenLogParser:
         
         '''
         # define the extract verb
-        anchor = ""
         clean_content = util.token_filter(content_part)
         doc = nlp(clean_content)
         # check available verb with basic rule
@@ -498,9 +496,8 @@ class GenLogParser:
         ''' extract the potential action from content
         
         '''
-
-        self.df_log["Content"] = self.df_log["Content"].apply(lambda x: self.action_ext(x)[0])
-        self.df_log["Direction"] = self.df_log["Content"].apply(lambda x: self.action_ext(x)[1])
+        tqdm.pandas(desc="extracting pois")
+        self.df_log[["Content", "Direction"]] = self.df_log["Content"].apply(lambda x: pd.Series(self.action_ext(x)))
         # filter points of interests
         self.df_log["Parameters"] = self.df_log["Parameters"].apply(lambda x: self.para_check(x))
         self.df_log['Time'] = self.time_create(self.df_log)
@@ -515,7 +512,6 @@ class GenLogParser:
         log_num = len(self.df_log)
         # for general logs, only extract time, parameters, actions
         column_poi_map = domaininfo.unstru_log_poi_map["general"]
-
         for column, _ in self.format_output.items():
             if column in ["Time", "Parameters", "Direction"]:
                 self.format_output[column] = self.df_log[column].tolist()
@@ -526,7 +522,7 @@ class GenLogParser:
             else:
                 self.format_output[column] = ["-"] * log_num
 
-        logger.info("the parsing output is like: {}".format(self.format_output))
+        # logger.info("the parsing output is like: {}".format(self.format_output))
 
         pd.DataFrame(self.format_output).to_csv(
             Path(self.savePath).joinpath(self.logName + "_unifrom.csv"), index=False
