@@ -71,11 +71,10 @@ class DepParse:
         '''
         # define all type of verbs
         target_pos_pattern = 'VB.*|VERB$'
-        
         # if there is no AUX adjacent to left of VERB sub -> obj, otherwise obj <- sub
         for ord, token in enumerate(doc):
             # check whether matching the verb
-            if bool(re.search(target_pos_pattern, token.pos_)):
+            if re.search(target_pos_pattern, token.pos_):
                 # rule1: check whether there is pos before this verb 
                 if ord - 1>=0:
                     if doc[ord-1].pos_ != "AUX":
@@ -84,8 +83,7 @@ class DepParse:
                         return token.text, '<-'
             else:
                 # no verb exists in logs
-                return None
-
+                continue
 
     def token_parse(self):
         pass

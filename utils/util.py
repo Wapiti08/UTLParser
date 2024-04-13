@@ -117,7 +117,7 @@ def path_match(test_string:str):
                 match_list.append(path)
             return match_list
         else:
-            return None
+            continue
 
 def domain_match(test_string:str):
     ''' signal match check

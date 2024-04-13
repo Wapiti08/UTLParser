@@ -96,5 +96,5 @@ class DepPatterns:
             return anchors, patterns
         
         else:
-            print("there is no pre-defined dependency patterns for {}".format(self.log_type))
+            # print("there is no pre-defined dependency patterns for {}".format(self.log_type))
             return None

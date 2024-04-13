@@ -462,7 +462,7 @@ class GenLogParser:
                 if domain_match:
                     new_paras.extend(domain_match)
                     continue
-                
+
                 new_paras.append(element)
 
         return new_paras
