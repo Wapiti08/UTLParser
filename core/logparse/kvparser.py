@@ -34,11 +34,12 @@ logger = logging.getLogger(__name__)
 
 class KVParser:
 
-    def __init__(self, log_filename:Path, poi_list:list, log_type:str, app:str):
+    def __init__(self, indir:str, outdir:str, log_name:str, \
+                 log_type:str, app:str):
         '''
         :param poi_list: for example: ["type", "timestamp", "acct", "exe", "res"]
         '''
-        self.PoI = poi_list
+        self.PoI = config.POI[app][log_type]
         self.format_output = {
             "Time":[],
             "Src_IP":[],
@@ -54,9 +55,13 @@ class KVParser:
             "Label":[]
 
         }
+        self.logName = log_name
+        self.path = indir
+        self.savePath = outdir
         self.log_type = log_type
         self.app = app
-        self.logs = Path(log_filename).read_text().splitlines()
+
+        self.logs = Path(self.path).joinpath(self.logName).read_text().splitlines()
 
 
     def split_pair(self, sen:str):
@@ -68,7 +73,9 @@ class KVParser:
         pattern = r'(?:[^"\s]+="[^"]*"|[^\'\s]+=\'[^\']*\'|[^"\s]+=[^\s]*)'
         if self.log_type == "audit":
             # check whether there is " or ' in sen  ---- audit 
-            if '"' in sen or "'" in sen:
+            if "'" in sen or '"' in sen:
+                sen = sen.replace("'","")
+                sen = sen.replace('"','')
                 # the pattern can avoid splitting problem for " and '
                 key_value_pairs = re.findall(pattern, sen)
                 for index, pair in enumerate(key_value_pairs):
@@ -88,7 +95,7 @@ class KVParser:
                 # read specific format
                 proces_format = config.format[self.log_type][self.app]
                 # create key value pair for previous part
-                regex, headers = util.gen_regex_from_logformat(proces_format)
+                headers, regex = util.gen_regex_from_logformat(proces_format)
                 res = self.header_value_pair(sen, regex, headers)
                 if res:
                     # remove the last content to have second-level split
@@ -98,12 +105,14 @@ class KVParser:
         return key_value_pairs
 
     def args_parse(self, args:str ):
-        ''' further process args with poi: fd, path and potential sub event
+        ''' for process log, 
+        further process args with poi: fd, path and potential sub event
         
         '''
         args_dict = {}
         # check whether args contains other structure
         args_tokens = args.split(" ")
+        print(args_tokens)
         if not util.is_all_kv_pairs(args_tokens):
             # match the sub event by matching the ">"
             if ">" in args_tokens:
@@ -137,6 +146,7 @@ class KVParser:
         proc_val_pattern = r'^(\d+)\(([^()]+)\)$'
         res = re.match(proc_val_pattern, value_string)
         # match ip or ip with port
+        print(res)
         if res:
             content = res.group(2)
             # check whether ip or path
@@ -188,7 +198,7 @@ class KVParser:
         # Converting the timestamp to a datetime object
         timestamp_datetime = datetime.fromtimestamp(timestamp_float)
         # Formatting datetime object to the desired format
-        return timestamp_datetime.strftime("%d-%b-%Y %H:%M:%S")
+        return timestamp_datetime.strftime("%Y-%b-%d %H:%M:%S")
 
     def poi_ext(self, pairs: list):
         ''' extract poi from pairs split from one sentence

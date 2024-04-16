@@ -79,7 +79,6 @@ class TestLogparser(unittest.TestCase):
         #     log_name="dns.log",
         #     keep_para=True,
         #     maxChild=100,
-        #     poi_list=[],
         # )
 
         
@@ -99,7 +98,6 @@ class TestLogparser(unittest.TestCase):
             log_name="syslog.log",
             keep_para=True,
             maxChild=100,
-            poi_list=[],
         )
 
         # test for apache auth
@@ -118,7 +116,6 @@ class TestLogparser(unittest.TestCase):
         #     log_name="auth.log",
         #     keep_para=True,
         #     maxChild=100,
-        #     poi_list=[],
         # )
 
 
@@ -182,7 +179,6 @@ class TestLogparser(unittest.TestCase):
             # log_name="auth.log",
             keep_para=True,
             maxChild=100,
-            poi_list=[],
         )
 
         self.logparser.load_data()
@@ -220,7 +216,6 @@ class TestLogparser(unittest.TestCase):
     #         log_name="dnsmasq.log",
     #         keep_para=True,
     #         maxChild=100,
-    #         poi_list=[],
     #     )
 
     #     para_list = ['cd', '/', '&& run-parts --report /etc/cron.hourly)','test','192.121.313.313->123.123.123.123']

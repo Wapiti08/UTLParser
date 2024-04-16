@@ -87,7 +87,6 @@ class GenLogParser:
             log_name="",
             maxChild=100,
             keep_para=True,
-            poi_list=[],
     ):
         '''
         :param depth: depth of all leaf nodes
@@ -106,7 +105,6 @@ class GenLogParser:
         self.savePath = outdir
         self.log_format = log_format
         self.keep_para = keep_para
-        self.PoI = poi_list
 
         self.format_output = {
             "Time":[],

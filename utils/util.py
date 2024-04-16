@@ -21,14 +21,20 @@ import config
 nlp = spacy.load("en_core_web_lg")
 
 def is_key_value_pair(element:str):
+    ''' check whether a split token is key-value pair
+    
+    '''
     # Define a regular expression pattern to match key-value pairs
     key_value_pattern = re.compile(r'^\w+=\S+$')
     # Check if the element matches the key-value pair pattern
     return bool(key_value_pattern.match(element))
 
 def is_all_kv_pairs(args:list):
+    ''' check whether all the tokens are key value pairs
+    
+    '''
     for element in args:
-        if not is_all_kv_pairs(element):
+        if not is_key_value_pair(element):
             return False
     
     return True

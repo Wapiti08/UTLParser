@@ -104,10 +104,10 @@ class ReqParser:
     def time_parse(self, time_string):
         ''' change the time format to unified format
         
-        '''
+        '''ß
         # define the input and output format --- %b is the abbreviated month name
         input_format = "%d/%b/%Y:%H:%M:%S %z"
-        output_format = "%d-%m-%Y %H:%M:%S"
+        output_format = "%Y-%b-%d %H:%M:%S"
 
         # parse the input string using input format
         parsed_date = datetime.strftime(time_string, input_format)
