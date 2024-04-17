@@ -77,12 +77,12 @@ class TestLogparser(unittest.TestCase):
         # kv_pairs = self.logparser.split_pair(test_string)
         # print(self.logparser.poi_ext(kv_pairs))
         pass
-    
+
     def test_log_parse(self, ):
         print(self.logparser.log_parse())
         
     def test_get_output(self,):
-        pass
+        print(self.logparser.get_output(0))
 
 if __name__ == "__main__":
     unittest.main()

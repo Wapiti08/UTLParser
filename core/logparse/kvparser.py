@@ -230,15 +230,17 @@ class KVParser:
 
         for log in tqdm(self.logs, desc="parsing {} logs...".format(self.log_type)):
             kv_pairs = self.split_pair(log)
-            if self.log_type == "audit":
-                poi_dict = self.poi_ext(kv_pairs)
-            elif self.log_type == "process":
-                print(kv_pairs)
-                poi_dict = self.poi_ext(kv_pairs[:-1]).update(self.args_parse(kv_pairs[-1]))
-            
-            for poi, value in poi_dict.items():
-                sum_poi_dict[poi].append(value)
-        
+            if kv_pairs:
+                if self.log_type == "audit":
+                    poi_dict = self.poi_ext(kv_pairs)
+                elif self.log_type == "process":
+                    if self.args_parse(kv_pairs[-1]) != {}:
+                        poi_dict = self.poi_ext(kv_pairs[:-1]).update(self.args_parse(kv_pairs[-1]))
+                    else:
+                        poi_dict = self.poi_ext(kv_pairs[:-1])
+                for poi, value in poi_dict.items():
+                    sum_poi_dict[poi].append(value)
+
         return sum_poi_dict
 
     def get_output(self, label: int):
@@ -254,49 +256,58 @@ class KVParser:
 
         if self.app.lower() == "apache":
             if self.log_type.lower() == "audit":
-                sum_poi_dict = self.log_parse(self.log_type)
-                # write data from extracted poi to format output
-                ## get the length of logs
-                log_num = len(self.logs)
-                for column, _ in self.format_output.items():
-                    if column == "IOCs":
-                        tuple_0_list = sum_poi_dict[column_poi_map[column][0]]
-                        tuple_1_list = sum_poi_dict[column_poi_map[column][1]]
-                        self.format_output[column] = list(zip(tuple_0_list, tuple_1_list))
-                    elif column == "Direction":
-                        self.format_output[column] = [column_poi_map[column]] * log_num 
-                    elif column == "Label":
-                        self.format_output[column] = [label] * log_num
-                    # exist poi for this column
-                    elif column in column_poi_map.keys():
-                        self.format_output[column] = sum_poi_dict[column_poi_map[column]]
-                    else:
-                        self.format_output[column] = ["-"] * log_num
-        
+                sum_poi_dict = self.log_parse()
+                if sum_poi_dict != {}:
+                    # write data from extracted poi to format output
+                    ## get the length of logs
+                    log_num = len(self.logs)
+                    for column, _ in self.format_output.items():
+                        if column == "IOCs":
+                            tuple_0_list = sum_poi_dict[column_poi_map[column][0]]
+                            tuple_1_list = sum_poi_dict[column_poi_map[column][1]]
+                            self.format_output[column] = list(zip(tuple_0_list, tuple_1_list))
+                        elif column == "Direction":
+                            self.format_output[column] = [column_poi_map[column]] * log_num 
+                        elif column == "Label":
+                            self.format_output[column] = [label] * log_num
+                        # exist poi for this column
+                        elif column in column_poi_map.keys():
+                            self.format_output[column] = sum_poi_dict[column_poi_map[column]]
+                        else:
+                            self.format_output[column] = ["-"] * log_num
+                else:
+                    logger.warn("Parsing error for {} log".format(self.log_type))
+                    return
+                
                 logger.info("the parsing output is like: {}".format(self.format_output))
 
         elif self.app.lower() == "sysdig":
             if self.log_type.lower() == "process":
-                sum_poi_dict = self.log_parse(self.log_type)
-                # grab both potential ip direction information and process call information
-                # process is the src node, pid 
-                log_num = len(self.logs)
-                for column, _ in self.format_output.items():
-                    if column in ["Time", "Actions", "Proto", "PID", "Parameters"]:
-                        self.format_output[column] = sum_poi_dict[column_poi_map[column]]
-                    elif column in ["Src_IP", "Dest_IP"]:
-                        # check whether there is corresponding value in fd
-                        if column.lower() in sum_poi_dict.keys():
-                            self.format_output[column] = sum_poi_dict[column.lower()]
-                    elif column == "Label":
-                        self.format_output[column] = [label] * log_num
-                    elif column == "IOCS":
-                        for index, key_name in enumerate(column_poi_map[column]):
-                            if key_name in sum_poi_dict.keys():
-                                self.format_output[column][index] = sum_poi_dict[key_name]
-                    elif column == "Direction":
-                        self.format_output[column] = [column_poi_map[column]] * log_num 
-
+                sum_poi_dict = self.log_parse()
+                if sum_poi_dict != {}:
+                    # grab both potential ip direction information and process call information
+                    # process is the src node, pid 
+                    log_num = len(self.logs)
+                    print(sum_poi_dict)
+                    for column, _ in self.format_output.items():
+                        if column in ["Time", "Actions", "Proto", "PID", "Parameters"]:
+                            self.format_output[column] = sum_poi_dict[column_poi_map[column]]
+                        elif column in ["Src_IP", "Dest_IP"]:
+                            # check whether there is corresponding value in fd
+                            if column.lower() in sum_poi_dict.keys():
+                                self.format_output[column] = sum_poi_dict[column.lower()]
+                        elif column == "Label":
+                            self.format_output[column] = [label] * log_num
+                        elif column == "IOCS":
+                            for index, key_name in enumerate(column_poi_map[column]):
+                                if key_name in sum_poi_dict.keys():
+                                    self.format_output[column][index] = sum_poi_dict[key_name]
+                        elif column == "Direction":
+                            self.format_output[column] = [column_poi_map[column]] * log_num 
+                else:
+                    logger.warn("Parsing error for {} log".format(self.log_type))
+                    return
+        
         pd.DataFrame(self.format_output).to_csv(
             Path(self.savePath).joinpath(self.logName + "_unifrom.csv"), index=False
         )

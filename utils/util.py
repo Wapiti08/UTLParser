@@ -48,6 +48,8 @@ def time_format(log_df: pd.DataFrame):
     # check whether year exists in column, otherwise choose current year for default
     if "Year" not in log_df.columns:
         log_df["Year"] = len(log_df) * [datetime.now().year]
+    if "Month" not in log_df.columns:
+        log_df["Month"] = len(log_df) * [datetime.now().strftime("%b")]
     if "Day" in log_df.columns:
         log_df["Time"] = pd.to_datetime(log_df[["Year", "Month", "Day", "Timestamp"]].astype(str).apply(' '.join, axis=1))
     elif "Date" in log_df.columns:
