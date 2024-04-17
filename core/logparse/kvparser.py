@@ -65,7 +65,8 @@ class KVParser:
 
 
     def split_pair(self, sen:str):
-        ''' split key-value pair default by space with recursive setting --- 
+        ''' for audit logs,
+        split key-value pair default by space with recursive setting --- 
         suitable for pure key-value pair matching
         
         '''
@@ -106,19 +107,20 @@ class KVParser:
 
     def args_parse(self, args:str ):
         ''' for process log, 
-        further process args with poi: fd, path and potential sub event
+        further process special args with poi: fd, path and potential sub event
         
         '''
         args_dict = {}
         # check whether args contains other structure
         args_tokens = args.split(" ")
-        print(args_tokens)
         if not util.is_all_kv_pairs(args_tokens):
             # match the sub event by matching the ">"
             if ">" in args_tokens:
                 args_dict["sub_event"] = args_tokens[args_tokens.index(">") + 1] 
-        else:
-            for pair in args_tokens:
+        
+        # process other kv pairs
+        for pair in args_tokens:
+            if "=" in pair:
                 # split key-value pair
                 res = pair.split("=")
                 key, value = res[0], res[1]
@@ -146,7 +148,6 @@ class KVParser:
         proc_val_pattern = r'^(\d+)\(([^()]+)\)$'
         res = re.match(proc_val_pattern, value_string)
         # match ip or ip with port
-        print(res)
         if res:
             content = res.group(2)
             # check whether ip or path
@@ -157,15 +158,15 @@ class KVParser:
                 return util.ip_match(value_string)
 
         # match the path 
-        elif "\\" in value_string or "/" in value_string:
+        if "\\" in value_string or "/" in value_string:
             return util.path_match(value_string)
         
         # match the domain
-        elif "." in value_string:
+        if "." in value_string:
             return util.domain_match(value_string)
-        else:
-            # filename
-            return value_string
+        
+        # filename
+        return value_string
 
 
     def header_value_pair(self, sen, regex, headers):
@@ -207,18 +208,18 @@ class KVParser:
         ext_poi = {}
         # split pairs to key-value dict
         for pair in pairs:
-            # remove timestamp part
-            if pair.startswith("msg=audit"):
-                ext_poi["timestamp"] = self.ext_format_time(pair)
-                
-            res = pair.split("=")
-            key, value = res[0], res[1]
-            if key in self.PoI:
-                ext_poi[key] = value
-
+            if pair != '':
+                # remove timestamp part
+                if pair.startswith("msg=audit"):
+                    ext_poi["timestamp"] = self.ext_format_time(pair)
+                    
+                res = pair.split("=")
+                key, value = res[0], res[1]
+                if key in self.PoI:
+                    ext_poi[key] = value
         return ext_poi
     
-    def log_parse(self, log_name:str):
+    def log_parse(self, ):
         ''' process logs into a list of ioc mapping dict
         
         '''
@@ -227,11 +228,12 @@ class KVParser:
         for poc in self.PoI:
             sum_poi_dict[poc] = []
 
-        for log in tqdm(self.logs, desc="parsing {} logs...".format(log_name)):
+        for log in tqdm(self.logs, desc="parsing {} logs...".format(self.log_type)):
             kv_pairs = self.split_pair(log)
             if self.log_type == "audit":
                 poi_dict = self.poi_ext(kv_pairs)
             elif self.log_type == "process":
+                print(kv_pairs)
                 poi_dict = self.poi_ext(kv_pairs[:-1]).update(self.args_parse(kv_pairs[-1]))
             
             for poi, value in poi_dict.items():

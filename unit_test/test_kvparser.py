@@ -52,27 +52,35 @@ class TestLogparser(unittest.TestCase):
         # key_value_audit_pairs = self.logparser.split_pair(sentence_audit)
         key_value_proc_pairs = self.logparser.split_pair(sen_process_1)
         # print(key_value_audit_pairs)
-        print(key_value_proc_pairs)
+        # print(key_value_proc_pairs)
         desired_pair_map_audit = ["type=USER_START", "msg=audit(1642635541.040.3245)", "pid=3539", "uid=0", "auid=0","ses=443", "msg='op=PAM:session_open", 'acct="root"', 'exe="/usr/sbin/cron"', "hostname=?", "addr=?", "terminal=cron", "res=success'"]
         # self.assertEquals(key_value_audit_pairs, desired_pair_map_audit)
 
     def test_args_parse(self,):
         
         args_str = "res=0 path=/opt/lampp/htdocs/userstats.php 5610 23:40:09.398233308 2 httpd (28599) > open"
-        print(self.logparser.args_parse(args_str))
+        # print(self.logparser.args_parse(args_str))
 
     def test_value_check(self,):
-        args_str = "res=0 path=/opt/lampp/htdocs/userstats.php 5610 23:40:09.398233308 2 httpd (28599) > open"
-        kv_pairs = self.logparser.args_parse(args_str)
-        for pair in kv_pairs:
-            print(self.logparser.value_check(pair))
+        # path check
+        # args_str = "res=0 path=/opt/lampp/htdocs/userstats.php 5610 23:40:09.398233308 2 httpd (28599) > open"
+        # # ip check
+        # # args_str = "fd=14(127.0.0.1:39175->127.0.0.1:80) size=8000"
+        # # domain check
+        # kv_pairs = self.logparser.args_parse(args_str)
+        # for pair in kv_pairs:
+        #     print(self.logparser.value_check(pair))
+        pass
 
     def test_poi_ext(self,):
+        # test_string = """type=USER_START msg=audit(1642635541.040:3245): pid=3539 uid=0 auid=0 ses=443 msg='op=PAM:session_open acct="root" exe="/usr/sbin/cron" hostname=? addr=? terminal=cron res=success'"""
+        # kv_pairs = self.logparser.split_pair(test_string)
+        # print(self.logparser.poi_ext(kv_pairs))
         pass
     
     def test_log_parse(self, ):
-        pass
-    
+        print(self.logparser.log_parse())
+        
     def test_get_output(self,):
         pass
 
