@@ -22,7 +22,7 @@ POI = {
     "access": ["Src_IP", "Timestamp", "Parameters", "Status", "Actions"]
   },
   "sysdig":{ 
-    "process": ["date", "proc", "pid", "event_type", "fd", "path"]
+    "process": ["timestamp", "proc", "pid", "event_type", "src_ip", "dest_ip","fd", "path", "sub_event"]
   },
   "zeek": {
     "conn": ["ts", "id.orig_h", "id.orig_p", "id.resp_h", "id.resp_p", "resp_bytes", "conn_state"],
@@ -32,7 +32,7 @@ POI = {
 format={
   "process": {
     # for testing 
-    "sysdig": "<Date> <CPU> <Proc> \(<PID>\) <Dir> <Event_Type> (<Args>)?",
+    "sysdig": "<Timestamp> <CPU> <Proc> \(<PID>\) <Dir> <Args>",
     # correct one
     # sysdig: "<Evt_Num> <Date> <CPU> <Proc> \(<PID>\) <Dir> <Event_Type> <Args>"
   }

@@ -100,8 +100,7 @@ class KVParser:
                 res = self.header_value_pair(sen, regex, headers)
                 if res:
                     # remove the last content to have second-level split
-                    pre_kv_pairs = res[:-1]
-                    key_value_pairs.extend(pre_kv_pairs)
+                    key_value_pairs.extend(res)
 
         return key_value_pairs
 
@@ -110,34 +109,63 @@ class KVParser:
         further process special args with poi: fd, path and potential sub event
         
         '''
+        def blank_value(poi_list, poi_dict):
+            for poi in poi_list:
+                poi_dict[poi] = '-'
+            return poi_dict
+        
         args_dict = {}
         # check whether args contains other structure
-        args_tokens = args.split(" ")
-        if not util.is_all_kv_pairs(args_tokens):
-            # match the sub event by matching the ">"
-            if ">" in args_tokens:
-                args_dict["sub_event"] = args_tokens[args_tokens.index(">") + 1] 
-        
-        # process other kv pairs
-        for pair in args_tokens:
-            if "=" in pair:
-                # split key-value pair
-                res = pair.split("=")
-                key, value = res[0], res[1]
-                # further process to extract precise values
-                res = self.value_check(value)
-                if key in self.PoI:
-                    # check the type
-                    if isinstance(res, list):
-                        if len(res) == 2:
-                            args_dict["src_ip"] = res[0]
-                            args_dict["dest_ip"] = res[1]
-                        elif len(res) == 1:
-                            args_dict["path"] = res[0]
-                        else:
-                            args_dict[key] = res
+        args_tokens = args.split("=",1)
+        if len(args_tokens[1].split(" ")) == 1:
+            # define the first element default as event_type
+            args_dict["event_type"] = args_tokens[1]
+            args_dict["sub_event"] = '-'
+            args_dict["src_ip"] = '-'
+            args_dict["dest_ip"] = '-'
+            args_dict['path'] = '-'
+            return args_dict
+        else:
+            args_sub_tokens = args_tokens[1].split(' ')
+            args_dict["event_type"] = args_sub_tokens[0]
+            if not util.is_all_kv_pairs(args_sub_tokens):
+                # match the sub event by matching the ">"
+                if ">" in args_sub_tokens:
+                    args_dict["sub_event"] = args_sub_tokens[args_sub_tokens.index(">") + 1] 
+                else:
+                    args_dict["sub_event"] = '-'
 
-        return args_dict
+            # process other kv pairs
+            for pair in args_sub_tokens[1:]:
+                if "=" in pair:
+                    # split key-value pair
+                    res = pair.split("=")
+                    key, value = res[0], res[1]
+                    # further process to extract precise values
+                    res = self.value_check(value)
+                    if key in self.PoI:
+                        # check the type
+                        if isinstance(res, list):
+                            if len(res) == 2:
+                                args_dict["src_ip"] = res[0]
+                                args_dict["dest_ip"] = res[1]
+                                args_dict = blank_value(['path'], args_dict)
+                            elif len(res) == 1:
+                                args_dict["path"] = res[0]
+                                args_dict = blank_value(['src_ip', 'dest_ip'], args_dict)
+                            else:
+                                args_dict = blank_value(['path', 'src_ip', 'dest_ip'], args_dict)
+
+                        else:
+                            args_dict = blank_value(['path', 'src_ip', 'dest_ip'], args_dict)
+
+                    else:
+                        args_dict = blank_value(['path', 'src_ip', 'dest_ip'], args_dict)
+
+                else:
+                    args_dict = blank_value(['path', 'src_ip', 'dest_ip'], args_dict)
+
+            return args_dict
 
     def value_check(self, value_string: str):
         ''' extract only value like path/domain/ip/username by giving the keyname
@@ -177,6 +205,7 @@ class KVParser:
         try:
             match = regex.search(sen.strip())
             message = [match.group(header) for header in headers]
+            message = [mes for mes in message if mes != '' ]
             # generate pairs
             for header, message in zip(headers, message):
                 kv_pairs.append(f"{header.lower()}={message}")
@@ -212,7 +241,7 @@ class KVParser:
                 # remove timestamp part
                 if pair.startswith("msg=audit"):
                     ext_poi["timestamp"] = self.ext_format_time(pair)
-                    
+                
                 res = pair.split("=")
                 key, value = res[0], res[1]
                 if key in self.PoI:
@@ -234,13 +263,15 @@ class KVParser:
                 if self.log_type == "audit":
                     poi_dict = self.poi_ext(kv_pairs)
                 elif self.log_type == "process":
-                    if self.args_parse(kv_pairs[-1]) != {}:
-                        poi_dict = self.poi_ext(kv_pairs[:-1]).update(self.args_parse(kv_pairs[-1]))
-                    else:
-                        poi_dict = self.poi_ext(kv_pairs[:-1])
+                    # check whether there is args part
+                    poi_dict = self.poi_ext(kv_pairs[:-1])
+                    poi_dict.update(self.args_parse(kv_pairs[-1]))
                 for poi, value in poi_dict.items():
                     sum_poi_dict[poi].append(value)
 
+        # for poc in self.PoI:
+            # if poc not in poi_dict.keys():
+                # sum_poi_dict[poc] = ['-'] * len(self.logs)
         return sum_poi_dict
 
     def get_output(self, label: int):
@@ -288,14 +319,20 @@ class KVParser:
                     # grab both potential ip direction information and process call information
                     # process is the src node, pid 
                     log_num = len(self.logs)
-                    print(sum_poi_dict)
                     for column, _ in self.format_output.items():
-                        if column in ["Time", "Actions", "Proto", "PID", "Parameters"]:
+                        if column in ["Time", "Actions", "Proto", "PID"]:
                             self.format_output[column] = sum_poi_dict[column_poi_map[column]]
+                        elif column == "Parameters":
+                            if column_poi_map[column] in sum_poi_dict.keys():
+                                self.format_output[column] = sum_poi_dict[column_poi_map[column]]
+                            else:
+                                self.format_output[column] = ['-'] * log_num
                         elif column in ["Src_IP", "Dest_IP"]:
                             # check whether there is corresponding value in fd
                             if column.lower() in sum_poi_dict.keys():
                                 self.format_output[column] = sum_poi_dict[column.lower()]
+                            else:
+                                self.format_output[column] = ['-'] * log_num
                         elif column == "Label":
                             self.format_output[column] = [label] * log_num
                         elif column == "IOCS":
@@ -304,11 +341,22 @@ class KVParser:
                                     self.format_output[column][index] = sum_poi_dict[key_name]
                         elif column == "Direction":
                             self.format_output[column] = [column_poi_map[column]] * log_num 
+                        else:
+                            self.format_output[column] = ['-'] * log_num 
+                
                 else:
                     logger.warn("Parsing error for {} log".format(self.log_type))
                     return
         
-        pd.DataFrame(self.format_output).to_csv(
+        for key, value in self.format_output.items():
+
+            print(len(value))
+        
+        log_df = pd.DataFrame(self.format_output) 
+        # format time
+        log_df = util.time_format(log_df)
+        
+        log_df[list(self.format_output.keys())].to_csv(
             Path(self.savePath).joinpath(self.logName + "_unifrom.csv"), index=False
         )
         logger.info("Unified Output is Done. [Time taken: {!s}]".format(datetime.now() - start_time))

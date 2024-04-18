@@ -52,7 +52,7 @@ class TestLogparser(unittest.TestCase):
         # key_value_audit_pairs = self.logparser.split_pair(sentence_audit)
         key_value_proc_pairs = self.logparser.split_pair(sen_process_1)
         # print(key_value_audit_pairs)
-        print(key_value_proc_pairs)
+        # print(key_value_proc_pairs)
         desired_pair_map_audit = ["type=USER_START", "msg=audit(1642635541.040.3245)", "pid=3539", "uid=0", "auid=0","ses=443", "msg='op=PAM:session_open", 'acct="root"', 'exe="/usr/sbin/cron"', "hostname=?", "addr=?", "terminal=cron", "res=success'"]
         # self.assertEquals(key_value_audit_pairs, desired_pair_map_audit)
 

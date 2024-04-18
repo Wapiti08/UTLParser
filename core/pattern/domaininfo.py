@@ -34,18 +34,18 @@ unstru_log_poi_map = {
             },
     "sysdig": {
         "process": {
-                "Time": "time",
+                "Time": "timestamp",
                 # if exist in fd
                 "Src_IP": "src_ip",
                 # if exist in fd
                 "Dest_IP":"dest_ip",
                 # same as the process name
-                "Proto":"process",
+                "Proto":"proc",
                 # if exists
                 "Parameters": "sub_event",
                 "IOCs":["fd", "path"],
                 "PID": "pid",
-                "Actions":"type",
+                "Actions":"event_type",
                 "Direction":"->",
         }
 
