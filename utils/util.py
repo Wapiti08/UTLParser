@@ -50,7 +50,9 @@ def time_format(log_df: pd.DataFrame):
         log_df["Year"] = len(log_df) * [datetime.now().year]
     if "Month" not in log_df.columns:
         log_df["Month"] = len(log_df) * [datetime.now().strftime("%b")]
-    if "Day" in log_df.columns:
+    if "Day" not in log_df.columns or "Date" not in log_df.columns:
+        log_df["Day"] = len(log_df) * [datetime.now().day]
+    elif "Day" in log_df.columns:
         log_df["Time"] = pd.to_datetime(log_df[["Year", "Month", "Day", "Timestamp"]].astype(str).apply(' '.join, axis=1))
     elif "Date" in log_df.columns:
         log_df["Time"] = pd.to_datetime(log_df[["Year", "Month", "Date", "Timestamp"]].astype(str).apply(' '.join, axis=1))
@@ -79,14 +81,20 @@ def gen_regex_from_logformat(logformat):
     regex = ""
     for k in range(len(splitters)):
         if k % 2 == 0:
-            # process the space between adjacent components
-            splitter = re.sub(" +", "\\\s+", splitters[k])
+            if splitters[k] == " (":
+                splitter = re.sub("\s+", "\\\s*", splitters[k])
+            else:
+                # process the space between adjacent components
+                splitter = re.sub(" +", "\\\s+", splitters[k])
             regex += splitter
+                
         else:
             header = splitters[k].strip("<").strip(">")
             # create a named capture group --- match only once or zero to avoid conflicts
             regex += "(?P<%s>.*?)" % header
             headers.append(header)
+                
+
     regex = re.compile("^" + regex + "$")
 
     return headers, regex
