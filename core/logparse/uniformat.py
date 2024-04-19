@@ -329,7 +329,6 @@ class UniFormat:
                 rate_list.append(round(occ/len, 3))
 
         rate_var = statistics.variance(rate_list)  
-        print(round(rate_var * (0.6) / (max_var - min_var),3))
         if rate_var == min_var:
             threshold = 0.2
         elif rate_var < max_var:

@@ -62,14 +62,16 @@ unstru_log_poi_map = {
 # define the mapping from uniformed column to components for structured logs (zeek)
 ## classified with log type
 stru_log_poi_map = {
-    "conn": {
-        "Time": "ts",
-        "Src_IP": "id.orig_h",
-        "Dest_IP": "id.resp_h",
-        "Proto": "service",
-        "Parameters": "resp_bytes",
-        "IOCs": ["id.orig_p", "id.resp_p"],
-        "Status": "conn_state",
-        "Direction": "->"
+    "zeek": {
+        "conn": {
+            "Time": "ts",
+            "Src_IP": "id.orig_h",
+            "Dest_IP": "id.resp_h",
+            "Proto": "service",
+            "Parameters": "resp_bytes",
+            "IOCs": ["id.orig_p", "id.resp_p"],
+            "Status": "conn_state",
+            "Direction": "->"
+        }
     }
 }

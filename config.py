@@ -16,16 +16,17 @@ log_type = {
   "gen": ["auth", "linux", "dns"]
 }
 
+# define the direct points of interest from key names or components
 POI = {
   "apache": {
     "audit": ["type", "timestamp", "acct", "exe", "res"],
-    "access": ["Src_IP", "Time", "Content", "Status", "Referer","Request_Method","User_Agent"]
+    "access": ["Src_IP", "Time", "Content", "Status", "Referer", "Request_Method", "User_Agent"]
   },
   "sysdig":{ 
     "process": ["timestamp", "proc", "pid", "event_type", "src_ip", "dest_ip","fd", "path", "sub_event"]
   },
   "zeek": {
-    "conn": ["ts", "id.orig_h", "id.orig_p", "id.resp_h", "id.resp_p", "resp_bytes", "conn_state"],
+    "conn": ["ts", "id.orig_h", "id.orig_p", "id.resp_h", "id.resp_p", "resp_bytes", "conn_state", "service"],
   }
 }
 

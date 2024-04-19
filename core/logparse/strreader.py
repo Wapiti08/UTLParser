@@ -12,14 +12,13 @@
 '''
 
 from zat.log_to_dataframe import LogToDataFrame
-import yaml
 import logging
 from pathlib import Path
 from datetime import datetime
 from core.pattern import domaininfo
 import pandas as pd
-
-config = yaml.safe_load("./config.yaml")
+import config
+import pandas as pd
 
 # set the configuration
 logging.basicConfig(level=logging.DEBUG,
@@ -32,9 +31,9 @@ logger = logging.getLogger(__name__)
 
 class StrLogParser:
 
-    def __init__(self, log_filename:Path, poi_list:list, log_type:str, app:str):
+    def __init__(self, indir:str, outdir:dir, log_name:str, log_type:str, app:str):
         
-        self.PoI = poi_list
+        self.PoI = config.POI[app][log_type]
         self.format_output = {
             "Time":[],
             "Src_IP":[],
@@ -49,39 +48,52 @@ class StrLogParser:
             "Direction":[],
             "Label":[]
         }
+
+        self.logName = log_name
+        self.path = indir
+        self.savePath = outdir
         self.log_type = log_type
         self.app = app
         
         # read structured logs    
         log_to_df = LogToDataFrame()
         # keep the ts column
-        self.df = log_to_df.create_dataframe(self.input_file,ts_index=False)
+        self.df = log_to_df.create_dataframe(Path(self.path).joinpath(log_name),ts_index=False)
     
 
     def format_ts(self, timestamp: float):
         datetime_obj = datetime.fromtimestamp(timestamp)
-        return datetime_obj.strftime("%d-%b-%Y %H:%M:%S")
+        return datetime_obj.strftime("%Y-%b-%d %H:%M:%S.%f")
 
     def log_parse(self,):
         ''' extract necessary columns according to poi list, save computation resource
         
         '''
-        return self.df[self.PoI].to_dict()
+        return self.df[self.PoI]
 
-    def get_output(self, log_type:str, app:str):
+    def get_output(self,):
 
-        logger.info("generating the format output for {}-{} logs".format(app.lower(), log_type.lower()))
+        logger.info("generating the format output for {}-{} logs".format(self.app.lower(), \
+                                                                         self.log_type.lower()))
         column_poi_map = domaininfo.stru_log_poi_map[self.app][self.log_type]
-        sum_poi_dict = self.log_parse(log_type)
+        sum_poi_dict = self.log_parse()
         log_num = len(self.df)
         for column, _ in self.format_output.items():
             if column in column_poi_map.keys():
-                self.format_output[column] = sum_poi_dict[column_poi_map[column]]
+                if isinstance(column_poi_map[column], list):
+                    self.format_output[column] = \
+                        sum_poi_dict.apply(lambda row: [row[col] for col in column_poi_map[column]], axis=1)
+                else:
+                    if column == "Direction":
+                        self.format_output[column] = [column_poi_map[column]] * log_num
+                    else:
+                        self.format_output[column] = sum_poi_dict[column_poi_map[column]]
             else:
                 self.format_output[column] = ["-"] * log_num
 
         logger.info("the parsing output is like: {}".format(self.format_output))
-
+        for key, value in self.format_output.items():
+            print(len(value))
         pd.DataFrame(self.format_output).to_csv(
             Path(self.savePath).joinpath(self.logName + "_unifrom.csv"), index=False
         )
