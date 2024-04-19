@@ -417,8 +417,6 @@ class GenLogParser:
             index=False,
             columns=["EventId", "EventTemplate", "Occurrences"],
         )
-        # print(self.df_log)
-        print(self.df_log['Parameters'])
 
 
     def get_parameter_list(self, row):
@@ -523,7 +521,7 @@ class GenLogParser:
         # logger.info("the parsing output is like: {}".format(self.format_output))
 
         pd.DataFrame(self.format_output).to_csv(
-            Path(self.savePath).joinpath(self.logName + "_unifrom.csv"), index=False
+            Path(self.savePath).joinpath(self.logName + "_uniform.csv"), index=False
         )
 
         logger.info("Unified Output is Done. [Time taken: {!s}]".format(datetime.now() - start_time))

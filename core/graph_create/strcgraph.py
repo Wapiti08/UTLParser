@@ -10,8 +10,10 @@ import spacy
 import networkx as nx
 import matplotlib.pyplot as plt
 from tqdm import tqdm
-from core.graph_create import gfeature
 import logging
+from core.pattern import graphrule
+from pathlib import Path
+import pandas as pd
 
 # set the configuration
 logging.basicConfig(level=logging.DEBUG,
@@ -26,10 +28,14 @@ class StruGrausalGraph:
     ''' process structured network traffic
     
     '''
-    def __init__(self, graphrule, log_df, log_type):
-        self.graphrule = graphrule
-        self.log_df = log_df
+    def __init__(self, indir:str, outdir:str, log_type:str):
+        self.graphrule = graphrule.graph_attrs_json
+        self.datapath = Path(indir).joinpath("{}.log_uniform.csv".format(log_type)).as_posix()
         self.log_type = log_type
+        self.savePath = outdir
+    
+    def data_load(self,):
+        self.log_df = pd.read_csv(self.datapath)
 
     def node_check(self, row:dict, node_value_key:list):
         ''' check whether node value is - or IP address
@@ -71,7 +77,7 @@ class StruGrausalGraph:
         # load the direction
         dire_key = self.graphrule[self.log_type]["edge"]["direc"]
 
-        nodes, edges = [], []
+        nodes_list, edges_list = [], []
 
         for _, row in tqdm(self.log_df.iterrows(), desc='parsing logs to graphs'):
             # check whether node exists or not: - is Nan
@@ -80,60 +86,30 @@ class StruGrausalGraph:
                 # check attributes ---- default ports
                 if node_attr_key != {}:
                     for key, value in node_attr_key.items():
-                        nodes.append(nodes[0], {key: row[value[0]]})
-                        nodes.append(nodes[1], {key: row[value[1]]})
+                        nodes_list.append((nodes[0], {key: row[value][0]}))
+                        nodes_list.append((nodes[1], {key: row[value][1]}))
 
             attrs_dict = {}
             pairs = list(zip(nodes[::2], nodes[1::2]))
             for key, value in edge_attr_key.items():
                 attrs_dict.update({key: row[value]})
-            edges.extend([(pair, attrs_dict) for pair in pairs])
+            edges_list.extend([(pair[0], pair[1], attrs_dict) for pair in pairs])
 
-            # G.add_node(row[node_value_key[0]], port=row['id.orig_p']) 
-            # G.add_node(row[node_value_key[1]], port=row['id.resp_p'])
-            # # G.nodes[row['id.resp_h']]['port'].append(row['id.resp_p'])
-            # # add edge
-            # G.add_edge(row['id.orig_h'], row['id.resp_h'], label=row['ts'], resp_bytes=row['resp_bytes'], conn_state=row['conn_state'])
-        
-        # create graph
-        G.add_nodes_from(nodes)
-        G.add_edges_from(edges)
+        G.add_nodes_from(nodes_list)
+        G.add_edges_from(edges_list)
 
         return G
-           
 
-    def graph_label(self, G: nx.Graph, node_indicator:str, att_indicitor:str, edge_indicitor:tuple, label:str):
-        G_label = 0
-        if label == '-   Malicious   C&C':
-            # check whether containing specific C&C server Ip -- node
-            if G.has_node(node_indicator):
-                G_label = 1
-                
-        elif label == '-   Malicious   C&C-FileDownload':
-            # check specific ip and resp bytes
-            condition1 = G.has_edge(*edge_indicitor) and G.edges[edge_indicitor]['resp_bytes'] > 3
-            condition2 = G.has_node(node_indicator)
-            if condition1 and condition2:
-                G_label = 2
-        
-        elif label == '-   Malicious   Attack':
-            vul_ports = [37215, 52869, 8081, 666]
-            # conn_state or the resp_p ---> vulnerable service
-            for edge in G.edges(data=True):
-                if 'S0' in G.edges[edge]['conn_state']:
-                    G_label = 3
-            for node in G.nodes:
-                if node['label'] == 'resp ip' and len(list(set(node['port']) & vul_ports)) > 0:
-                    G_label = 3
+    def graph_save(self, G):
+        # Draw the graph
+        pos = nx.spring_layout(G)  # You can choose a layout algorithm
 
-        elif label == '-   Malicious   DDoS':
-            # count the edges between two nodes
-            if gfeature.edges_count(G, edge_indicitor) > att_indicitor:
-                G_label = 4
-        else:
-            print('Currently not support graph label with original label {}'.format(label))
-            exit
+        # Draw the nodes and edges
+        nx.draw(G, pos, with_labels=True, node_size=700, node_color='lightblue', font_size=12, font_color='black')
+        # Draw the edge labels
+        edge_labels = nx.get_edge_attributes(G, 'status')  # Get the edge labels
+        nx.draw_networkx_edges
+        nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels, font_color='red')
 
-        return G_label
-
-
+        # Save the graph as a PNG file
+        plt.savefig(Path(self.savePath).joinpath('{}_graph.png'.format(self.log_type)))

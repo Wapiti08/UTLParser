@@ -91,11 +91,11 @@ class StrLogParser:
             else:
                 self.format_output[column] = ["-"] * log_num
 
-        logger.info("the parsing output is like: {}".format(self.format_output))
+        # logger.info("the parsing output is like: {}".format(self.format_output))
         for key, value in self.format_output.items():
             print(len(value))
         pd.DataFrame(self.format_output).to_csv(
-            Path(self.savePath).joinpath(self.logName + "_unifrom.csv"), index=False
+            Path(self.savePath).joinpath(self.logName + "_uniform.csv"), index=False
         )
 
 

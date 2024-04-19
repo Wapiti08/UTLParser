@@ -355,6 +355,6 @@ class KVParser:
         log_df = util.time_format(log_df)
         
         log_df[list(self.format_output.keys())].to_csv(
-            Path(self.savePath).joinpath(self.logName + "_unifrom.csv"), index=False
+            Path(self.savePath).joinpath(self.logName + "_uniform.csv"), index=False
         )
         logger.info("Unified Output is Done. [Time taken: {!s}]".format(datetime.now() - start_time))

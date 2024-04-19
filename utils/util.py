@@ -45,6 +45,7 @@ def time_format(log_df: pd.DataFrame):
     to single <Time> with unified format
     
     '''
+    print(log_df.columns)
     # check whether year exists in column, otherwise choose current year for default
     if "Year" not in log_df.columns:
         log_df["Year"] = len(log_df) * [datetime.now().year]
@@ -52,13 +53,13 @@ def time_format(log_df: pd.DataFrame):
         log_df["Month"] = len(log_df) * [datetime.now().strftime("%b")]
     if "timestamp" in log_df.columns:
         log_df['Timestamp'] = log_df['timestamp']
-        if "Day" in log_df.columns:
-                log_df["Time"] = pd.to_datetime(log_df[["Year", "Month", "Day", "Timestamp"]].astype(str).apply(' '.join, axis=1))
-        elif "Date" in log_df.columns:
-            log_df["Time"] = pd.to_datetime(log_df[["Year", "Month", "Date", "Timestamp"]].astype(str).apply(' '.join, axis=1))
-        else:
-            log_df["Day"] = len(log_df) * [datetime.now().day]
+    if "Day" in log_df.columns:
             log_df["Time"] = pd.to_datetime(log_df[["Year", "Month", "Day", "Timestamp"]].astype(str).apply(' '.join, axis=1))
+    elif "Date" in log_df.columns:
+        log_df["Time"] = pd.to_datetime(log_df[["Year", "Month", "Date", "Timestamp"]].astype(str).apply(' '.join, axis=1))
+    else:
+        log_df["Day"] = len(log_df) * [datetime.now().day]
+        log_df["Time"] = pd.to_datetime(log_df[["Year", "Month", "Day", "Timestamp"]].astype(str).apply(' '.join, axis=1))
     
     if "Time" in log_df.columns:
         try:
@@ -143,6 +144,7 @@ def path_match(test_string:str):
         res = re.search(path_regex, test_string)
         if res:
             for path in re.findall(path_regex, test_string):
+                path = tuple(para for para in path if para not in ['', ')', '('] and len(para)!=1)
                 match_list.append(path)
             return match_list
         else:
