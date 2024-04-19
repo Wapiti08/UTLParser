@@ -20,6 +20,7 @@ from pathlib import Path
 import pandas as pd
 from urllib.parse import urlparse
 from core.pattern import domaininfo
+import config
 
 # set the configuration
 logging.basicConfig(level=logging.DEBUG,
@@ -32,17 +33,17 @@ logger = logging.getLogger(__name__)
 
 
 # define the default log format
-log_format = "<SRC_IP> - - \[<Time>\] \"<Request_Method> <Content> <HTTP_Version>\" \
+log_format = "<Src_IP> - - \[<Time>\] \"<Request_Method> <Content> <HTTP_Version>\" \
                 <Status> <Response_Size> \"<Referer>\" \"<User_Agent>\"",
 
 class ReqParser:
 
-    def __init__(self, log_filename:Path, poi_list:list):
+    def __init__(self, indir:str, outdir:dir, log_name:str, log_type:str, app:str):
         ''' 
         :param poi_list: src_ip, time, request_method, content (parameters),
                          status, referer(domain), user_agent(tool name)
         '''
-        self.PoI = poi_list
+        self.PoI = config.POI[app][log_type]
         self.format_output = {
             "Time":[],
             "Src_IP":[],
@@ -58,7 +59,13 @@ class ReqParser:
             "Label":[]
 
         }
-        self.logs = Path(log_filename).read_text().splitlines()
+        self.logName = log_name
+        self.path = indir
+        self.savePath = outdir
+        self.log_type = log_type
+        self.app = app
+
+        self.logs = Path(self.path).joinpath(self.logName).read_text().splitlines()
     
     def domain_ext(self, referer_part):
         ''' 
@@ -74,6 +81,7 @@ class ReqParser:
         # check whether ? exists in content
         if "?" in content_part:
             paras = content_part.split("?")[1]
+            return paras
         else:
             return "-"
     
@@ -94,7 +102,7 @@ class ReqParser:
             else:
                 header = splitters[k].strip("<").strip(">")
                 # create a named capture group
-                regex += "(?P<%s>.*)" % header
+                regex += "(?P<%s>.*?)" % header
                 headers.append(header)
         regex = re.compile("^" + regex + "$")
 
@@ -104,13 +112,12 @@ class ReqParser:
     def time_parse(self, time_string):
         ''' change the time format to unified format
         
-        '''ß
+        '''
         # define the input and output format --- %b is the abbreviated month name
         input_format = "%d/%b/%Y:%H:%M:%S %z"
-        output_format = "%Y-%b-%d %H:%M:%S"
-
+        output_format = "%Y-%b-%d %H:%M:%S.%f"
         # parse the input string using input format
-        parsed_date = datetime.strftime(time_string, input_format)
+        parsed_date = datetime.strptime(time_string, input_format)
 
         formatted_date = parsed_date.strftime(output_format)
 
@@ -122,7 +129,9 @@ class ReqParser:
         '''
         browser_regex = r'([^\s/]+)(?=/\d+\.\d+)'
         browser_names = re.findall(browser_regex, user_agent_part)
-        return browser_names
+        common_browsers = ["Mozilla", "AppleWebKit", "Chrome", "Safari", "Gecko", "Firefox"]
+
+        return [ browser for browser in browser_names if browser not in common_browsers]
 
     def poi_ext(self, regex, headers):
         ''' match the poi according to component regex
@@ -145,10 +154,9 @@ class ReqParser:
         logdf.insert(0, 'LineId', None)
         logdf["LineId"] = logdf.index + 1
         # extract expected columns based on poi
-        desired_columns = [header for header in headers if any(header.lower() == poi for poi in self.PoI)]
+        desired_columns = [header for header in headers if any(header.lower() == poi.lower() for poi in self.PoI)]
         print("Total lines: ", len(logdf))
         logdf = logdf[desired_columns]
-
         # extract the necessary part based on functions
         logdf['Time'] = logdf["Time"].apply(lambda x: self.time_parse(x))
         logdf["Content"] = logdf['Content'].apply(lambda x: self.url_para_ext(x))
@@ -169,7 +177,7 @@ class ReqParser:
         if self.app.lower() == "apache":
             if "access" in self.log_type.lower():
                 # generate the regex and headers
-                headers, regex = self.gen_logformat_regex(log_format)
+                headers, regex = self.gen_logformat_regex(log_format[0])
                 logdf = self.poi_ext(regex, headers)
                 log_num = len(logdf)
 
@@ -185,8 +193,7 @@ class ReqParser:
                     else:
                         self.format_output[column] = ["-"] * log_num
 
-                logger.info("the parsing output is like: {}".format(self.format_output))
-
+                # logger.info("the parsing output is like: {}".format(self.format_output))
 
         pd.DataFrame(self.format_output).to_csv(
             Path(self.savePath).joinpath(self.logName + "_unifrom.csv"), index=False

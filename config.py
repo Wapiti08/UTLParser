@@ -19,7 +19,7 @@ log_type = {
 POI = {
   "apache": {
     "audit": ["type", "timestamp", "acct", "exe", "res"],
-    "access": ["Src_IP", "Timestamp", "Parameters", "Status", "Actions"]
+    "access": ["Src_IP", "Time", "Content", "Status", "Referer","Request_Method","User_Agent"]
   },
   "sysdig":{ 
     "process": ["timestamp", "proc", "pid", "event_type", "src_ip", "dest_ip","fd", "path", "sub_event"]
