@@ -228,7 +228,7 @@ class KVParser:
         # Converting the timestamp to a datetime object
         timestamp_datetime = datetime.fromtimestamp(timestamp_float)
         # Formatting datetime object to the desired format
-        return timestamp_datetime.strftime("%Y-%b-%d %H:%M:%S")
+        return timestamp_datetime.strftime("%Y-%b-%d %H:%M:%S.%f")
 
     def poi_ext(self, pairs: list):
         ''' extract poi from pairs split from one sentence
@@ -254,8 +254,8 @@ class KVParser:
         '''
         # define the sum poi dict to save the extracted poi from per log
         sum_poi_dict = {}
-        for poc in self.PoI:
-            sum_poi_dict[poc] = []
+        for poi in self.PoI:
+            sum_poi_dict[poi] = []
 
         for log in tqdm(self.logs, desc="parsing {} logs...".format(self.log_type)):
             kv_pairs = self.split_pair(log)
@@ -266,12 +266,14 @@ class KVParser:
                     # check whether there is args part
                     poi_dict = self.poi_ext(kv_pairs[:-1])
                     poi_dict.update(self.args_parse(kv_pairs[-1]))
-                for poi, value in poi_dict.items():
-                    sum_poi_dict[poi].append(value)
 
-        # for poc in self.PoI:
-            # if poc not in poi_dict.keys():
-                # sum_poi_dict[poc] = ['-'] * len(self.logs)
+                # check missing poi value
+                for poi in self.PoI:
+                    if poi not in poi_dict.keys():
+                        sum_poi_dict[poi].append('-')
+                    else:
+                        sum_poi_dict[poi].append(poi_dict[poi])
+
         return sum_poi_dict
 
     def get_output(self, label: int):
@@ -310,7 +312,7 @@ class KVParser:
                     logger.warn("Parsing error for {} log".format(self.log_type))
                     return
                 
-                logger.info("the parsing output is like: {}".format(self.format_output))
+                # logger.info("the parsing output is like: {}".format(self.format_output))
 
         elif self.app.lower() == "sysdig":
             if self.log_type.lower() == "process":
@@ -347,10 +349,6 @@ class KVParser:
                 else:
                     logger.warn("Parsing error for {} log".format(self.log_type))
                     return
-        
-        for key, value in self.format_output.items():
-
-            print(len(value))
         
         log_df = pd.DataFrame(self.format_output) 
         # format time

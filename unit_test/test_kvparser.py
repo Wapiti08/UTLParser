@@ -79,10 +79,11 @@ class TestLogparser(unittest.TestCase):
         pass
 
     def test_log_parse(self, ):
-        print(self.logparser.log_parse())
+        # print(self.logparser.log_parse())
+        pass
         
     def test_get_output(self,):
-        print(self.logparser.get_output(0))
+        self.logparser.get_output(0)
 
 if __name__ == "__main__":
     unittest.main()

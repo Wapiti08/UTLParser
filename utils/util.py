@@ -62,7 +62,9 @@ def time_format(log_df: pd.DataFrame):
     
     if "Time" in log_df.columns:
         try:
-            log_df['Time'] = log_df["Time"].dt.strftime("%Y-%b-%d %H:%M:%S.%f")
+            log_df['Time'] = pd.to_datetime(log_df["Time"])
+            log_df["Time"] = log_df["Time"].dt.strftime("%Y-%b-%d %H:%M:%S.%f")
+            return log_df
         except:
             if "Day" in log_df.columns:
                 log_df["Time"] = pd.to_datetime(log_df[["Year", "Month", "Day", "Timestamp"]].astype(str).apply(' '.join, axis=1))
