@@ -1,6 +1,6 @@
 # UTLParser
 ![Authour](https://img.shields.io/badge/Author-Wapiti08-blue.svg) 
-![Python](https://img.shields.io/badge/Python3-3.9.6-brightgreen.svg) 
+![Python](https://img.shields.io/badge/Python3-3.10-brightgreen.svg) 
 ![License](https://img.shields.io/badge/license-MIT3.0-green.svg)
 ![Testing Environment](https://img.shields.io/badge/macOS-14.2.1-golden.svg)
 
@@ -116,14 +116,20 @@ Toward Unified Temporal Causal Graph Construction with Semantic Log Parser
 ## Running
 
 ```
-# create virtual environment
-python -m virtualenv env
-# under linux
-source env/bin/activate
+# avoid python version conflict --- pyenv
+brew install pyenv-virtualenv
+brew install pyenv
+pyenv install 3.10
+pyenv global 3.10
+pyenv virtualenv 3.10 UTLParser
+# activate the environment
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+pyenv local UTLParser
+pyenv activiate UTLParser
 pip3 install -r requirements.txt
 # download large language library
 python -m spacy download en_core_web_lg
-
 ```
 
 ## Output Format

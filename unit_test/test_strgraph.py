@@ -6,7 +6,6 @@
  # @ Description: unit test for structural graph construction
 '''
 
-from contextlib import AbstractContextManager
 import sys
 from pathlib import Path
 sys.path.insert(0, Path(sys.path[0]).parent.as_posix())

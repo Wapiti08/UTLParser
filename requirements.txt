@@ -2,13 +2,11 @@ pandas==2.0.3
 dask==2023.5.0
 zat==0.4.6
 spacy==3.3.3
-networkx==3.1
+# for multi-edge print out support
+networkx==3.3
 chardet==5.2.0
 nltk==3.8.1
 lmdb==1.4.1
 dill==0.3.7
 base58==2.1.1
-flair==0.13.1
 regex==2022.3.2
-torchvision==1.10.0
-pyvis==0.3.2

@@ -14,6 +14,7 @@ import logging
 from core.pattern import graphrule
 from pathlib import Path
 import pandas as pd
+from core.graph_label import graphlabel
 
 # set the configuration
 logging.basicConfig(level=logging.DEBUG,
@@ -92,7 +93,12 @@ class StruGrausalGraph:
             attrs_dict = {}
             pairs = list(zip(nodes[::2], nodes[1::2]))
             for key, value in edge_attr_key.items():
-                attrs_dict.update({key: row[value]})
+                if isinstance(row[edge_value_key],str):
+                    attrs_dict.update({key: row[value],
+                                    'value':row[edge_value_key]})
+                else:
+                    attrs_dict.update({key: row[value],
+                                    'value':'-'})
             edges_list.extend([(pair[0], pair[1], attrs_dict) for pair in pairs])
 
         G.add_nodes_from(nodes_list)
@@ -101,15 +107,10 @@ class StruGrausalGraph:
         return G
 
     def graph_save(self, G):
-        # Draw the graph
-        pos = nx.spring_layout(G)  # You can choose a layout algorithm
 
-        # Draw the nodes and edges
-        nx.draw(G, pos, with_labels=True, node_size=700, node_color='lightblue', font_size=12, font_color='black')
-        # Draw the edge labels
-        edge_labels = nx.get_edge_attributes(G, 'status')  # Get the edge labels
-        nx.draw_networkx_edges
-        nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels, font_color='red')
-
-        # Save the graph as a PNG file
+        fig, ax = plt.subplots()
+        graphdraw = graphlabel.GraphLabel()
+        graphdraw.draw_labeled_multigraph(G, "value", ax)
+        fig.tight_layout()
+        # plt.show()
         plt.savefig(Path(self.savePath).joinpath('{}_graph.png'.format(self.log_type)))

@@ -6,8 +6,6 @@
 @Last Modified time: 2024-02-29 09:36:17  
 """
 
-from zat.log_to_dataframe import LogToDataFrame
-import spacy
 import networkx as nx
 import matplotlib.pyplot as plt
 from tqdm import tqdm
@@ -89,10 +87,10 @@ class UnstrGausalGraph:
         # load the direction
         dire_key = self.graphrule[self.log_type]["edge"]["direc"]
 
-        nodes, edges = [], []
+        nodes_list, edges_list = [], []
 
         # create the causal graph
-        for idx, row in tqdm(self.log_df.iterative(), desc="making causal graph from {}".format(self.log_type)):
+        for _, row in tqdm(self.log_df.iterative(), desc="making causal graph from {}".format(self.log_type)):
             nodes = self.node_check(row, node_value_key)
             # check whether nodes exist
             if nodes:
@@ -109,20 +107,20 @@ class UnstrGausalGraph:
                 # create the edges
                 attrs_dict = {}
                 pairs = list(zip(nodes[::2], nodes[1::2]))
-                for key, value in edge_attr_key.items():
-                    attrs_dict.update({key: row[value]})
-                edges.extend([(pair, attrs_dict) for pair in pairs])
                 
             elif row[dire_key] == "<-":
                 attrs_dict = {}
                 pairs = list(zip(nodes[1::2], nodes[::2]))
-                for key, value in edge_attr_key.items():
-                    attrs_dict.update({key: row[value]})
-                edges.extend([(pair, attrs_dict) for pair in pairs])
+            
+            for key, value in edge_attr_key.items():
+                attrs_dict.update({key: row[value],
+                                'value': row[edge_value_key]})
+            
+            edges_list.extend([(pair[0], pair[1], attrs_dict) for pair in pairs])
 
         # create graph
-        G.add_nodes_from(nodes)
-        G.add_edges_from(edges)
+        G.add_nodes_from(nodes_list)
+        G.add_edges_from(edges_list)
 
         return G
 
