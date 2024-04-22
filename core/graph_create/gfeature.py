@@ -40,17 +40,3 @@ def temp_graph_ext(G:nx.classes.digraph.DiGraph, T: datetime):
             subgraphs.extend(nx.connected_components(temp_graph))
 
     return subgraphs
-
-def visualize_graph(G: nx.Graph, file_path: None):
-    # draw the graph
-    # print(G.info())
-    pos = nx.spring_layout(G)
-    # nx.draw_networkx(G, pos)
-    nx.draw(G, pos, arrows=True, with_labels=True, node_color='skyblue',font_weight='bold')
-    # draw multiple edges
-    edge_labels = {(u,v): d['label'] for u, v, d in G.edges(data=True)}
-    nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels)
-    plt.show()
-    # save the graph
-    if file_path:
-        nx.write_graphml(G, file_path)

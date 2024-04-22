@@ -459,7 +459,6 @@ class GenLogParser:
                     new_paras.extend(domain_match)
                     continue
                 
-        print(new_paras)
         return new_paras
 
     def action_ext(self, content_part: str):

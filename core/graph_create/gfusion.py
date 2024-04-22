@@ -8,3 +8,16 @@
  '''
 
 
+class GraphFusion:
+    def __init__(self,):
+        pass
+
+    def graph_conn(self,):
+        ''' fuse multiple sub graphs according to rule information like auth, audit, dns, access 
+        
+        '''
+        pass
+
+
+    def time_check(self,):
+        pass

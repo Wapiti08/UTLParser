@@ -21,7 +21,7 @@ class TestLogparser(unittest.TestCase):
         indir = cur_path.joinpath("data","result").as_posix()
         outdir = cur_path.joinpath("data","result").as_posix()
 
-        self.unstrgraph = UnstrGausalGraph(indir, outdir, "audit")
+        self.unstrgraph = UnstrGausalGraph(indir, outdir, "access")
     
     def test_temp_graph(self,):
         self.unstrgraph.data_load()

@@ -69,7 +69,6 @@ class UnstrGausalGraph:
         
         '''
         value = row[key_name]
-        print(value)
         # check whether value is a list first
         if isinstance(key_name, list):
             # return nodes in order
@@ -77,6 +76,7 @@ class UnstrGausalGraph:
             return [row[key_name[i]] for i in range(node_list_len)]
         else:
             # check the length of corresponding value
+            value = ast.literal_eval(value)
             value_len = len(value)
             # make sure two variables are extracted to become nodes
             if value_len == 2:
@@ -106,12 +106,18 @@ class UnstrGausalGraph:
         dire_key = self.graphrule[log_type]["edge"]["direc"]
 
         nodes_list, edges_list = [], []
-        self.log_df['IOCs'] = self.log_df["IOCs"].apply(lambda x: ast.literal_eval(x))
+        
+        # try:
+        #     self.log_df['IOCs'] = self.log_df["IOCs"].apply(lambda x: ast.literal_eval(x))
+        # except Exception as e:
+        #     logger.warn("error occurs when converting IOCs type", e)
+        # finally:
+        #     pass          
+
         # self.log_df['IOCs'] = self.log_df["IOCs"].apply(lambda x: x.strip("[]").replace("'","").split(", "))
         # create the causal graph
         for _, row in tqdm(self.log_df.iterrows(), desc="making causal graph from {}".format(self.log_type)):
             nodes = self.node_check(row, node_value_key)
-            print(nodes)
             # check whether nodes exist
             if nodes:
                 node_len = len(nodes)
