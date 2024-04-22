@@ -195,8 +195,11 @@ class ReqParser:
 
                 # logger.info("the parsing output is like: {}".format(self.format_output))
 
-        pd.DataFrame(self.format_output).to_csv(
-            Path(self.savePath).joinpath(self.logName + "_uniform.csv"), index=False
+        # pd.DataFrame(self.format_output).to_csv(
+        #     Path(self.savePath).joinpath(self.logName + "_uniform.csv"), index=False
+        # )
+        pd.DataFrame(self.format_output).to_parquet(
+            Path(self.savePath).joinpath(self.logName + "_uniform.parquet"), index=False
         )
 
         logger.info("Unified Output is Done. [Time taken: {!s}]".format(datetime.now() - start_time))

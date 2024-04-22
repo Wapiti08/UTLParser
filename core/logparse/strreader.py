@@ -94,8 +94,12 @@ class StrLogParser:
         # logger.info("the parsing output is like: {}".format(self.format_output))
         for key, value in self.format_output.items():
             print(len(value))
-        pd.DataFrame(self.format_output).to_csv(
-            Path(self.savePath).joinpath(self.logName + "_uniform.csv"), index=False
+        # pd.DataFrame(self.format_output).to_csv(
+        #     Path(self.savePath).joinpath(self.logName + "_uniform.csv"), index=False
+        # )
+        pd.DataFrame(self.format_output).to_parquet(
+            Path(self.savePath).joinpath(self.logName + "_uniform.parquest"), index=False
         )
+
 
 

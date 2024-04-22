@@ -458,9 +458,8 @@ class GenLogParser:
                 if domain_match:
                     new_paras.extend(domain_match)
                     continue
-
-                new_paras.append(element)
-
+                
+        print(new_paras)
         return new_paras
 
     def action_ext(self, content_part: str):
@@ -523,5 +522,9 @@ class GenLogParser:
         pd.DataFrame(self.format_output).to_csv(
             Path(self.savePath).joinpath(self.logName + "_uniform.csv"), index=False
         )
+        
+        # pd.DataFrame(self.format_output).to_parquet(
+        #     Path(self.savePath).joinpath(self.logName + "_uniform.parquet"), index=False
+        # )
 
         logger.info("Unified Output is Done. [Time taken: {!s}]".format(datetime.now() - start_time))

@@ -131,7 +131,7 @@ def ip_match(test_string:str):
                 match_list.append(ip)
             return match_list
         else:
-            return None
+            continue
 
 def path_match(test_string:str):
     ''' signal match check

@@ -21,17 +21,24 @@ class TestLogparser(unittest.TestCase):
         indir = cur_path.joinpath("data","result").as_posix()
         outdir = cur_path.joinpath("data","result").as_posix()
 
-        self.unstrgraph = UnstrGausalGraph(indir, outdir, "conn")
+        self.unstrgraph = UnstrGausalGraph(indir, outdir, "audit")
     
-    def test_temp_graph():
-        pass
+    def test_temp_graph(self,):
+        self.unstrgraph.data_load()
+        G = self.unstrgraph.causal_graph()
+        T = "2018-10-26 04:02:04.954534144"
+        print(self.unstrgraph.temp_graph(G, T))
 
-    def test_comm_detect():
-        pass
+    def test_comm_detect(self,):
+        self.unstrgraph.data_load()
+        G = self.unstrgraph.causal_graph()
+        T = "2018-10-26 04:02:04.954534144"
+        print(self.unstrgraph.comm_detect(G))
 
     def test_causal_graph(self,):
-        self.unstrgraph.causal_graph()
-        
+        self.unstrgraph.data_load()
+        G = self.unstrgraph.causal_graph()
+        self.unstrgraph.graph_save(G)
 
 
 if __name__ == "__main__":

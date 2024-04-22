@@ -13,8 +13,8 @@ graph_attrs_json = {
             "attrs":{}
         },
         "edge":{
-            "direc": "",
-            "value": "Content",
+            "direc": "Direction",
+            "value": "Actions",
             "attrs":{
                 "timestamp": "Time",
             }

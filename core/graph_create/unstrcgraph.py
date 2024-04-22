@@ -10,8 +10,14 @@ import networkx as nx
 import matplotlib.pyplot as plt
 from tqdm import tqdm
 from core.graph_create import gfeature
+from core.pattern import graphrule
 from datetime import datetime
 import logging
+from core.graph_label import graphlabel
+from pathlib import Path
+import pandas as pd
+import config
+import ast
 
 # set the configuration
 logging.basicConfig(level=logging.DEBUG,
@@ -28,10 +34,16 @@ class UnstrGausalGraph:
     temp_graph: extract all the edges, nodes when time equals to give timestamp
 
     '''
-    def __init__(self, graphrule, log_df, log_type):
-        self.graphrule = graphrule
-        self.log_df = log_df
+    def __init__(self, indir:str, outdir:str, log_type:str):
+        self.graphrule = graphrule.graph_attrs_json
+        self.datapath = Path(indir).joinpath("{}.log_uniform.csv".format(log_type)).as_posix()
+        # self.datapath = Path(indir).joinpath("{}.log_uniform.parquet".format(log_type)).as_posix()
         self.log_type = log_type
+        self.savePath = outdir
+
+    def data_load(self,):
+        self.log_df = pd.read_csv(self.datapath)
+        # self.log_df = pd.read_parquet(self.datapath)
 
     def temp_graph(self, G:nx.classes.digraph.DiGraph, T:datetime):
         ''' extract temporal subgraphs by matching time T
@@ -57,6 +69,7 @@ class UnstrGausalGraph:
         
         '''
         value = row[key_name]
+        print(value)
         # check whether value is a list first
         if isinstance(key_name, list):
             # return nodes in order
@@ -66,7 +79,7 @@ class UnstrGausalGraph:
             # check the length of corresponding value
             value_len = len(value)
             # make sure two variables are extracted to become nodes
-            if isinstance(value, list) and value_len == 2:
+            if value_len == 2:
                 return value[0], value[1]
         
         return None
@@ -77,21 +90,28 @@ class UnstrGausalGraph:
         '''
         G = nx.MultiDiGraph()
         # create node value and attrs
-        node_value_key = self.graphrule[self.log_type]["node"]["value"]
-        node_attr_key = self.graphrule[self.log_type]["node"]["attrs"]
+        if self.log_type in config.log_type['gen']:
+            log_type = 'general'
+        else:
+            log_type = self.log_type
+
+        node_value_key = self.graphrule[log_type]["node"]["value"]
+        node_attr_key = self.graphrule[log_type]["node"]["attrs"]
 
         # create edge value and attrs
-        edge_value_key = self.graphrule[self.log_type]["edge"]["value"]
-        edge_attr_key = self.graphrule[self.log_type]["edge"]["attrs"]
+        edge_value_key = self.graphrule[log_type]["edge"]["value"]
+        edge_attr_key = self.graphrule[log_type]["edge"]["attrs"]
 
         # load the direction
-        dire_key = self.graphrule[self.log_type]["edge"]["direc"]
+        dire_key = self.graphrule[log_type]["edge"]["direc"]
 
         nodes_list, edges_list = [], []
-
+        self.log_df['IOCs'] = self.log_df["IOCs"].apply(lambda x: ast.literal_eval(x))
+        # self.log_df['IOCs'] = self.log_df["IOCs"].apply(lambda x: x.strip("[]").replace("'","").split(", "))
         # create the causal graph
-        for _, row in tqdm(self.log_df.iterative(), desc="making causal graph from {}".format(self.log_type)):
+        for _, row in tqdm(self.log_df.iterrows(), desc="making causal graph from {}".format(self.log_type)):
             nodes = self.node_check(row, node_value_key)
+            print(nodes)
             # check whether nodes exist
             if nodes:
                 node_len = len(nodes)
@@ -102,27 +122,41 @@ class UnstrGausalGraph:
                         for i in range(node_len):
                             nodes.append((nodes[i], {key: row[value][i]}))
 
-            # check the direction and build the edge
-            if row[dire_key] in ["->", "-"] :
-                # create the edges
-                attrs_dict = {}
-                pairs = list(zip(nodes[::2], nodes[1::2]))
+                # check the direction and build the edge
+                if row[dire_key] in ["->", "-"] :
+                    # create the edges
+                    pairs = list(zip(nodes[::2], nodes[1::2]))
+                    
+                elif row[dire_key] == "<-":
+                    pairs = list(zip(nodes[1::2], nodes[::2]))
                 
-            elif row[dire_key] == "<-":
                 attrs_dict = {}
-                pairs = list(zip(nodes[1::2], nodes[::2]))
+                for key, value in edge_attr_key.items():
+                    if isinstance(row[edge_value_key],str):
+                        attrs_dict.update({key: row[value],
+                                        'value': row[edge_value_key]})
+                    else:
+                        attrs_dict.update({key: row[value],
+                                        'value':'-'})
+                edges_list.extend([(pair[0], pair[1], attrs_dict) for pair in pairs])
             
-            for key, value in edge_attr_key.items():
-                attrs_dict.update({key: row[value],
-                                'value': row[edge_value_key]})
-            
-            edges_list.extend([(pair[0], pair[1], attrs_dict) for pair in pairs])
-
+            else:
+                continue
         # create graph
         G.add_nodes_from(nodes_list)
         G.add_edges_from(edges_list)
 
         return G
+    
+    def graph_save(self, G):
+
+        fig, ax = plt.subplots()
+        graphdraw = graphlabel.GraphLabel()
+        graphdraw.draw_labeled_multigraph(G, "value", ax)
+        fig.tight_layout()
+        # plt.show()
+        nx.write_graphml_lxml(G, Path(self.savePath).joinpath('{}.graphml'.format(self.log_type)))
+        plt.savefig(Path(self.savePath).joinpath('{}_graph.png'.format(self.log_type)))
 
     def graph_label(self,):
         pass
