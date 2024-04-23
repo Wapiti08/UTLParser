@@ -38,5 +38,5 @@ def temp_graph_ext(G:nx.classes.digraph.DiGraph, T: datetime):
             temp_graph = nx.MultiDiGraph()
             temp_graph.add_edge(u,v, **edge)
             subgraphs.extend(nx.connected_components(temp_graph))
-
+    print("All the graphs appear at timestamp {} include".format(T))
     return subgraphs

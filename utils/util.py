@@ -45,7 +45,21 @@ def time_format(log_df: pd.DataFrame):
     to single <Time> with unified format
     
     '''
-    print(log_df.columns)
+    # check whether right format Time exists
+    if "Time" in log_df.columns:
+        try:
+            log_df['Time'] = pd.to_datetime(log_df["Time"])
+            log_df["Time"] = log_df["Time"].dt.strftime("%Y-%b-%d %H:%M:%S.%f")
+            return log_df
+        except:
+            if "Day" in log_df.columns:
+                log_df["Time"] = pd.to_datetime(log_df[["Year", "Month", "Day", "Timestamp"]].astype(str).apply(' '.join, axis=1))
+            elif "Date" in log_df.columns:
+                log_df["Time"] = pd.to_datetime(log_df[["Year", "Month", "Date", "Timestamp"]].astype(str).apply(' '.join, axis=1))
+            else:
+                log_df["Day"] = len(log_df) * [datetime.now().day]
+                log_df["Time"] = pd.to_datetime(log_df[["Year", "Month", "Day", "Time"]].astype(str).apply(' '.join, axis=1))
+
     # check whether year exists in column, otherwise choose current year for default
     if "Year" not in log_df.columns:
         log_df["Year"] = len(log_df) * [datetime.now().year]
@@ -61,19 +75,7 @@ def time_format(log_df: pd.DataFrame):
         log_df["Day"] = len(log_df) * [datetime.now().day]
         log_df["Time"] = pd.to_datetime(log_df[["Year", "Month", "Day", "Timestamp"]].astype(str).apply(' '.join, axis=1))
     
-    if "Time" in log_df.columns:
-        try:
-            log_df['Time'] = pd.to_datetime(log_df["Time"])
-            log_df["Time"] = log_df["Time"].dt.strftime("%Y-%b-%d %H:%M:%S.%f")
-            return log_df
-        except:
-            if "Day" in log_df.columns:
-                log_df["Time"] = pd.to_datetime(log_df[["Year", "Month", "Day", "Timestamp"]].astype(str).apply(' '.join, axis=1))
-            elif "Date" in log_df.columns:
-                log_df["Time"] = pd.to_datetime(log_df[["Year", "Month", "Date", "Timestamp"]].astype(str).apply(' '.join, axis=1))
-            else:
-                log_df["Day"] = len(log_df) * [datetime.now().day]
-                log_df["Time"] = pd.to_datetime(log_df[["Year", "Month", "Day", "Time"]].astype(str).apply(' '.join, axis=1))
+    
             
     # format the time
     log_df['Time'] = log_df["Time"].dt.strftime("%Y-%b-%d %H:%M:%S.%f")

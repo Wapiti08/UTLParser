@@ -26,23 +26,23 @@ class TestLogparser(unittest.TestCase):
         outdir = cur_path.joinpath("data","result").as_posix()
 
         # test for sysdig process
-        self.logparser = KVParser(
-            indir=indir,
-            outdir=outdir,
-            log_name='process.log',
-            log_type='process',
-            app='sysdig',
-        )
-
-
-        # test for apache audit
         # self.logparser = KVParser(
         #     indir=indir,
         #     outdir=outdir,
-        #     log_name='audit.log',
-        #     log_type='audit',
-        #     app='apache',
-        # )   
+        #     log_name='process.log',
+        #     log_type='process',
+        #     app='sysdig',
+        # )
+
+
+        # test for apache audit
+        self.logparser = KVParser(
+            indir=indir,
+            outdir=outdir,
+            log_name='audit.log',
+            log_type='audit',
+            app='apache',
+        )   
 
     def test_split_pair(self,):
         

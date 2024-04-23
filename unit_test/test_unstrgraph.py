@@ -20,19 +20,17 @@ class TestLogparser(unittest.TestCase):
         cur_path = Path.cwd()
         indir = cur_path.joinpath("data","result").as_posix()
         outdir = cur_path.joinpath("data","result").as_posix()
-
-        self.unstrgraph = UnstrGausalGraph(indir, outdir, "access")
+        self.unstrgraph = UnstrGausalGraph(indir, outdir, "dns")
     
     def test_temp_graph(self,):
         self.unstrgraph.data_load()
         G = self.unstrgraph.causal_graph()
-        T = "2018-10-26 04:02:04.954534144"
+        T = "2024-Jan-15 00:00:53.00000"
         print(self.unstrgraph.temp_graph(G, T))
 
     def test_comm_detect(self,):
         self.unstrgraph.data_load()
         G = self.unstrgraph.causal_graph()
-        T = "2018-10-26 04:02:04.954534144"
         print(self.unstrgraph.comm_detect(G))
 
     def test_causal_graph(self,):

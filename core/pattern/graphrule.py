@@ -22,7 +22,7 @@ graph_attrs_json = {
     },
     "audit": {
         "node": {
-            "value": "IOCs",
+            "value": ["Src_IP", "IOCs"],
             "attrs": {}
         },
         "edge":{

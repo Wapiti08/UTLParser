@@ -15,6 +15,7 @@ unstru_log_poi_map = {
         "audit": {
                     "Time": "timestamp",
                     "Actions":"type",
+                    "Src_IP": "hostname",
                     # only accept two elements to form a tuple
                     "IOCs":["acct","exe"],
                     "Status":"res",

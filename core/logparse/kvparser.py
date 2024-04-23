@@ -245,7 +245,8 @@ class KVParser:
                 res = pair.split("=")
                 key, value = res[0], res[1]
                 if key in self.PoI:
-                    ext_poi[key] = value
+                    if value != "?":
+                        ext_poi[key] = value
         return ext_poi
     
     def log_parse(self, ):
@@ -330,7 +331,7 @@ class KVParser:
                             else:
                                 self.format_output[column] = ['-'] * log_num
                         elif column in ["Src_IP", "Dest_IP"]:
-                            # check whether there is corresponding value in fd
+                            # check whether there is corresponding value in fd or hostname
                             if column.lower() in sum_poi_dict.keys():
                                 self.format_output[column] = sum_poi_dict[column.lower()]
                             else:
@@ -354,10 +355,10 @@ class KVParser:
         # format time
         log_df = util.time_format(log_df)
         
-        # log_df[list(self.format_output.keys())].to_csv(
-        #     Path(self.savePath).joinpath(self.logName + "_uniform.csv"), index=False
-        # )
-        log_df[list(self.format_output.keys())].to_parquet(
-            Path(self.savePath).joinpath(self.logName + "_uniform.parquet"), index=False
+        log_df[list(self.format_output.keys())].to_csv(
+            Path(self.savePath).joinpath(self.logName + "_uniform.csv"), index=False
         )
+        # log_df[list(self.format_output.keys())].to_parquet(
+        #     Path(self.savePath).joinpath(self.logName + "_uniform.parquet"), index=False
+        # )
         logger.info("Unified Output is Done. [Time taken: {!s}]".format(datetime.now() - start_time))
