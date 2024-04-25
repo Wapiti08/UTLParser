@@ -49,6 +49,8 @@ class GraphLabel:
         Length of connectionstyle must be at least that of a maximum number of edges
         between pair of nodes. This number is maximum one-sided connections
         for directed graph and maximum total connections for undirected graph.
+        :param G: the graph created by networkx
+        :param attr_name: the label information of edge in graphs
         """
         # Works with arc3 and angle3 connectionstyles
         # connectionstyle = [f"arc3,rad={r}" for r in it.accumulate([0.15] * 4)]

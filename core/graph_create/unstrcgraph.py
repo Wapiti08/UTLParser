@@ -82,7 +82,6 @@ class UnstrGausalGraph:
                 else:
                     if row[key] != '-':
                         nodes.append(row[key])
-
         else:
             # check the length of corresponding value
             value = ast.literal_eval(value)
@@ -104,17 +103,45 @@ class UnstrGausalGraph:
             log_type = 'general'
         else:
             log_type = self.log_type
+        # check if log is process log
+        if log_type != "process":
+            node_value_key = self.graphrule[log_type]["node"]["value"]
+            node_attr_key = self.graphrule[log_type]["node"]["attrs"]
 
-        node_value_key = self.graphrule[log_type]["node"]["value"]
-        node_attr_key = self.graphrule[log_type]["node"]["attrs"]
+            # create edge value and attrs
+            edge_value_key = self.graphrule[log_type]["edge"]["value"]
+            edge_attr_key = self.graphrule[log_type]["edge"]["attrs"]
 
-        # create edge value and attrs
-        edge_value_key = self.graphrule[log_type]["edge"]["value"]
-        edge_attr_key = self.graphrule[log_type]["edge"]["attrs"]
+            # load the direction
+            dire_key = self.graphrule[log_type]["edge"]["direc"]
+        # process log 
+        else:
+            graph_list = []
+            for option in self.graphrule[log_type].keys():
+                # initialize Graph object
+                G = nx.MultiDiGraph()
+                node_value_key = self.graphrule[log_type][option]["node"]["value"]
+                node_attr_key = self.graphrule[log_type][option]["node"]["attrs"]
 
-        # load the direction
-        dire_key = self.graphrule[log_type]["edge"]["direc"]
+                # create edge value and attrs
+                edge_value_key = self.graphrule[log_type][option]["edge"]["value"]
+                edge_attr_key = self.graphrule[log_type][option]["edge"]["attrs"]
 
+                # load the direction
+                dire_key = self.graphrule[log_type][option]["edge"]["direc"]
+                graph_list.append(self.graph_create(G, node_value_key, node_attr_key, \
+                                                    edge_value_key, edge_attr_key, dire_key))
+                # compose all the sub graphs in process to one graph
+                
+            return nx.compose_all(graph_list)
+
+        G = self.graph_create(G, node_value_key, node_attr_key, edge_value_key, \
+                              edge_attr_key, dire_key)
+
+        return G
+    
+    def graph_create(self, G, node_value_key, node_attr_key, edge_value_key, edge_attr_key, dire_key):
+        
         nodes_list, edges_list = [], []
         
         try:
@@ -124,7 +151,6 @@ class UnstrGausalGraph:
         finally:
             pass          
 
-        # self.log_df['IOCs'] = self.log_df["IOCs"].apply(lambda x: x.strip("[]").replace("'","").split(", "))
         # create the causal graph
         for _, row in tqdm(self.log_df.iterrows(), desc="making causal graph from {}".format(self.log_type)):
             nodes = self.node_check(row, node_value_key)
@@ -139,7 +165,7 @@ class UnstrGausalGraph:
                         for i in range(node_len):
                             nodes.append((nodes[i], {key: row[value][i]}))
 
-                # check the direction and build the edge
+                # check the direction and build the eßßdge
                 if row[dire_key] in ["->", "-"] :
                     # create the edges
                     pairs = list(zip(nodes[::2], nodes[1::2]))
@@ -149,25 +175,30 @@ class UnstrGausalGraph:
                 
                 attrs_dict = {}
                 for key, value in edge_attr_key.items():
-                    if isinstance(row[edge_value_key],str):
-                        if isinstance(row[value], list):
-                            row[value] = ",".join(row[value])
-                        attrs_dict.update({key: row[value],
-                                        'value': row[edge_value_key]})
+                    if edge_value_key != "":
+                        if isinstance(row[edge_value_key],str):
+                            if isinstance(row[value], list):
+                                row[value] = ",".join(row[value])
+                            attrs_dict.update({key: row[value],
+                                            'value': row[edge_value_key]})
+                        else:
+                            attrs_dict.update({key: row[value],
+                                            'value':'-'})
                     else:
                         attrs_dict.update({key: row[value],
-                                        'value':'-'})
+                                            'value':'-'})
                         
                 edges_list.extend([(pair[0], pair[1], attrs_dict) for pair in pairs])
             
             else:
                 continue
+
         # create graph
         G.add_nodes_from(nodes_list)
         G.add_edges_from(edges_list)
 
         return G
-    
+
     def graph_save(self, G):
 
         fig, ax = plt.subplots()

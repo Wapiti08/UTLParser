@@ -71,7 +71,7 @@ graph_attrs_json = {
             },
             "edge":{
                 "direc": "Direction",
-                "value": "event_type",
+                "value": "Actions",
                 "attrs": {
                     "timestamp":"Time",
                 }
