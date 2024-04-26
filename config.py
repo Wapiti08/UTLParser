@@ -38,3 +38,12 @@ format={
     # sysdig: "<Evt_Num> <Date> <CPU> <Proc> \(<PID>\) <Dir> <Event_Type> <Args>"
   }
 }
+
+# define the potential candidates to decide optimal time delay
+time_thres_list = [1,2,3,4]
+
+# define the average path length inside temporal graph
+avg_len = 2
+
+# define the pre-defined longest path length
+pre_long_len = 3

@@ -9,6 +9,8 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 from datetime import datetime
+import config
+from core.graph_create.gfusion import GraphFusion
 
 def edges_count(G:nx.Graph, edge:tuple):
     '''
@@ -30,13 +32,11 @@ def comm_graph_ext(G:nx.classes.digraph.DiGraph):
     return comm_graphs
 
 
-def temp_graph_ext(G:nx.classes.digraph.DiGraph, T: datetime):
-    subgraphs = []
-    for u, v, edge in G.edges(data=True):
-        # extract the attribute element
-        if 'timestamp' in edge and edge['timestamp'] == T:
-            temp_graph = nx.MultiDiGraph()
-            temp_graph.add_edge(u,v, **edge)
-            subgraphs.extend(nx.connected_components(temp_graph))
-    print("All the graphs appear at timestamp {} include".format(T))
-    return subgraphs
+def temp_graph_ext(sub_graphs_list: list, T: datetime):
+    # load time_delay_list
+    time_delay_list = config.time_thres_list
+    graphfuser = GraphFusion(config.avg_len, config.pre_long_len)
+    conn_graph = graphfuser.graph_conn(sub_graphs_list)
+    # choose the threshold
+    opt_time = graphfuser.choose_thres(conn_graph, T, time_delay_list)
+    return graphfuser.temp_graph(conn_graph, T, opt_time)
