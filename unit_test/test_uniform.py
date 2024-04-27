@@ -27,8 +27,8 @@ class TestLogparser(unittest.TestCase):
         
         # self.uniformater = UniFormat(syslog_file)
         # self.uniformater = UniFormat(dns_file)
-        # self.uniformater = UniFormat(auth_file)
-        self.uniformater = UniFormat(audit_file)
+        self.uniformater = UniFormat(auth_file)
+        # self.uniformater = UniFormat(audit_file)
 
 
     def test_com_check(self):
@@ -56,7 +56,7 @@ class TestLogparser(unittest.TestCase):
             3: ["<Component>","<Proto>","<Level>","<Application>"]
         }
 
-        log_format_dict = self.uniformater.dep_check(pos_com_mapping, sys_maybe_log_format_dict)
+        log_format_dict = self.uniformater.dep_check(pos_com_mapping, auth_maybe_log_format_dict)
         
         print("result of position checking:")
         print(log_format_dict)
@@ -82,7 +82,7 @@ class TestLogparser(unittest.TestCase):
             "[<PID>]": [":"]
         }
 
-        log_format_dict = self.uniformater.dep_check(dep_map_dict, sys_maybe_log_format_dict)
+        log_format_dict = self.uniformater.dep_check(dep_map_dict, auth_maybe_log_format_dict)
         print("result of dependency checking:")
         print(log_format_dict)
 
@@ -97,7 +97,7 @@ class TestLogparser(unittest.TestCase):
                  3: ['<Component>'], 4: ['<Component>'], 5: [':'], 6: ['<Content>']}
 
 
-        log_format_dict = self.uniformater.com_rule_check(sys_maybe_log_format_dict)
+        log_format_dict = self.uniformater.com_rule_check(auth_maybe_log_format_dict)
         print("result of component checking:")
         print(log_format_dict)
 
@@ -154,7 +154,7 @@ format_dict = {
         "auth": {
             "log_format": "<Month> <Day> <Timestamp> <Component> <Proto>: <Content>",
             # match the ip, port, id
-            "st": 0.2,
+            "st": 0.33,
             "depth": 4,
         },
         "access": {

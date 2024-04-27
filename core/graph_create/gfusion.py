@@ -32,7 +32,6 @@ class GraphFusion:
         :param G: the original fused multi-edge directed graph
         :param T: the timestamp to pick up temporal graph
         '''
-        subgraphs = []
         # calculate the time interval
         min_time, max_time = self.time_scope(T, threshold)
         time_format = "%Y-%b-%d %H:%M:%S.%f"

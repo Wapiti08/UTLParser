@@ -23,7 +23,7 @@ format_dict = {
             "log_format": "<Month> <Day> <Timestamp> <Component> <Proto>: <Content>",
             # match the ip, port, id
             "regex": [config.regex['ip4'],config.regex['port'],config.regex['id']],
-            "st": 0.2,
+            "st": 0.33,
             "depth": 4,
         },
         # "access": {
@@ -83,28 +83,10 @@ class TestLogparser(unittest.TestCase):
 
         
         # test for linux syslog
-        rex = format_dict['Linux']['syslog']['regex']
-        log_format = format_dict['Linux']['syslog']['log_format']
-        depth = format_dict['Linux']['syslog']['depth']
-        st = format_dict['Linux']['syslog']['st']
-
-        self.logparser = GenLogParser(
-            depth=depth,
-            st=st,
-            rex = rex,
-            indir=indir,
-            outdir=outdir,
-            log_format=log_format,
-            log_name="syslog.log",
-            keep_para=True,
-            maxChild=100,
-        )
-
-        # test for apache auth
-        # rex = format_dict['Apache']['auth']['regex']
-        # log_format = format_dict['Apache']['auth']['log_format']
-        # depth = format_dict['Apache']['auth']['depth']
-        # st = format_dict['Apache']['auth']['st']
+        # rex = format_dict['Linux']['syslog']['regex']
+        # log_format = format_dict['Linux']['syslog']['log_format']
+        # depth = format_dict['Linux']['syslog']['depth']
+        # st = format_dict['Linux']['syslog']['st']
 
         # self.logparser = GenLogParser(
         #     depth=depth,
@@ -113,10 +95,28 @@ class TestLogparser(unittest.TestCase):
         #     indir=indir,
         #     outdir=outdir,
         #     log_format=log_format,
-        #     log_name="auth.log",
+        #     log_name="syslog.log",
         #     keep_para=True,
         #     maxChild=100,
         # )
+
+        # test for apache auth
+        rex = format_dict['Apache']['auth']['regex']
+        log_format = format_dict['Apache']['auth']['log_format']
+        depth = format_dict['Apache']['auth']['depth']
+        st = format_dict['Apache']['auth']['st']
+
+        self.logparser = GenLogParser(
+            depth=depth,
+            st=st,
+            rex = rex,
+            indir=indir,
+            outdir=outdir,
+            log_format=log_format,
+            log_name="auth.log",
+            keep_para=True,
+            maxChild=100,
+        )
 
 
     def test_parse(self):
@@ -150,10 +150,10 @@ class TestLogparser(unittest.TestCase):
         outdir = cur_path.joinpath("data","result").as_posix()
 
         # # test for linux syslog
-        rex = format_dict['Linux']['syslog']['regex']
-        log_format = format_dict['Linux']['syslog']['log_format']
-        depth = format_dict['Linux']['syslog']['depth']
-        st = format_dict['Linux']['syslog']['st']
+        # rex = format_dict['Linux']['syslog']['regex']
+        # log_format = format_dict['Linux']['syslog']['log_format']
+        # depth = format_dict['Linux']['syslog']['depth']
+        # st = format_dict['Linux']['syslog']['st']
 
         # # test for dns logs
         # rex = format_dict['DNS']['dnsmasq']['regex']
@@ -162,10 +162,10 @@ class TestLogparser(unittest.TestCase):
         # st = format_dict['DNS']['dnsmasq']['st']
 
         # test for auth logs
-        # rex = format_dict['Apache']['auth']['regex']
-        # log_format = format_dict['Apache']['auth']['log_format']
-        # depth = format_dict['Apache']['auth']['depth']
-        # st = format_dict['Apache']['auth']['st']
+        rex = format_dict['Apache']['auth']['regex']
+        log_format = format_dict['Apache']['auth']['log_format']
+        depth = format_dict['Apache']['auth']['depth']
+        st = format_dict['Apache']['auth']['st']
 
         self.logparser = GenLogParser(
             depth=depth,
@@ -182,9 +182,9 @@ class TestLogparser(unittest.TestCase):
         )
 
         self.logparser.load_data()
-        self.logparser.parse("syslog.log")
+        # self.logparser.parse("syslog.log")
         # self.logparser.parse("dns.log")
-        # self.logparser.parse("auth.log")
+        self.logparser.parse("auth.log")
         self.logparser.poi_ext()
         self.logparser.get_output(0)
 

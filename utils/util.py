@@ -135,6 +135,25 @@ def ip_match(test_string:str):
         else:
             continue
 
+def split_commands_check(string_list: list):
+    ''' check split commands and join them if they are
+    
+    '''
+    command = ''
+    new_string_list = []
+    for index, string in enumerate(string_list):
+        if '/bin' in string:
+            command = ' '.join(string_list[index:])
+            new_string_list.append(command)
+            break
+    
+    if len(new_string_list) > 0:
+        string_list[index:] = [command]
+        return string_list
+    else:
+        return string_list
+
+
 def path_match(test_string:str):
     ''' signal match check
     
@@ -146,8 +165,8 @@ def path_match(test_string:str):
         res = re.search(path_regex, test_string)
         if res:
             for path in re.findall(path_regex, test_string):
-                path = tuple(para for para in path if para not in ['', ')', '('] and len(para)!=1)
-                match_list.append(path)
+                # remove sub matching
+                match_list.append(path[0])
             return match_list
         else:
             continue

@@ -451,14 +451,25 @@ class GenLogParser:
                 if "/" in element or "\\" in element:
                     path_match = util.path_match(element)
                     if path_match:
-                        new_paras.extend(path_match)
+                        # check the type of element --- avoid tuples as values
+                        if isinstance(path_match[0], str):
+                            # avoid repetitions
+                            new_paras.extend(list(set(path_match)))
+                        elif isinstance(path_match[0], tuple):
+                            new_paras.extend(list(set(element for tup in path_match for element in tup)))
                         continue
+                # match domain
                 domain_match = util.domain_match(element)
-
                 if domain_match:
                     new_paras.extend(domain_match)
                     continue
-                
+                # match potential user or group names
+                if not element.isdigit():
+                    new_paras.append(element)
+                    continue
+
+        # check potential split commands
+        new_paras = util.split_commands_check(new_paras)
         return new_paras
 
     def action_ext(self, content_part: str):
@@ -509,7 +520,7 @@ class GenLogParser:
         for column, _ in self.format_output.items():
             if column in ["Time", "Parameters", "Direction"]:
                 self.format_output[column] = self.df_log[column].tolist()
-            elif column == "Actions":
+            elif column in ["Actions", "Proto"]:
                 self.format_output[column] = self.df_log[column_poi_map[column]].tolist()
             elif column == "Label":
                 self.format_output[column] = [label] * log_num
