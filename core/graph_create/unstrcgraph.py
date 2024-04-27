@@ -45,12 +45,11 @@ class UnstrGausalGraph:
         self.log_df = pd.read_csv(self.datapath)
         # self.log_df = pd.read_parquet(self.datapath)
 
-    def temp_graph(self, G:nx.classes.digraph.DiGraph, T:datetime):
+    def temp_graph(self, graph_list, T:datetime):
         ''' extract temporal subgraphs by matching time T
         
         '''
-        
-        return gfeature.temp_graph_ext(G, T)
+        return gfeature.temp_graph_ext(graph_list, T)
 
     def comm_detect(self, G:nx.classes.digraph.DiGraph):
         ''' extract independent activity graphs
@@ -199,14 +198,17 @@ class UnstrGausalGraph:
 
         return G
 
-    def graph_save(self, G):
+    def graph_save(self, G, name:str):
 
         fig, ax = plt.subplots()
         graphdraw = graphlabel.GraphLabel()
         graphdraw.draw_labeled_multigraph(G, "value", ax)
         fig.tight_layout()
         nx.write_graphml_lxml(G, Path(self.savePath).joinpath('{}.graphml'.format(self.log_type)))
-        plt.savefig(Path(self.savePath).joinpath('{}_graph.png'.format(self.log_type)))
+        if not name:
+            plt.savefig(Path(self.savePath).joinpath('{}_graph.png'.format(self.log_type)))
+        else:
+            plt.savefig(Path(self.savePath).joinpath('{}_graph.png'.format(name)))
 
     def graph_label(self,):
         pass

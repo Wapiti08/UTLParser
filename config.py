@@ -40,7 +40,7 @@ format={
 }
 
 # define the potential candidates to decide optimal time delay
-time_thres_list = [1,2,3,4]
+time_thres_list = [0,1,2,3,4]
 
 # define the average path length inside temporal graph
 avg_len = 2
