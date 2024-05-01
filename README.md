@@ -10,11 +10,11 @@ Toward Unified Temporal Causal Graph Construction with Semantic Log Parser
 
 ## Features
 - correlate data from multiple sources (network traffic, system/applications/service logs, process execution status)
-- automatically generate and identify the log format used by log parser
-- extract the entities (obj, sub, action) from events (both structured and unstructured logs)
-- correlate processes and build process-specific communities
-- graph compression with graph summarization
-- creation of causal and provenance graphs
+- automatically recognize log format, and calculate depth and similarity threshold
+- extract the entities (obj, sub, action) with depedency relationships from events (both structured and unstructured logs) 
+- provenance graph construction from multi-source logs
+- measure the delay for log fusion
+- interfaces for optimized temporal graph query
 
 ## Explaination of Dataset
 
@@ -39,26 +39,11 @@ Toward Unified Temporal Causal Graph Construction with Semantic Log Parser
         - remote command execution --- dnsmasq,apache, audit (internal_server), system.cpu
         - data exfiltration --- dnsmasq, audit (internal_share), 
 
-- MLog:
-
-    - include:
-        - Linux logs /var/log/messages, /var/log/secure 
-        - process accounting records /var/log/pacct , other Linux logs
-        - Apache web server logs /var/log/httpd/access_log, /var/log/httpd/error-log, /var/log/httpd/referer-log and /var/log/httpd/audit_log 
-        - Sendmail /var/log/mailog, 
-        - Squid /var/log/squid/access_log, /var/log/squid/store_log, /var/log/squid/cache_log, etc.
-
-
-- Windows (CBS):
-    
-    - contain information about component installation, removal or servicing events
-
 - Sysdig Process:
     ```
     # follow the format like: evt.num, evt.time, evt.cpu, proc.name, thread.tid, evt.dir, evt.type, evt.args
     - 123 23:40:09.105899621 3 httpd (28599) > switch next=0 pgft_maj=3 pgft_min=619 vm_size=442720 vm_rss=668 vm_swap=7004
     ```
-
 
 - IoT23 (structured logs) --- network traffic:
     - label information
@@ -126,7 +111,7 @@ pyenv virtualenv 3.10 UTLParser
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 pyenv local UTLParser
-pyenv activiate UTLParser
+pyenv activate UTLParser
 pip3 install -r requirements.txt
 # download large language library
 python -m spacy download en_core_web_lg

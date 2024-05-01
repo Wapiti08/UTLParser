@@ -63,9 +63,9 @@ class GraphLabel:
             G, pos, edge_color="grey", connectionstyle=connectionstyle, ax=ax
         )
 
-        for *edge, attrs in G.edges(keys=True, data=True):
-            print(*edge)
-            print(attrs)
+        # for *edge, attrs in G.edges(keys=True, data=True):
+        #     print(*edge)
+        #     print(attrs)
 
         # time_name = "timestamp"
         labels = {

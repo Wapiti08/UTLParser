@@ -19,6 +19,8 @@ import pandas as pd
 import config
 import ast
 
+logging.getLogger('matplotlib.font_manager').disabled = True
+
 # set the configuration
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s [%(levelname)s]: %(message)s',
@@ -79,7 +81,8 @@ class UnstrGausalGraph:
                     # recursively match value with string
                     nodes.extend([node for node in row[key] if node !='-'])
                 else:
-                    if row[key] != '-':
+                    # filter nan and -
+                    if row[key] != '-' and isinstance(row[key], str):
                         nodes.append(row[key])
         else:
             # check the length of corresponding value
@@ -153,9 +156,9 @@ class UnstrGausalGraph:
         # create the causal graph
         for _, row in tqdm(self.log_df.iterrows(), desc="making causal graph from {}".format(self.log_type)):
             nodes = self.node_check(row, node_value_key)
+            print(nodes)
             # check whether nodes exist
             if len(nodes) != 0:
-                # print(nodes)
                 node_len = len(nodes)
                 # check the node attr
                 if node_attr_key != {}:
@@ -204,10 +207,11 @@ class UnstrGausalGraph:
         graphdraw = graphlabel.GraphLabel()
         graphdraw.draw_labeled_multigraph(G, "value", ax)
         fig.tight_layout()
-        nx.write_graphml_lxml(G, Path(self.savePath).joinpath('{}.graphml'.format(self.log_type)))
         if not name:
+            nx.write_graphml_lxml(G, Path(self.savePath).joinpath('{}.graphml'.format(self.log_type)))
             plt.savefig(Path(self.savePath).joinpath('{}_graph.png'.format(self.log_type)))
         else:
+            nx.write_graphml_lxml(G, Path(self.savePath).joinpath('{}.graphml'.format(name)))
             plt.savefig(Path(self.savePath).joinpath('{}_graph.png'.format(name)))
 
     def graph_label(self,):

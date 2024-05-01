@@ -39,4 +39,5 @@ def temp_graph_ext(sub_graphs_list: list, T: datetime):
     conn_graph = graphfuser.graph_conn(sub_graphs_list)
     # choose the threshold
     opt_time = graphfuser.choose_thres(conn_graph, T, time_delay_list)
+    print("calculated optimized time interval is: {}".format(opt_time))
     return graphfuser.temp_graph(conn_graph, T, opt_time)

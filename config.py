@@ -43,7 +43,7 @@ format={
 time_thres_list = [0,1,2,3,4]
 
 # define the average path length inside temporal graph
-avg_len = 2
+avg_len = 1
 
 # define the pre-defined longest path length
-pre_long_len = 3
+# pre_long_len = 2

@@ -13,13 +13,13 @@ class GraphFusion:
     ''' the module to fuse mutiple sub graphs and extract precise temporal graph
     
     '''
-    def __init__(self, avg_len:int, pre_long_len:int):
+    def __init__(self, avg_len:int,):
         '''
         :param avg_len: the average length of path in termporal graph
         :param pre_long_len: the pre-defined potential longest path length
         '''
         self.avg_len = avg_len
-        self.pre_long_len = pre_long_len
+        # self.pre_long_len = pre_long_len
 
     def graph_conn(self, graph_list:list):
         ''' fuse multiple sub graphs according to rule information like auth, audit, dns, access 
@@ -56,6 +56,7 @@ class GraphFusion:
             delay_score = self.inde_score(t_graph) + self.inde_score(t_graph)
             delay_score_dict[thres] = delay_score
         # pick the keys with largest value
+        # print(delay_score_dict)
         max_value = max(delay_score_dict.values())
         max_keys = [k for k, v in delay_score_dict.items() if v == max_value]
         return min(max_keys)
@@ -81,10 +82,15 @@ class GraphFusion:
         # get central node and its degree
         cen_node = nx.center(G)
         node_degree = G.degree(cen_node)
-        if longest_len >= self.avg_len and longest_len <= self.pre_long_len + 1:
+        # if longest_len >= self.avg_len and longest_len <= self.pre_long_len + 1:
+        #     inte_score += 1
+        # if node_degree>=2 and node_degree<=3:
+        #     inte_score += 1
+        if longest_len >= self.avg_len:
             inte_score += 1
-        if node_degree>=2 and node_degree<=3:
+        if node_degree>=2:
             inte_score += 1
+
         return inte_score
 
     def inde_score(self, G):
@@ -104,8 +110,11 @@ class GraphFusion:
                             three_paths.append(path)
         # check the homogeneity and heterogeneity
         for t_path in three_paths:
-            if t_path[-1] in t_path[0:-1]:
+
+            if t_path[-1] not in t_path[0:-1]:
                 inde_score += 1
         return inde_score
-            
+    
+    def entity_type_check(self,):
+        pass
 
