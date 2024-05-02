@@ -14,7 +14,7 @@ Toward Unified Temporal Causal Graph Construction with Semantic Log Parser
 - extract the entities (obj, sub, action) with depedency relationships from events (both structured and unstructured logs) 
 - provenance graph construction from multi-source logs
 - measure the delay for log fusion
-- interfaces for optimized temporal graph query
+- interfaces for optimized temporal graph query and graph community detection
 
 ## Explaination of Dataset
 

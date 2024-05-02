@@ -1,3 +1,12 @@
+'''
+ # @ Author: Newt Tan
+ # @ Create Time: 2024-04-19 09:27:01
+ # @ Modified by: Newt Tan
+ # @ Modified time: 2024-05-01 09:21:56
+ # @ Description: label 
+ '''
+
+
 import networkx as nx
 from core.graph_create import gfeature
 import itertools as it
@@ -9,7 +18,11 @@ class GraphLabel:
     def __init__(self,):
         pass
 
-    def graph_label(self, G: nx.Graph, node_indicator:str, att_indicitor:str, edge_indicitor:tuple, label:str):
+    def graph_label_eq(self, G: nx.Graph, node_indicator:str, att_indicitor:str, edge_indicitor:tuple, label:int):
+        '''
+        :param G: temporal directed graph
+
+        '''
         G_label = 0
         if label == '-   Malicious   C&C':
             # check whether containing specific C&C server Ip -- node
@@ -42,6 +55,13 @@ class GraphLabel:
             exit
 
         return G_label
+
+
+    def graph_label_iocs(self, G: nx.Graph, node_indicator:str, att_indicitor:str, edge_indicitor:tuple, label:str):
+        '''
+        :param G: temporal directed graph
+        '''
+        pass
 
 
     def draw_labeled_multigraph(self, G, attr_name, ax=None):
