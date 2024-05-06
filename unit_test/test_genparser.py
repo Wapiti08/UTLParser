@@ -26,6 +26,13 @@ format_dict = {
             "st": 0.33,
             "depth": 4,
         },
+        "error": {
+            "log_format": "\[<Week> <Month> <Day> <Timestamp> <Year>\] \[<Proto>\] \[pid <PID>\] \[client <Src_IP>\] <Content>",
+            # match the path, port, id
+            "regex": [config.regex['path_unix']],
+            "st": 0.2,
+            "depth": 3,
+        },
         # "access": {
         #     "log_format": "<Month> <Day> <Timestamp> <Component>: <Content>",
         #     # match the ip, port, id
@@ -83,22 +90,22 @@ class TestLogparser(unittest.TestCase):
 
         
         # test for linux syslog
-        rex = format_dict['Linux']['syslog']['regex']
-        log_format = format_dict['Linux']['syslog']['log_format']
-        depth = format_dict['Linux']['syslog']['depth']
-        st = format_dict['Linux']['syslog']['st']
+        # rex = format_dict['Linux']['syslog']['regex']
+        # log_format = format_dict['Linux']['syslog']['log_format']
+        # depth = format_dict['Linux']['syslog']['depth']
+        # st = format_dict['Linux']['syslog']['st']
 
-        self.logparser = GenLogParser(
-            depth=depth,
-            st=st,
-            rex = rex,
-            indir=indir,
-            outdir=outdir,
-            log_format=log_format,
-            log_name="syslog.log",
-            keep_para=True,
-            maxChild=100,
-        )
+        # self.logparser = GenLogParser(
+        #     depth=depth,
+        #     st=st,
+        #     rex = rex,
+        #     indir=indir,
+        #     outdir=outdir,
+        #     log_format=log_format,
+        #     log_name="syslog.log",
+        #     keep_para=True,
+        #     maxChild=100,
+        # )
 
         # test for apache auth
         # rex = format_dict['Apache']['auth']['regex']
@@ -118,13 +125,32 @@ class TestLogparser(unittest.TestCase):
         #     maxChild=100,
         # )
 
+        # test for apache error
+        rex = format_dict['Apache']['error']['regex']
+        log_format = format_dict['Apache']['error']['log_format']
+        depth = format_dict['Apache']['error']['depth']
+        st = format_dict['Apache']['error']['st']
+
+        self.logparser = GenLogParser(
+            depth=depth,
+            st=st,
+            rex = rex,
+            indir=indir,
+            outdir=outdir,
+            log_format=log_format,
+            log_name="error.log",
+            keep_para=True,
+            maxChild=100,
+        )
+
 
     def test_parse(self):
 
         # self.logparser.parse("dnsmasq.log")ß
         # self.logparser.parse("dns.log")
         # self.logparser.parse("auth.log")
-        self.logparser.parse("syslog.log")
+        # self.logparser.parse("syslog.log")
+        self.logparser.parse("error.log")
 
         # self.assertEqual()
 
@@ -150,10 +176,10 @@ class TestLogparser(unittest.TestCase):
         outdir = cur_path.joinpath("data","result").as_posix()
 
         # # test for linux syslog
-        rex = format_dict['Linux']['syslog']['regex']
-        log_format = format_dict['Linux']['syslog']['log_format']
-        depth = format_dict['Linux']['syslog']['depth']
-        st = format_dict['Linux']['syslog']['st']
+        rex = format_dict['Apache']['error']['regex']
+        log_format = format_dict['Apache']['error']['log_format']
+        depth = format_dict['Apache']['error']['depth']
+        st = format_dict['Apache']['error']['st']
 
         # # test for dns logs
         # rex = format_dict['DNS']['dnsmasq']['regex']
@@ -174,7 +200,7 @@ class TestLogparser(unittest.TestCase):
             indir=indir,
             outdir=outdir,
             log_format=log_format,
-            log_name="syslog.log",
+            log_name="error.log",
             # log_name="dns.log",
             # log_name="auth.log",
             keep_para=True,
@@ -182,7 +208,8 @@ class TestLogparser(unittest.TestCase):
         )
 
         self.logparser.load_data()
-        self.logparser.parse("syslog.log")
+        self.logparser.parse("error.log")
+        # self.logparser.parse("syslog.log")
         # self.logparser.parse("dns.log")
         # self.logparser.parse("auth.log")
         self.logparser.poi_ext()
@@ -200,10 +227,10 @@ class TestLogparser(unittest.TestCase):
     #     # st = format_dict['Linux']['syslog']['st']
 
     #     # test for dns logs
-    #     rex = format_dict['DNS']['dnsmasq']['regex']
-    #     log_format = format_dict['DNS']['dnsmasq']['log_format']
-    #     depth = format_dict['DNS']['dnsmasq']['depth']
-    #     st = format_dict['DNS']['dnsmasq']['st']
+    #     rex = format_dict['Apache']['error']['regex']
+    #     log_format = format_dict['Apache']['error']['log_format']
+    #     depth = format_dict['Apache']['error']['depth']
+    #     st = format_dict['Apache']['error']['st']
 
     #     self.logparser = GenLogParser(
     #         depth=depth,
@@ -213,7 +240,7 @@ class TestLogparser(unittest.TestCase):
     #         outdir=outdir,
     #         log_format=log_format,
     #         # log_name="syslog.log",
-    #         log_name="dnsmasq.log",
+    #         log_name="error.log",
     #         keep_para=True,
     #         maxChild=100,
     #     )

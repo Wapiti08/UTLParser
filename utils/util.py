@@ -68,7 +68,7 @@ def time_format(log_df: pd.DataFrame):
     if "timestamp" in log_df.columns:
         log_df['Timestamp'] = log_df['timestamp']
     if "Day" in log_df.columns:
-            log_df["Time"] = pd.to_datetime(log_df[["Year", "Month", "Day", "Timestamp"]].astype(str).apply(' '.join, axis=1))
+        log_df["Time"] = pd.to_datetime(log_df[["Year", "Month", "Day", "Timestamp"]].astype(str).apply(' '.join, axis=1))
     elif "Date" in log_df.columns:
         log_df["Time"] = pd.to_datetime(log_df[["Year", "Month", "Date", "Timestamp"]].astype(str).apply(' '.join, axis=1))
     else:
@@ -98,6 +98,7 @@ def gen_regex_from_logformat(logformat):
     headers = []
     # match any context inside <> without < and > themselves
     splitters = re.split(r"(<[^<>]+>)", logformat)
+
     regex = ""
     for k in range(len(splitters)):
         if k % 2 == 0:

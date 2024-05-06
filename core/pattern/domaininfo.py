@@ -54,6 +54,8 @@ unstru_log_poi_map = {
     "general": {
             "Time": "Time",
             "Proto": "Proto",
+            "Src_IP": "Src_IP",
+            "PID": "PID",
             "Parameters": "Parameters",
             "Actions": "Content",
             "Direction": 'Direction'

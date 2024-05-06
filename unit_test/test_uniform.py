@@ -24,10 +24,12 @@ class TestLogparser(unittest.TestCase):
         dns_file = Path('./data/dnsmasq.log')
         auth_file = Path('./data/auth.log')
         audit_file = Path('./data/audit.log')
+        error_file = Path('./data/error.log')
         
         # self.uniformater = UniFormat(syslog_file)
         # self.uniformater = UniFormat(dns_file)
-        self.uniformater = UniFormat(auth_file)
+        # self.uniformater = UniFormat(auth_file)
+        self.uniformater = UniFormat(error_file)
         # self.uniformater = UniFormat(audit_file)
 
 
