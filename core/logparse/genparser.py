@@ -476,9 +476,15 @@ class GenLogParser:
         ''' extract the potential anchor word, waiting to add more rules on direction
         
         '''
+        # if ":" in content_part:
+        #     content_part = content_part.rsplit(":")[1]
         # define the extract verb
         clean_content = util.token_filter(content_part)
         doc = nlp(clean_content)
+        for token in doc:
+            print(token.lemma_)
+            print(token.dep_)
+            print(token.pos_)
         # check available verb with basic rule
         veb_res = self.depparser.verb_ext(doc)
         if veb_res:        
@@ -515,6 +521,7 @@ class GenLogParser:
         '''
         start_time = datetime.now() 
         log_num = len(self.df_log)
+
         # for general logs, only extract time, parameters, actions
         column_poi_map = domaininfo.unstru_log_poi_map["general"]
         for column, _ in self.format_output.items():

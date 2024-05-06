@@ -72,12 +72,9 @@ label_set_dict = {
     "access":
         [
             ["172.17.130.196"],
-            ["10.35.35.205", 200],
-            ["10.35.35.206", 200],
-            ["172.17.130.196"],
-            ["/"],
-            ["/?p=5"],
-            ["POST", "/wp-admin/admin-ajax.php"],
+            ["10.35.35.206", "200"],
+            ["p=5"],
+            ["POST"],
             ["wp_meta=WyJpZCJd"],
             ["172.17.130.196","wp_meta=WyJpZCJd"],
             ["172.17.130.196","wp_meta=WyJuZXRzdGF0IiwgIi10Il0%3D"],
@@ -94,15 +91,14 @@ label_set_dict = {
             ["172.17.130.196","wp_meta=WyJjYXQiLCAiL2V0Yy9wcm9maWxlIl0%3D"],
             ["172.17.130.196","WyJ3Z2V0IiwgImh0dHBzOi8vZ2l0aHViLmNvbS9haXQtYWVjaWQvd3BoYXNoY3JhY2svYXJjaGl2ZS9yZWZzL3RhZ3MvdjAuMS50YXIuZ3oiXQ"],
             ["172.17.130.196","WyJ0YXIiLCAieHZmeiIsICJ2MC4xLnRhci5neiJd"],
-            ["172.17.130.196","WyJ3Z2V0I"],
             ["172.17.130.196","WyIuL3dwaGFzaGNyYWNrLTAuMS93cGhhc2hjcmFjay5zaCIsICItdyIsICIkUFdEL3JvY2t5b3UudHh0IiwgIi1qIiwgIi4vd3BoYXNoY3JhY2stMC4xL2pvaG4tMS43LjYtanVtYm8tMTItTGludXg2NC9ydW4iLCAiLXUi"],
         ]
     ,
     "audit":
         [
-            ["auth", "phopkins", "/bin/su", "success"],
-            ["acq", "phopkins", "/bin/su", "success"],
-            ["start", "phopkins", "/bin/su", "success"],
+            ["AUTH", "phopkins", "/bin/su", "success"],
+            ["ACQ", "phopkins", "/bin/su", "success"],
+            ["START", "phopkins", "/bin/su", "success"],
         ]
     ,
     "dnsmasq":
@@ -126,6 +122,7 @@ def value_match(ioc_list:list, data:list):
         for ioc in ioc_list:
             if str(ioc) in str(log_string):
                 iocs_num += 1
+
     return iocs_num
 
 
@@ -155,7 +152,6 @@ def iocs_coverage(labelled_data:list, ioc_indicitors:list, check_position:list,
     iocs_num = 0
     # extract all iocs according to ioc_indicitors
     iocs_num = value_match(ioc_indicitors, labelled_data)
-
     # parse labelled logs into uniformed csv
     if data_type == "audit":
         logparser = KVParser(
@@ -165,7 +161,8 @@ def iocs_coverage(labelled_data:list, ioc_indicitors:list, check_position:list,
             log_type='audit',
             app='apache',
         )
-    
+        logparser.get_output(1)
+
     elif data_type == "access":
         logparser = ReqParser(
             indir=indir,
@@ -173,6 +170,7 @@ def iocs_coverage(labelled_data:list, ioc_indicitors:list, check_position:list,
             log_name='access.log',
             log_type='access',
             app='apache',)
+        logparser.get_output(1)
 
     else:
         if data_type in ["auth","error"]:
@@ -198,11 +196,12 @@ def iocs_coverage(labelled_data:list, ioc_indicitors:list, check_position:list,
             keep_para=True,
             maxChild=100,
         )
-    try:
-        logparser.get_output(1)
-    except:
+
         logparser.load_data()
+        logparser.parse("{}.log".format(data_type))
+        logparser.poi_ext()
         logparser.get_output(1)
+    
     # match all the iocs and calculate the coverage
     try:
         uni_df = pd.read_parquet(Path(outdir).joinpath(data_type + ".log_uniform.parquest"))
@@ -212,8 +211,11 @@ def iocs_coverage(labelled_data:list, ioc_indicitors:list, check_position:list,
     matched_iocs_num = 0
     for column in check_position:
         matched_iocs_num += value_match(iocs_list, uni_df[column].tolist())
+    
     print(matched_iocs_num)
+    
     print(iocs_num)
+
     iocs_coverage = round(matched_iocs_num/iocs_num,4)  
     print("iocs coverage for {} is: ".format(data_type, iocs_coverage))
 
@@ -258,29 +260,35 @@ def label_csv_data(uniform_csv_path, label_data_path):
     
     return uni_df.iloc[malicious_lines]
     
-def labelled_data_ext(data_path, label_data_rule_path):
-    '''
-    :param data_path: the file path with malicious data
-    :param label_data_rule_path: the file defining malicious lines
-    '''
-    with data_path.open("r") as fr:
-        data = fr.readlines()
+# def labelled_data_ext(data_path, label_data_rule_path):
+#     '''
+#     :param data_path: the file path with malicious data
+#     :param label_data_rule_path: the file defining malicious lines
+#     '''
+#     with data_path.open("r") as fr:
+#         data = fr.readlines()
 
-    malicious_lines = []
+#     malicious_lines = []
     
-    with label_data_rule_path.open("r") as fr:
-        rule_data = fr.readlines()
+#     with label_data_rule_path.open("r") as fr:
+#         rule_data = fr.readlines()
 
-    for line in rule_data:
-        log = json.loads(line)
-        # minus one to get index
-        malicious_lines.append(data[log["line"]-1])
+#     for line in rule_data:
+#         log = json.loads(line)
+#         # minus one to get index
+#         malicious_lines.append(data[log["line"]-1])
     
-    return malicious_lines
+#     return malicious_lines
 
 if __name__ == "__main__":
 
-    data_type_list = ["access", "audit", "auth", "dnsmasq", "error"]
+    data_type_list = [
+                    # "access",
+                    #   "audit", 
+                      "auth", 
+                      "dnsmasq", 
+                    #   "error"
+                      ]
     
     cur_path = Path.cwd()
     indir = cur_path.joinpath("data").as_posix()
@@ -289,13 +297,16 @@ if __name__ == "__main__":
 
     for data_type in data_type_list:
         # load malicious data
-        mal_data = labelled_data_ext(Path(indir).joinpath(f"{data_type}.log"), Path(labdir).joinpath(f"{data_type}.log"))
+        # mal_data = labelled_data_ext(Path(indir).joinpath(f"{data_type}.log"), Path(labdir).joinpath(f"{data_type}.log"))
+        with Path(indir).joinpath(f"{data_type}.log").open("r") as fr:
+            data = fr.readlines()
         # get the ioc_list
         iocs_list = set()
         for ioc_set in label_set_dict[data_type]:
             iocs_list.update(ioc_set)
         pos_check = label_pos_dict[data_type]
-        print(iocs_coverage(mal_data, list(iocs_list), pos_check, data_type))
+        # print(iocs_coverage(mal_data, list(iocs_list), pos_check, data_type))
+        print(iocs_coverage(data, list(iocs_list), pos_check, data_type))
 
 
 
