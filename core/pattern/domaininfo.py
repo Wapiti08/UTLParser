@@ -16,6 +16,8 @@ unstru_log_poi_map = {
                     "Time": "timestamp",
                     "Actions":"type",
                     "Src_IP": "hostname",
+                    "PID": "pid",
+                    "Parameters":"user@1001",
                     # only accept two elements to form a tuple
                     "IOCs":["acct","exe"],
                     "Status":"res",

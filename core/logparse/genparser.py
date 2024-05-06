@@ -481,10 +481,6 @@ class GenLogParser:
         # define the extract verb
         clean_content = util.token_filter(content_part)
         doc = nlp(clean_content)
-        for token in doc:
-            print(token.lemma_)
-            print(token.dep_)
-            print(token.pos_)
         # check available verb with basic rule
         veb_res = self.depparser.verb_ext(doc)
         if veb_res:        
@@ -531,10 +527,7 @@ class GenLogParser:
                 else:
                     self.format_output[column] = ["-"] * log_num
             elif column in ["Actions", "Proto"]:
-                if column in self.df_log.columns:
-                    self.format_output[column] = self.df_log[column_poi_map[column]].tolist()
-                else:
-                    self.format_output[column] = ["-"] * log_num
+                self.format_output[column] = self.df_log[column_poi_map[column]].tolist()
             elif column == "Label":
                 self.format_output[column] = [label] * log_num
             else:

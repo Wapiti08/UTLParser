@@ -46,9 +46,9 @@ format_dict = {
 
 label_pos_dict = {
     "error": ["Src_IP",],
-    "auth":["Parameters","Actions"],
+    "auth":["Proto", "Parameters","Actions"],
     "access":["Src_IP","Parameters","Actions","Status"],
-    "audit":["Actions", "IOCs", "Status"],
+    "audit":["PID","Actions", "IOCs", "Status"],
     "dnsmasq":["IOCs"],
     # "conn":["Dest_IP", "IOCs","Status"]
 }
@@ -56,7 +56,7 @@ label_pos_dict = {
 label_set_dict = {
     "error":
         [
-            ["172.17.130.196"],
+            ["172.17.130.196"], 
         ]
     ,
     "auth":
@@ -66,7 +66,6 @@ label_set_dict = {
          ["opened", "system-user:session"],
          ["sudo", "opened"],
          ["sudo", "closed"],
-         ["pts/0", "root"]
         ]
     ,
     "access":
@@ -98,7 +97,14 @@ label_set_dict = {
         [
             ["AUTH", "phopkins", "/bin/su", "success"],
             ["ACQ", "phopkins", "/bin/su", "success"],
-            ["START", "phopkins", "/bin/su", "success"],
+            ["USER_START", "phopkins", "/bin/su", "success"],
+            ["AUTH", "phopkins", "/lib/systemd/systemd", "success"],
+            ["ACQ", "phopkins", "/lib/systemd/systemd", "success"],
+            ["LOGIN", "1001", "1"],
+            ["USER_START", "phopkins", "1001", "/lib/systemd/systemd", "success"],
+            ["SERVICE_START", "phopkins", "1001", "/lib/systemd/systemd", "success"],
+
+
         ]
     ,
     "dnsmasq":
@@ -212,10 +218,6 @@ def iocs_coverage(labelled_data:list, ioc_indicitors:list, check_position:list,
     for column in check_position:
         matched_iocs_num += value_match(iocs_list, uni_df[column].tolist())
     
-    print(matched_iocs_num)
-    
-    print(iocs_num)
-
     iocs_coverage = round(matched_iocs_num/iocs_num,4)  
     print("iocs coverage for {} is: ".format(data_type, iocs_coverage))
 
@@ -226,7 +228,7 @@ def label_acc(ano_uniform_df, iocs_set_indicitors:list, match_position: list,
               data_type:str):
     ''' calculate labelling accuracy for specific log type
     
-    :param uniform_df: the unified output
+    :param ano_uniform_df: the unified output
     :param iocs_set_indicitors: the iocs list with embedded iocs set
     :param match_position: the place to match set of iocs, name of iocs locations
     :param data_type: log type
@@ -234,21 +236,21 @@ def label_acc(ano_uniform_df, iocs_set_indicitors:list, match_position: list,
     match_series = ano_uniform_df[match_position].apply(lambda row: ' '.join(row.values.astype(str)), axis=1).tolist()
     matched_label_num = 0
     matched_label_num = value_set_match(iocs_set_indicitors, match_series)
-    
+    print(len(ano_uniform_df))
     lab_acc = round(matched_label_num/len(ano_uniform_df),4)
-    print("iocs coverage for {} is: ".format(data_type, lab_acc))
+    print("labelling accuracy for {} is: ".format(data_type, lab_acc))
 
     return lab_acc
     
-def label_csv_data(uniform_csv_path, label_data_path):
+def label_csv_data(data_type, label_data_path):
     ''' based on index information in label_data to mark anomaly in uniform_df
     
     :param uniform_df: csv framework with lineId
     '''
     try:
-        uni_df = pd.read_parquet(Path(outdir).joinpath(data_type + "_uniform.parquest"))
+        uni_df = pd.read_parquet(Path(outdir).joinpath(data_type + ".log_uniform.parquest"))
     except:
-        uni_df = pd.read_csv(Path(outdir).joinpath(data_type + "_uniform.csv"))
+        uni_df = pd.read_csv(Path(outdir).joinpath(data_type + ".log_uniform.csv"))
 
     with label_data_path.open("r") as fr:
         data = fr.readlines()
@@ -256,7 +258,8 @@ def label_csv_data(uniform_csv_path, label_data_path):
     
     for line in data:
         log = json.loads(line)
-        malicious_lines.append(log["line"])
+        # consider index starting from 0
+        malicious_lines.append(log["line"]-1)
     
     return uni_df.iloc[malicious_lines]
     
@@ -283,11 +286,11 @@ def label_csv_data(uniform_csv_path, label_data_path):
 if __name__ == "__main__":
 
     data_type_list = [
-                    # "access",
-                    #   "audit", 
+                      "access",
+                      "audit", 
                       "auth", 
-                      "dnsmasq", 
-                    #   "error"
+                      "error",
+                      "dnsmasq",    
                       ]
     
     cur_path = Path.cwd()
@@ -307,7 +310,8 @@ if __name__ == "__main__":
         pos_check = label_pos_dict[data_type]
         # print(iocs_coverage(mal_data, list(iocs_list), pos_check, data_type))
         print(iocs_coverage(data, list(iocs_list), pos_check, data_type))
-
+        ano_uni_df = label_csv_data(data_type, Path(labdir).joinpath(f"{data_type}.log"))
+        print(label_acc(ano_uni_df, label_set_dict[data_type], label_pos_dict[data_type], data_type))
 
 
     

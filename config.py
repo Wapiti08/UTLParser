@@ -19,7 +19,7 @@ log_type = {
 # define the direct points of interest from key names or components
 POI = {
   "apache": {
-    "audit": ["type", "timestamp", "acct", "exe", "hostname", "res"],
+    "audit": ["type", "timestamp", "acct", "exe", "hostname", "res", "pid", "unit"],
     "access": ["Src_IP", "Time", "Content", "Status", "Referer", "Request_Method", "User_Agent"]
   },
   "sysdig":{ 
