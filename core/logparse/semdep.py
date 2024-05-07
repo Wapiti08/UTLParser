@@ -70,7 +70,7 @@ class DepParse:
         not suitable for dns
         '''
         # define all type of verbs
-        target_pos_pattern = 'VB.*|VERB$'
+        target_pos_pattern = 'VB.*|VERB'
         # if there is no AUX adjacent to left of VERB sub -> obj, otherwise obj <- sub
         for ord, token in enumerate(doc):
             # check whether matching the verb
@@ -85,8 +85,12 @@ class DepParse:
                     # first token as the verb
                     return token.text, "->"
             else:
-                # no verb exists in logs
-                continue
+                # add special case due to error from spacy
+                if re.search("|NNP|NN|PROPN|NOUN", token.pos_) and token.text in ["reply"]:
+                    return token.text, "->"
+                else:
+                    # no verb exists in logs
+                    continue
 
     def token_parse(self):
         pass

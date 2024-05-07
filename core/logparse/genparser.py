@@ -500,6 +500,7 @@ class GenLogParser:
             # print(dep_res)
             return dep_res[0], dep_res[1]
         
+
         return '-', '-'
 
     def time_create(self, log_df: pd.DataFrame):

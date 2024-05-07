@@ -36,7 +36,7 @@ class DepPatterns:
                             "REL_OP": "<",
                             "RIGHT_ID": "{}_subject".format(anchor),
                             # define the potential pos and dep value, and occurrance
-                            "RIGHT_ATTRS": {"DEP": {"IN":["nummod","nsubj"]}},
+                            "RIGHT_ATTRS": {"DEP": {"IN":["nummod","nsubj","npadvmod"]}},
                         },
                         # match the ip as object
                         {

@@ -11,8 +11,8 @@ nlp.tokenizer = Tokenizer(nlp.vocab, token_match=re.compile(r'\S+').match)
 matcher = DependencyMatcher(nlp.vocab)
 
 # matcher.add("using", [pattern])
-dns_str_3 = "querying 3x6-.546-.2PoxC1PkS*qtk0p2kKZGSYsWe2X*u678tHnPA6vJb6cp7itF6Qlb7/ZNOUZ*-.tO4afCcp4TpC6S0KJF27aqpRaGLcHzZCkPnUWPug2PpcImBWfcLFKlm5p5r3-.Ewvg4xYu8FqM2a/lO4V8qfcNr2i1bRY/u8wZM19IvDh7deB7cBxUezv5CAKT-.customers_2018.xlsx.ycgjslfptkev.com from 10.35.33.111"
-dns_str_2 = "querying 3x6-.547-.WharXpRiFOnbAvznOFBIiR4EDr2FH97sAZEw0PT77TTzCvi*vLTdNSfYJ*mB-.Mro0pNd/COkTkZFQTEVKuNZC5LIIlfsj*GoWta1/KRxUKbPNKrTmgKeKzYyL-.7d8d5cAaEvTfDy0U68UesMs7uYYesKt6eeusCf44XNbaB1URD9Df/KlCm7AV-.customers_2018.xlsx.ycgjslfptkev.com from 10.35.33.111"
+dns_str_3 = "reply 3x6-.574-.xqEH4LJCxvZSteAj7/uqEz8Kd996UsAAuEfrXARN/xIYt9EkrDilHDq/QeUl-.Fn92642mtMm/0MKSVCBEs5KcjAoTWWlzfTMyNTYuvxI9/PFjzIZWmiK/0BEV-.U62G584L0hxNdp/Pn811XFRfIDpYxZOf5PgrYleh/puPF4YEbjyZaHzksBJd-.customers_2020.xlsx.ycgjslfptkev.com is 195.128.194.168"
+dns_str_2 = "reply firefox.settings.services.mozilla.com is 99.86.237.78"
 # dns_str_4 = "forwarded database.clamav.net to 192.168.255.254"
 # dns_str_1 = "nameserver 127.0.0.1 refused to do a recursive query"
 # dns_str_5 = "reply shavar.prod.mozaws.net is 52.89.81.52"
@@ -62,11 +62,12 @@ def verb_ext(doc:spacy.tokens.doc.Doc) -> Tuple[str, str, bool]:
 for str in str_list:
     print("parsing log: \n {}".format(str))
     patterns = []
-    doc = nlp(str)
+    doc = nlp(dns_str_2)
     # displacy.serve(doc,port=8080)
 
     # print out semantic role
     for token in doc:
+
         print(token.text,  token.dep_, token.tag_)
     # get the verb
     verb_text, lemma_text, shift = verb_ext(doc)
@@ -74,7 +75,7 @@ for str in str_list:
 
     if lemma_text in forward_direction:
         print(lemma_text)
-        if not shift:
+        if shift:
             pattern = [
                 {
                     "RIGHT_ID": "anchor_{}".format(verb_text),
@@ -86,7 +87,7 @@ for str in str_list:
                     "REL_OP": "<",
                     "RIGHT_ID": "{}_subject".format(verb_text),
                     # define the potential pos and dep value, and occurrance
-                    "RIGHT_ATTRS": {"DEP": "nsubj"},
+                    "RIGHT_ATTRS": {"DEP": {"IN":["nummod","nsubj","npadvmod"]}},
                 },
                 # match the ip as object
                 {
@@ -99,55 +100,56 @@ for str in str_list:
             # Add the pattern to the matcher
             matcher.add("{}".format(verb_text.upper()), [pattern])
         else:
+            print(lemma_text)
             pattern = [
                 {
-                    "LEFT_ID": "anchor_{}".format(verb_text),
-                    "RIGHT_ATTRS": {"ORTH": "{}".format(verb_text)}
+                    "LEFT_ID": "anchor_{}".format(lemma_text),
+                    "RIGHT_ATTRS": {"ORTH": "{}".format(lemma_text)}
                 },
                 # match the domain as subject
                 {
-                    "LEFT_ID": "anchor_{}".format(verb_text),
+                    "LEFT_ID": "anchor_{}".format(lemma_text),
                     "REL_OP": ">",
-                    "RIGHT_ID": "{}_subject".format(verb_text),
+                    "RIGHT_ID": "{}_subject".format(lemma_text),
                     # define the potential pos and dep value, and occurrance
-                    "RIGHT_ATTRS": {"DEP": "nsubj"},
+                    "RIGHT_ATTRS": {"DEP": {"IN":["nummod","nsubj","npadvmod"]}},
                 },
                 # match the ip as object
                 {
-                    "LEFT_ID": "anchor_{}".format(verb_text),
+                    "LEFT_ID": "anchor_{}".format(lemma_text),
                     "REL_OP": ">>",
-                    "RIGHT_ID": "{}_object".format(verb_text),
+                    "RIGHT_ID": "{}_object".format(lemma_text),
                     "RIGHT_ATTRS": {"DEP": "attr"},
                 },
             ]
             # Add the pattern to the matcher
-            matcher.add("{}".format(verb_text), [pattern])
+            matcher.add("{}".format(lemma_text.upper()), [pattern])
 
     elif lemma_text in backward_direction:
         print(lemma_text)
         pattern = [
                 {
-                    "RIGHT_ID": "anchor_{}".format(verb_text),
-                    "RIGHT_ATTRS": {"ORTH": "{}".format(verb_text)}
+                    "RIGHT_ID": "anchor_{}".format(lemma_text),
+                    "RIGHT_ATTRS": {"ORTH": "{}".format(lemma_text)}
                 },
                 # match the domain as subject
                 {
-                    "LEFT_ID": "anchor_{}".format(verb_text),
+                    "LEFT_ID": "anchor_{}".format(lemma_text),
                     "REL_OP": ">",
-                    "RIGHT_ID": "{}_object".format(verb_text),
+                    "RIGHT_ID": "{}_object".format(lemma_text),
                     # define the potential pos and dep value, and occurrance
-                    "RIGHT_ATTRS": {"DEP": "dobj"},
+                    "RIGHT_ATTRS": {"DEP": {"IN":["nummod","nsubj","npadvmod"]}},
                 },
                 # match the ip as object
                 {
-                    "LEFT_ID": "anchor_{}".format(verb_text),
+                    "LEFT_ID": "anchor_{}".format(lemma_text),
                     "REL_OP": ">>",
-                    "RIGHT_ID": "{}_subject".format(verb_text),
+                    "RIGHT_ID": "{}_subject".format(lemma_text),
                     "RIGHT_ATTRS": {"DEP": "pobj"},
                 },
             ]
         # Add the pattern to the matcher
-        matcher.add("{}".format(verb_text), [pattern])
+        matcher.add("{}".format(lemma_text.upper()), [pattern])
     
     else:
         print("Currently, the direction of anchor {} has been not decided".format(verb_text))

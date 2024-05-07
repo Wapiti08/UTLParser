@@ -49,7 +49,7 @@ label_pos_dict = {
     "auth":["Proto", "Parameters","Actions"],
     "access":["Src_IP","Parameters","Actions","Status"],
     "audit":["PID","Actions", "IOCs", "Status", "Parameters"],
-    "dnsmasq":["IOCs", "Actions"],
+    "dnsmasq":["Parameters", "Actions"],
     # "conn":["Dest_IP", "IOCs","Status"]
 }
 
@@ -121,9 +121,9 @@ label_set_dict = {
             ["in-addr.arpa", "172.17.130.196"],
             ["query", "172.17.131.81"],
             ["query", "10.35.35.206"],
-            ["forwarded"],
-            ["reply"],
-            ["cached"],
+            # ["forwarded"],
+            # ["reply"],
+            # ["cached"],
             ["price.fox.org", "172.17.130.196"],
             ["forwarded","price.fox.org"],
             ["reply","price.fox.org"],
@@ -235,7 +235,8 @@ def iocs_coverage(labelled_data:list, ioc_indicitors:list, check_position:list,
     matched_iocs_num = 0
     for column in check_position:
         matched_iocs_num += value_match(iocs_list, uni_df[column].tolist())
-    
+    print(matched_iocs_num)
+    print(iocs_num)
     iocs_coverage = round(matched_iocs_num/iocs_num,4)  
     print("iocs coverage for {} is: ".format(data_type, iocs_coverage))
 
