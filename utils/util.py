@@ -85,7 +85,8 @@ def time_format(log_df: pd.DataFrame):
 def token_filter(token:str):
     if "[" in token:
         extra_part_rex = r'\[.*?\] '
-        return re.sub(extra_part_rex, '', token)
+        # avoid query mistakenly recognized as NN tag
+        return re.sub(extra_part_rex, 'ing ', token)
     else:
         return token
 

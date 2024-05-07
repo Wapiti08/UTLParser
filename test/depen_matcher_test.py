@@ -11,18 +11,18 @@ nlp.tokenizer = Tokenizer(nlp.vocab, token_match=re.compile(r'\S+').match)
 matcher = DependencyMatcher(nlp.vocab)
 
 # matcher.add("using", [pattern])
-dns_str_3 = "cached db.local.clamav.net.cdn.cloudflare.net is 2606:4700::6810:da54"
-dns_str_2 = "query[txt] current.cvd.clamav.net from 172.17.131.81"
-dns_str_4 = "forwarded database.clamav.net to 192.168.255.254"
-dns_str_1 = "nameserver 127.0.0.1 refused to do a recursive query"
-dns_str_5 = "reply shavar.prod.mozaws.net is 52.89.81.52"
+dns_str_3 = "querying 3x6-.546-.2PoxC1PkS*qtk0p2kKZGSYsWe2X*u678tHnPA6vJb6cp7itF6Qlb7/ZNOUZ*-.tO4afCcp4TpC6S0KJF27aqpRaGLcHzZCkPnUWPug2PpcImBWfcLFKlm5p5r3-.Ewvg4xYu8FqM2a/lO4V8qfcNr2i1bRY/u8wZM19IvDh7deB7cBxUezv5CAKT-.customers_2018.xlsx.ycgjslfptkev.com from 10.35.33.111"
+dns_str_2 = "querying 3x6-.547-.WharXpRiFOnbAvznOFBIiR4EDr2FH97sAZEw0PT77TTzCvi*vLTdNSfYJ*mB-.Mro0pNd/COkTkZFQTEVKuNZC5LIIlfsj*GoWta1/KRxUKbPNKrTmgKeKzYyL-.7d8d5cAaEvTfDy0U68UesMs7uYYesKt6eeusCf44XNbaB1URD9Df/KlCm7AV-.customers_2018.xlsx.ycgjslfptkev.com from 10.35.33.111"
+# dns_str_4 = "forwarded database.clamav.net to 192.168.255.254"
+# dns_str_1 = "nameserver 127.0.0.1 refused to do a recursive query"
+# dns_str_5 = "reply shavar.prod.mozaws.net is 52.89.81.52"
 
 str_list = []
-str_list.append(dns_str_1)
+# str_list.append(dns_str_1)
 str_list.append(dns_str_2)
 str_list.append(dns_str_3)
-str_list.append(dns_str_4)
-str_list.append(dns_str_5)
+# str_list.append(dns_str_4)
+# str_list.append(dns_str_5)
 
 forward_direction = ["reply", 'forward', "cache"]
 backward_direction = ["query"]
@@ -62,7 +62,7 @@ def verb_ext(doc:spacy.tokens.doc.Doc) -> Tuple[str, str, bool]:
 for str in str_list:
     print("parsing log: \n {}".format(str))
     patterns = []
-    doc = nlp(dns_str_1)
+    doc = nlp(str)
     # displacy.serve(doc,port=8080)
 
     # print out semantic role

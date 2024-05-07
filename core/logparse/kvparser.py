@@ -87,6 +87,7 @@ class KVParser:
                         key_value_pairs[index] = key
                         nested_pairs = self.split_pair(value)    
                         key_value_pairs.extend(nested_pairs)
+                        
             else:
                 # implement general split
                 key_value_pairs = sen.split(" ")
@@ -241,12 +242,16 @@ class KVParser:
                 # remove timestamp part
                 if pair.startswith("msg=audit"):
                     ext_poi["timestamp"] = self.ext_format_time(pair)
-                
+                # process msg=unit=x
+                if pair.count("=") == 2:
+                    pair = pair.split('=',1)[1]
+
                 res = pair.split("=")
                 key, value = res[0], res[1]
                 if key in self.PoI:
                     if value != "?":
                         ext_poi[key] = value
+
         return ext_poi
     
     def log_parse(self, ):

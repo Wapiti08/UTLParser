@@ -35,6 +35,7 @@ import spacy
 import yaml
 from core.pattern import domaininfo
 import config
+from spacy.tokenizer import Tokenizer
 
 # set the configuration
 logging.basicConfig(level=logging.DEBUG,
@@ -45,6 +46,7 @@ logging.basicConfig(level=logging.DEBUG,
 # create a logger
 logger = logging.getLogger(__name__)
 nlp = spacy.load("en_core_web_lg")
+nlp.tokenizer = Tokenizer(nlp.vocab, token_match=re.compile(r'\S+').match)
 
 
 class Logcluster:
@@ -481,13 +483,21 @@ class GenLogParser:
         # define the extract verb
         clean_content = util.token_filter(content_part)
         doc = nlp(clean_content)
+        # for token in doc:
+        #     print(token.text)
+        #     print(token.pos_)
+        #     print(token.dep_)
+        #     print(token.tag_)
         # check available verb with basic rule
         veb_res = self.depparser.verb_ext(doc)
         if veb_res:        
+            # print(veb_res)
             return veb_res[0], veb_res[1]
+        
         # check pre-define dependency pattern
         dep_res = self.depparser.depen_parse(doc)
         if dep_res:
+            # print(dep_res)
             return dep_res[0], dep_res[1]
         
         return '-', '-'
@@ -517,16 +527,16 @@ class GenLogParser:
         '''
         start_time = datetime.now() 
         log_num = len(self.df_log)
-
         # for general logs, only extract time, parameters, actions
         column_poi_map = domaininfo.unstru_log_poi_map["general"]
+
         for column, _ in self.format_output.items():
-            if column in ["Time", "Parameters", "Direction", "PID", "Src_IP"]:
+            if column in ["Time", "Parameters", "Direction", "PID", "Src_IP", "Proto"]:
                 if column in self.df_log.columns:
                     self.format_output[column] = self.df_log[column].tolist()
                 else:
                     self.format_output[column] = ["-"] * log_num
-            elif column in ["Actions", "Proto"]:
+            elif column == "Actions":
                 self.format_output[column] = self.df_log[column_poi_map[column]].tolist()
             elif column == "Label":
                 self.format_output[column] = [label] * log_num

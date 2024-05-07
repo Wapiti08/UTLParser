@@ -48,8 +48,8 @@ label_pos_dict = {
     "error": ["Src_IP",],
     "auth":["Proto", "Parameters","Actions"],
     "access":["Src_IP","Parameters","Actions","Status"],
-    "audit":["PID","Actions", "IOCs", "Status"],
-    "dnsmasq":["IOCs"],
+    "audit":["PID","Actions", "IOCs", "Status", "Parameters"],
+    "dnsmasq":["IOCs", "Actions"],
     # "conn":["Dest_IP", "IOCs","Status"]
 }
 
@@ -96,23 +96,41 @@ label_set_dict = {
     "audit":
         [
             ["AUTH", "phopkins", "/bin/su", "success"],
+            ["USER_CMD", "1001"],
+            ["CRED_REFR"],
+            ["USER_START"],
+            ["USER_END"],
+            ["CRED_DISP"],
+            ["SYSCALL"],
+            ["PROCTITLE"],
+            ["consequuntur"],
             ["ACQ", "phopkins", "/bin/su", "success"],
             ["USER_START", "phopkins", "/bin/su", "success"],
             ["AUTH", "phopkins", "/lib/systemd/systemd", "success"],
             ["ACQ", "phopkins", "/lib/systemd/systemd", "success"],
             ["LOGIN", "1001", "1"],
             ["USER_START", "phopkins", "1001", "/lib/systemd/systemd", "success"],
-            ["SERVICE_START", "phopkins", "1001", "/lib/systemd/systemd", "success"],
-
-
+            ["SERVICE_START", "user@1001", "/lib/systemd/systemd", "success"],
         ]
     ,
     "dnsmasq":
         [
             ["ycgjslfptkev.com"],
-            ['data.wpscan.org'],
-            ["github.com"],
-            ["codeload.github.com"]
+            ["127.0.0.1", "refused"],
+            ["reply", "price.fox.org"],
+            ["in-addr.arpa", "172.17.130.196"],
+            ["query", "172.17.131.81"],
+            ["query", "10.35.35.206"],
+            ["forwarded"],
+            ["reply"],
+            ["cached"],
+            ["price.fox.org", "172.17.130.196"],
+            ["forwarded","price.fox.org"],
+            ["reply","price.fox.org"],
+            ["query","intranet.price.fox.org"],
+            ["forwarded","intranet.price.fox.org"],
+            ["reply","intranet.price.fox.org"],
+
         ],
     # "conn":[
     #     ["6667"],
@@ -236,7 +254,6 @@ def label_acc(ano_uniform_df, iocs_set_indicitors:list, match_position: list,
     match_series = ano_uniform_df[match_position].apply(lambda row: ' '.join(row.values.astype(str)), axis=1).tolist()
     matched_label_num = 0
     matched_label_num = value_set_match(iocs_set_indicitors, match_series)
-    print(len(ano_uniform_df))
     lab_acc = round(matched_label_num/len(ano_uniform_df),4)
     print("labelling accuracy for {} is: ".format(data_type, lab_acc))
 
@@ -286,10 +303,10 @@ def label_csv_data(data_type, label_data_path):
 if __name__ == "__main__":
 
     data_type_list = [
-                      "access",
-                      "audit", 
-                      "auth", 
-                      "error",
+                    #   "access",
+                    #   "audit", 
+                    #   "auth", 
+                    #   "error",
                       "dnsmasq",    
                       ]
     
@@ -310,6 +327,7 @@ if __name__ == "__main__":
         pos_check = label_pos_dict[data_type]
         # print(iocs_coverage(mal_data, list(iocs_list), pos_check, data_type))
         print(iocs_coverage(data, list(iocs_list), pos_check, data_type))
+
         ano_uni_df = label_csv_data(data_type, Path(labdir).joinpath(f"{data_type}.log"))
         print(label_acc(ano_uni_df, label_set_dict[data_type], label_pos_dict[data_type], data_type))
 

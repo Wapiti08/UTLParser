@@ -81,6 +81,9 @@ class DepParse:
                         return token.text, '->'
                     else:
                         return token.text, '<-'
+                else:
+                    # first token as the verb
+                    return token.text, "->"
             else:
                 # no verb exists in logs
                 continue
