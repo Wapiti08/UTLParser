@@ -6,8 +6,13 @@
  # @ Description: Potential Fusion Part or Optimization Part to reduce the graph size or 
                 achieve the fusion of graphs from diverse data sourcesw
  '''
+import sys
+from pathlib import Path
+sys.path.insert(0,Path(sys.path[0]).resolve().parent.as_posix())
 import networkx as nx
 from datetime import datetime, timedelta
+import config
+
 
 class GraphFusion:
     ''' the module to fuse mutiple sub graphs and extract precise temporal graph
@@ -108,13 +113,38 @@ class GraphFusion:
                         # path with length 2 has 3 nodes
                         if len(path) == 3:
                             three_paths.append(path)
+
         # check the homogeneity and heterogeneity
         for t_path in three_paths:
-
             if t_path[-1] not in t_path[0:-1]:
                 inde_score += 1
         return inde_score
-    
-    def entity_type_check(self,):
-        pass
+
+    def entity_type_check(self, node_value:str, model_path:):
+        ''' check the entity type to corresponding indexes
+        
+        '''
+        # define the desired mapping dict with entity type with index
+        entity_map_dict = {
+            "IP": 1,
+            "Domain": 2,
+            "Path": 3,
+            "User": 4,
+            "Port": 5,
+            "Process": 6,
+            "Event": 7
+        }
+
+        ip_regex = [config.regex["ip4"], config.regex["ip6"], config.regex["ip_with_port"]]
+        domain = [config.regex["domain"]]
+        path = [config.regex["path_unix"], config.regex["path_win"]]
+        port = [config.regex["port"]]
+
+        # use pre-extracted custom entity list to identify process, event, users
+        
+
+
+
+
+
 

@@ -31,21 +31,21 @@ class TestLogparser(unittest.TestCase):
         self.access_unstrgraph = UnstrGausalGraph(indir, outdir, "access")
         self.syslog_unstrgraph = UnstrGausalGraph(indir, outdir, "syslog")
     
-    # def test_temp_graph(self,):
-    #     self.auth_unstrgraph.data_load()
-    #     self.audit_unstrgraph.data_load()
-    #     self.dns_unstrgraph.data_load()
-    #     self.access_unstrgraph.data_load()
+    def test_temp_graph(self,):
+        self.auth_unstrgraph.data_load()
+        self.audit_unstrgraph.data_load()
+        self.dns_unstrgraph.data_load()
+        self.access_unstrgraph.data_load()
 
-    #     graph_list = [self.auth_unstrgraph.causal_graph(),
-    #                   self.audit_unstrgraph.causal_graph(),
-    #                   self.dns_unstrgraph.causal_graph(),
-    #                   self.access_unstrgraph.causal_graph()]
-    #     T = "2022-Jan-15 10:17:01.246000"
-    #     # calculate the opt time
-    #     G = self.graphfusion.graph_conn(graph_list)
-    #     # opt_time = self.graphfusion.choose_thres(G, T, config.time_thres_list)
-    #     print(self.auth_unstrgraph.temp_graph(graph_list, T))
+        graph_list = [self.auth_unstrgraph.causal_graph(),
+                      self.audit_unstrgraph.causal_graph(),
+                      self.dns_unstrgraph.causal_graph(),
+                      self.access_unstrgraph.causal_graph()]
+        T = "2022-Jan-15 10:17:01.246000"
+        # calculate the opt time
+        G = self.graphfusion.graph_conn(graph_list)
+        # opt_time = self.graphfusion.choose_thres(G, T, config.time_thres_list)
+        print(self.auth_unstrgraph.temp_graph(graph_list, T))
 
     # def test_comm_detect(self,):
     #     self.auth_unstrgraph.data_load()
@@ -61,24 +61,24 @@ class TestLogparser(unittest.TestCase):
     #     G = self.graphfusion.graph_conn(graph_list)
     #     print(self.auth_unstrgraph.comm_detect(G))
 
-    def test_causal_graph(self,):
-        self.auth_unstrgraph.data_load()
-        self.audit_unstrgraph.data_load()
-        self.dns_unstrgraph.data_load()
-        self.access_unstrgraph.data_load()
-        self.syslog_unstrgraph.data_load()
+    # def test_causal_graph(self,):
+    #     self.auth_unstrgraph.data_load()
+    #     self.audit_unstrgraph.data_load()
+    #     self.dns_unstrgraph.data_load()
+    #     self.access_unstrgraph.data_load()
+    #     self.syslog_unstrgraph.data_load()
 
-        graph_list = [
-                        # self.auth_unstrgraph.causal_graph(),
-                      self.audit_unstrgraph.causal_graph(),
-                      self.dns_unstrgraph.causal_graph(),
-                      self.access_unstrgraph.causal_graph()]
+    #     graph_list = [
+    #                     # self.auth_unstrgraph.causal_graph(),
+    #                   self.audit_unstrgraph.causal_graph(),
+    #                   self.dns_unstrgraph.causal_graph(),
+    #                   self.access_unstrgraph.causal_graph()]
         
-        # self.auth_unstrgraph.graph_save(self.auth_unstrgraph.causal_graph(), None)
-        # self.syslog_unstrgraph.graph_save(self.syslog_unstrgraph.causal_graph(), None)
+    #     # self.auth_unstrgraph.graph_save(self.auth_unstrgraph.causal_graph(), None)
+    #     # self.syslog_unstrgraph.graph_save(self.syslog_unstrgraph.causal_graph(), None)
 
-        G = self.graphfusion.graph_conn(graph_list)
-        self.auth_unstrgraph.graph_save(G, "full")
+    #     G = self.graphfusion.graph_conn(graph_list)
+    #     self.auth_unstrgraph.graph_save(G, "full")
 
 
 if __name__ == "__main__":

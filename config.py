@@ -13,7 +13,7 @@ regex = {
 log_type = {
   "kv": ["audit", "process"],
   "req": ["access"],
-  "gen": ["auth", "syslog", "dns"]
+  "gen": ["auth", "syslog", "dns", "error"]
 }
 
 # define the direct points of interest from key names or components

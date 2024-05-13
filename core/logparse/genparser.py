@@ -510,6 +510,22 @@ class GenLogParser:
         log_df = util.time_format(log_df)
         return log_df["Time"]
 
+    def pid_ext(self, proto_string:str):
+        ''' extract potential pid in proto component
+        
+        '''
+        pattern = r'^(.*?)\[(\d+)\]$'
+        match = re.match(pattern, proto_string)
+
+        if match:
+            # Extract the part before PID and the PID
+            process_name = match.group(1)
+            pid = match.group(2)
+            return process_name, pid
+        else:
+            return proto_string, '-'
+
+
     def poi_ext(self,):
         ''' extract the potential action from content
         
@@ -518,6 +534,8 @@ class GenLogParser:
         self.df_log[["Content", "Direction"]] = self.df_log["Content"].apply(lambda x: pd.Series(self.action_ext(x)))
         # filter points of interests
         self.df_log["Parameters"] = self.df_log["Parameters"].apply(lambda x: self.para_check(x))
+        # extract PID from proto if exist
+        self.df_log[["Proto", "PID"]] = self.df_log["Proto"].apply(lambda x: self.pid_ext(x))
         self.df_log['Time'] = self.time_create(self.df_log)
 
 
