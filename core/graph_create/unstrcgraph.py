@@ -42,6 +42,7 @@ class UnstrGausalGraph:
         # self.datapath = Path(indir).joinpath("{}.log_uniform.parquet".format(log_type)).as_posix()
         self.log_type = log_type
         self.savePath = outdir
+        self.entity_path = Path.cwd().parent.joinpath("core", "entity-reco")
 
     def data_load(self,):
         self.log_df = pd.read_csv(self.datapath)
@@ -51,7 +52,7 @@ class UnstrGausalGraph:
         ''' extract temporal subgraphs by matching time T
         
         '''
-        return gfeature.temp_graph_ext(graph_list, T)
+        return gfeature.temp_graph_ext(graph_list, T, self.entity_path)
 
     def comm_detect(self, G:nx.classes.digraph.DiGraph):
         ''' extract independent activity graphs

@@ -23,7 +23,7 @@ class TestLogparser(unittest.TestCase):
         cur_path = Path.cwd()
         indir = cur_path.joinpath("data","result").as_posix()
         outdir = cur_path.joinpath("data","result").as_posix()
-        self.graphfusion = GraphFusion(config.avg_len)
+        self.graphfusion = GraphFusion(config.avg_len, cur_path.parent.joinpath("core","entity-reco"))
 
         self.auth_unstrgraph = UnstrGausalGraph(indir, outdir, "auth")
         self.audit_unstrgraph = UnstrGausalGraph(indir, outdir, "audit")

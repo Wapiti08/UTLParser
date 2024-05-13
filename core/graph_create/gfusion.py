@@ -26,11 +26,19 @@ class GraphFusion:
         self.avg_len = avg_len
         # self.pre_long_len = pre_long_len
         user_list_path = entity_path.joinpath("user_entity.txt")
-        self.user_list = [line.strip() for line in user_list_path.open().readlines()]
+        with user_list_path.open() as fr:
+            user_data = fr.readlines()
+        self.user_list = [line.strip() for line in user_data]
+        
         process_list_path = entity_path.joinpath("process_entity.txt")
-        self.process_list = [line.strip() for line in process_list_path.open().readlines()]
+        with process_list_path.open() as fr:
+            process_data = fr.readlines()
+        self.process_list = [line.strip() for line in process_data]
+
         event_list_path = entity_path.joinpath("event_entity.txt")
-        self.event_list = [line.strip() for line in event_list_path.open().readlines()]
+        with event_list_path.open() as fr:
+            event_data = fr.readlines()
+        self.event_list = [line.strip() for line in event_data]
 
     def graph_conn(self, graph_list:list):
         ''' fuse multiple sub graphs according to rule information like auth, audit, dns, access 
@@ -124,8 +132,10 @@ class GraphFusion:
         for t_path in three_paths:
             entity_paths = []
             entity_paths = [self.entity_type_check(node) for node in t_path]
+            print(entity_paths)
             if entity_paths[-1] not in entity_paths[0:-1]:
                 inde_score += 1
+        print(inde_score)
         return inde_score
 
     def entity_type_check(self, node_value:str):
@@ -160,7 +170,5 @@ class GraphFusion:
             return entity_map_dict["Port"]
         else:
             return 0
-
-
 
 
