@@ -1,0 +1,17 @@
+usermod
+sudo
+chfn
+useradd
+chpasswd
+groupadd
+systemd
+authz_core:error
+negotiation:error
+sshd
+CRON
+php7:warn
+autoindex:error
+php7:error
+chage
+systemd-logind
+httpd

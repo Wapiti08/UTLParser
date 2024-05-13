@@ -12,19 +12,25 @@ sys.path.insert(0,Path(sys.path[0]).resolve().parent.as_posix())
 import networkx as nx
 from datetime import datetime, timedelta
 import config
-
+from utils import util
 
 class GraphFusion:
     ''' the module to fuse mutiple sub graphs and extract precise temporal graph
     
     '''
-    def __init__(self, avg_len:int,):
+    def __init__(self, avg_len:int, entity_path:Path):
         '''
         :param avg_len: the average length of path in termporal graph
         :param pre_long_len: the pre-defined potential longest path length
         '''
         self.avg_len = avg_len
         # self.pre_long_len = pre_long_len
+        user_list_path = entity_path.joinpath("user_entity.txt")
+        self.user_list = [line.strip() for line in user_list_path.open().readlines()]
+        process_list_path = entity_path.joinpath("process_entity.txt")
+        self.process_list = [line.strip() for line in process_list_path.open().readlines()]
+        event_list_path = entity_path.joinpath("event_entity.txt")
+        self.event_list = [line.strip() for line in event_list_path.open().readlines()]
 
     def graph_conn(self, graph_list:list):
         ''' fuse multiple sub graphs according to rule information like auth, audit, dns, access 
@@ -116,11 +122,13 @@ class GraphFusion:
 
         # check the homogeneity and heterogeneity
         for t_path in three_paths:
-            if t_path[-1] not in t_path[0:-1]:
+            entity_paths = []
+            entity_paths = [self.entity_type_check(node) for node in t_path]
+            if entity_paths[-1] not in entity_paths[0:-1]:
                 inde_score += 1
         return inde_score
 
-    def entity_type_check(self, node_value:str, model_path:):
+    def entity_type_check(self, node_value:str):
         ''' check the entity type to corresponding indexes
         
         '''
@@ -132,18 +140,26 @@ class GraphFusion:
             "User": 4,
             "Port": 5,
             "Process": 6,
-            "Event": 7
+            "Event": 7,
         }
 
-        ip_regex = [config.regex["ip4"], config.regex["ip6"], config.regex["ip_with_port"]]
-        domain = [config.regex["domain"]]
-        path = [config.regex["path_unix"], config.regex["path_win"]]
-        port = [config.regex["port"]]
-
         # use pre-extracted custom entity list to identify process, event, users
-        
-
-
+        if node_value in self.user_list:
+            return entity_map_dict["User"]
+        elif node_value in self.process_list:
+            return entity_map_dict["Process"]
+        elif node_value in self.event_list:
+            return entity_map_dict["Event"]
+        elif util.path_match(node_value):
+            return entity_map_dict["Path"]
+        elif util.ip_match(node_value):
+            return entity_map_dict["IP"]
+        elif util.domain_match(node_value):
+            return entity_map_dict["Domain"]
+        elif util.port_match(node_value):
+            return entity_map_dict["Port"]
+        else:
+            return 0
 
 
 

@@ -483,11 +483,6 @@ class GenLogParser:
         # define the extract verb
         clean_content = util.token_filter(content_part)
         doc = nlp(clean_content)
-        # for token in doc:
-        #     print(token.text)
-        #     print(token.pos_)
-        #     print(token.dep_)
-        #     print(token.tag_)
         # check available verb with basic rule
         veb_res = self.depparser.verb_ext(doc)
         if veb_res:        
@@ -535,7 +530,7 @@ class GenLogParser:
         # filter points of interests
         self.df_log["Parameters"] = self.df_log["Parameters"].apply(lambda x: self.para_check(x))
         # extract PID from proto if exist
-        self.df_log[["Proto", "PID"]] = self.df_log["Proto"].apply(lambda x: self.pid_ext(x))
+        self.df_log[["Proto", "PID"]] = self.df_log["Proto"].apply(lambda x: pd.Series(self.pid_ext(x)))
         self.df_log['Time'] = self.time_create(self.df_log)
 
 

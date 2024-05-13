@@ -137,6 +137,23 @@ def ip_match(test_string:str):
         else:
             continue
 
+
+def port_match(test_string:str):
+    ''' match all
+    
+    '''
+    match_list = []
+    # check port
+    port_regex = config.regex["port"]
+
+    res = re.search(port_regex, test_string)
+    if res:
+        for port in re.findall(port_regex, test_string): 
+            match_list.append(port)
+        return match_list
+    else:
+        return None
+
 def split_commands_check(string_list: list):
     ''' check split commands and join them if they are
     
