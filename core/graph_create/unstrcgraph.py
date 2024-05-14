@@ -42,7 +42,7 @@ class UnstrGausalGraph:
         # self.datapath = Path(indir).joinpath("{}.log_uniform.parquet".format(log_type)).as_posix()
         self.log_type = log_type
         self.savePath = outdir
-        self.entity_path = Path.cwd().parent.joinpath("core", "entity-reco")
+        self.entity_path = Path.cwd().parent.joinpath("core", "entity_reco")
 
     def data_load(self,):
         self.log_df = pd.read_csv(self.datapath)

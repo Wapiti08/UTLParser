@@ -15,7 +15,7 @@ from core.graph_create.gfusion import GraphFusion
 from core.graph_create import gfeature
 import config
 
-class TestLogparser(unittest.TestCase):
+class TestUnStrgraph(unittest.TestCase):
     ''' test the parsing performance for access log
     
     '''

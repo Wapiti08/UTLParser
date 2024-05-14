@@ -10,3 +10,5 @@ import sys
 from pathlib import Path
 sys.path.insert(0, Path(sys.path[0]).parent.as_posix())
 import unittest
+from core.graph_create import gfusion
+

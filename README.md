@@ -6,7 +6,7 @@
 
 ---
 
-Toward Unified Temporal Causal Graph Construction with Semantic Log Parser
+Towards Unified Semantic Log Parsing Framework for Temporal Causal Graph Construction 
 
 ## Features
 - correlate data from multiple sources (network traffic, system/applications/service logs, process execution status)
@@ -96,10 +96,32 @@ Toward Unified Temporal Causal Graph Construction with Semantic Log Parser
 
 
 ## Structure
+- core: 
+    - entity_reco: custom entity extraction from unifited output
 
-        
+    - graph_create: the module block to build causal graphs
+
+    - graph_label: labelling temporal graph
+
+    - logparse: multiple log parsers
+
+    - pattern: the rule to build unifited output and graph
+
+- eval: benchmark testing
+
+- eval_data: the code to generate evaluation data
+
+- src: the running main interface
+
+- unit_test: the unit testing for core modules
+
+- utils: util functions to support processing
+
+- config: the config file including regexes, defined poi, etc
+
 ## Running
 
+- preprepration
 ```
 # avoid python version conflict --- pyenv
 brew install pyenv-virtualenv
@@ -115,6 +137,11 @@ pyenv activate UTLParser
 pip3 install -r requirements.txt
 # download large language library
 python -m spacy download en_core_web_lg
+```
+
+- how to use
+```
+
 ```
 
 ## Output Format
