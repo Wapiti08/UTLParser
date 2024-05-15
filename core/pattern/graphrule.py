@@ -9,7 +9,7 @@
 graph_attrs_json = {
     "general": {
         "node": {
-            "value": ["Proto", "Parameters"],
+            "value": ["Src_IP", "Proto", "Parameters"],
             "attrs":{}
         },
         "edge":{

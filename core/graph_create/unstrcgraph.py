@@ -80,7 +80,8 @@ class UnstrGausalGraph:
                 # like the IOCs ---- tuple, Parameters --- list
                 if isinstance(row[key], tuple) or isinstance(row[key], list):
                     # recursively match value with string
-                    nodes.extend([node for node in row[key] if node !='-'])
+                    nodes.extend([node for node in row[key] if node !='-' and \
+                                  len(node.split(" "))==1 and (">" not in node)])
                 else:
                     # filter nan and -
                     if row[key] != '-' and isinstance(row[key], str):
@@ -160,7 +161,7 @@ class UnstrGausalGraph:
         # create the causal graph
         for _, row in tqdm(self.log_df.iterrows(), desc="making causal graph from {}".format(self.log_type)):
             nodes = self.node_check(row, node_value_key)
-            # print(nodes)
+            print(nodes)
             # check whether nodes exist
             if len(nodes) != 0:
                 node_len = len(nodes)

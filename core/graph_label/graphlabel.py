@@ -1,25 +1,77 @@
-'''
- # @ Author: Newt Tan
- # @ Create Time: 2024-04-19 09:27:01
- # @ Modified by: Newt Tan
- # @ Modified time: 2024-05-01 09:21:56
- # @ Description: label 
- '''
+# '''
+#  # @ Author: Newt Tan
+#  # @ Create Time: 2024-04-19 09:27:01
+#  # @ Modified by: Newt Tan
+#  # @ Modified time: 2024-05-01 09:21:56
+#  # @ Description: module to label temporal causal graphs
+#  '''
 
 
 import networkx as nx
 from core.graph_create import gfeature
 import itertools as it
 
+# from iocs location to list of iocs
+ioc_dict = {
+    "conn": {
+        ""
+    },
+    "error": {
 
+    },
+    "auth": {
+
+    },
+    "access": {
+
+    },
+    "audit": {
+
+    },
+    "dnsmasq": {
+
+    }
+}
+
+# from node/edge attribute to iocs locations
+attr_iocs_dict = {
+    "conn": {
+        "node": {
+            "value": ["Dest_IP"],
+            "attrs": ["port"]
+        },
+        "edge": {
+            "attrs": ["status", "size"],
+        }
+    },
+    "error": {
+        "node": {
+            "value": ["Src_IP"]
+        },
+    },
+    "auth": {
+        "node": {
+
+        }
+    },
+    "access": {
+
+    },
+    "audit": {
+
+    },
+    "dnsmasq": {
+        
+    }
+}
 
 class GraphLabel:
 
     def __init__(self,):
         pass
 
-    def graph_label_eq(self, G: nx.Graph, node_indicator:str, att_indicitor:str, edge_indicitor:tuple, label:int):
-        '''
+    def graph_multi_label_eq(self, G: nx.Graph, attr_iocs_dict: dict, ioc_dict:dict, label_dict:dict):
+        ''' label edge or node with specific labels according to single value matching --- structured graphs
         :param G: temporal directed graph
 
         '''
@@ -56,9 +108,14 @@ class GraphLabel:
 
         return G_label
 
-
-    def graph_label_iocs(self, G: nx.Graph, node_indicator:str, att_indicitor:str, edge_indicitor:tuple, label:str):
+    def graph_label_eq(self, self, G: nx.Graph, attr_iocs_dict: dict):
+        ''' label edge or node with anomaly label according to single value matching --- structured graphs
+        
         '''
+
+
+    def graph_label_iocs(self, G: nx.Graph, Timestamp:str, aattr_iocs_dict: dict):
+        ''' label subgraph according to iocs --- unstructured graphs
         :param G: temporal directed graph
         '''
         pass
@@ -82,10 +139,6 @@ class GraphLabel:
         nx.draw_networkx_edges(
             G, pos, edge_color="grey", connectionstyle=connectionstyle, ax=ax
         )
-
-        # for *edge, attrs in G.edges(keys=True, data=True):
-        #     print(*edge)
-        #     print(attrs)
 
         # time_name = "timestamp"
         labels = {

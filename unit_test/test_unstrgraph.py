@@ -30,6 +30,7 @@ class TestUnStrgraph(unittest.TestCase):
         self.dns_unstrgraph = UnstrGausalGraph(indir, outdir, "dns")
         self.access_unstrgraph = UnstrGausalGraph(indir, outdir, "access")
         self.syslog_unstrgraph = UnstrGausalGraph(indir, outdir, "syslog")
+        self.error_unstrgraph = UnstrGausalGraph(indir, outdir, "error")
     
     # def test_temp_graph(self,):
     #     self.auth_unstrgraph.data_load()
@@ -62,11 +63,12 @@ class TestUnStrgraph(unittest.TestCase):
     #     print(self.auth_unstrgraph.comm_detect(G))
 
     def test_causal_graph(self,):
-        self.auth_unstrgraph.data_load()
+        # self.error_unstrgraph.data_load()       
+        # self.auth_unstrgraph.data_load()
         # self.audit_unstrgraph.data_load()
         # self.dns_unstrgraph.data_load()
         # self.access_unstrgraph.data_load()
-        # self.syslog_unstrgraph.data_load()
+        self.syslog_unstrgraph.data_load()
 
         # graph_list = [
         #                 # self.auth_unstrgraph.causal_graph(),
@@ -74,8 +76,9 @@ class TestUnStrgraph(unittest.TestCase):
         #               self.dns_unstrgraph.causal_graph(),
         #               self.access_unstrgraph.causal_graph()]
         
-        self.auth_unstrgraph.graph_save(self.auth_unstrgraph.causal_graph(), None)
-        # self.syslog_unstrgraph.graph_save(self.syslog_unstrgraph.causal_graph(), None)
+        # self.error_unstrgraph.graph_save(self.error_unstrgraph.causal_graph(), None)
+        # self.auth_unstrgraph.graph_save(self.auth_unstrgraph.causal_graph(), None)
+        self.syslog_unstrgraph.graph_save(self.syslog_unstrgraph.causal_graph(), None)
 
         # G = self.graphfusion.graph_conn(graph_list)
         # self.auth_unstrgraph.graph_save(G, "full")
