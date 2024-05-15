@@ -1,7 +1,5 @@
 data/
 env/
-core/EXTRACTOR
 ref/
 test/
 unit_test/data
-networkx/

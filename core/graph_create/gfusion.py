@@ -90,25 +90,36 @@ class GraphFusion:
         max_time = timestamp + timedelta(seconds=threshold)
         return min_time, max_time
 
+    def inte_cond_check(self, inte_score, longest_len, node_degree):
+        if longest_len >= self.avg_len:
+            inte_score += 1
+        if node_degree>=2:
+            inte_score += 1
+        return inte_score
+
     def inte_score(self, G):
         ''' calculate the score to measure the integrity of sub graphs ---- extracted temporal graphs
         :param G: the picked temporal graph
         '''
         inte_score = 0
+        UG = G.to_undirected()
         # get the longest path and its length
-        longest_path = max(nx.connected_components(G))
+        longest_path = max(nx.connected_components(UG))
         longest_len = len(longest_path)
-        # get central node and its degree
-        cen_node = nx.center(G)
-        node_degree = G.degree(cen_node)
-        # if longest_len >= self.avg_len and longest_len <= self.pre_long_len + 1:
-        #     inte_score += 1
-        # if node_degree>=2 and node_degree<=3:
-        #     inte_score += 1
-        if longest_len >= self.avg_len:
-            inte_score += 1
-        if node_degree>=2:
-            inte_score += 1
+        # check whether graph is connected
+        if nx.is_connected(UG):
+            # get central node and its degree
+            cen_node = nx.center(UG)
+            node_degree = [deg for node, deg in G.degree(cen_node)][0]
+            inte_score = self.inte_cond_check(inte_score, longest_len, node_degree)
+        else:
+            comm_graphs = [G.subgraph(c) for c in nx.connected_components(UG)]
+            for conn_graph in comm_graphs:
+                ug = conn_graph.to_undirected()
+                cen_node = nx.center(ug)
+                node_degree = G.degree(cen_node)
+                node_degree = [deg for node, deg in G.degree(cen_node)][0]
+                inte_score = self.inte_cond_check(inte_score, longest_len, node_degree)
 
         return inte_score
 
@@ -132,10 +143,8 @@ class GraphFusion:
         for t_path in three_paths:
             entity_paths = []
             entity_paths = [self.entity_type_check(node) for node in t_path]
-            print(entity_paths)
             if entity_paths[-1] not in entity_paths[0:-1]:
                 inde_score += 1
-        print(inde_score)
         return inde_score
 
     def entity_type_check(self, node_value:str):

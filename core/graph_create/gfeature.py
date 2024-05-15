@@ -32,7 +32,6 @@ def comm_graph_ext(G:nx.classes.digraph.DiGraph):
     comm_graphs = [G.subgraph(c) for c in nx.connected_components(UG)]
     return comm_graphs
 
-
 def temp_graph_ext(sub_graphs_list: list, T: datetime, entity_path:Path):
     # load time_delay_list
     time_delay_list = config.time_thres_list
