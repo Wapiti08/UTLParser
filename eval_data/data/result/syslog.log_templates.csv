@@ -1,0 +1,116 @@
+EventId,EventTemplate,Occurrences
+72b02db5,(root) CMD ( cd <*>,120
+4ebfb0b4,Starting Message of the Day...,10
+345a768e,Started Message of the Day.,10
+faf4d33e,[76398.724224] hrtimer: interrupt took 15172948 ns,1
+b37fee6f,Starting Daily apt download activities...,10
+43d542ce,Started Daily apt download activities.,10
+034ae84c,(root) CMD (test -x <*>,6
+76b18ae2,Starting Daily apt upgrade and clean activities...,5
+faea3411,[system] Reloaded configuration,3
+972954e0,message repeated <*> times: [ [system] Reloaded configuration],2
+c39f5440,Reloading.,8
+bcc51a2b,Stopping LSB: automatic crash report generation...,1
+ac0cf716,* Stopping automatic crash report generation: apport,1
+5917eca7,...done.,3
+8d9fd2f6,Stopped LSB: automatic crash report generation.,1
+ca273894,message repeated <*> times: [ Reloading.],4
+c1c8232e,Starting LSB: automatic crash report generation...,1
+d7beaac3,* Starting automatic crash report generation: apport,1
+c7e62b9e,Started LSB: automatic crash report generation.,1
+5e9136a3,Stopping udev Kernel Device Manager...,1
+8efc8f8e,Stopped udev Kernel Device Manager.,1
+22110ed5,Starting udev Kernel Device Manager...,1
+0964e582,Started udev Kernel Device Manager.,1
+2af85575,Stopping OpenBSD Secure Shell server...,1
+e721f659,Stopped OpenBSD Secure Shell server.,1
+d3100102,Starting OpenBSD Secure Shell server...,1
+e5862279,Started OpenBSD Secure Shell server.,1
+408fb1a8,Reexecuting.,1
+8b9ef340,[81881.919135] systemd: 29 output lines suppressed due to ratelimiting,1
+724d4735,[81881.927118] systemd[1]: systemd 237 running in system mode. (+PAM +AUDIT +SELINUX +IMA +APPARMOR +SMACK +SYSVINIT +UTMP +LIBCRYPTSETUP +GCRYPT +GNUTLS +ACL +XZ +LZ4 +SECCOMP +BLKID +ELFUTILS +KMOD -IDN2 +IDN -PCRE2 default-hierarchy=hybrid),1
+b8cfd951,[81881.927213] systemd[1]: Detected virtualization kvm.,1
+fd426e5a,[81881.927223] systemd[1]: Detected architecture x86-64.,1
+d4606850,"Network configuration changed, trying to establish connection.",34
+1799bdac,Stopping Network Service...,1
+fcf987af,Synchronized to time server <*> (ntp.ubuntu.com).,35
+bf159122,Stopped Network Service.,1
+19157299,Starting Network Service...,1
+a998175b,ens7: Gained IPv6LL,1
+105a3c3d,ens6: Gained IPv6LL,1
+e8cc960a,ens3: Gained IPv6LL,1
+d7e5ae8a,Enumeration completed,1
+a31cdf37,Started Network Service.,1
+3a7fcef5,Stopping Network Name Resolution...,1
+a68d20bb,ens7: IPv6 successfully enabled,1
+fda80c60,lo: Link is not managed by us,3
+580dcfd6,<*> Link is not managed by us,3
+c44bd099,Stopped Network Name Resolution.,1
+68cb57ab,Starting Network Name Resolution...,1
+d826ffb9,ens6: IPv6 successfully enabled,1
+c3e00f67,ens3: IPv6 successfully enabled,1
+843d3d96,<*> IPv4: martian source <*> from <*> on dev <*>,271
+691bab7d,<*> ll header: 00000000: fa 16 3e <*> <*> <*> fa 16 3e f8 <*> <*> 08 00 <*>,271
+e3b7964f,ens7: DHCPv4 address 10.35.32.1<*>,1
+381770a9,"[system] Activating via systemd: service name='org.freedesktop.hostname1' unit='dbus-org.freedesktop.hostname1.service' requested by ':1.101' (uid=100 pid=21647 comm=""/lib/systemd/systemd-networkd "" label=""unconfined"")",1
+5b1f1a91,Starting Hostname Service...,1
+04cedd8a,ens6: DHCPv4 address 172.17.128.1<*>,1
+195480eb,ens3: DHCPv4 address 192.168.128.4<*>,1
+7468a9a0,ens7: Configured,11
+d5ddf9bc,ens6: Configured,11
+f06dcd81,ens3: Configured,11
+9d5e0649,Positive Trust Anchors:,1
+887c9bcb,. IN DS <*> 8 2 <*>,2
+07711911,Negative trust anchors: 10.in-addr.arpa 16.172.in-addr.arpa 17.172.in-addr.arpa 18.172.in-addr.arpa 19.172.in-addr.arpa 20.172.in-addr.arpa 21.172.in-addr.arpa 22.172.in-addr.arpa 23.172.in-addr.arpa 24.172.in-addr.arpa 25.172.in-addr.arpa 26.172.in-addr.arpa 27.172.in-addr.arpa 28.172.in-addr.arpa 29.172.in-addr.arpa 30.172.in-addr.arpa 31.172.in-addr.arpa 168.192.in-addr.arpa d.f.ip6.arpa corp home internal intranet lan local private test,1
+f9ffea0e,Using system hostname 'inet-firewall'.,1
+53ebf168,Started Network Name Resolution.,1
+8c9e9166,Stopping Network Time Synchronization...,1
+982364a6,[system] Successfully activated service 'org.freedesktop.hostname1',1
+3a6c3a0e,Started Hostname Service.,1
+bc0748d1,Stopped Network Time Synchronization.,1
+3b9fdd46,Starting Network Time Synchronization...,1
+b9cce6a9,Changed host name to 'host-10-35-32-1',1
+541fba14,Changed host name to 'host-172-17-128-1',1
+77999de4,Changed host name to 'host-192-168-128-4',1
+2e9be645,Started Network Time Synchronization.,1
+66e61db2,Stopped Flush Journal to Persistent Storage.,1
+26f0b6ae,Stopping Flush Journal to Persistent Storage...,1
+1fd6c598,[81882.489447] systemd[1]: Stopping Journal Service...,1
+3b89d6c6,[81882.490124] systemd-journald[412]: Received SIGTERM from PID 1 (systemd).,1
+7fc46b7e,[81882.530934] systemd[1]: Stopped Journal Service.,1
+fb0b4627,[81882.533098] systemd[1]: Starting Journal Service...,1
+c4cdac62,[81882.562720] systemd[1]: Started Journal Service.,1
+e1db1317,Starting Flush Journal to Persistent Storage...,1
+7a4412e1,Started Flush Journal to Persistent Storage.,1
+e5432bfb,Stopping LSB: Record successful boot for GRUB...,1
+88c4f2fb,Stopped LSB: Record successful boot for GRUB.,1
+75ebfe87,Starting LSB: Record successful boot for GRUB...,1
+695db85f,* Recording successful boot for GRUB,1
+b0b3e1bf,Started LSB: Record successful boot for GRUB.,1
+f35d232a,"[81909.168503] SGI XFS with ACLs, security attributes, realtime, no debug enabled",1
+61c19ab3,debug: running /usr/lib/os-probes/50mounted-tests on /dev/vda14,2
+fb06ab93,debug: /dev/vda14 type not recognised; skipping,2
+49ef6846,debug: os detected by /usr/lib/os-probes/50mounted-tests,2
+48017415,debug: running <*> on mounted /dev/vda15,24
+199dbc88,debug: Not on UEFI platform,2
+84456355,debug: /dev/vda15 is a FAT32 partition,6
+f79326e7,debug: /dev/vda15 is not a <*> partition: exiting,4
+03e35051,debug: /dev/vda15 is not an HFS+ partition: exiting,2
+be35dfa1,Started Daily apt upgrade and clean activities.,5
+7bda11e7,(root) CMD ( test -x <*>/popularity-contest --crond),5
+038a758d,Starting Cleanup of Temporary Directories...,5
+20447797,Started Cleanup of Temporary Directories.,5
+8d6d893d,[103556.380414] net_ratelimit: 6 callbacks suppressed,1
+c576a924,(root) CMD (if [ -x /usr/share/mdadm/checkarray ] && [ $(date +%d) -le 7 ]; then /usr/share/mdadm/checkarray --cron --all --idle --quiet; fi),1
+016933eb,"[origin software=""rsyslogd"" swVersion=""8.32.0"" x-pid=""931"" x-info=""http:/<*>",1
+c8769e3f,* Super-optimized for small spaces - read how we shrank the memory,8
+32a56f28,footprint of MicroK8s to make it the smallest full K8s around.,8
+49d0a4d1,https:/<*>/blog/microk8s-memory-optimisation,8
+cc91e8eb,<*> inet-fw REJECT IN=ens3 OUT= <*> <*> DST=192.168.128.4 <*> TOS=0x00 PREC=0x00 <*> <*> DF PROTO=TCP <*> <*> <*> RES=0x00 <*> URGP=0,12
+70f4b48c,Starting Discard unused blocks...,1
+f6c8daa8,Started Discard unused blocks.,1
+9f6a8c8a,<*> dmz-fw REJECT IN=ens6 OUT= MAC=fa:16:3e:c3:c5:bf:fa:16:3e:f8:65:07:08:00 SRC=172.17.130.196 <*> LEN=60 TOS=0x00 PREC=0x00 TTL=63 <*> DF PROTO=TCP <*> <*> WINDOW=64240 RES=0x00 SYN URGP=0,12
+8bc92361,[360311.239243] nf_conntrack: default automatic helper assignment has been turned off for security reasons and CT-based firewall rule not found. Use the iptables CT target to attach helpers instead.,1
+8caf1ee5,<*> neighbour: arp_cache: neighbor table overflow!,15
+5d09aafd,[360342.407045] net_ratelimit: 427 callbacks suppressed,1
+2b02a3d5,Timed out waiting for reply from 91.189.91.157:123 (ntp.ubuntu.com).,1

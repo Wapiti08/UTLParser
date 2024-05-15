@@ -1,0 +1,12 @@
+EventId,EventTemplate,Occurrences
+40f8343b,query[A] <*> from <*>,624
+bef4b736,forwarded <*> to <*>,637
+a1c209ec,reply <*> is <*>,661
+c9a784dc,query[AAAA] mail from 172.17.131.81,4
+88c1a799,cached mail is NXDOMAIN,4
+016a4472,query[TXT] current.cvd.clamav.net from 172.17.131.81,12
+992388a4,query[AAAA] db.local.clamav.net from 172.17.131.81,10
+ad0caf4c,cached db.local.clamav.net is <CNAME>,14
+3218a414,cached db.local.clamav.net.cdn.cloudflare.net is <*>,28
+a318d1d4,query[AAAA] database.clamav.net from 172.17.131.81,2
+a9856941,query[AAAA] motd.ubuntu.com from <*>,4

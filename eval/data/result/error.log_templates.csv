@@ -1,0 +1,17 @@
+EventId,EventTemplate,Occurrences
+2d75551f,PHP Warning: <*> failed to open <*> No such file or directory in <*> on line <*>,3
+dfbdd927,PHP Warning: scandir(): (errno 2): No such file or directory in <*> on line 190,1
+1acc3bb4,"script '<*> not found or unable to stat, referer: https://intranet.price.fox.org",13
+a651913c,"AH01276: Cannot serve directory <*>: No matching DirectoryIndex (index.html,index.cgi,index.pl,index.php,index.xhtml,index.htm) found, and server-generated directory index forbidden by Options directive, referer: https://intranet.price.fox.org",1
+ae3aea74,PHP Fatal error: Uncaught Error: Call to undefined function get_header() in <*> trace:\n#0 {main}\n thrown in <*> on line <*> referer: https://intranet.price.fox.org,8
+2968b852,AH01630: client denied by server configuration: <*> referer: https://intranet.price.fox.org,4
+998eb5ba,"AH00687: Negotiation: discovered file(s) matching request: <*> (None could be negotiated)., referer: https://intranet.price.fox.org",2
+8e1bf35c,"script '<*> copy.php' not found or unable to stat, referer: https://intranet.price.fox.org",1
+bba4276e,"script '<*> - Copy.php' not found or unable to stat, referer: https://intranet.price.fox.org",1
+a08b703f,AH01630: client denied by server configuration: <*>,547
+b76814bb,script '<*> not found or unable to stat,532
+7eedc4df,AH00687: Negotiation: discovered file(s) matching request: <*> (None could be negotiated).,134
+295d0cb8,"AH01276: Cannot serve directory <*>: No matching DirectoryIndex (index.html,index.cgi,index.pl,index.php,index.xhtml,index.htm) found, and server-generated directory index forbidden by Options directive",82
+cf4a4178,PHP Fatal error: Uncaught Error: Call to undefined function <*> in <*> trace:\n#0 {main}\n thrown in <*> on line <*>,3
+7a026ffe,PHP Warning: Use of undefined constant <*> - assumed <*> (this will throw an Error in a future version of PHP) in <*> on line 9,4
+37de67e9,PHP Fatal error: require(): Failed opening required 'ABSPATHWPINC/blocks/archives.php' (include_path='.:<*> in <*> on line 9,2

@@ -1,0 +1,12 @@
+EventId,EventTemplate,Occurrences
+40f8343b,query[A] <*> from <*>,1765
+bef4b736,forwarded <*> to <*>,1911
+a1c209ec,reply <*> is <*>,2042
+40c94dcf,query[AAAA] mail from <*>,12
+88c1a799,cached mail is NXDOMAIN,12
+ba410271,query[TXT] <*> from <*>,36
+1c20f0f3,query[AAAA] <*> from <*>,164
+2604aa46,cached <*> is <*>,194
+48a3819a,query[SRV] _http._<*> from <*>,27
+1222321a,query[SRV] _https._<*> from <*>,4
+b0a0058c,nameserver <*> refused to do a recursive query,100

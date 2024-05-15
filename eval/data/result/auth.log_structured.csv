@@ -1,0 +1,626 @@
+LineId,Month,Day,Timestamp,Component,Proto,Content,EventId,EventTemplate,Parameters
+1,Jan,16,06:25:50,intranet-server,CRON[18032],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+2,Jan,16,06:39:01,intranet-server,CRON[18209],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+3,Jan,16,06:39:01,intranet-server,CRON[18209],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+4,Jan,16,06:47:01,intranet-server,CRON[18365],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+5,Jan,16,06:47:15,intranet-server,CRON[18365],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+6,Jan,16,07:07:01,intranet-server,CRON[18380],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+7,Jan,16,07:07:01,intranet-server,CRON[18380],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+8,Jan,16,07:09:01,intranet-server,CRON[18384],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+9,Jan,16,07:09:01,intranet-server,CRON[18384],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+10,Jan,16,07:17:01,intranet-server,CRON[18448],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+11,Jan,16,07:17:01,intranet-server,CRON[18448],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+12,Jan,16,07:39:01,intranet-server,CRON[18468],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+13,Jan,16,07:39:01,intranet-server,CRON[18468],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+14,Jan,16,08:09:01,intranet-server,CRON[18546],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+15,Jan,16,08:09:01,intranet-server,CRON[18546],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+16,Jan,16,08:17:01,intranet-server,CRON[18636],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+17,Jan,16,08:17:01,intranet-server,CRON[18636],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+18,Jan,16,08:39:01,intranet-server,CRON[18643],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+19,Jan,16,08:39:01,intranet-server,CRON[18643],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+20,Jan,16,09:09:01,intranet-server,CRON[18716],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+21,Jan,16,09:09:01,intranet-server,CRON[18716],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+22,Jan,16,09:17:01,intranet-server,CRON[18787],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+23,Jan,16,09:17:01,intranet-server,CRON[18787],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+24,Jan,16,09:39:01,intranet-server,CRON[18794],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+25,Jan,16,09:39:01,intranet-server,CRON[18794],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+26,Jan,16,10:09:01,intranet-server,CRON[18868],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+27,Jan,16,10:09:01,intranet-server,CRON[18868],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+28,Jan,16,10:17:01,intranet-server,CRON[18939],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+29,Jan,16,10:17:01,intranet-server,CRON[18939],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+30,Jan,16,10:39:01,intranet-server,CRON[18958],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+31,Jan,16,10:39:01,intranet-server,CRON[18958],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+32,Jan,16,11:09:01,intranet-server,CRON[19038],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+33,Jan,16,11:09:01,intranet-server,CRON[19038],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+34,Jan,16,11:17:01,intranet-server,CRON[19118],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+35,Jan,16,11:17:01,intranet-server,CRON[19118],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+36,Jan,16,11:39:01,intranet-server,CRON[19181],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+37,Jan,16,11:39:01,intranet-server,CRON[19181],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+38,Jan,16,12:09:01,intranet-server,CRON[19256],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+39,Jan,16,12:09:01,intranet-server,CRON[19256],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+40,Jan,16,12:17:01,intranet-server,CRON[19329],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+41,Jan,16,12:17:01,intranet-server,CRON[19329],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+42,Jan,16,12:39:01,intranet-server,CRON[19338],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+43,Jan,16,12:39:01,intranet-server,CRON[19338],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+44,Jan,16,13:09:01,intranet-server,CRON[19412],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+45,Jan,16,13:09:01,intranet-server,CRON[19412],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+46,Jan,16,13:17:01,intranet-server,CRON[19484],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+47,Jan,16,13:17:01,intranet-server,CRON[19484],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+48,Jan,16,13:39:01,intranet-server,CRON[19496],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+49,Jan,16,13:39:01,intranet-server,CRON[19496],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+50,Jan,16,14:09:01,intranet-server,CRON[19576],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+51,Jan,16,14:09:01,intranet-server,CRON[19576],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+52,Jan,16,14:17:01,intranet-server,CRON[19730],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+53,Jan,16,14:17:01,intranet-server,CRON[19730],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+54,Jan,16,14:39:01,intranet-server,CRON[19749],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+55,Jan,16,14:39:01,intranet-server,CRON[19749],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+56,Jan,16,15:09:01,intranet-server,CRON[19824],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+57,Jan,16,15:09:01,intranet-server,CRON[19824],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+58,Jan,16,15:17:02,intranet-server,CRON[19897],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+59,Jan,16,15:17:02,intranet-server,CRON[19897],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+60,Jan,16,15:39:01,intranet-server,CRON[19904],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+61,Jan,16,15:39:01,intranet-server,CRON[19904],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+62,Jan,16,16:09:01,intranet-server,CRON[19979],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+63,Jan,16,16:09:01,intranet-server,CRON[19979],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+64,Jan,16,16:17:01,intranet-server,CRON[20052],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+65,Jan,16,16:17:01,intranet-server,CRON[20052],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+66,Jan,16,16:39:01,intranet-server,CRON[20073],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+67,Jan,16,16:39:01,intranet-server,CRON[20073],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+68,Jan,16,17:09:01,intranet-server,CRON[20211],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+69,Jan,16,17:09:01,intranet-server,CRON[20211],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+70,Jan,16,17:17:01,intranet-server,CRON[20286],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+71,Jan,16,17:17:01,intranet-server,CRON[20286],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+72,Jan,16,17:39:01,intranet-server,CRON[20291],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+73,Jan,16,17:39:01,intranet-server,CRON[20291],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+74,Jan,16,18:09:01,intranet-server,CRON[20368],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+75,Jan,16,18:09:01,intranet-server,CRON[20368],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+76,Jan,16,18:17:01,intranet-server,CRON[20438],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+77,Jan,16,18:17:01,intranet-server,CRON[20438],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+78,Jan,16,18:39:01,intranet-server,CRON[20446],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+79,Jan,16,18:39:01,intranet-server,CRON[20446],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+80,Jan,16,19:09:01,intranet-server,CRON[20517],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+81,Jan,16,19:09:01,intranet-server,CRON[20517],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+82,Jan,16,19:17:01,intranet-server,CRON[20586],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+83,Jan,16,19:17:01,intranet-server,CRON[20586],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+84,Jan,16,19:39:01,intranet-server,CRON[20593],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+85,Jan,16,19:39:01,intranet-server,CRON[20593],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+86,Jan,16,20:09:01,intranet-server,CRON[20667],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+87,Jan,16,20:09:01,intranet-server,CRON[20667],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+88,Jan,16,20:17:01,intranet-server,CRON[20745],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+89,Jan,16,20:17:01,intranet-server,CRON[20745],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+90,Jan,16,20:39:01,intranet-server,CRON[20752],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+91,Jan,16,20:39:01,intranet-server,CRON[20752],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+92,Jan,16,21:09:01,intranet-server,CRON[20825],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+93,Jan,16,21:09:01,intranet-server,CRON[20825],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+94,Jan,16,21:17:01,intranet-server,CRON[20897],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+95,Jan,16,21:17:01,intranet-server,CRON[20897],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+96,Jan,16,21:39:01,intranet-server,CRON[20903],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+97,Jan,16,21:39:01,intranet-server,CRON[20903],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+98,Jan,16,22:09:01,intranet-server,CRON[20979],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+99,Jan,16,22:09:01,intranet-server,CRON[20979],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+100,Jan,16,22:17:01,intranet-server,CRON[21049],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+101,Jan,16,22:17:01,intranet-server,CRON[21049],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+102,Jan,16,22:39:01,intranet-server,CRON[21066],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+103,Jan,16,22:39:01,intranet-server,CRON[21066],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+104,Jan,16,23:09:01,intranet-server,CRON[21138],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+105,Jan,16,23:09:01,intranet-server,CRON[21138],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+106,Jan,16,23:17:01,intranet-server,CRON[21210],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+107,Jan,16,23:17:01,intranet-server,CRON[21210],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+108,Jan,16,23:39:01,intranet-server,CRON[21216],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+109,Jan,16,23:39:01,intranet-server,CRON[21216],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+110,Jan,17,00:09:01,intranet-server,CRON[21305],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+111,Jan,17,00:09:01,intranet-server,CRON[21305],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+112,Jan,17,00:17:01,intranet-server,CRON[21377],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+113,Jan,17,00:17:01,intranet-server,CRON[21377],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+114,Jan,17,00:39:02,intranet-server,CRON[21383],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+115,Jan,17,00:39:02,intranet-server,CRON[21383],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+116,Jan,17,01:09:01,intranet-server,CRON[21484],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+117,Jan,17,01:09:01,intranet-server,CRON[21484],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+118,Jan,17,01:17:01,intranet-server,CRON[22056],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+119,Jan,17,01:17:01,intranet-server,CRON[22056],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+120,Jan,17,01:39:01,intranet-server,CRON[22125],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+121,Jan,17,01:39:01,intranet-server,CRON[22125],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+122,Jan,17,02:09:01,intranet-server,CRON[22203],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+123,Jan,17,02:09:01,intranet-server,CRON[22203],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+124,Jan,17,02:17:01,intranet-server,CRON[22273],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+125,Jan,17,02:17:01,intranet-server,CRON[22273],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+126,Jan,17,02:39:01,intranet-server,CRON[22285],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+127,Jan,17,02:39:01,intranet-server,CRON[22285],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+128,Jan,17,03:09:01,intranet-server,CRON[22360],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+129,Jan,17,03:09:01,intranet-server,CRON[22360],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+130,Jan,17,03:17:01,intranet-server,CRON[22429],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+131,Jan,17,03:17:01,intranet-server,CRON[22429],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+132,Jan,17,03:39:01,intranet-server,CRON[22433],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+133,Jan,17,03:39:01,intranet-server,CRON[22433],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+134,Jan,17,04:09:01,intranet-server,CRON[22513],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+135,Jan,17,04:09:01,intranet-server,CRON[22513],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+136,Jan,17,04:17:01,intranet-server,CRON[22591],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+137,Jan,17,04:17:01,intranet-server,CRON[22591],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+138,Jan,17,04:39:01,intranet-server,CRON[22596],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+139,Jan,17,04:39:01,intranet-server,CRON[22596],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+140,Jan,17,05:09:01,intranet-server,CRON[22677],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+141,Jan,17,05:09:01,intranet-server,CRON[22677],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+142,Jan,17,05:17:01,intranet-server,CRON[22747],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+143,Jan,17,05:17:01,intranet-server,CRON[22747],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+144,Jan,17,05:39:01,intranet-server,CRON[22752],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+145,Jan,17,05:39:01,intranet-server,CRON[22752],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+146,Jan,17,06:09:01,intranet-server,CRON[22824],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+147,Jan,17,06:09:01,intranet-server,CRON[22824],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+148,Jan,17,06:17:01,intranet-server,CRON[22901],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+149,Jan,17,06:17:01,intranet-server,CRON[22901],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+150,Jan,17,06:25:02,intranet-server,CRON[22905],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+151,Jan,17,06:25:12,intranet-server,CRON[22905],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+152,Jan,17,06:39:01,intranet-server,CRON[23073],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+153,Jan,17,06:39:01,intranet-server,CRON[23073],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+154,Jan,17,07:07:01,intranet-server,CRON[23250],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+155,Jan,17,07:07:01,intranet-server,CRON[23250],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+156,Jan,17,07:09:01,intranet-server,CRON[23253],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+157,Jan,17,07:09:02,intranet-server,CRON[23253],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+158,Jan,17,07:17:01,intranet-server,CRON[23326],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+159,Jan,17,07:17:01,intranet-server,CRON[23326],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+160,Jan,17,07:39:01,intranet-server,CRON[23408],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+161,Jan,17,07:39:01,intranet-server,CRON[23408],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+162,Jan,17,08:09:01,intranet-server,CRON[23484],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+163,Jan,17,08:09:01,intranet-server,CRON[23484],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+164,Jan,17,08:17:01,intranet-server,CRON[23573],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+165,Jan,17,08:17:01,intranet-server,CRON[23573],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+166,Jan,17,08:39:01,intranet-server,CRON[23580],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+167,Jan,17,08:39:01,intranet-server,CRON[23580],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+168,Jan,17,09:09:01,intranet-server,CRON[23653],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+169,Jan,17,09:09:01,intranet-server,CRON[23653],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+170,Jan,17,09:17:01,intranet-server,CRON[23725],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+171,Jan,17,09:17:01,intranet-server,CRON[23725],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+172,Jan,17,09:39:01,intranet-server,CRON[23752],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+173,Jan,17,09:39:01,intranet-server,CRON[23752],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+174,Jan,17,10:09:01,intranet-server,CRON[23842],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+175,Jan,17,10:09:01,intranet-server,CRON[23842],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+176,Jan,17,10:17:01,intranet-server,CRON[23918],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+177,Jan,17,10:17:01,intranet-server,CRON[23918],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+178,Jan,17,10:39:01,intranet-server,CRON[23930],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+179,Jan,17,10:39:01,intranet-server,CRON[23930],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+180,Jan,17,11:09:01,intranet-server,CRON[24006],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+181,Jan,17,11:09:01,intranet-server,CRON[24006],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+182,Jan,17,11:17:01,intranet-server,CRON[24074],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+183,Jan,17,11:17:01,intranet-server,CRON[24074],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+184,Jan,17,11:39:01,intranet-server,CRON[24082],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+185,Jan,17,11:39:01,intranet-server,CRON[24082],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+186,Jan,17,12:09:01,intranet-server,CRON[24152],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+187,Jan,17,12:09:01,intranet-server,CRON[24152],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+188,Jan,17,12:17:01,intranet-server,CRON[24224],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+189,Jan,17,12:17:01,intranet-server,CRON[24224],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+190,Jan,17,12:39:01,intranet-server,CRON[24231],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+191,Jan,17,12:39:01,intranet-server,CRON[24231],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+192,Jan,17,13:09:01,intranet-server,CRON[24304],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+193,Jan,17,13:09:01,intranet-server,CRON[24304],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+194,Jan,17,13:17:01,intranet-server,CRON[24380],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+195,Jan,17,13:17:01,intranet-server,CRON[24380],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+196,Jan,17,13:39:01,intranet-server,CRON[24385],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+197,Jan,17,13:39:01,intranet-server,CRON[24385],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+198,Jan,17,14:09:01,intranet-server,CRON[24467],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+199,Jan,17,14:09:01,intranet-server,CRON[24467],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+200,Jan,17,14:17:02,intranet-server,CRON[24536],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+201,Jan,17,14:17:02,intranet-server,CRON[24536],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+202,Jan,17,14:39:02,intranet-server,CRON[24595],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+203,Jan,17,14:39:02,intranet-server,CRON[24595],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+204,Jan,17,15:09:01,intranet-server,CRON[24683],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+205,Jan,17,15:09:01,intranet-server,CRON[24683],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+206,Jan,17,15:17:01,intranet-server,CRON[24758],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+207,Jan,17,15:17:01,intranet-server,CRON[24758],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+208,Jan,17,15:39:01,intranet-server,CRON[24766],pam_unix(su:session): session opened for user root by (uid=0),9bc9f94e,pam_unix(su:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+209,Jan,17,15:39:01,intranet-server,CRON[24766],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+210,Jan,17,16:09:01,intranet-server,CRON[24846],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+211,Jan,17,16:09:01,intranet-server,CRON[24846],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+212,Jan,17,16:17:01,intranet-server,CRON[24919],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+213,Jan,17,16:17:01,intranet-server,CRON[24919],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+214,Jan,17,16:39:01,intranet-server,CRON[24929],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+215,Jan,17,16:39:01,intranet-server,CRON[24929],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+216,Jan,17,17:09:01,intranet-server,CRON[25037],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+217,Jan,17,17:09:01,intranet-server,CRON[25037],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+218,Jan,17,17:17:01,intranet-server,CRON[25107],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+219,Jan,17,17:17:01,intranet-server,CRON[25107],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+220,Jan,17,17:39:01,intranet-server,CRON[25114],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+221,Jan,17,17:39:01,intranet-server,CRON[25114],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+222,Jan,17,17:55:29,intranet-server,sshd[13953],pam_unix(sshd:session): session closed for user hwarren,611cfa24,pam_unix(sshd:session): session closed for user hwarren,[]
+223,Jan,17,17:55:29,intranet-server,systemd-logind[1011],Removed session 98.,168e7166,Removed session <*>.,['98']
+224,Jan,17,18:09:01,intranet-server,CRON[25187],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+225,Jan,17,18:09:01,intranet-server,CRON[25187],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+226,Jan,17,18:17:01,intranet-server,CRON[25254],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+227,Jan,17,18:17:01,intranet-server,CRON[25254],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+228,Jan,17,18:39:01,intranet-server,CRON[25260],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+229,Jan,17,18:39:01,intranet-server,CRON[25260],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+230,Jan,17,19:09:01,intranet-server,CRON[25337],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+231,Jan,17,19:09:01,intranet-server,CRON[25337],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+232,Jan,17,19:17:01,intranet-server,CRON[25412],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+233,Jan,17,19:17:01,intranet-server,CRON[25412],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+234,Jan,17,19:39:01,intranet-server,CRON[25417],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+235,Jan,17,19:39:01,intranet-server,CRON[25417],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+236,Jan,17,20:09:01,intranet-server,CRON[25486],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+237,Jan,17,20:09:01,intranet-server,CRON[25486],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+238,Jan,17,20:17:01,intranet-server,CRON[25560],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+239,Jan,17,20:17:01,intranet-server,CRON[25560],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+240,Jan,17,20:30:48,intranet-server,sshd[25565],Accepted publickey for hwarren from 172.17.130.196 port 42972 ssh2: RSA SHA256:8wFbiaYPevKS/wYKnePO20v0iymTcrRh4Kr+1uRS1UM,7b02d35d,Accepted publickey for <*> from <*> port <*> ssh<*>: RSA <*>,"['hwarren', '172.17.130.196', '42972', '2', 'SHA256:8wFbiaYPevKS/wYKnePO20v0iymTcrRh4Kr+1uRS1UM']"
+241,Jan,17,20:30:48,intranet-server,sshd[25565],pam_unix(sshd:session): session opened for user hwarren by (uid=0),b7a32072,pam_unix(sshd:session): session opened for user <*> by (uid=0),['hwarren']
+242,Jan,17,20:30:48,intranet-server,systemd-logind[1011],New session 283 of user hwarren.,4e6a7bf7,New session <*> of user <*>,"['283', 'hwarren.']"
+243,Jan,17,20:30:48,intranet-server,systemd,pam_unix(systemd-user:session): session opened for user hwarren by (uid=0),acb98ce0,pam_unix(systemd-user:session): session opened for user <*> by (uid=0),['hwarren']
+244,Jan,17,20:39:01,intranet-server,CRON[25725],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+245,Jan,17,20:39:01,intranet-server,CRON[25725],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+246,Jan,17,21:09:01,intranet-server,CRON[25803],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+247,Jan,17,21:09:01,intranet-server,CRON[25803],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+248,Jan,17,21:17:01,intranet-server,CRON[25872],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+249,Jan,17,21:17:01,intranet-server,CRON[25872],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+250,Jan,17,21:39:01,intranet-server,CRON[25878],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+251,Jan,17,21:39:01,intranet-server,CRON[25878],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+252,Jan,17,22:09:01,intranet-server,CRON[25951],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+253,Jan,17,22:09:01,intranet-server,CRON[25951],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+254,Jan,17,22:17:01,intranet-server,CRON[26023],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+255,Jan,17,22:17:01,intranet-server,CRON[26023],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+256,Jan,17,22:39:01,intranet-server,CRON[26031],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+257,Jan,17,22:39:01,intranet-server,CRON[26031],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+258,Jan,17,23:09:01,intranet-server,CRON[26102],pam_unix(su:session): session opened for user root by (uid=0),9bc9f94e,pam_unix(su:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+259,Jan,17,23:09:01,intranet-server,CRON[26102],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+260,Jan,17,23:17:02,intranet-server,CRON[26171],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+261,Jan,17,23:17:02,intranet-server,CRON[26171],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+262,Jan,17,23:39:01,intranet-server,CRON[26262],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+263,Jan,17,23:39:01,intranet-server,CRON[26262],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+264,Jan,18,00:09:01,intranet-server,CRON[26337],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+265,Jan,18,00:09:01,intranet-server,CRON[26337],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+266,Jan,18,00:17:01,intranet-server,CRON[26405],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+267,Jan,18,00:17:01,intranet-server,CRON[26405],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+268,Jan,18,00:39:01,intranet-server,CRON[26414],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+269,Jan,18,00:39:01,intranet-server,CRON[26414],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+270,Jan,18,01:09:01,intranet-server,CRON[26482],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+271,Jan,18,01:09:01,intranet-server,CRON[26482],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+272,Jan,18,01:17:01,intranet-server,CRON[26551],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+273,Jan,18,01:17:01,intranet-server,CRON[26551],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+274,Jan,18,01:39:01,intranet-server,CRON[26559],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+275,Jan,18,01:39:01,intranet-server,CRON[26559],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+276,Jan,18,02:09:01,intranet-server,CRON[26631],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+277,Jan,18,02:09:01,intranet-server,CRON[26631],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+278,Jan,18,02:17:01,intranet-server,CRON[26700],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+279,Jan,18,02:17:01,intranet-server,CRON[26700],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+280,Jan,18,02:39:01,intranet-server,CRON[26705],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+281,Jan,18,02:39:01,intranet-server,CRON[26705],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+282,Jan,18,03:09:01,intranet-server,CRON[26774],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+283,Jan,18,03:09:01,intranet-server,CRON[26774],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+284,Jan,18,03:17:01,intranet-server,CRON[26842],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+285,Jan,18,03:17:01,intranet-server,CRON[26842],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+286,Jan,18,03:39:01,intranet-server,CRON[26846],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+287,Jan,18,03:39:01,intranet-server,CRON[26846],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+288,Jan,18,04:09:01,intranet-server,CRON[26915],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+289,Jan,18,04:09:01,intranet-server,CRON[26915],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+290,Jan,18,04:17:01,intranet-server,CRON[26997],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+291,Jan,18,04:17:01,intranet-server,CRON[26997],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+292,Jan,18,04:39:01,intranet-server,CRON[27003],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+293,Jan,18,04:39:01,intranet-server,CRON[27003],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+294,Jan,18,05:09:01,intranet-server,CRON[27071],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+295,Jan,18,05:09:01,intranet-server,CRON[27071],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+296,Jan,18,05:17:01,intranet-server,CRON[27138],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+297,Jan,18,05:17:01,intranet-server,CRON[27138],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+298,Jan,18,05:39:01,intranet-server,CRON[27149],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+299,Jan,18,05:39:01,intranet-server,CRON[27149],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+300,Jan,18,06:09:01,intranet-server,CRON[27230],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+301,Jan,18,06:09:01,intranet-server,CRON[27230],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+302,Jan,18,06:17:01,intranet-server,CRON[27297],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+303,Jan,18,06:17:01,intranet-server,CRON[27297],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+304,Jan,18,06:25:01,intranet-server,CRON[27301],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+305,Jan,18,06:25:09,intranet-server,CRON[27301],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+306,Jan,18,06:39:01,intranet-server,CRON[27623],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+307,Jan,18,06:39:01,intranet-server,CRON[27623],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+308,Jan,18,07:07:01,intranet-server,CRON[27690],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+309,Jan,18,07:07:01,intranet-server,CRON[27690],pam_unix(su:session): session closed for user root,3652eb09,pam_unix(su:session): session closed for user root,[]
+310,Jan,18,07:09:01,intranet-server,CRON[27693],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+311,Jan,18,07:09:01,intranet-server,CRON[27693],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+312,Jan,18,07:17:01,intranet-server,CRON[27759],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+313,Jan,18,07:17:01,intranet-server,CRON[27759],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+314,Jan,18,07:39:01,intranet-server,CRON[27764],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+315,Jan,18,07:39:01,intranet-server,CRON[27764],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+316,Jan,18,08:09:01,intranet-server,CRON[27833],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+317,Jan,18,08:09:01,intranet-server,CRON[27833],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+318,Jan,18,08:17:01,intranet-server,CRON[27918],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+319,Jan,18,08:17:01,intranet-server,CRON[27918],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+320,Jan,18,08:39:01,intranet-server,CRON[27923],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+321,Jan,18,08:39:01,intranet-server,CRON[27923],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+322,Jan,18,09:09:01,intranet-server,CRON[27995],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+323,Jan,18,09:09:01,intranet-server,CRON[27995],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+324,Jan,18,09:17:02,intranet-server,CRON[28067],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+325,Jan,18,09:17:02,intranet-server,CRON[28067],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+326,Jan,18,09:39:01,intranet-server,CRON[28081],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+327,Jan,18,09:39:01,intranet-server,CRON[28081],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+328,Jan,18,10:09:01,intranet-server,CRON[28164],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+329,Jan,18,10:09:01,intranet-server,CRON[28164],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+330,Jan,18,10:17:01,intranet-server,CRON[28245],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+331,Jan,18,10:17:01,intranet-server,CRON[28245],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+332,Jan,18,10:39:01,intranet-server,CRON[28255],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+333,Jan,18,10:39:01,intranet-server,CRON[28255],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+334,Jan,18,11:09:01,intranet-server,CRON[28328],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+335,Jan,18,11:09:01,intranet-server,CRON[28328],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+336,Jan,18,11:17:02,intranet-server,CRON[28399],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+337,Jan,18,11:17:02,intranet-server,CRON[28399],pam_unix(su:session): session closed for user root,3652eb09,pam_unix(su:session): session closed for user root,[]
+338,Jan,18,11:39:01,intranet-server,CRON[28415],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+339,Jan,18,11:39:01,intranet-server,CRON[28415],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+340,Jan,18,12:09:02,intranet-server,CRON[28496],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+341,Jan,18,12:09:02,intranet-server,CRON[28496],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+342,Jan,18,12:17:01,intranet-server,CRON[28569],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+343,Jan,18,12:17:01,intranet-server,CRON[28569],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+344,Jan,18,12:17:31,intranet-server,sshd[28573],Did not receive identification string from 172.17.130.196 port 52000,1de1e05d,Did not receive identification string from <*> port <*>0,"['172.17.130.196', '5200']"
+345,Jan,18,12:39:01,intranet-server,CRON[28622],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+346,Jan,18,12:39:01,intranet-server,CRON[28622],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+347,Jan,18,13:09:01,intranet-server,CRON[28722],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+348,Jan,18,13:09:01,intranet-server,CRON[28722],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+349,Jan,18,13:14:31,intranet-server,su[28816],Successful su for phopkins by www-data,2f37c4e7,Successful su for phopkins by www-data,[]
+350,Jan,18,13:14:31,intranet-server,su[28816],+ /dev/pts/1 www-data:phopkins,60a51361,+ /dev/pts/<*> www-data:phopkins,['1']
+351,Jan,18,13:14:31,intranet-server,su[28816],pam_unix(su:session): session opened for user phopkins by (uid=33),9bc9f94e,pam_unix(su:session): session opened for user <*> by <*>,"['phopkins', '(uid=33)']"
+352,Jan,18,13:14:31,intranet-server,systemd-logind[1011],New session c1 of user phopkins.,4e6a7bf7,New session <*> of user <*>,"['c1', 'phopkins.']"
+353,Jan,18,13:14:31,intranet-server,systemd,pam_unix(systemd-user:session): session opened for user phopkins by (uid=0),acb98ce0,pam_unix(systemd-user:session): session opened for user <*> by (uid=0),['phopkins']
+354,Jan,18,13:14:41,intranet-server,sudo,phopkins : TTY=pts/1 ; PWD=/var/www/intranet.price.fox.org/wp-content/uploads/2022/01 ; USER=root ; COMMAND=list,06bd422b,phopkins : TTY=pts/<*> ; PWD=/var/www/intranet.price.fox.org/wp-content/uploads/<*>/0<*> ; USER=root ; COMMAND=list,"['1', '2022', '1']"
+355,Jan,18,13:14:43,intranet-server,sudo,phopkins : TTY=pts/1 ; PWD=/var/www/intranet.price.fox.org/wp-content/uploads/2022/01 ; USER=root ; COMMAND=/bin/ls -laR /root/,8cbbd61e,phopkins : TTY=pts/<*> ; PWD=/var/www/intranet.price.fox.org/wp-content/uploads/<*>/0<*> ; USER=root ; COMMAND=/bin/ls -laR /root/,"['1', '2022', '1']"
+356,Jan,18,13:14:43,intranet-server,sudo,pam_unix(sudo:session): session opened for user root by (uid=0),35bc9d79,pam_unix(sudo:session): session opened for user root by (uid=0),[]
+357,Jan,18,13:14:43,intranet-server,sudo,pam_unix(sudo:session): session closed for user root,8b428b11,pam_unix(sudo:session): session closed for user root,[]
+358,Jan,18,13:14:49,intranet-server,sudo,phopkins : TTY=pts/1 ; PWD=/var/www/intranet.price.fox.org/wp-content/uploads/2022/01 ; USER=root ; COMMAND=/bin/cat /etc/shadow,1bbc4748,phopkins : TTY=pts/<*> ; PWD=/var/www/intranet.price.fox.org/wp-content/uploads/<*>/0<*> ; USER=root ; COMMAND=/bin/cat /etc/shadow,"['1', '2022', '1']"
+359,Jan,18,13:14:49,intranet-server,sudo,pam_unix(sudo:session): session opened for user root by (uid=0),35bc9d79,pam_unix(sudo:session): session opened for user root by (uid=0),[]
+360,Jan,18,13:14:49,intranet-server,sudo,pam_unix(sudo:session): session closed for user root,8b428b11,pam_unix(sudo:session): session closed for user root,[]
+361,Jan,18,13:17:01,intranet-server,CRON[28848],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+362,Jan,18,13:17:01,intranet-server,CRON[28848],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+363,Jan,18,13:39:01,intranet-server,CRON[28867],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+364,Jan,18,13:39:01,intranet-server,CRON[28867],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+365,Jan,18,14:09:01,intranet-server,CRON[28966],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+366,Jan,18,14:09:01,intranet-server,CRON[28966],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+367,Jan,18,14:17:01,intranet-server,CRON[29037],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+368,Jan,18,14:17:01,intranet-server,CRON[29037],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+369,Jan,18,14:39:01,intranet-server,CRON[29042],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+370,Jan,18,14:39:01,intranet-server,CRON[29042],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+371,Jan,18,15:09:01,intranet-server,CRON[29125],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+372,Jan,18,15:09:01,intranet-server,CRON[29125],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+373,Jan,18,15:17:01,intranet-server,CRON[29200],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+374,Jan,18,15:17:01,intranet-server,CRON[29200],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+375,Jan,18,15:39:01,intranet-server,CRON[29206],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+376,Jan,18,15:39:01,intranet-server,CRON[29206],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+377,Jan,18,16:09:01,intranet-server,CRON[29278],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+378,Jan,18,16:09:01,intranet-server,CRON[29278],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+379,Jan,18,16:17:01,intranet-server,CRON[29349],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+380,Jan,18,16:17:01,intranet-server,CRON[29349],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+381,Jan,18,16:39:01,intranet-server,CRON[29359],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+382,Jan,18,16:39:01,intranet-server,CRON[29359],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+383,Jan,18,17:09:01,intranet-server,CRON[29952],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+384,Jan,18,17:09:01,intranet-server,CRON[29952],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+385,Jan,18,17:17:02,intranet-server,CRON[30026],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+386,Jan,18,17:17:02,intranet-server,CRON[30026],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+387,Jan,18,17:39:01,intranet-server,CRON[30033],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+388,Jan,18,17:39:01,intranet-server,CRON[30033],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+389,Jan,18,18:09:01,intranet-server,CRON[30109],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+390,Jan,18,18:09:01,intranet-server,CRON[30109],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+391,Jan,18,18:17:01,intranet-server,CRON[30183],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+392,Jan,18,18:17:01,intranet-server,CRON[30183],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+393,Jan,18,18:39:01,intranet-server,CRON[30190],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+394,Jan,18,18:39:01,intranet-server,CRON[30190],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+395,Jan,18,19:09:01,intranet-server,CRON[30262],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+396,Jan,18,19:09:01,intranet-server,CRON[30262],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+397,Jan,18,19:17:01,intranet-server,CRON[30331],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+398,Jan,18,19:17:01,intranet-server,CRON[30331],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+399,Jan,18,19:39:01,intranet-server,CRON[30395],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+400,Jan,18,19:39:01,intranet-server,CRON[30395],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+401,Jan,18,20:09:01,intranet-server,CRON[30465],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+402,Jan,18,20:09:01,intranet-server,CRON[30465],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+403,Jan,18,20:17:01,intranet-server,CRON[30534],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+404,Jan,18,20:17:01,intranet-server,CRON[30534],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+405,Jan,18,20:39:01,intranet-server,CRON[30540],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+406,Jan,18,20:39:01,intranet-server,CRON[30540],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+407,Jan,18,21:09:01,intranet-server,CRON[30621],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+408,Jan,18,21:09:01,intranet-server,CRON[30621],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+409,Jan,18,21:17:01,intranet-server,CRON[30696],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+410,Jan,18,21:17:01,intranet-server,CRON[30696],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+411,Jan,18,21:39:01,intranet-server,CRON[30701],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+412,Jan,18,21:39:01,intranet-server,CRON[30701],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+413,Jan,18,22:09:01,intranet-server,CRON[30770],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+414,Jan,18,22:09:01,intranet-server,CRON[30770],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+415,Jan,18,22:17:01,intranet-server,CRON[30841],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+416,Jan,18,22:17:01,intranet-server,CRON[30841],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+417,Jan,18,22:39:01,intranet-server,CRON[30845],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+418,Jan,18,22:39:01,intranet-server,CRON[30845],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+419,Jan,18,23:09:01,intranet-server,CRON[30918],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+420,Jan,18,23:09:01,intranet-server,CRON[30918],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+421,Jan,18,23:17:01,intranet-server,CRON[30992],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+422,Jan,18,23:17:01,intranet-server,CRON[30992],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+423,Jan,18,23:39:01,intranet-server,CRON[30997],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+424,Jan,18,23:39:01,intranet-server,CRON[30997],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+425,Jan,19,00:09:01,intranet-server,CRON[31070],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+426,Jan,19,00:09:01,intranet-server,CRON[31070],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+427,Jan,19,00:17:01,intranet-server,CRON[31149],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+428,Jan,19,00:17:01,intranet-server,CRON[31149],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+429,Jan,19,00:39:01,intranet-server,CRON[31153],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+430,Jan,19,00:39:01,intranet-server,CRON[31153],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+431,Jan,19,01:09:01,intranet-server,CRON[31225],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+432,Jan,19,01:09:01,intranet-server,CRON[31225],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+433,Jan,19,01:17:01,intranet-server,CRON[31295],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+434,Jan,19,01:17:01,intranet-server,CRON[31295],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+435,Jan,19,01:39:01,intranet-server,CRON[31301],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+436,Jan,19,01:39:01,intranet-server,CRON[31301],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+437,Jan,19,02:09:01,intranet-server,CRON[31379],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+438,Jan,19,02:09:01,intranet-server,CRON[31379],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+439,Jan,19,02:17:01,intranet-server,CRON[31451],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+440,Jan,19,02:17:01,intranet-server,CRON[31451],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+441,Jan,19,02:39:01,intranet-server,CRON[31470],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+442,Jan,19,02:39:01,intranet-server,CRON[31470],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+443,Jan,19,03:09:01,intranet-server,CRON[31547],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+444,Jan,19,03:09:02,intranet-server,CRON[31547],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+445,Jan,19,03:17:01,intranet-server,CRON[31616],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+446,Jan,19,03:17:01,intranet-server,CRON[31616],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+447,Jan,19,03:39:01,intranet-server,CRON[31621],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+448,Jan,19,03:39:01,intranet-server,CRON[31621],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+449,Jan,19,04:09:01,intranet-server,CRON[32202],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+450,Jan,19,04:09:01,intranet-server,CRON[32202],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+451,Jan,19,04:17:01,intranet-server,CRON[32288],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+452,Jan,19,04:17:01,intranet-server,CRON[32288],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+453,Jan,19,04:39:01,intranet-server,CRON[32293],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+454,Jan,19,04:39:01,intranet-server,CRON[32293],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+455,Jan,19,05:09:01,intranet-server,CRON[32367],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+456,Jan,19,05:09:01,intranet-server,CRON[32367],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+457,Jan,19,05:17:01,intranet-server,CRON[32441],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+458,Jan,19,05:17:01,intranet-server,CRON[32441],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+459,Jan,19,05:39:01,intranet-server,CRON[32449],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+460,Jan,19,05:39:01,intranet-server,CRON[32449],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+461,Jan,19,06:09:01,intranet-server,CRON[32522],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+462,Jan,19,06:09:01,intranet-server,CRON[32522],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+463,Jan,19,06:17:01,intranet-server,CRON[32591],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+464,Jan,19,06:17:01,intranet-server,CRON[32591],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+465,Jan,19,06:25:02,intranet-server,CRON[32595],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+466,Jan,19,06:25:29,intranet-server,CRON[32595],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+467,Jan,19,06:39:01,intranet-server,CRON[302],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+468,Jan,19,06:39:01,intranet-server,CRON[302],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+469,Jan,19,07:07:01,intranet-server,CRON[708],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+470,Jan,19,07:07:01,intranet-server,CRON[708],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+471,Jan,19,07:09:01,intranet-server,CRON[711],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+472,Jan,19,07:09:01,intranet-server,CRON[711],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+473,Jan,19,07:17:01,intranet-server,CRON[789],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+474,Jan,19,07:17:01,intranet-server,CRON[789],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+475,Jan,19,07:39:01,intranet-server,CRON[795],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+476,Jan,19,07:39:01,intranet-server,CRON[795],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+477,Jan,19,08:09:01,intranet-server,CRON[869],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+478,Jan,19,08:09:01,intranet-server,CRON[869],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+479,Jan,19,08:17:01,intranet-server,CRON[955],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+480,Jan,19,08:17:01,intranet-server,CRON[955],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+481,Jan,19,08:39:01,intranet-server,CRON[967],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+482,Jan,19,08:39:01,intranet-server,CRON[967],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+483,Jan,19,09:09:01,intranet-server,CRON[1047],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+484,Jan,19,09:09:01,intranet-server,CRON[1047],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+485,Jan,19,09:17:01,intranet-server,CRON[1125],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+486,Jan,19,09:17:01,intranet-server,CRON[1125],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+487,Jan,19,09:39:01,intranet-server,CRON[1138],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+488,Jan,19,09:39:01,intranet-server,CRON[1138],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+489,Jan,19,10:09:01,intranet-server,CRON[1261],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+490,Jan,19,10:09:01,intranet-server,CRON[1261],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+491,Jan,19,10:17:01,intranet-server,CRON[1334],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+492,Jan,19,10:17:01,intranet-server,CRON[1334],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+493,Jan,19,10:39:01,intranet-server,CRON[1342],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+494,Jan,19,10:39:01,intranet-server,CRON[1342],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+495,Jan,19,11:09:01,intranet-server,CRON[1415],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+496,Jan,19,11:09:01,intranet-server,CRON[1415],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+497,Jan,19,11:17:02,intranet-server,CRON[1485],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+498,Jan,19,11:17:02,intranet-server,CRON[1485],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+499,Jan,19,11:39:01,intranet-server,CRON[1490],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+500,Jan,19,11:39:01,intranet-server,CRON[1490],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+501,Jan,19,12:09:01,intranet-server,CRON[1637],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+502,Jan,19,12:09:01,intranet-server,CRON[1637],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+503,Jan,19,12:17:01,intranet-server,CRON[1713],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+504,Jan,19,12:17:01,intranet-server,CRON[1713],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+505,Jan,19,12:39:01,intranet-server,CRON[1719],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+506,Jan,19,12:39:01,intranet-server,CRON[1719],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+507,Jan,19,13:09:01,intranet-server,CRON[1790],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+508,Jan,19,13:09:01,intranet-server,CRON[1790],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+509,Jan,19,13:17:02,intranet-server,CRON[1862],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+510,Jan,19,13:17:02,intranet-server,CRON[1862],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+511,Jan,19,13:39:01,intranet-server,CRON[1868],pam_unix(cron:session): session opened for user test by (uid=1100),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['test', '(uid=1100)']"
+512,Jan,19,13:39:02,intranet-server,CRON[1868],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+513,Jan,19,14:09:01,intranet-server,CRON[1949],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+514,Jan,19,14:09:01,intranet-server,CRON[1949],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+515,Jan,19,14:17:01,intranet-server,CRON[2026],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+516,Jan,19,14:17:01,intranet-server,CRON[2026],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+517,Jan,19,14:39:01,intranet-server,CRON[2034],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+518,Jan,19,14:39:01,intranet-server,CRON[2034],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+519,Jan,19,15:09:01,intranet-server,CRON[2115],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+520,Jan,19,15:09:01,intranet-server,CRON[2115],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+521,Jan,19,15:17:01,intranet-server,CRON[2184],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+522,Jan,19,15:17:01,intranet-server,CRON[2184],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+523,Jan,19,15:39:01,intranet-server,CRON[2201],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+524,Jan,19,15:39:01,intranet-server,CRON[2201],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+525,Jan,19,16:09:01,intranet-server,CRON[2285],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+526,Jan,19,16:09:01,intranet-server,CRON[2285],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+527,Jan,19,16:17:01,intranet-server,CRON[2363],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+528,Jan,19,16:17:01,intranet-server,CRON[2363],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+529,Jan,19,16:39:01,intranet-server,CRON[2373],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+530,Jan,19,16:39:01,intranet-server,CRON[2373],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+531,Jan,19,17:09:01,intranet-server,CRON[2450],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+532,Jan,19,17:09:01,intranet-server,CRON[2450],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+533,Jan,19,17:17:01,intranet-server,CRON[2521],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+534,Jan,19,17:17:01,intranet-server,CRON[2521],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+535,Jan,19,17:39:01,intranet-server,CRON[2529],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+536,Jan,19,17:39:01,intranet-server,CRON[2529],pam_unix(cron:session): session closed for user test,ba07081a,pam_unix(cron:session): session closed for user <*>,['test']
+537,Jan,19,18:09:01,intranet-server,CRON[2602],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+538,Jan,19,18:09:01,intranet-server,CRON[2602],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+539,Jan,19,18:17:01,intranet-server,CRON[2672],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+540,Jan,19,18:17:01,intranet-server,CRON[2672],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+541,Jan,19,18:39:01,intranet-server,CRON[2681],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+542,Jan,19,18:39:01,intranet-server,CRON[2681],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+543,Jan,19,19:09:01,intranet-server,CRON[2755],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+544,Jan,19,19:09:01,intranet-server,CRON[2755],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+545,Jan,19,19:17:01,intranet-server,CRON[2826],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+546,Jan,19,19:17:01,intranet-server,CRON[2826],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+547,Jan,19,19:39:01,intranet-server,CRON[2831],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+548,Jan,19,19:39:01,intranet-server,CRON[2831],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+549,Jan,19,20:09:01,intranet-server,CRON[2911],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+550,Jan,19,20:09:01,intranet-server,CRON[2911],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+551,Jan,19,20:17:01,intranet-server,CRON[2982],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+552,Jan,19,20:17:01,intranet-server,CRON[2982],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+553,Jan,19,20:39:01,intranet-server,CRON[2987],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+554,Jan,19,20:39:01,intranet-server,CRON[2987],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+555,Jan,19,21:09:01,intranet-server,CRON[3060],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+556,Jan,19,21:09:01,intranet-server,CRON[3060],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+557,Jan,19,21:17:01,intranet-server,CRON[3139],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+558,Jan,19,21:17:01,intranet-server,CRON[3139],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+559,Jan,19,21:39:01,intranet-server,CRON[3165],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+560,Jan,19,21:39:01,intranet-server,CRON[3165],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+561,Jan,19,22:09:01,intranet-server,CRON[3241],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+562,Jan,19,22:09:01,intranet-server,CRON[3241],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+563,Jan,19,22:17:01,intranet-server,CRON[3311],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+564,Jan,19,22:17:01,intranet-server,CRON[3311],pam_unix(cron:session): session closed for user test,ba07081a,pam_unix(cron:session): session closed for user <*>,['test']
+565,Jan,19,22:39:01,intranet-server,CRON[3317],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+566,Jan,19,22:39:01,intranet-server,CRON[3317],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+567,Jan,19,23:09:01,intranet-server,CRON[3455],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+568,Jan,19,23:09:01,intranet-server,CRON[3455],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+569,Jan,19,23:17:01,intranet-server,CRON[3531],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+570,Jan,19,23:17:02,intranet-server,CRON[3531],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+571,Jan,19,23:39:01,intranet-server,CRON[3539],pam_unix(cron:session): session opened for user test by (uid=1001),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['test', '(uid=1001)']"
+572,Jan,19,23:39:01,intranet-server,CRON[3539],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+573,Jan,20,00:09:01,miller-mail,CRON[6428],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+574,Jan,20,00:09:01,miller-mail,CRON[6428],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+575,Jan,20,00:17:02,miller-mail,CRON[6504],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+576,Jan,20,00:17:02,miller-mail,CRON[6504],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+577,Jan,20,00:39:01,miller-mail,CRON[6547],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+578,Jan,20,00:39:01,miller-mail,CRON[6547],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+579,Jan,20,01:09:01,miller-mail,CRON[6679],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+580,Jan,20,01:09:01,miller-mail,CRON[6679],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+581,Jan,20,01:17:01,miller-mail,CRON[6763],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+582,Jan,20,01:17:01,miller-mail,CRON[6763],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+583,Jan,20,01:39:01,miller-mail,CRON[6815],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+584,Jan,20,01:39:01,miller-mail,CRON[6815],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+585,Jan,20,02:09:01,miller-mail,CRON[6935],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+586,Jan,20,02:09:01,miller-mail,CRON[6935],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+587,Jan,20,02:17:01,miller-mail,CRON[7014],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+588,Jan,20,02:17:01,miller-mail,CRON[7014],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+589,Jan,20,02:39:01,miller-mail,CRON[7058],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+590,Jan,20,02:39:01,miller-mail,CRON[7058],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+591,Jan,20,03:09:01,miller-mail,CRON[7182],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+592,Jan,20,03:09:01,miller-mail,CRON[7182],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+593,Jan,20,03:17:01,miller-mail,CRON[7262],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+594,Jan,20,03:17:01,miller-mail,CRON[7262],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+595,Jan,20,03:39:01,miller-mail,CRON[7314],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+596,Jan,20,03:39:01,miller-mail,CRON[7314],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+597,Jan,20,04:09:01,miller-mail,CRON[7445],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+598,Jan,20,04:09:01,miller-mail,CRON[7445],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+599,Jan,20,04:17:01,miller-mail,CRON[7528],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+600,Jan,20,04:17:01,miller-mail,CRON[7528],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+601,Jan,20,04:39:01,miller-mail,CRON[7573],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+602,Jan,20,04:39:01,miller-mail,CRON[7573],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+603,Jan,20,05:09:01,miller-mail,CRON[7700],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+604,Jan,20,05:09:01,miller-mail,CRON[7700],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+605,Jan,20,05:17:01,miller-mail,CRON[7776],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+606,Jan,20,05:17:01,miller-mail,CRON[7776],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+607,Jan,20,05:39:01,miller-mail,CRON[7864],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+608,Jan,20,05:39:01,miller-mail,CRON[7864],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+609,Jan,20,06:09:01,miller-mail,CRON[8088],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+610,Jan,20,06:09:01,miller-mail,CRON[8088],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+611,Jan,20,06:17:01,miller-mail,CRON[8198],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+612,Jan,20,06:17:01,miller-mail,CRON[8198],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+613,Jan,20,06:25:01,miller-mail,CRON[8270],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+614,Jan,20,06:25:04,miller-mail,CRON[8270],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+615,Jan,20,06:39:01,miller-mail,CRON[8533],pam_unix(cron:session): session opened for user root by (uid=0),7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,"['root', '(uid=0)']"
+616,Jan,20,06:39:01,miller-mail,CRON[8533],pam_unix(cron:session): session closed for user root,ba07081a,pam_unix(cron:session): session closed for user <*>,['root']
+617,Jan,20,06:49:59,miller-mail,sshd[8646],Accepted publickey for ait from 192.168.130.19 port 52040 ssh2: RSA SHA256:yxAJcMgl5WTSlj4ZPvj7TSgUbIlxQ1GHdtXeIcp0czs,7b02d35d,Accepted publickey for <*> from <*> port <*> ssh<*>: RSA <*>,"['ait', '192.168.130.19', '52040', '2', 'SHA256:yxAJcMgl5WTSlj4ZPvj7TSgUbIlxQ1GHdtXeIcp0czs']"
+618,Jan,20,06:49:59,miller-mail,sshd[8646],pam_unix(sshd:session): session opened for user ait by (uid=0),b7a32072,pam_unix(sshd:session): session opened for user <*> by (uid=0),['ait']
+619,Jan,20,06:49:59,miller-mail,systemd-logind[509],New session 460 of user ait.,4e6a7bf7,New session <*> of user <*>,"['460', 'ait.']"
+620,Jan,20,06:49:59,miller-mail,systemd,pam_unix(systemd-user:session): session opened for user ait by (uid=0),acb98ce0,pam_unix(systemd-user:session): session opened for user <*> by (uid=0),['ait']
+621,Jan,20,06:50:39,miller-mail,sshd[8717],Accepted publickey for ait from 192.168.130.19 port 52100 ssh2: RSA SHA256:yxAJcMgl5WTSlj4ZPvj7TSgUbIlxQ1GHdtXeIcp0czs,7b02d35d,Accepted publickey for <*> from <*> port <*> ssh<*>: RSA <*>,"['ait', '192.168.130.19', '52100', '2', 'SHA256:yxAJcMgl5WTSlj4ZPvj7TSgUbIlxQ1GHdtXeIcp0czs']"
+622,Jan,20,06:50:39,miller-mail,sshd[8717],pam_unix(sshd:session): session opened for user ait by (uid=0),b7a32072,pam_unix(sshd:session): session opened for user <*> by (uid=0),['ait']
+623,Jan,20,06:50:39,miller-mail,systemd-logind[509],New session 462 of user ait.,4e6a7bf7,New session <*> of user <*>,"['462', 'ait.']"
+624,Jan,20,06:50:39,miller-mail,sudo,ait : TTY=unknown ; PWD=/home/ait ; USER=root ; COMMAND=/usr/bin/rsync --server --sender -lLogDtrze.LsfxC . /var/log/auth.log /var/log/auth.log.1,e00b4448,ait : TTY=unknown ; PWD=/home/ait ; USER=root ; COMMAND=/usr/bin/rsync --server --sender -lLogDtrze.LsfxC . /var/log/auth.log /var/log/auth.log.<*>,['1']
+625,Jan,20,06:50:39,miller-mail,sudo,pam_unix(sudo:session): session opened for user root by (uid=0),35bc9d79,pam_unix(sudo:session): session opened for user root by (uid=0),[]

@@ -1,0 +1,28 @@
+EventId,EventTemplate,Occurrences
+eb87f473,<*> uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting <*> <*> <*> <*> <*> res=success',262
+365cecbf,<*> uid=0 <*> <*> msg='op=PAM:setcred <*> <*> <*> <*> <*> res=success',528
+f3b2bac2,<*> uid=0 old-auid=4294967295 <*> tty=(none) old-ses=4294967295 <*> res=1,262
+1e352b25,<*> uid=0 <*> <*> msg='op=PAM:session_open <*> <*> <*> <*> <*> res=success',265
+ff0629e8,<*> uid=0 <*> <*> msg='op=PAM:session_close <*> <*> <*> <*> <*> res=success',260
+b295a08b,"pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=phpsessionclean comm=""systemd"" exe=""/lib/systemd/systemd"" hostname=? addr=? terminal=? res=success'",325
+e236b77f,"pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=phpsessioncleakey-n comm=""systemd"" exe=""/lib/systemd/systemd"" hostname=? addr=? terminal=? res=success'",1
+3af47c23,"pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=apt-daily comm=""systemd"" exe=""/lib/systemd/systemd"" hostname=? addr=? terminal=? res=success'",12
+197609b7,"apparmor=""STATUS"" operation=""profile_replace"" info=""same as current profile, skipping"" profile=""unconfined"" <*> pid=23609 comm=""apparmor_parser""",4
+9d9321eb,"arch=c000003e syscall=1 success=yes <*> a0=6 <*> <*> a3=0 items=0 ppid=23608 pid=23609 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=4294967295 comm=""apparmor_parser"" exe=""/sbin/apparmor_parser"" key=(null)",4
+0c9c36e2,proctitle=61707061726D6F725F706172736572002D72002D54002D57002F6574632F61707061726D6F722E642F7362696E2E6468636C69656E74,4
+edef716c,"pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=apport comm=""systemd"" exe=""/lib/systemd/systemd"" hostname=? addr=? terminal=? res=success'",3
+fc23e8f9,"pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=systemd-udevd comm=""systemd"" exe=""/lib/systemd/systemd"" hostname=? addr=? terminal=? res=success'",3
+7a8ad74d,"pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=motd-news comm=""systemd"" exe=""/lib/systemd/systemd"" hostname=? addr=? terminal=? res=success'",14
+eb4ac7fa,"pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=ssh comm=""systemd"" exe=""/lib/systemd/systemd"" hostname=? addr=? terminal=? res=success'",3
+cf470033,"pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=systemd-networkd comm=""systemd"" exe=""/lib/systemd/systemd"" hostname=? addr=? terminal=? res=success'",3
+6d18153b,"pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=systemd-resolved comm=""systemd"" exe=""/lib/systemd/systemd"" hostname=? addr=? terminal=? res=success'",3
+87a36bf7,"pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=systemd-hostnamed comm=""systemd"" exe=""/lib/systemd/systemd"" hostname=? addr=? terminal=? res=success'",3
+d2b4dea0,"pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=systemd-timesyncd comm=""systemd"" exe=""/lib/systemd/systemd"" hostname=? addr=? terminal=? res=success'",3
+a03f9452,"pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=systemd-journal-flush comm=""systemd"" exe=""/lib/systemd/systemd"" hostname=? addr=? terminal=? res=success'",3
+dc19e683,"pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=systemd-journald comm=""systemd"" exe=""/lib/systemd/systemd"" hostname=? addr=? terminal=? res=success'",3
+11e2181e,"pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=grub-common comm=""systemd"" exe=""/lib/systemd/systemd"" hostname=? addr=? terminal=? res=success'",3
+3a9d96fb,"pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=apt-daily-upgrade comm=""systemd"" exe=""/lib/systemd/systemd"" hostname=? addr=? terminal=? res=success'",8
+fc005a8a,"pid=1 uid=0 auid=4294967295 ses=4294967295 <*> comm=""systemd"" exe=""/lib/systemd/systemd"" hostname=? addr=? terminal=? res=success'",15
+ba9e76df,"<*> uid=0 <*> <*> msg='op=login <*> exe=""/usr/sbin/sshd"" <*> <*> terminal=/dev/pts/0 res=success'",3
+229f44ce,"<*> uid=1001 auid=1001 ses=89 msg='cwd=""/home/phopkins"" cmd=7461696C202F7661722F6C6F672F7379736C6F67 terminal=pts/0 res=success'",2
+e36c73e3,"pid=14091 uid=1002 auid=1002 ses=98 msg='cwd=""/home/hwarren"" cmd=7461696C202F7661722F6C6F672F7379736C6F67 terminal=pts/0 res=success'",1

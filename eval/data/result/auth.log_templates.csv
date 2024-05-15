@@ -1,0 +1,20 @@
+EventId,EventTemplate,Occurrences
+ba07081a,pam_unix(cron:session): session closed for user <*>,297
+7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,296
+9bc9f94e,pam_unix(su:session): session opened for user <*> by <*>,3
+611cfa24,pam_unix(sshd:session): session closed for user hwarren,1
+168e7166,Removed session <*>.,1
+7b02d35d,Accepted publickey for <*> from <*> port <*> ssh<*>: RSA <*>,3
+b7a32072,pam_unix(sshd:session): session opened for user <*> by (uid=0),3
+4e6a7bf7,New session <*> of user <*>,4
+acb98ce0,pam_unix(systemd-user:session): session opened for user <*> by (uid=0),3
+3652eb09,pam_unix(su:session): session closed for user root,2
+1de1e05d,Did not receive identification string from <*> port <*>0,1
+2f37c4e7,Successful su for phopkins by www-data,1
+60a51361,+ /dev/pts/<*> www-data:phopkins,1
+06bd422b,phopkins : TTY=pts/<*> ; PWD=/var/www/intranet.price.fox.org/wp-content/uploads/<*>/0<*> ; USER=root ; COMMAND=list,1
+8cbbd61e,phopkins : TTY=pts/<*> ; PWD=/var/www/intranet.price.fox.org/wp-content/uploads/<*>/0<*> ; USER=root ; COMMAND=/bin/ls -laR /root/,1
+35bc9d79,pam_unix(sudo:session): session opened for user root by (uid=0),3
+8b428b11,pam_unix(sudo:session): session closed for user root,2
+1bbc4748,phopkins : TTY=pts/<*> ; PWD=/var/www/intranet.price.fox.org/wp-content/uploads/<*>/0<*> ; USER=root ; COMMAND=/bin/cat /etc/shadow,1
+e00b4448,ait : TTY=unknown ; PWD=/home/ait ; USER=root ; COMMAND=/usr/bin/rsync --server --sender -lLogDtrze.LsfxC . /var/log/auth.log /var/log/auth.log.<*>,1

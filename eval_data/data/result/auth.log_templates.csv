@@ -1,0 +1,6 @@
+EventId,EventTemplate,Occurrences
+7e2b698f,pam_unix(cron:session): session opened for user <*> by <*>,372
+ba07081a,pam_unix(cron:session): session closed for user <*>,372
+7d779975,Received signal 15; terminating.,1
+d55bf1bd,Server listening on <*> port 22.,2
+991ec8eb,Did not receive identification string from 172.17.130.196 port 50004,1

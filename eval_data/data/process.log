@@ -1,0 +1,92 @@
+01:40:19.601363716 1 httpd (7513) > accept
+01:40:19.601374197 1 httpd (7513) < accept fd=14(127.0.0.1:39175->127.0.0.1:80) tuple=127.0.0.1:39175->127.0.0.1:80 queuepct=0
+01:40:19.601506564 1 httpd (7513) > read fd=14(127.0.0.1:39175->127.0.0.1:80) size=8000
+01:40:19.601512497 1 httpd (7513) < read res=85 data=GET /textfile.txt HTTP/1.1..User-Agent: curl/7.35.0..Host: 127.0.0.1..Accept: */
+01:40:19.601516976 0 httpd (3750) > switch next=0 pgft_maj=0 pgft_min=522 vm_size=350196 vm_rss=9304 vm_swap=0
+01:40:19.601661779 1 httpd (7513) > open
+01:40:19.601668329 1 httpd (7513) < open fd=15(/opt/lampp/htdocs/textfile.txt) name=/opt/lampp/htdocs/textfile.txt flags=1(O_RDONLY) mode=0
+01:40:19.601699335 1 httpd (7513) > read fd=14(127.0.0.1:39175->127.0.0.1:80) size=8000
+01:40:19.601701560 1 httpd (7513) < read res=-11(EAGAIN) data=
+01:40:19.601855764 1 httpd (7513) > close fd=15(/opt/lampp/htdocs/textfile.txt)
+01:40:19.601857490 1 httpd (7513) < close res=0** **
+23:40:09.104014005 3 httpd (28599) > fcntl fd=13(127.0.0.1:40016->127.0.0.1:80) cmd=2(F_GETFD)
+23:40:09.104016357 3 httpd (28599) < fcntl res=0(/dev/null)
+23:40:09.104016814 3 httpd (28599) > fcntl fd=13(127.0.0.1:40016->127.0.0.1:80) cmd=3(F_SETFD)
+23:40:09.104017097 3 httpd (28599) < fcntl res=0(/dev/null)
+23:40:09.104027550 3 httpd (28599) > semop
+23:40:09.104759831 3 httpd (28599) < semop 5113 23:40:09.104820227 3 httpd (28599) > getsockname
+23:40:09.104826231 3 httpd (28599) < getsockname 5115 23:40:09.105334639 3 httpd (28599) > fcntl fd=13(127.0.0.1:40016->127.0.0.1:80) cmd=4(F_GETFL)
+23:40:09.105340241 3 httpd (28599) < fcntl res=2(/opt/lampp/logs/error_log)
+23:40:09.105341064 3 httpd (28599) > fcntl fd=13(127.0.0.1:40016->127.0.0.1:80) cmd=5(F_SETFL)
+23:40:09.105341663 3 httpd (28599) < fcntl res=0(/dev/null)
+23:40:09.105899621 3 httpd (28599) > switch next=0 pgft_maj=3 pgft_min=619 vm_size=442720 vm_rss=668 vm_swap=7004
+23:40:09.378390386 2 httpd (28599) > read fd=13(127.0.0.1:40016->127.0.0.1:80) size=8000
+23:40:09.378418530 2 httpd (28599) < read res=318 data=GET /userstats.php HTTP/1.1..Host: 127.0.0.1..User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:21.0) Gecko/20100101 Firefox/21.0..Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8..Accept-Language: en-US,en;q=0.5..Accept-Encoding: gzip, deflate..Connection: keep-alive..Cache-Control: max-age=0....
+23:40:09.378918776 2 httpd (28599) > switch next=59720 pgft_maj=4 pgft_min=635 vm_size=442720 vm_rss=668 vm_swap=7004
+23:40:09.396427155 2 httpd (28599) > switch next=0 pgft_maj=5 pgft_min=654 vm_size=442720 vm_rss=668 vm_swap=7004
+23:40:09.398102142 2 httpd (28599) > stat
+23:40:09.398128234 2 httpd (28599) < stat res=0 path=/opt/lampp/htdocs/userstats.php 5610 23:40:09.398233308 2 httpd (28599) > open
+23:40:09.398249150 2 httpd (28599) < open fd=-2(ENOENT) name=/opt/lampp/htdocs/.htaccess flags=1(O_RDONLY) mode=0 5634 23:40:09.403161359 2 httpd (28599) > open
+23:40:09.403175465 2 httpd (28599) < open fd=14(/opt/lampp/htdocs/userstats.php) name=/opt/lampp/htdocs/userstats.php flags=1(O_RDONLY) mode=0
+23:40:09.403245437 2 httpd (28599) > fstat fd=14(/opt/lampp/htdocs/userstats.php)
+23:40:09.403250724 2 httpd (28599) < fstat res=0 5638 23:40:09.403258650 2 httpd (28599) > fstat fd=14(/opt/lampp/htdocs/userstats.php)
+23:40:09.403259412 2 httpd (28599) < fstat res=0 5640 23:40:09.403273154 2 httpd (28599) > fstat fd=14(/opt/lampp/htdocs/userstats.php)
+23:40:09.403274053 2 httpd (28599) < fstat res=0 5642 23:40:09.403275792 2 httpd (28599) > mmap addr=0 length=113 prot=1(PROT_READ) flags=1(MAP_SHARED) fd=14(/opt/lampp/htdocs/userstats.php) offset=0
+23:40:09.403294603 2 httpd (28599) < mmap res=7F8250DC3000 vm_size=442724 vm_rss=2408 vm_swap=6336 5644 23:40:09.403542240 2 httpd (28599) > munmap addr=7F8250DC3000 length=113
+23:40:09.403560506 2 httpd (28599) < munmap res=0 vm_size=442720 vm_rss=2620 vm_swap=6296 5646 23:40:09.403572796 2 httpd (28599) > close fd=14(/opt/lampp/htdocs/userstats.php)
+23:40:09.403576281 2 httpd (28599) < close res=0 5648 23:40:09.403620049 2 httpd (28599) > getcwd
+23:40:09.403626400 2 httpd (28599) < getcwd res=18 path=/opt/lampp/htdocs 5650 23:40:09.403633577 2 httpd (28599) > lstat
+23:40:09.403641609 2 httpd (28599) < lstat res=0 path=/opt/lampp/htdocs/./db_interface.php 5652 23:40:09.403648137 2 httpd (28599) > open
+23:40:09.403656260 2 httpd (28599) < open fd=14(/opt/lampp/htdocs/db_interface.php) name=/opt/lampp/htdocs/db_interface.php flags=1(O_RDONLY) mode=0
+23:40:09.403660357 2 httpd (28599) > fstat fd=14(/opt/lampp/htdocs/db_interface.php)
+23:40:09.403661417 2 httpd (28599) < fstat res=0 5656 23:40:09.403663079 2 httpd (28599) > fstat fd=14(/opt/lampp/htdocs/db_interface.php)
+23:40:09.403663597 2 httpd (28599) < fstat res=0 5658 23:40:09.403665748 2 httpd (28599) > fstat fd=14(/opt/lampp/htdocs/db_interface.php)
+23:40:09.403666380 2 httpd (28599) < fstat res=0 5660 23:40:09.403667145 2 httpd (28599) > mmap addr=0 length=376 prot=1(PROT_READ) flags=1(MAP_SHARED) fd=14(/opt/lampp/htdocs/db_interface.php) offset=0
+23:40:09.403674583 2 httpd (28599) < mmap res=7F8250DC3000 vm_size=442724 vm_rss=2620 vm_swap=6296 5662 23:40:09.404640219 2 httpd (28599) > switch next=330 pgft_maj=6 pgft_min=1175 vm_size=442724 vm_rss=2620 vm_swap=6296
+23:40:09.405363736 2 httpd (28599) > switch next=499(rngd) pgft_maj=6 pgft_min=1183 vm_size=442724 vm_rss=2620 vm_swap=6296
+23:40:09.405643687 2 httpd (28599) > munmap addr=7F8250DC3000 length=376
+23:40:09.405661866 2 httpd (28599) < munmap res=0 vm_size=442720 vm_rss=2868 vm_swap=6120 5666 23:40:09.405667140 2 httpd (28599) > close fd=14(/opt/lampp/htdocs/db_interface.php)
+23:40:09.405669782 2 httpd (28599) < close res=0
+23:40:09.406165738 2 httpd (28599) > switch next=330 pgft_maj=6 pgft_min=1233 vm_size=442720 vm_rss=2868 vm_swap=6120
+23:40:09.406240303 2 httpd (28599) > socket domain=10(AF_INET6) type=2 proto=0
+23:40:09.406372521 2 httpd (28599) < socket fd=14()
+23:40:09.406386102 2 httpd (28599) > close fd=14()
+23:40:09.406388724 2 httpd (28599) < close res=0 5673 23:40:09.406444211 2 httpd (28599) > socket domain=2(AF_INET) type=1 proto=0
+23:40:09.406545389 2 httpd (28599) < socket fd=14()
+23:40:09.406547070 2 httpd (28599) > fcntl fd=14() cmd=4(F_GETFL)
+23:40:09.406549281 2 httpd (28599) < fcntl res=2(/opt/lampp/logs/error_log)
+23:40:09.406550034 2 httpd (28599) > fcntl fd=14() cmd=5(F_SETFL)
+23:40:09.406550806 2 httpd (28599) < fcntl res=0(/dev/null)
+23:40:09.406551722 2 httpd (28599) > connect fd=14()
+23:40:09.406900932 2 httpd (28599) < connect res=-115(EINPROGRESS) tuple=127.0.0.1:51525->127.0.0.1:3306
+23:40:09.406912034 2 httpd (28599) > poll fds=14:435 timeout=60000
+23:40:09.406918947 2 httpd (28599) < poll res=1 fds=14:44 5683 23:40:09.406921328 2 httpd (28599) > getsockopt
+23:40:09.406926197 2 httpd (28599) < getsockopt 5685 23:40:09.406927738 2 httpd (28599) > fcntl fd=14(127.0.0.1:51525->127.0.0.1:3306) cmd=5(F_SETFL)
+23:40:09.406929477 2 httpd (28599) < fcntl res=0(/dev/null)
+23:40:09.406957933 2 httpd (28599) > setsockopt
+23:40:09.406963959 2 httpd (28599) < setsockopt 5689 23:40:09.406977520 2 httpd (28599) > poll fds=14:431 timeout=1471228928
+23:40:09.407004946 2 httpd (28599) > switch next=0 pgft_maj=6 pgft_min=1259 vm_size=442720 vm_rss=2868 vm_swap=6120
+23:40:09.407726899 3 httpd (28599) < poll res=1 fds=14:41 5719 23:40:09.407772280 3 httpd (28599) > recvfrom fd=14(127.0.0.1:51525->127.0.0.1:3306) size=4
+23:40:09.407784644 3 httpd (28599) < recvfrom res=4 data=J... tuple=NULL 5721 23:40:09.407796522 3 httpd (28599) > poll fds=14:431 timeout=1471228928
+23:40:09.407801177 3 httpd (28599) < poll res=1 fds=14:41 5723 23:40:09.407802020 3 httpd (28599) > recvfrom fd=14(127.0.0.1:51525->127.0.0.1:3306) size=78
+23:40:09.407806960 3 httpd (28599) < recvfrom res=74 data=.5.5.31.....,N(wD+Ku...................0)}]8@uQrkCM.mysql_native_password. tuple=NULL 5725 23:40:09.407878378 3 httpd (28599) > sendto fd=14(127.0.0.1:51525->127.0.0.1:3306) size=85 tuple=NULL
+23:40:09.407994004 3 httpd (28599) < sendto res=85 data=Q...................................root..5.*......S....8.u]=..mysql_native_password.
+23:40:09.408007187 3 httpd (28599) > poll fds=14:431 timeout=1471228928
+23:40:09.408024570 3 httpd (28599) > switch next=0 pgft_maj=6 pgft_min=1270 vm_size=442720 vm_rss=3120 vm_swap=6100
+23:40:09.408397503 3 httpd (28599) < poll res=1 fds=14:41 5736 23:40:09.408401449 3 httpd (28599) > recvfrom fd=14(127.0.0.1:51525->127.0.0.1:3306) size=4
+23:40:09.408408712 3 httpd (28599) < recvfrom res=4 data=H... tuple=NULL 5738 23:40:09.408415661 3 httpd (28599) > poll fds=14:431 timeout=1471228928
+23:40:09.408418497 3 httpd (28599) < poll res=1 fds=14:41 5740 23:40:09.408419273 3 httpd (28599) > recvfrom fd=14(127.0.0.1:51525->127.0.0.1:3306) size=78
+23:40:09.408421912 3 httpd (28599) < recvfrom res=72 data=...#28000Access denied for user 'root'@'localhost' (using password: YES) tuple=NULL
+23:40:09.408507305 3 httpd (28599) > close fd=14(127.0.0.1:51525->127.0.0.1:3306)
+23:40:09.408509917 3 httpd (28599) < close res=0
+23:40:09.408621532 3 httpd (28599) > open
+23:40:09.408647914 3 httpd (28599) < open fd=14(/opt/lampp/logs/php_error_log) name=/opt/lampp/logs/php_error_log flags=14(O_APPEND|O_CREAT|O_WRONLY) mode=0
+23:40:09.408938827 3 httpd (28599) > write fd=14(/opt/lampp/logs/php_error_log) size=52
+23:40:09.408991270 3 httpd (28599) < write res=52 data=[31-Jul-2014 05:40:09] Database error. 5749 23:40:09.408994303 3 httpd (28599) > close fd=14(/opt/lampp/logs/php_error_log)
+23:40:09.408996256 3 httpd (28599) < close res=0
+23:40:09.414189905 0 httpd (28599) > read fd=13(127.0.0.1:40016->127.0.0.1:80) size=8000
+23:40:09.414202406 0 httpd (28599) < read res=-11(EAGAIN) data= 5838 23:40:09.414210168 0 httpd (28599) > writev fd=13(127.0.0.1:40016->127.0.0.1:80) size=353
+23:40:09.414279449 0 httpd (28599) < writev res=353 data=HTTP/1.1 200 OK..Date: Thu, 31 Jul 2014 03:40:09 GMT..Server: Apache/2.4.4 (Unix) OpenSSL/1.0.1e PHP/5.4.16 mod_perl/2.0.8-dev Perl/v5.16.3..X-Powered-By: PHP/5.4.16..Content-Length: 83..Keep-Alive: timeout=5, max=100..Connection: Keep-Alive..Content-Type: text/html.... 5840 23:40:09.414428358 0 httpd (28599) > write fd=9(/opt/lampp/logs/access_log) size=80
+23:40:09.414470191 0 httpd (28599) < write res=80 data=127.0.0.1 - - [30/Jul/2014:23:40:09 -0400] "GET /userstats.php HTTP/1.1" 200 83. 5843 23:40:09.414475321 0 httpd (28599) > times
+23:40:09.414478852 0 httpd (28599) < times 5846 23:40:09.414502519 0 httpd (28599) > poll fds=13:41 timeout=5000
+23:40:09.414523199 0 httpd (28599) > switch next=0 pgft_maj=6 pgft_min=1500 vm_size=442720 vm_rss=3684 vm_swap=5840
