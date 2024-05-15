@@ -77,8 +77,8 @@ class UnstrGausalGraph:
         if isinstance(key_name, list):
             # return nodes in order
             for key in key_name:
-                # like the IOCs ---- list
-                if isinstance(row[key], tuple):
+                # like the IOCs ---- tuple, Parameters --- list
+                if isinstance(row[key], tuple) or isinstance(row[key], list):
                     # recursively match value with string
                     nodes.extend([node for node in row[key] if node !='-'])
                 else:
@@ -88,10 +88,6 @@ class UnstrGausalGraph:
         else:
             # check the length of corresponding value
             value = ast.literal_eval(value)
-            # value_len = len(value)
-            # # make sure two variables are extracted to become nodes
-            # if value_len == 2:
-            #     return value[0], value[1]
             nodes.extend(value)
         
         return nodes
@@ -153,10 +149,18 @@ class UnstrGausalGraph:
             logger.warn("error occurs when converting IOCs type", e)
         finally:
             pass          
+        
+        try:
+            self.log_df['Parameters'] = self.log_df["Parameters"].apply(lambda x: ast.literal_eval(x))
+        except Exception as e:
+            logger.warn("error occurs when converting Parameters type", e)
+        finally:
+            pass   
 
         # create the causal graph
         for _, row in tqdm(self.log_df.iterrows(), desc="making causal graph from {}".format(self.log_type)):
             nodes = self.node_check(row, node_value_key)
+            # print(nodes)
             # check whether nodes exist
             if len(nodes) != 0:
                 node_len = len(nodes)
