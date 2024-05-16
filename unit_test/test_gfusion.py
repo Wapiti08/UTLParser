@@ -28,6 +28,14 @@ class TestGFusion(unittest.TestCase):
         cur_path = Path.cwd()
         graph_path = cur_path.joinpath("data", "result", "full.graphml").as_posix()
         self.G = nx.read_graphml(graph_path)
+        for node, data in self.G.nodes(data=True):
+            print(node)
+            print(data)
+        
+        for u,v, attrs in self.G.edges(data=True):
+            print(u)
+            print(v)
+            print(attrs)
     
     def test_choose_thres(self):
         # read full graph graphml file

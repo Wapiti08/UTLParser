@@ -3,7 +3,7 @@
 #  # @ Create Time: 2024-04-19 09:27:01
 #  # @ Modified by: Newt Tan
 #  # @ Modified time: 2024-05-01 09:21:56
-#  # @ Description: module to label temporal causal graphs
+#  # @ Description: module to label subgraph in temporal causal graph
 #  '''
 
 
@@ -11,115 +11,110 @@ import networkx as nx
 from core.graph_create import gfeature
 import itertools as it
 
-# from iocs location to list of iocs
-ioc_dict = {
-    "conn": {
-        ""
-    },
-    "error": {
-
-    },
-    "auth": {
-
-    },
-    "access": {
-
-    },
-    "audit": {
-
-    },
-    "dnsmasq": {
-
-    }
-}
 
 # from node/edge attribute to iocs locations
 attr_iocs_dict = {
-    "conn": {
-        "node": {
-            "value": ["Dest_IP"],
-            "attrs": ["port"]
-        },
-        "edge": {
-            "attrs": ["status", "size"],
-        }
+    "node": {
+        "value": ["Src_IP","IOCs", "Dest_IP"],
+        "attrs": ["IOCs"]
     },
-    "error": {
-        "node": {
-            "value": ["Src_IP"]
-        },
-    },
-    "auth": {
-        "node": {
-
-        }
-    },
-    "access": {
-
-    },
-    "audit": {
-
-    },
-    "dnsmasq": {
-        
+    "edge": {
+        "value": ["Actions"],
+        "attrs": ["Status", "IOCs"],
     }
+}
+
+# give example of labels in conn
+iot_ioc_dict = {
+        "Status":["S0"],
+        "IOCs":[80, 8081, 52869,37215,666],
+        "Dest_IP":["172.32.33.171"]
+}
+
+# example of iocs
+ait_iot_dict = {
+    "Src_IP": ["172.17.130.196", "10.35.35.206"],
+    "Proto": ["su","system-user"],
+    "Parameters": ["phopkins", "p=5", 
+                   "wp_meta=WyJpZCJd",
+                   "wp_meta=WyJpZCJd",
+                   "wp_meta=WyJjYXQiLCAiL2V0Yy9yZXNvbHYuY29uZiJd",
+                   "wp_meta=WyJpcCIsICJhZGRyIl0%3D"],
+    "Actions": ["opened", "closed", "POST","AUTH","CRED_REFR","USER_START"],
+    "Status": [200],
+    "IOCs": ["phopkins","/lib/systemd/systemd"]
 }
 
 class GraphLabel:
 
-    def __init__(self,):
-        pass
+    def __init__(self, attr_iocs_dict:dict, label_dict:dict):
+        self.attr_iocs_dict = attr_iocs_dict
+        self.label_dict = label_dict
 
-    def graph_multi_label_eq(self, G: nx.Graph, attr_iocs_dict: dict, ioc_dict:dict, label_dict:dict):
+    def ioc_match(self, sub_graph):
+        '''
+        
+        '''
+        # get the list of columns for node value
+        node_value_list = self.attr_ioc_dict["node"]["value"]
+        for node, attributes in sub_graph.nodes(data=True):
+            # check whether node is inside iocs list
+            for node_column in node_value_list:
+                if node in self.label_dict[node_column]:
+                    sub_graph.nodes[node]['label'] = 1
+                    break
+            
+            for att_name, att_value in attributes:
+                if att_value in self.label_dict[att_name]:
+                    sub_graph.nodes[node]['label'] = 1
+                    break
+
+        # get the list of columns for edge value
+        edge_value_list = self.attr_ioc_dict["edge"]["value"]
+        for u, v, attributes in sub_graph.edges(data=True):
+            # check whether edge is inside iocs list
+            for edge_column in edge_value_list:
+                for att_key, att_value in attributes.items():
+                    # ignore timestamp in this stage
+                    if att_key != "timestamp" and att_value !='' and att_value!='-':
+                        if att_value in self.label_dict[edge_column]:
+                            sub_graph[u][v]['label'] = 1
+                            break
+
+        return sub_graph
+
+    def iter_subgraph(self, G):
+        ''' extract subgraph from temporal graph (keep the original values and attributes)
+        
+        '''
+        subgraphs = []
+        for u, v in G.edges(data=True):
+            subgraph = G.subgraph([u, v]).copy()
+
+            for node in subgraph.nodes():
+                subgraph.nodes[node].update(G.nodes[node])
+            
+            for edge in subgraph.edges():
+                subgraph.edges[edge].update(G.edges[edge])
+        
+            subgraphs.append(subgraph)
+        
+        return subgraphs
+
+
+    def subgraph_label(self, G: nx.Graph, ):
         ''' label edge or node with specific labels according to single value matching --- structured graphs
         :param G: temporal directed graph
 
         '''
-        G_label = 0
-        if label == '-   Malicious   C&C':
-            # check whether containing specific C&C server Ip -- node
-            if G.has_node(node_indicator):
-                G_label = 1
-                
-        elif label == '-   Malicious   C&C-FileDownload':
-            # check specific ip and resp bytes
-            condition1 = G.has_edge(*edge_indicitor) and G.edges[edge_indicitor]['resp_bytes'] > 3
-            condition2 = G.has_node(node_indicator)
-            if condition1 and condition2:
-                G_label = 2
-        
-        elif label == '-   Malicious   Attack':
-            vul_ports = [37215, 52869, 8081, 666]
-            # conn_state or the resp_p ---> vulnerable service
-            for edge in G.edges(data=True):
-                if 'S0' in G.edges[edge]['conn_state']:
-                    G_label = 3
-            for node in G.nodes:
-                if node['label'] == 'resp ip' and len(list(set(node['port']) & vul_ports)) > 0:
-                    G_label = 3
+        subgraphs = self.iter_subgraph(G)
+        subgraph_labels = []
+        for subgraph in subgraphs:
+            matched_subgraph = self.ioc_match(subgraph)
+            # check whether two components (two nodes or one node with one edge) are labelled as 1
+            
 
-        elif label == '-   Malicious   DDoS':
-            # count the edges between two nodes
-            if gfeature.edges_count(G, edge_indicitor) > att_indicitor:
-                G_label = 4
-        else:
-            print('Currently not support graph label with original label {}'.format(label))
-            exit
-
-        return G_label
-
-    def graph_label_eq(self, G: nx.Graph, attr_iocs_dict: dict):
-        ''' label edge or node with anomaly label according to single value matching --- structured graphs
-        
-        '''
-
-
-    def graph_label_iocs(self, G: nx.Graph, Timestamp:str, aattr_iocs_dict: dict):
-        ''' label subgraph according to iocs --- unstructured graphs
-        :param G: temporal directed graph
-        '''
-        pass
-
+        return subgraph_labels
 
     def draw_labeled_multigraph(self, G, attr_name, ax=None):
         """
