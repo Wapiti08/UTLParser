@@ -16,6 +16,63 @@ Towards Unified Semantic Log Parsing Framework for Temporal Causal Graph Constru
 - measure the delay for log fusion
 - interfaces for optimized temporal graph query and graph community detection
 
+
+
+## Structure
+- core: 
+    - entity_reco: custom entity extraction from unifited output
+
+    - graph_create: the module block to build causal graphs
+
+    - graph_label: labelling temporal graph
+
+    - logparse: multiple log parsers
+
+    - pattern: the rule to build unifited output and graph
+
+- eval: benchmark testing
+
+- eval_data: the code to generate evaluation data
+
+- src: the running main interface
+
+- unit_test: the unit testing for core modules
+
+- utils: util functions to support processing
+
+- config: the config file including regexes, defined poi, etc
+
+## Running
+
+- preprepration
+```
+# avoid python version conflict --- pyenv
+brew install pyenv-virtualenv
+brew install pyenv
+pyenv install 3.10
+pyenv global 3.10
+pyenv virtualenv 3.10 UTLParser
+# activate the environment
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+pyenv local UTLParser
+pyenv activate UTLParser
+pip3 install -r requirements.txt
+# download large language library
+python -m spacy download en_core_web_lg
+```
+
+- how to use
+```
+
+```
+
+## Output Format
+
+- IOCs:
+
+    Timestamp, Src_IP, Dst_IP, Proto or Application, Domain, PacketSize, ParaPair (tuple)
+
 ## Explaination of Dataset
 
 - AIT (fox) --- pure unstructured logs:
@@ -78,78 +135,6 @@ Towards Unified Semantic Log Parsing Framework for Temporal Causal Graph Constru
         - feature analysis? --- other features
 
 
-## Process Modules
-
-- DNS process
-
-    - log components
-
-        timestamp + service_name[id]: message
-
-    - involving attacks
-
-        wpscan, webshell, dns/network/service scan
-
-    - potential indicitors
-
-        ips/domains, events, commands
-
-
-## Structure
-- core: 
-    - entity_reco: custom entity extraction from unifited output
-
-    - graph_create: the module block to build causal graphs
-
-    - graph_label: labelling temporal graph
-
-    - logparse: multiple log parsers
-
-    - pattern: the rule to build unifited output and graph
-
-- eval: benchmark testing
-
-- eval_data: the code to generate evaluation data
-
-- src: the running main interface
-
-- unit_test: the unit testing for core modules
-
-- utils: util functions to support processing
-
-- config: the config file including regexes, defined poi, etc
-
-## Running
-
-- preprepration
-```
-# avoid python version conflict --- pyenv
-brew install pyenv-virtualenv
-brew install pyenv
-pyenv install 3.10
-pyenv global 3.10
-pyenv virtualenv 3.10 UTLParser
-# activate the environment
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-pyenv local UTLParser
-pyenv activate UTLParser
-pip3 install -r requirements.txt
-# download large language library
-python -m spacy download en_core_web_lg
-```
-
-- how to use
-```
-
-```
-
-## Output Format
-
-- IOCs:
-
-    Timestamp, Src_IP, Dst_IP, Proto or Application, Domain, PacketSize, ParaPair (tuple)
- 
 ## Next Plan
 
 - Build Temporal Graph Neural Networks

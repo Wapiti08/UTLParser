@@ -60,12 +60,13 @@ label_set_dict = {
         ]
     ,
     "auth":
-        [["successful", "www-data"],
-         ["opened", "su:session"],
-         ["new", "phopkins"],
-         ["opened", "system-user:session"],
-         ["sudo", "opened"],
-         ["sudo", "closed"],
+        [
+            ["successful", "www-data"],
+            ["opened", "su:session"],
+            ["new", "phopkins"],
+            ["opened", "system-user:session"],
+            ["sudo", "opened"],
+            ["sudo", "closed"],
         ]
     ,
     "access":

@@ -108,7 +108,7 @@ class GraphLabel:
 
         return G_label
 
-    def graph_label_eq(self, self, G: nx.Graph, attr_iocs_dict: dict):
+    def graph_label_eq(self, G: nx.Graph, attr_iocs_dict: dict):
         ''' label edge or node with anomaly label according to single value matching --- structured graphs
         
         '''
