@@ -110,9 +110,18 @@ class GraphLabel:
         subgraphs = self.iter_subgraph(G)
         subgraph_labels = []
         for subgraph in subgraphs:
+            ioc_count = 0
             matched_subgraph = self.ioc_match(subgraph)
             # check whether two components (two nodes or one node with one edge) are labelled as 1
-            
+            for u, v, attrs in matched_subgraph.edges(data=True):
+                if matched_subgraph.nodes[u]["label"] == 1:
+                    ioc_count += 1
+                if matched_subgraph.nodes[v]["label"] == 1:
+                    ioc_count += 1
+                if matched_subgraph[u][v]['label'] == 1:
+                    ioc_count += 1
+                if ioc_count >= 2:
+                    subgraph_labels.append(1)
 
         return subgraph_labels
 
