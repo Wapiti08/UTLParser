@@ -52,7 +52,8 @@ class GraphLabel:
         self.label_dict = label_dict
 
     def ioc_match(self, sub_graph):
-        '''
+        ''' traverse the value and attributes to match iocs and assign label
+         to node and edge with 1 for anomaly
         
         '''
         # get the list of columns for node value
@@ -102,7 +103,7 @@ class GraphLabel:
         return subgraphs
 
 
-    def subgraph_label(self, G: nx.Graph, ):
+    def subgraph_label(self, G: nx.Graph):
         ''' label edge or node with specific labels according to single value matching --- structured graphs
         :param G: temporal directed graph
 
