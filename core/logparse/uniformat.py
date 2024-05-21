@@ -70,21 +70,21 @@ pos_com_mapping = {
     3: ["<Component>","<Proto>","<Level>","<Application>"]
 }
 
-component_pool = [
-    "<Timestamp>",
-    "<Day>",
-    "<Month>",
-    "<Date>",
-    "<Content>",
-    "<Level>",
-    "<Component>",
-    "[<PID>]",
-    "<Proto>",'<Application>'
-]
+# component_pool = [
+#     "<Timestamp>",
+#     "<Day>",
+#     "<Month>",
+#     "<Date>",
+#     "<Content>",
+#     "<Level>",
+#     "<Component>",
+#     "[<PID>]",
+#     "<Proto>",'<Application>'
+# ]
 
-remain_chars = [
-    '-','',',','"',"[","]","(",")"
-]
+# remain_chars = [
+#     '-','',',','"',"[","]","(",")"
+# ]
 
 com_rex_mapping = {
     "<Month>":[form_month_regex],

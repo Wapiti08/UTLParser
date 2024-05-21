@@ -82,14 +82,22 @@ if __name__ == "__main__":
     parser.add_argument('-f', '--fuse', type=bool, help="whether to fuse subgraphs", default=False)
 
     # timestamp to query temporal graph
-    parser.add_argument()
+    parser.add_argument('-t', '--timestamp',  type=str, help="input string type timestamp in %Y-%b-%d %H:%M:%S.%f format")
 
     # whether to generate labelled subgraphs
-    parser.add_argument()
+    parser.add_argument('-l', '--label', type=bool, help="whether to generate labelled subgraphs", default=False)
 
     # streaming processing
-    parser.add_argument()
+    parser.add_argument('-s', '--streaming', type=bool, help="whether to process in streaming", default=False)
 
     args = parser.parse_args()
     
     logger.info()
+
+    log_app = args.application
+    log_path = args.input
+    output_path = args.output
+    iocs_list =args.entities
+    fuse = args.fuse
+    
+    graphtracker = GraphTrace()
