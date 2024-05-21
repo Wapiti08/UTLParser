@@ -17,7 +17,6 @@ Towards Unified Semantic Log Parsing Framework for Temporal Causal Graph Constru
 - interfaces for optimized temporal graph query and graph community detection
 
 
-
 ## Structure
 - core: 
     - entity_reco: custom entity extraction from unifited output
@@ -64,6 +63,9 @@ python -m spacy download en_core_web_lg
 
 - how to use
 ```
+# add testing logs to right category in config.py -> log_type
+
+
 
 ```
 

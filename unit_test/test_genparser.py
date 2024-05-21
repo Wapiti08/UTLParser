@@ -146,11 +146,7 @@ class TestLogparser(unittest.TestCase):
 
     def test_parse(self):
 
-        # self.logparser.parse("dnsmasq.log")ß
-        # self.logparser.parse("dns.log")
-        self.logparser.parse("auth.log")
-        # self.logparser.parse("syslog.log")
-        # self.logparser.parse("error.log")
+        self.logparser.parse()
 
         # self.assertEqual()
 
@@ -208,10 +204,10 @@ class TestLogparser(unittest.TestCase):
         )
 
         self.logparser.load_data()
-        # self.logparser.parse("error.log")
-        # self.logparser.parse("syslog.log")
-        # self.logparser.parse("dns.log")
-        self.logparser.parse("auth.log")
+        # self.logparser.parse()
+        # self.logparser.parse()
+        # self.logparser.parse()
+        self.logparser.parse()
         self.logparser.poi_ext()
         self.logparser.get_output(0)
 

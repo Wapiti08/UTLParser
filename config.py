@@ -9,11 +9,89 @@ regex = {
   "id": "\b\d{1,5}\b"
 }
 
+# pre-calcuated log parameters
+format_dict = {
+    "DNS": {
+        "dnsmasq": {
+            "log_format": "<Month> <Date> <Timestamp> <Component>: <Content>",
+            # match the domain, ipv4 and ipv6
+            "regex": [regex['domain'], regex['ip4'], regex['ip6']],
+            "st":0.3,
+            # right
+            'depth':4,
+        },
+    },
+    "Apache": {
+        "auth": {
+            "log_format": "<Month> <Day> <Timestamp> <Component> <Proto>: <Content>",
+            # match the ip, port, id
+            "regex": [regex['ip4'],regex['port'],regex['id']],
+            "st": 0.33,
+            "depth": 4,
+        },
+        # error is not appliable for automatic format generation
+        "error": {
+            "log_format": "\[<Week> <Month> <Day> <Timestamp> <Year>\] \[<Proto>\] \[pid <PID>\] \[client <Src_IP>\] <Content>",
+            # match the path, port, id
+            "regex": [regex['path_unix']],
+            "st": 0.2,
+            "depth": 3,
+        },
+        # "access": {
+        #     "log_format": "<Month> <Day> <Timestamp> <Component>: <Content>",
+        #     # match the ip, port, id
+        #     "regex": [config.regex['ip4'],config.regex['port'],config.regex['id']],
+        #     "st": 0.7,
+        #     "depth": 4,
+        # },
+    },
+    "Linux": {
+        "syslog":{
+            "log_format": "<Month> <Day> <Timestamp> <Component> <Proto>: <Content>",
+            # match path
+            "regex": [regex['path_unix'],regex['domain']],
+            "st": 0.2,
+            "depth":6,
+        }
+    },
+    "Sysdig": {
+        "process":{
+            "log_format": "<Month> <Day> <Timestamp> <Component>: <Content>",
+            # match path
+            "regex": [regex['path_unix']],
+            "st": 0.7,
+            "depth":5,
+        }
+    }
+
+}
 
 log_type = {
+  # major key-value pairs as the content
   "kv": ["audit", "process"],
+  # http request structure
   "req": ["access"],
+  "str": ["conn"],
   "gen": ["auth", "syslog", "dns", "error"]
+}
+
+
+dep_map_dict = {
+    "<Month>": ["<Day>"],
+    "<Day>":["<Timestamp>"],
+    "<Timestamp>":["<Level>", "<Component>", "<Proto>"],
+    "<Component>":["<Proto>","<Application>","<Level>"],
+    "<Level>":["Proto"],
+    "<Proto>": ["[<PID>]", "<Content>",":"],
+    ":":["<Content>"],
+    "[<PID>]": [":"]
+}
+
+pos_com_mapping = {
+    0: ["<Month>", "<Date>"],
+    1: ["<Day>", "<Timestamp>"],
+    2: ["<Timestamp>"],
+    3: ["<Component>","<Proto>","<Level>","<Application>"]
 }
 
 # define the direct points of interest from key names or components
@@ -44,6 +122,3 @@ time_thres_list = [0,1,2,3,4]
 
 # define the average path length inside temporal graph
 avg_len = 1
-
-# define the pre-defined longest path length
-# pre_long_len = 2

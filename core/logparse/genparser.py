@@ -339,11 +339,10 @@ class GenLogParser:
         return retVal
 
 
-    def parse(self, logName):
+    def parse(self,):
         # define the parsing file path
-        print("Parsing file: " + Path(self.path).joinpath(logName).as_posix())
+        print("Parsing file: " + Path(self.path).joinpath(self.logName).as_posix())
         start_time = datetime.now()
-        self.logName = logName
         rootNode = Node()
         logCluL = []
 
