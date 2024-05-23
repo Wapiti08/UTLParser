@@ -46,10 +46,15 @@ class GraphTrace:
         uparser.choose_logparser()
         uparser.generate_output()
 
-    def causal_graph_create(self,):
+    def causal_graph_create(self, ):
         ''' generate causal graphs from unified output
         
         '''
+        
+
+        if fuse:
+
+
 
 
     def graph_query(self,):
