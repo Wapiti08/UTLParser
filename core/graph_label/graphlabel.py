@@ -162,3 +162,6 @@ class GraphLabel:
             bbox={"alpha": 0},
             ax=ax,
         )
+
+if __name__ == "__main__":
+    

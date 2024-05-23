@@ -16,11 +16,10 @@ class GausalGraph:
     ''' process raw logs 
     
     '''
-    def __init__(self, indir, outdir, log_type, fuse: bool):
+    def __init__(self, indir, outdir, log_type):
         self.input_file = indir
         self.output_file = outdir
         self.log_type = log_type
-        self.fuse = fuse
 
     def causal_graph_create(self, structured: bool):
         ''' go to separate process logics
@@ -37,6 +36,7 @@ class GausalGraph:
         self.caugrapher.data_load()
         subgraph = self.caugrapher.causal_graph()
         self.caugrapher.graph_save(subgraph)
+        return subgraph
 
 
     def fuse_subgraphs(self, indir_list:list):
@@ -49,9 +49,9 @@ class GausalGraph:
             grapher.data_load()
             sub_graph_list.append(grapher.causal_graph())
         
-        self.fused_graph = grapher.graph_conn(sub_graph_list)
-        grapher.graph_save(self.fused_graph, "full")
-        return self.fused_graph
+        fused_graph = grapher.graph_conn(sub_graph_list)
+        grapher.graph_save(fused_graph, "full")
+        return fused_graph
 
     def query_temp_graph(self, indir_list, T):
         ''' query temporal graph from fused graph
@@ -66,11 +66,11 @@ class GausalGraph:
         
         return self.caugrapher.temp_graph(sub_graph_list, T)
 
-    def query_comm(self, ):
+    def query_comm(self, fused_graph):
         ''' get the independent graphs from fused graph to detect communities
         
         '''
-        return self.caugrapher.comm_detect(self.fused_graph)
+        return self.caugrapher.comm_detect(fused_graph)
 
 
 

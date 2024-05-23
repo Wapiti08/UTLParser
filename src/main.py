@@ -31,12 +31,15 @@ logger.addHandler(file_handler)
 
 
 class GraphTrace:
-    def __init__(self, log_app, log_path, output_path, iocs_list, fuse:bool):
+    def __init__(self, log_app, log_path, output_path, iocs_list, fuse:bool, stru:bool):
         self.log_app = log_app
         self.log_path = log_path
         self.output_path = output_path
         self.iocs_list = iocs_list
         self.fuse = fuse
+        self.strc = stru
+        self.grapher = caugraph.GausalGraph(self.log_path, self.output_path, self.log_app)
+
 
     def log_parse(self):
         ''' generate the unified output for given log data
@@ -46,21 +49,26 @@ class GraphTrace:
         uparser.choose_logparser()
         uparser.generate_output()
 
-    def causal_graph_create(self, ):
+    def causal_graph(self, ):
         ''' generate causal graphs from unified output
         
         '''
+        return self.grapher.causal_graph_create(self.strc)
+
+    def fused_causal_graph(self, log_path_list: list):
+        if self.fuse:
+            return self.grapher.fuse_subgraphs(log_path_list)
+
+    def temp_graph_query(self, indir_list, T):
+        return self.grapher.query_temp_graph(indir_list, T)
         
+    def comm_graph_query(self, fused_graph):
+        return self.grapher.query_comm(fused_graph)
 
-        if fuse:
-
-
-
-
-    def graph_query(self,):
-        pass
-        
     def graph_label(self,):
+        ''' generate labelled sugraphs for potential supervised training
+        
+        '''
         pass
 
 if __name__ == "__main__":
@@ -79,6 +87,10 @@ if __name__ == "__main__":
 
     # specify desired entity types to extract
     parser.add_argument("-e", '--entities', type=list, help="input the list of desired entity types to extract")
+
+    # specify desired entity types to extract
+    parser.add_argument("-s", '--structure', type=bool, help="whether the log is structured or unstructured, \
+                        corresponding to different process logic")
 
     # specify output location
     parser.add_argument("-o", "--output", type=str, help="input the output of results", default=outdir)
