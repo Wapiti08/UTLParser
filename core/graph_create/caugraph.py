@@ -39,13 +39,13 @@ class GausalGraph:
         return subgraph
 
 
-    def fuse_subgraphs(self, indir_list:list):
+    def fuse_subgraphs(self, indir_list:list, log_type_list:list):
         ''' generate subgraphs and fuse them to one graph
         
         '''
         sub_graph_list = []
-        for indir in indir_list:
-            grapher = unstrcgraph.UnstrGausalGraph(indir, self.output_file, self.log_type)
+        for indir, log_type in zip(indir_list, log_type_list):
+            grapher = unstrcgraph.UnstrGausalGraph(indir, self.output_file, log_type)
             grapher.data_load()
             sub_graph_list.append(grapher.causal_graph())
         

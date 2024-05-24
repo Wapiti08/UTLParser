@@ -31,12 +31,11 @@ logger.addHandler(file_handler)
 
 
 class GraphTrace:
-    def __init__(self, log_app, log_path, output_path, iocs_list, fuse:bool, stru:bool):
+    def __init__(self, log_app, log_path, output_path, iocs_list, stru:bool):
         self.log_app = log_app
         self.log_path = log_path
         self.output_path = output_path
         self.iocs_list = iocs_list
-        self.fuse = fuse
         self.strc = stru
         self.grapher = caugraph.GausalGraph(self.log_path, self.output_path, self.log_app)
 
@@ -55,21 +54,35 @@ class GraphTrace:
         '''
         return self.grapher.causal_graph_create(self.strc)
 
-    def fused_causal_graph(self, log_path_list: list):
-        if self.fuse:
-            return self.grapher.fuse_subgraphs(log_path_list)
+    def fused_causal_graph(self, log_path_list: list, log_type_list:list):
+        ''' fuse subgraphs from multiple source logs
+        :param log_path_list: list of log paths
+        
+        '''
+        return self.grapher.fuse_subgraphs(log_path_list, log_type_list)
 
     def temp_graph_query(self, indir_list, T):
+        ''' query temporal graph for given timestamp T with a list of subgraphs
+        :param indir_list: list of logs
+        '''
         return self.grapher.query_temp_graph(indir_list, T)
         
     def comm_graph_query(self, fused_graph):
-        return self.grapher.query_comm(fused_graph)
-
-    def graph_label(self,):
-        ''' generate labelled sugraphs for potential supervised training
+        ''' detect independent communities from fused_graph
         
         '''
-        pass
+        return self.grapher.query_comm(fused_graph)
+
+    def graph_label(self, fused_graph):
+        ''' generate labelled sugraphs for potential supervised training
+        
+        :return subgraphs, labels
+        '''
+        graphlabeler = graphlabel.GraphLabel(
+            attr_iocs_dict=config.attr_iocs_dict,
+            label_dict=config.ait_iot_dict,
+        )
+        return graphlabeler.subgraph_label(fused_graph)
 
 
 if __name__ == "__main__":
@@ -81,7 +94,7 @@ if __name__ == "__main__":
     parser = ArgumentParser(description="converting logs to provenance graphs")
 
     # specify application name to generate log
-    parser.add_argument("-a","--application" type=str, help="input the name of application which generates logs")
+    parser.add_argument("-a","--application", type=str, help="input the name of application which generates logs")
 
     # specify log location
     parser.add_argument("-i", "--input", type=str, help="input the full path of log data to process", default=indir)
@@ -91,13 +104,19 @@ if __name__ == "__main__":
 
     # specify desired entity types to extract
     parser.add_argument("-s", '--structure', type=bool, help="whether the log is structured or unstructured, \
-                        corresponding to different process logic")
+                        corresponding to different process logic", default=False)
 
     # specify output location
     parser.add_argument("-o", "--output", type=str, help="input the output of results", default=outdir)
 
     # whether to fuse subgraphs
     parser.add_argument('-f', '--fuse', type=bool, help="whether to fuse subgraphs", default=False)
+
+    # specify application name to generate log
+    parser.add_argument("-al","--app_list", type=list, help="input the list of application names corresponding to log path list")
+
+    # specify log location
+    parser.add_argument("-il", "--input_list", type=list, help="input the list of log path corresponding to application name list", default=indir)
 
     # timestamp to query temporal graph
     parser.add_argument('-t', '--timestamp',  type=str, help="input string type timestamp in %Y-%b-%d %H:%M:%S.%f format")
@@ -110,12 +129,23 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
     
-    logger.info()
+    logger.info("")
 
     log_app = args.application
     log_path = args.input
     output_path = args.output
     iocs_list =args.entities
-    fuse = args.fuse
+    struc = args.strucure
     
-    graphtracker = GraphTrace()
+    # general causal graph creation
+    graphtracker = GraphTrace(log_app, log_path, iocs_list, struc)
+
+    # fuse subgraphs
+    if args.fuse:
+        fused_graph = graphtracker.fused_causal_graph(args.input_list, args.app_list)
+
+    # graph query
+    graphtracker.temp_graph_query(args.input_list, args.timestamp)
+
+    # graph label
+    graphtracker.graph_label(fused_graph)
