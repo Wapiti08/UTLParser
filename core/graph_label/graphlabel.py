@@ -10,40 +10,7 @@
 import networkx as nx
 from core.graph_create import gfeature
 import itertools as it
-
-
-# from node/edge attribute to iocs locations
-attr_iocs_dict = {
-    "node": {
-        "value": ["Src_IP","IOCs", "Dest_IP"],
-        "attrs": ["IOCs"]
-    },
-    "edge": {
-        "value": ["Actions"],
-        "attrs": ["Status", "IOCs"],
-    }
-}
-
-# give example of labels in conn
-iot_ioc_dict = {
-        "Status":["S0"],
-        "IOCs":[80, 8081, 52869,37215,666],
-        "Dest_IP":["172.32.33.171"]
-}
-
-# example of iocs
-ait_iot_dict = {
-    "Src_IP": ["172.17.130.196", "10.35.35.206"],
-    "Proto": ["su","system-user"],
-    "Parameters": ["phopkins", "p=5", 
-                   "wp_meta=WyJpZCJd",
-                   "wp_meta=WyJpZCJd",
-                   "wp_meta=WyJjYXQiLCAiL2V0Yy9yZXNvbHYuY29uZiJd",
-                   "wp_meta=WyJpcCIsICJhZGRyIl0%3D"],
-    "Actions": ["opened", "closed", "POST","AUTH","CRED_REFR","USER_START"],
-    "Status": [200],
-    "IOCs": ["phopkins","/lib/systemd/systemd"]
-}
+from pathlib import Path
 
 class GraphLabel:
 
@@ -57,21 +24,28 @@ class GraphLabel:
         
         '''
         # get the list of columns for node value
-        node_value_list = self.attr_ioc_dict["node"]["value"]
+        node_value_list = self.attr_iocs_dict["node"]["value"]
         for node, attributes in sub_graph.nodes(data=True):
             # check whether node is inside iocs list
             for node_column in node_value_list:
-                if node in self.label_dict[node_column]:
-                    sub_graph.nodes[node]['label'] = 1
-                    break
-            
-            for att_name, att_value in attributes:
-                if att_value in self.label_dict[att_name]:
-                    sub_graph.nodes[node]['label'] = 1
-                    break
+                try:
+                    if node in self.label_dict[node_column]:
+                        sub_graph.nodes[node]['label'] = 1
+                    else:
+                        sub_graph.nodes[node]['label'] = 0
+                except:
+                    continue
+            for att_name, att_value in attributes.items():
+                try:
+                    if att_value in self.label_dict[att_name]:
+                        sub_graph.nodes[node]['label'] = 1
+                    else:
+                        sub_graph.nodes[node]['label'] = 0
+                except:
+                    continue
 
         # get the list of columns for edge value
-        edge_value_list = self.attr_ioc_dict["edge"]["value"]
+        edge_value_list = self.attr_iocs_dict["edge"]["value"]
         for u, v, attributes in sub_graph.edges(data=True):
             # check whether edge is inside iocs list
             for edge_column in edge_value_list:
@@ -79,7 +53,7 @@ class GraphLabel:
                     # ignore timestamp in this stage
                     if att_key != "timestamp" and att_value !='' and att_value!='-':
                         if att_value in self.label_dict[edge_column]:
-                            sub_graph[u][v]['label'] = 1
+                            attributes['label'] = 1
                             break
 
         return sub_graph
@@ -89,14 +63,13 @@ class GraphLabel:
         
         '''
         subgraphs = []
-        for u, v in G.edges(data=True):
+        for u, v, attributes in G.edges(data=True):
             subgraph = G.subgraph([u, v]).copy()
 
             for node in subgraph.nodes():
                 subgraph.nodes[node].update(G.nodes[node])
-            
-            for edge in subgraph.edges():
-                subgraph.edges[edge].update(G.edges[edge])
+            for key, value in attributes.items():
+                subgraph[u][v][0][key]= value
         
             subgraphs.append(subgraph)
         
@@ -115,16 +88,28 @@ class GraphLabel:
             matched_subgraph = self.ioc_match(subgraph)
             # check whether two components (two nodes or one node with one edge) are labelled as 1
             for u, v, attrs in matched_subgraph.edges(data=True):
-                if matched_subgraph.nodes[u]["label"] == 1:
-                    ioc_count += 1
-                if matched_subgraph.nodes[v]["label"] == 1:
-                    ioc_count += 1
-                if matched_subgraph[u][v]['label'] == 1:
-                    ioc_count += 1
+                try:
+                    if matched_subgraph.nodes[u]["label"] == 1:
+                        ioc_count += 1
+                except:
+                    pass
+                try:
+                    if matched_subgraph.nodes[v]["label"] == 1:
+                        ioc_count += 1
+                except:
+                    pass
+                try:
+                    if matched_subgraph[u][v]['label'] == 1:
+                        ioc_count += 1
+                except:
+                    pass
+                # assign lables
                 if ioc_count >= 2:
                     subgraph_labels.append(1)
-
-        return subgraph_labels
+                else:
+                    subgraph_labels.append(0)
+          
+        return subgraphs, subgraph_labels
 
     def draw_labeled_multigraph(self, G, attr_name, ax=None):
         """
@@ -162,6 +147,3 @@ class GraphLabel:
             bbox={"alpha": 0},
             ax=ax,
         )
-
-if __name__ == "__main__":
-    

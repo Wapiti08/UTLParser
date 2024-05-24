@@ -117,6 +117,40 @@ format={
   }
 }
 
+
+# from node/edge attribute to iocs locations
+attr_iocs_dict = {
+    "node": {
+        "value": ["Src_IP","IOCs", "Dest_IP"],
+        "attrs": ["IOCs"]
+    },
+    "edge": {
+        "value": ["Actions"],
+        "attrs": ["Status", "IOCs"],
+    }
+}
+
+# give example of labels in conn
+iot_ioc_dict = {
+        "Status":["S0"],
+        "IOCs":[80, 8081, 52869,37215,666],
+        "Dest_IP":["172.32.33.171"]
+}
+
+# example of iocs
+ait_iot_dict = {
+    "Src_IP": ["172.17.130.196", "10.35.35.206"],
+    "Proto": ["su","system-user"],
+    "Parameters": ["phopkins", "p=5", 
+                   "wp_meta=WyJpZCJd",
+                   "wp_meta=WyJpZCJd",
+                   "wp_meta=WyJjYXQiLCAiL2V0Yy9yZXNvbHYuY29uZiJd",
+                   "wp_meta=WyJpcCIsICJhZGRyIl0%3D"],
+    "Actions": ["opened", "closed", "POST","AUTH","CRED_REFR","USER_START"],
+    "Status": [200],
+    "IOCs": ["phopkins","/lib/systemd/systemd"]
+}
+
 # define the potential candidates to decide optimal time delay
 time_thres_list = [0,1,2,3,4]
 

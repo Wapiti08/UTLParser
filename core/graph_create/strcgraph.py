@@ -15,7 +15,6 @@ from core.pattern import graphrule
 from pathlib import Path
 import pandas as pd
 from core.graph_label import graphlabel
-import ast
 
 # set the configuration
 logging.basicConfig(level=logging.DEBUG,
