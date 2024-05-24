@@ -42,8 +42,8 @@ class LogParser:
         outdir = self.output_path
         log_name = Path(self.log_path).stem
 
-        if self.log_name in config["log_type"]["kv"]:
-            self.logparser = kvparser.KVParser(
+        if log_name in config.log_type["kv"]:
+            logparser = kvparser.KVParser(
                 indir = indir,
                 outdir = outdir,
                 log_name=log_name,
@@ -51,8 +51,8 @@ class LogParser:
                 app = self.log_app
                 )
             
-        elif self.log_name in config["log_type"]["req"]:
-            self.logparser = reqparser.ReqParser(
+        elif log_name in config.log_type["req"]:
+            logparser = reqparser.ReqParser(
                 indir = indir,
                 outdir = outdir,
                 log_name=log_name,
@@ -60,15 +60,15 @@ class LogParser:
                 app = self.log_app
             )
         
-        elif self.log_name in config["log_type"]["gen"]:
+        elif log_name in config.log_type["gen"]:
             # check whether parameters have been calculated before
-            if self.log_app in config['format_dict'].keys():
-                if self.log_name in config["format_dict"][self.log_app].keys():
+            if self.log_app in config.format_dict.keys():
+                if self.log_name in config.format_dict[self.log_app].keys():
                     # rex is decided by types of IOCs to extract
-                    rex = config["format_dict"][self.log_app]["regex"]
-                    log_format = config["format_dict"][self.log_app]["log_format"]
-                    depth = config["format_dict"][self.log_app]["depth"]
-                    st = config["format_dict"][self.log_app]["st"]
+                    rex = config.format_dict[self.log_app]["regex"]
+                    log_format = config.format_dict[self.log_app]["log_format"]
+                    depth = config.format_dict[self.log_app]["depth"]
+                    st = config.format_dict[self.log_app]["st"]
                 else:
                     logger.info("{} in {} has not been processed before, \
                                 generating parameters".format(self.log_name, self.log_app))
@@ -91,7 +91,7 @@ class LogParser:
                 depth, thres, log_format = self.gen_parser_paras()
             
             # parse general logs
-            self.logparser = genparser.GenLogParser(
+            logparser = genparser.GenLogParser(
                 depth=depth,
                 st=thres,
                 rex = rex,
@@ -103,14 +103,15 @@ class LogParser:
                 maxChild=100,
                 )
 
-        elif self.log_name in config["log_type"]["str"]:
-            self.logparser = strreader.StrLogParser(
+        elif log_name in config.log_type["str"]:
+            logparser = strreader.StrLogParser(
                 indir = indir,
                 outdir = outdir,
                 log_name=log_name,
                 log_type = Path(log_name).name,
                 app = self.log_app
             )
+        return logparser
 
     def gen_parser_paras(self,):
         # calculate parameter
@@ -128,5 +129,5 @@ class LogParser:
         log_format = uniformer.format_ext(log_format_dict)
         return depth, thres, log_format
 
-    def generate_output(self):
-        self.logparser.get_output(0)
+    def generate_output(self, logparser):
+        logparser.get_output(0)

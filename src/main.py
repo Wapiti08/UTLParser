@@ -45,8 +45,7 @@ class GraphTrace:
         
         '''
         uparser = unilogparser.LogParser(self.log_app, self.log_path, self.output_path, self.iocs_list)
-        uparser.choose_logparser()
-        uparser.generate_output()
+        uparser.generate_output(uparser.choose_logparser())
 
     def causal_graph(self, ):
         ''' generate causal graphs from unified output
@@ -88,7 +87,7 @@ class GraphTrace:
 if __name__ == "__main__":
     
     cur_path = Path.cwd()
-    indir = cur_path.joinpath("data").as_posix()
+    indir = cur_path.joinpath("data")
     outdir = cur_path.joinpath("data","result").as_posix()
 
     parser = ArgumentParser(description="converting logs to provenance graphs")
@@ -97,7 +96,7 @@ if __name__ == "__main__":
     parser.add_argument("-a","--application", type=str, help="input the name of application which generates logs")
 
     # specify log location
-    parser.add_argument("-i", "--input", type=str, help="input the full path of log data to process", default=indir)
+    parser.add_argument("-i", "--input", type=str, help="input the log file name to process")
 
     # specify desired entity types to extract
     parser.add_argument("-e", '--entities', type=list, help="input the list of desired entity types to extract")
@@ -125,27 +124,33 @@ if __name__ == "__main__":
     parser.add_argument('-l', '--label', type=bool, help="whether to generate labelled subgraphs", default=False)
 
     # streaming processing
-    parser.add_argument('-s', '--streaming', type=bool, help="whether to process in streaming", default=False)
+    parser.add_argument('-r', '--streaming', type=bool, help="whether to process in streaming", default=False)
 
     args = parser.parse_args()
-    
-    logger.info("")
 
     log_app = args.application
-    log_path = args.input
+    log_file = args.input
+
+    logger.info("generate causal graphs from {} {}".format(log_app, log_file))
+
+    log_path = indir.joinpath(log_file)
     output_path = args.output
-    iocs_list =args.entities
-    struc = args.strucure
+    iocs_list = args.entities
+    struc = args.structure
     
     # general causal graph creation
-    graphtracker = GraphTrace(log_app, log_path, iocs_list, struc)
-
+    graphtracker = GraphTrace(log_app, log_path, output_path, iocs_list, struc)
+    # parsing logs
+    graphtracker.log_parse()   
+    # parsing logs to causal graphs
+    graphtracker.causal_graph()
     # fuse subgraphs
     if args.fuse:
         fused_graph = graphtracker.fused_causal_graph(args.input_list, args.app_list)
 
-    # graph query
-    graphtracker.temp_graph_query(args.input_list, args.timestamp)
+    if args.timestamp and len(args.input_list)!=1:
+        graphtracker.temp_graph_query(args.input_list, args.timestamp)
 
-    # graph label
-    graphtracker.graph_label(fused_graph)
+    if args.label:
+        # graph label
+        graphtracker.graph_label(fused_graph)
