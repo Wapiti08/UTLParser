@@ -63,8 +63,11 @@ python -m spacy download en_core_web_lg
 
 - how to use
 ```
-# add testing logs to right category in config.py -> log_type
+# add testing logs with right category inside config.py -> log_type
 
+# single log source processing
+
+# multiple log sources processing
 
 
 ```
