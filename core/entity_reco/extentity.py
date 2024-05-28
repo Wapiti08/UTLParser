@@ -1,8 +1,6 @@
 """ 
 @Description: module to extract potential user names, process, event from unified output
-@Author: newt.tan 
 @Date: 2024-01-23 14:58:04 
-@Last Modified by:   newt.tan  
 @Last Modified time: 2024-01-23 14:58:04  
 """
 
