@@ -1,7 +1,5 @@
 '''
- # @ Author: Newt Tan
  # @ Create Time: 2024-02-16 13:17:40
- # @ Modified by: Newt Tan
  # @ Modified time: 2024-03-06 11:13:19
  # @ Description: Unifited Module to Generate log format, threshold, depth for General Log Parsing Module
 '''

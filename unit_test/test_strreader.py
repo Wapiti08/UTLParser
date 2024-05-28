@@ -1,7 +1,5 @@
 '''
- # @ Author: Newt Tan
  # @ Create Time: 2024-03-28 19:35:48
- # @ Modified by: Newt Tan
  # @ Modified time: 2024-04-19 13:11:05
  # @ Description: unit test for structured log parsing
  '''

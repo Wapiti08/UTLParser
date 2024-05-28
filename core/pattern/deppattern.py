@@ -1,8 +1,6 @@
 """ 
 @Description: Defined Patterns for Dependency Parsing
-@Author: newt.tan 
 @Date: 2024-02-29 09:34:51 
-@Last Modified by:   newt.tan  
 @Last Modified time: 2024-02-29 09:34:51  
 """
 

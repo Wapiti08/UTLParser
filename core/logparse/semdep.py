@@ -1,8 +1,6 @@
 """ 
 @Description: the module to parse sementic role of tokens in sentence for dependency analysis
-@Author: newt.tan 
 @Date: 2024-02-19 16:45:32 
-@Last Modified by:   newt.tan  
 @Last Modified time: 2024-02-19 16:45:32 
 """
 

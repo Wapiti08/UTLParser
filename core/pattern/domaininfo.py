@@ -1,7 +1,5 @@
 '''
- # @ Author: Newt Tan
  # @ Create Time: 2024-03-18 09:53:03
- # @ Modified by: Newt Tan
  # @ Modified time: 2024-03-18 09:54:30
  # @ Description: the mapping dict from uniform format to specific components,
                 used to define the graph rules

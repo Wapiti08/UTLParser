@@ -1,7 +1,5 @@
 # '''
-#  # @ Author: Newt Tan
 #  # @ Create Time: 2024-04-19 09:27:01
-#  # @ Modified by: Newt Tan
 #  # @ Modified time: 2024-05-01 09:21:56
 #  # @ Description: module to label subgraph in temporal causal graph
 #  '''

@@ -1,7 +1,5 @@
 '''
- # @ Author: Newt Tan
  # @ Create Time: 2024-03-22 15:20:48
- # @ Modified by: Newt Tan
  # @ Modified time: 2024-03-22 15:21:39
  # @ Description: define the node/edge label, features/attributes
  '''

@@ -1,7 +1,5 @@
 '''
- # @ Author: Newt Tan
  # @ Create Time: 2024-03-04 11:13:40
- # @ Modified by: Newt Tan
  # @ Modified time: 2024-03-07 11:59:42
  # @ Description: The module to parse http request like logs
  '''

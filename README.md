@@ -1,5 +1,4 @@
 # UTLParser
-![Authour](https://img.shields.io/badge/Author-Wapiti08-blue.svg) 
 ![Python](https://img.shields.io/badge/Python3-3.10-brightgreen.svg) 
 ![License](https://img.shields.io/badge/license-MIT3.0-green.svg)
 ![Testing Environment](https://img.shields.io/badge/macOS-14.2.1-golden.svg)

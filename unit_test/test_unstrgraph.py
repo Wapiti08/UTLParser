@@ -1,7 +1,5 @@
 '''
- # @ Author: Newt Tan
  # @ Create Time: 2024-03-29 22:06:53
- # @ Modified by: Newt Tan
  # @ Modified time: 2024-04-19 19:02:31
  # @ Description: unit test for unstructural graph construction
  '''

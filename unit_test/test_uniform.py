@@ -1,7 +1,5 @@
 '''
- # @ Author: Newt Tan
  # @ Create Time: 2024-03-28 11:35:15
- # @ Modified by: Newt Tan
  # @ Modified time: 2024-03-28 11:37:13
  # @ Description: unit test for uniform module
  '''

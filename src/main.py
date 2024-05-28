@@ -1,7 +1,5 @@
 '''
- # @ Author: Newt Tan
  # @ Create Time: 2024-01-19 19:11:01
- # @ Modified by: Newt Tan
  # @ Modified time: 2024-05-17 08:21:50
  # @ Description: the running interface for log transformation, graph construction, graph query
  '''
