@@ -69,7 +69,6 @@ python -m spacy download en_core_web_lg
 
 # multiple log sources processing
 
-
 ```
 
 ## Output Format

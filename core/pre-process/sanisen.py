@@ -1,8 +1,6 @@
 """ 
 @Description: define function to filter / santize tokens, sentences
-@Author: newt.tan 
 @Date: 2024-02-29 10:07:10 
-@Last Modified by:   newt.tan  
 @Last Modified time: 2024-02-29 10:07:10  
 """
 
