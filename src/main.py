@@ -35,7 +35,7 @@ class GraphTrace:
         self.output_path = output_path
         self.iocs_list = iocs_list
         self.strc = stru
-        self.grapher = caugraph.GausalGraph(self.log_path, self.output_path, self.log_app)
+        self.grapher = caugraph.GausalGraph(self.output_path, self.output_path, self.log_app)
 
 
     def log_parse(self):
@@ -84,22 +84,22 @@ class GraphTrace:
 
 if __name__ == "__main__":
     
-    cur_path = Path.cwd()
-    indir = cur_path.joinpath("data")
-    outdir = cur_path.joinpath("data","result").as_posix()
+    cur_path = Path.cwd().parent
+    indir = cur_path.joinpath("unit_test", "data")
+    outdir = cur_path.joinpath("unit_test","data","result").as_posix()
 
     parser = ArgumentParser(description="converting logs to provenance graphs")
 
     # specify application name to generate log
-    parser.add_argument("-a","--application", type=str, help="input the name of application which generates logs")
+    parser.add_argument("-a","--application", type=str, required=True, help="input the name of application which generates logs")
 
     # specify log location
-    parser.add_argument("-i", "--input", type=str, help="input the log file name to process")
+    parser.add_argument("-i", "--input", type=str, help="input the log file name to process", default=indir)
 
     # specify desired entity types to extract
-    parser.add_argument("-e", '--entities', type=list, help="input the list of desired entity types to extract")
+    parser.add_argument("-e", '--entities', type=list, default=['ip4', 'domain'] , help="input the list of desired entity types to extract, choose from config regex keys")
 
-    # specify desired entity types to extract
+    # check to use different logic
     parser.add_argument("-s", '--structure', type=bool, help="whether the log is structured or unstructured, \
                         corresponding to different process logic", default=False)
 
@@ -144,11 +144,14 @@ if __name__ == "__main__":
     graphtracker.causal_graph()
     # fuse subgraphs
     if args.fuse:
+        print("** make sure you provide log list and application list **")
         fused_graph = graphtracker.fused_causal_graph(args.input_list, args.app_list)
 
-    if args.timestamp and len(args.input_list)!=1:
+    if args.timestamp and len(args.input_list) != 1:
+        print("** make sure you provide log list to fuse and timetstamp")
         graphtracker.temp_graph_query(args.input_list, args.timestamp)
 
     if args.label:
-        # graph label
+        print("** make sure you generate fused graph before**")
+        # create graph label
         graphtracker.graph_label(fused_graph)

@@ -28,42 +28,35 @@ class LogParser:
         self.log_app = log_app
         self.log_path = log_path
         self.output_path = output_path
-        self.log_name = self.log_type_check(log_path)
         self.iocs_list = iocs_list
-
-    def log_type_check(self, log_path):
-        ''' extract the name part
-        
-        '''
-        return Path(log_path).name
 
     def choose_logparser(self,):
         indir = Path(self.log_path).parent
         outdir = self.output_path
-        log_name = Path(self.log_path).stem
-
-        if log_name in config.log_type["kv"]:
+        logname = Path(self.log_path).stem
+        print(Path(self.log_path).name)
+        if logname in config.log_type["kv"]:
             logparser = kvparser.KVParser(
                 indir = indir,
                 outdir = outdir,
-                log_name=log_name,
-                log_type = Path(log_name).name,
+                log_name= Path(self.log_path).name,
+                log_type = logname,
                 app = self.log_app
                 )
             
-        elif log_name in config.log_type["req"]:
+        elif logname in config.log_type["req"]:
             logparser = reqparser.ReqParser(
                 indir = indir,
                 outdir = outdir,
-                log_name=log_name,
-                log_type = Path(log_name).name,
+                log_name= Path(self.log_path).name,
+                log_type = logname,
                 app = self.log_app
             )
         
-        elif log_name in config.log_type["gen"]:
+        elif logname in config.log_type["gen"]:
             # check whether parameters have been calculated before
             if self.log_app in config.format_dict.keys():
-                if self.log_name in config.format_dict[self.log_app].keys():
+                if logname in config.format_dict[self.log_app].keys():
                     # rex is decided by types of IOCs to extract
                     rex = config.format_dict[self.log_app]["regex"]
                     log_format = config.format_dict[self.log_app]["log_format"]
@@ -71,7 +64,7 @@ class LogParser:
                     st = config.format_dict[self.log_app]["st"]
                 else:
                     logger.info("{} in {} has not been processed before, \
-                                generating parameters".format(self.log_name, self.log_app))
+                                generating parameters".format(logname, self.log_app))
                     # check whether desired entities have been provided
                     if not self.iocs_list:
                         logger.warn("The desired entities have not been provided, please add a list in command")
@@ -81,7 +74,7 @@ class LogParser:
                     depth, thres, log_format = self.gen_parser_paras()
             else:
                 logger.info("logs in {} has not been processed before, \
-                            generating parameters".format(self.log_name, self.log_app))
+                            generating parameters".format(logname, self.log_app))
                 # check whether desired entities have been provided
                 if not self.iocs_list:
                     logger.warn("The desired entities have not been provided, please add a list in command")
@@ -98,17 +91,17 @@ class LogParser:
                 indir=indir,
                 outdir=outdir,
                 log_format=log_format,
-                log_name=log_name,
+                log_name = Path(self.log_path).name,
                 keep_para=True,
                 maxChild=100,
                 )
 
-        elif log_name in config.log_type["str"]:
+        elif logname in config.log_type["str"]:
             logparser = strreader.StrLogParser(
                 indir = indir,
                 outdir = outdir,
-                log_name=log_name,
-                log_type = Path(log_name).name,
+                log_name= Path(self.log_path).name,
+                log_type = logname,
                 app = self.log_app
             )
         return logparser
@@ -119,15 +112,18 @@ class LogParser:
         sens = uniformer.ran_pick(10)
         depth = uniformer.cal_depth(sens)
         thres = uniformer.cal_thres(sens)
+        log_format_dict = {}
         log_format_list = []
         for _, sen in enumerate(sens):
-            log_format_dict = uniformer.com_check(sen, 0, ":", 1, log_format_dict)
-            if log_format_dict:
-                log_format_list.append(uniformer.com_rule_check(log_format_dict))
+            log_format_dict_res = uniformer.com_check(sen, 0, ":", 1, log_format_dict)
+            if log_format_dict_res:
+                log_format_list.append(uniformer.com_rule_check(log_format_dict_res))
         
         log_format_dict = uniformer.final_format(log_format_list)
         log_format = uniformer.format_ext(log_format_dict)
         return depth, thres, log_format
 
     def generate_output(self, logparser):
+        logparser.parse()
+        logparser.poi_ext()
         logparser.get_output(0)

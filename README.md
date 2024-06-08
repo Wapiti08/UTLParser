@@ -62,13 +62,20 @@ python -m spacy download en_core_web_lg
 
 - how to use
 ```
-# add testing logs with right category inside config.py -> log_type
-
 # single log source processing
+python3 main.py -a dns -i /xxx/UTLParser/unit_test/data/dns.log
 
-# multiple log sources processing
+# multiple log sources processing --- fused graph
+
+
+# assign labels to fused graphs
 
 ```
+
+- custom running
+
+    - add poi and iocs for custom logs inside config.py
+    - repeat above steps
 
 ## Output Format
 

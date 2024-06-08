@@ -33,7 +33,7 @@ class GausalGraph:
         # load unified output
         self.caugrapher.data_load()
         subgraph = self.caugrapher.causal_graph()
-        self.caugrapher.graph_save(subgraph)
+        self.caugrapher.graph_save(subgraph, None)
         return subgraph
 
 

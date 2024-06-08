@@ -527,7 +527,10 @@ class GenLogParser:
         # filter points of interests
         self.df_log["Parameters"] = self.df_log["Parameters"].apply(lambda x: self.para_check(x))
         # extract PID from proto if exist
-        self.df_log[["Proto", "PID"]] = self.df_log["Proto"].apply(lambda x: pd.Series(self.pid_ext(x)))
+        if "Proto" in self.df_log.columns:
+            self.df_log[["Proto", "PID"]] = self.df_log["Proto"].apply(lambda x: pd.Series(self.pid_ext(x)))
+        else:
+            self.df_log[["Proto", "PID"]] = self.df_log["Component"].apply(lambda x: pd.Series(self.pid_ext(x)))
         self.df_log['Time'] = self.time_create(self.df_log)
 
 

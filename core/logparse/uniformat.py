@@ -200,7 +200,6 @@ class UniFormat:
                         # remove wrong prediction then replace with right dependent component
                         else:
                             maybe_log_format_dict[pos+1] = correct_components
-                            print(maybe_log_format_dict)
                     
                     # picked wrong component
                     else:
@@ -215,6 +214,7 @@ class UniFormat:
         
         '''
         log_format_dict = {} 
+        print(maybe_log_format_dict)
         log_format_dict = self.dep_check(dep_map_dict, maybe_log_format_dict)
         log_format_dict = self.pos_check(pos_com_mapping, log_format_dict)
         for key,value in log_format_dict.items():

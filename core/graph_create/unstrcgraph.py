@@ -207,7 +207,7 @@ class UnstrGausalGraph:
     def graph_save(self, G, name:str):
 
         fig, ax = plt.subplots()
-        graphdraw = graphlabel.GraphLabel()
+        graphdraw = graphlabel.GraphLabel(config.attr_iocs_dict, config.ait_iot_dict)
         graphdraw.draw_labeled_multigraph(G, "value", ax)
         fig.tight_layout()
         if not name:
