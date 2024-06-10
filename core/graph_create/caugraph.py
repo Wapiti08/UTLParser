@@ -7,7 +7,7 @@
 import sys
 from pathlib import Path
 sys.path.insert(0, Path(sys.path[0]).parent.as_posix())
-from core.graph_create import strcgraph, unstrcgraph
+from core.graph_create import strcgraph, unstrcgraph, gfusion, gfeature
 import config
 
 class GausalGraph:
@@ -36,34 +36,6 @@ class GausalGraph:
         self.caugrapher.graph_save(subgraph, None)
         return subgraph
 
-
-    def fuse_subgraphs(self, indir_list:list, log_type_list:list):
-        ''' generate subgraphs and fuse them to one graph
-        
-        '''
-        sub_graph_list = []
-        for indir, log_type in zip(indir_list, log_type_list):
-            grapher = unstrcgraph.UnstrGausalGraph(indir, self.output_file, log_type)
-            grapher.data_load()
-            sub_graph_list.append(grapher.causal_graph())
-        
-        fused_graph = grapher.graph_conn(sub_graph_list)
-        grapher.graph_save(fused_graph, "full")
-        return fused_graph
-
-    def query_temp_graph(self, indir_list, T):
-        ''' query temporal graph from fused graph
-        :param G: fused graph
-        :param T: given format timestamp like: "2022-Jan-15 10:17:01.246000"
-        '''
-        sub_graph_list = []
-        for indir in indir_list:
-            grapher = unstrcgraph.UnstrGausalGraph(indir, self.output_file, self.log_type)
-            grapher.data_load()
-            sub_graph_list.append(grapher.causal_graph())
-        
-        return self.caugrapher.temp_graph(sub_graph_list, T)
-
     def query_comm(self, fused_graph):
         ''' get the independent graphs from fused graph to detect communities
         
@@ -71,8 +43,35 @@ class GausalGraph:
         return self.caugrapher.comm_detect(fused_graph)
 
 
+def query_temp_graph(app_list, output_file, T, entity_path):
+    ''' query temporal graph from fused graph
+    :param G: fused graph
+    :param T: given format timestamp like: "2022-Jan-15 10:17:01.246000"
+    '''
+    sub_graph_list = []
+    for log_type in app_list:
+        grapher = unstrcgraph.UnstrGausalGraph(output_file, log_type)
+        grapher.data_load()
+        sub_graph_list.append(grapher.causal_graph())
+    
+    return gfeature.temp_graph_ext(sub_graph_list, T, entity_path)
 
 
+def fuse_subgraphs(log_type_list:list, output_path:str, entity_path:str):
+    ''' generate subgraphs and fuse them to one graph
+    
+    '''
+    sub_graph_list = []
+    for log_type in log_type_list:
+        grapher = unstrcgraph.UnstrGausalGraph(output_path, log_type)
+        grapher.data_load()
+        sub_graph_list.append(grapher.causal_graph())
+    
+    graphfusion = gfusion.GraphFusion(config.avg_len, entity_path)
+
+    fused_graph = graphfusion.graph_conn(sub_graph_list)
+    grapher.graph_save(fused_graph, "full")
+    return fused_graph
 
 
 

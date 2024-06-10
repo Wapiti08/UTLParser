@@ -66,9 +66,13 @@ python -m spacy download en_core_web_lg
 python3 main.py -a dns -i /xxx/UTLParser/unit_test/data/dns.log
 
 # multiple log sources processing --- fused graph
+python3 main.py -f True -al 'dns,error,access,audit'
 
+# temporal graph query
+python3 main.py -al 'dns,error,access,audit' -t "2022-Jan-15 10:17:01.246000"
 
 # assign labels to fused graphs
+
 
 ```
 

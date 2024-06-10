@@ -34,7 +34,7 @@ class LogParser:
         indir = Path(self.log_path).parent
         outdir = self.output_path
         logname = Path(self.log_path).stem
-        print(Path(self.log_path).name)
+        
         if logname in config.log_type["kv"]:
             logparser = kvparser.KVParser(
                 indir = indir,

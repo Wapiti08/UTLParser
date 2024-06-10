@@ -34,9 +34,12 @@ class UnstrGausalGraph:
     temp_graph: extract all the edges, nodes when time equals to give timestamp
 
     '''
-    def __init__(self, indir:str, outdir:str, log_type:str):
+    def __init__(self, outdir:str, log_type:str):
+        '''
+        :param outdir: the output path of unified output
+        '''
         self.graphrule = graphrule.graph_attrs_json
-        self.datapath = Path(indir).joinpath("{}.log_uniform.csv".format(log_type)).as_posix()
+        self.datapath = Path(outdir).joinpath("{}.log_uniform.csv".format(log_type)).as_posix()
         # self.datapath = Path(indir).joinpath("{}.log_uniform.parquet".format(log_type)).as_posix()
         self.log_type = log_type
         self.savePath = outdir
