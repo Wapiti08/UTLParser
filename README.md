@@ -72,7 +72,7 @@ python3 main.py -f True -al 'dns,error,access,audit'
 python3 main.py -al 'dns,error,access,audit' -t "2022-Jan-15 10:17:01.246000"
 
 # assign labels to fused graphs
-
+python3 main.py -l True 
 
 ```
 

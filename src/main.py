@@ -166,4 +166,13 @@ if __name__ == "__main__":
         fused_graph = nx.read_graphml(Path(outdir).joinpath("full.graphml"))
         subgraphs, labels = graph_label(fused_graph)    
         print(subgraphs)
-        # print(labels)
+        print(labels)
+
+        # List all nodes with their attributes
+        # nodes_with_attributes = subgraphs[0].nodes(data=True)
+        # for node, attrs in nodes_with_attributes:
+        #     print(f"Node: {node}, Attributes: {attrs}")
+        
+        # edges_with_attributes = subgraphs[0].edges(data=True)
+        # for u, v, attrs in edges_with_attributes:
+        #     print(f"Edge: ({u}, {v}), Attributes: {attrs}")
