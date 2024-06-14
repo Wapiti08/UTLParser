@@ -49,12 +49,6 @@ class UnstrGausalGraph:
         self.log_df = pd.read_csv(self.datapath)
         # self.log_df = pd.read_parquet(self.datapath)
 
-    def temp_graph(self, graph_list, T:datetime):
-        ''' extract temporal subgraphs by matching time T
-        
-        '''
-        return gfeature.temp_graph_ext(graph_list, T, self.entity_path)
-
     def comm_detect(self, G:nx.classes.digraph.DiGraph):
         ''' extract independent activity graphs
         

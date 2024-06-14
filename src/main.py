@@ -15,6 +15,7 @@ from core.graph_label import graphlabel
 import config
 from argparse import ArgumentParser
 import logging
+import networkx as nx
 
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s [%(levelname)s]: %(message)s',
@@ -50,24 +51,24 @@ class GraphTrace:
         '''
         return self.grapher.causal_graph_create(self.strc)
 
-
-        
     def comm_graph_query(self, fused_graph):
         ''' detect independent communities from fused_graph
         
         '''
         return self.grapher.query_comm(fused_graph)
 
-    def graph_label(self, fused_graph):
-        ''' generate labelled sugraphs for potential supervised training
-        
-        :return subgraphs, labels
-        '''
-        graphlabeler = graphlabel.GraphLabel(
-            attr_iocs_dict=config.attr_iocs_dict,
-            label_dict=config.ait_iot_dict,
-        )
-        return graphlabeler.subgraph_label(fused_graph)
+
+def graph_label(fused_graph):
+    ''' generate labelled sugraphs for potential supervised training
+    
+    :return subgraphs, labels
+    '''
+    graphlabeler = graphlabel.GraphLabel(
+        attr_iocs_dict=config.attr_iocs_dict,
+        label_dict=config.ait_iot_dict,
+    )
+
+    return graphlabeler.subgraph_label(fused_graph)
 
 
 def temp_graph_query(app_list, output_file, T, entity_path):
@@ -146,7 +147,7 @@ if __name__ == "__main__":
         print("** make sure you provide application list and generate uniformed output before **")
         fused_graph = fused_causal_graph(args.app_list, output_path, entity_path)
 
-    if not args.timestamp:
+    if args.output and args.input and args.application:
         # process single log transformation
         # general causal graph creation
         graphtracker = GraphTrace(log_app, log_path, output_path, iocs_list, struc)
@@ -159,7 +160,10 @@ if __name__ == "__main__":
         print("** make sure you provide log list to fuse and timetstamp")
         print(temp_graph_query(args.app_list, output_path, args.timestamp, entity_path))
 
-    if args.label:
-        print("** make sure you generate fused graph before**")
-        # create graph label
-        graphtracker.graph_label(fused_graph)
+    if args.label and args.output:
+        print("** make sure you generate fused graph before **")
+        # load the fused graph
+        fused_graph = nx.read_graphml(Path(outdir).joinpath("full.graphml"))
+        subgraphs, labels = graph_label(fused_graph)    
+        print(subgraphs)
+        # print(labels)
