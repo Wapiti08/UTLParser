@@ -47,7 +47,7 @@ def time_format(log_df: pd.DataFrame):
     # check whether right format Time exists
     if "Time" in log_df.columns:
         try:
-            log_df['Time'] = pd.to_datetime(log_df["Time"])
+            log_df['Time'] = pd.to_datetime(log_df["Time"],errors='coerce')
             log_df["Time"] = log_df["Time"].dt.strftime("%Y-%b-%d %H:%M:%S.%f")
             return log_df
         except:

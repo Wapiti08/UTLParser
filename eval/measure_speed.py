@@ -15,8 +15,19 @@ from core.graph_create.gfusion import GraphFusion
 from core.graph_label import graphlabel
 import time
 import config
+import logging
 import networkx as nx
 
+logging.basicConfig(level=logging.DEBUG,
+                    format='%(asctime)s [%(levelname)s]: %(message)s',
+                    datefmt='%Y-%m-%d %H:%M:%S'
+                )
+logger = logging.getLogger(__name__)
+file_handler = logging.FileHandler('app.log')
+file_handler.setLevel(logging.DEBUG)
+file_formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+file_handler.setFormatter(file_formatter)
+logger.addHandler(file_handler)
 
 format_dict = {
     "DNS": {
@@ -39,7 +50,7 @@ graphfusion = GraphFusion(config.avg_len, cur_path.parent.joinpath("core","entit
 
 
 def eval_genlog_parse():
-
+    logger.info("evaluting general logs")
     # --------------- log parsing ---------------
     now = time.time()
 
@@ -65,17 +76,19 @@ def eval_genlog_parse():
     logparser.poi_ext()
     logparser.get_output(0)
 
-    print("Time spent for general log parsing is: ", time.time() - now)
+    logger.info("Time spent for general log parsing is: {}".format(time.time() - now))
 
     # --------------- causal graph ---------------
     now = time.time()
     dns_unstrgraph = UnstrGausalGraph(outdir, "dns")
     dns_unstrgraph.data_load()
     dns_unstrgraph.causal_graph()
-    print("Time spent for dns causal graph is: ", time.time() - now)
+    logger.info("Time spent for dns causal graph is: {}".format(time.time() - now))
 
 
 def eval_kvlog_parse():
+    logger.info("evaluting key-value logs")
+
     # --------------- log parsing ---------------
     now = time.time()
 
@@ -89,17 +102,19 @@ def eval_kvlog_parse():
     )   
     logparser.log_parse()
     logparser.get_output(0)
-    print("Time spent for key-value log parsing is: ", time.time() - now)
+    logger.info("Time spent for key-value log parsing is: {}".format(time.time() - now))
 
     # --------------- causal graph ---------------
     now = time.time()
     audit_unstrgraph = UnstrGausalGraph(outdir, "audit")
     audit_unstrgraph.data_load()
     audit_unstrgraph.causal_graph()
-    print("Time spent for audit causal graph is: ", time.time() - now)
+    logger.info("Time spent for audit causal graph is: {}".format(time.time() - now))
 
 
 def eval_reqlog_parse():
+    logger.info("evaluting request logs")
+
     # --------------- log parsing ---------------
     now = time.time()
 
@@ -113,14 +128,14 @@ def eval_reqlog_parse():
     )
 
     logparser.get_output(0)
-    print("Time spent for request log parsing is: ", time.time() - now)
+    logger.info("Time spent for request log parsing is: {}".format(time.time() - now))
 
     # --------------- causal graph ---------------
     now = time.time()
     access_unstrgraph = UnstrGausalGraph(outdir, "access")
     access_unstrgraph.data_load()
     access_unstrgraph.causal_graph()
-    print("Time spent for access causal graph is: ", time.time() - now)
+    logger.info("Time spent for access causal graph is: {}".format(time.time() - now))
 
 
 def eval_graph_fusion():
@@ -143,7 +158,7 @@ def eval_graph_fusion():
 
     G = graphfusion.graph_conn(graph_list)
 
-    print("Time spent for fusing graph is: ", time.time() - now)
+    logger.info("Time spent for fusing graph is: {}".format(time.time() - now))
 
     dns_unstrgraph.graph_save(G, "full")
 
@@ -157,13 +172,13 @@ def eval_graph_label():
         )
     now = time.time()
     graphlabeler.subgraph_label(G=sub_graph)[1]
-    print("Time spent for labeling graphs is: ", time.time() - now)
+    logger.info("Time spent for labeling graphs is: {}".format(time.time() - now))
 
 
 if __name__ == "__main__":
-    eval_genlog_parse()
-    eval_kvlog_parse()
-    eval_reqlog_parse()
-    eval_graph_fusion()
+    # eval_genlog_parse()
+    # eval_kvlog_parse()
+    # eval_reqlog_parse()
+    # eval_graph_fusion()
     eval_graph_label()
 

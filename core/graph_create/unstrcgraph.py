@@ -156,7 +156,6 @@ class UnstrGausalGraph:
         # create the causal graph
         for _, row in tqdm(self.log_df.iterrows(), desc="making causal graph from {}".format(self.log_type)):
             nodes = self.node_check(row, node_value_key)
-            print(nodes)
             # check whether nodes exist
             if len(nodes) != 0:
                 node_len = len(nodes)
