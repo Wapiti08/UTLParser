@@ -4,3 +4,4 @@ ref/
 test/
 unit_test/data
 __pycache__
+large_data/
