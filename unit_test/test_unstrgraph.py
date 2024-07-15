@@ -23,12 +23,12 @@ class TestUnStrgraph(unittest.TestCase):
         outdir = cur_path.joinpath("data","result").as_posix()
         self.graphfusion = GraphFusion(config.avg_len, cur_path.parent.joinpath("core","entity_reco"))
 
-        self.auth_unstrgraph = UnstrGausalGraph(indir, outdir, "auth")
-        self.audit_unstrgraph = UnstrGausalGraph(indir, outdir, "audit")
-        self.dns_unstrgraph = UnstrGausalGraph(indir, outdir, "dns")
-        self.access_unstrgraph = UnstrGausalGraph(indir, outdir, "access")
-        self.syslog_unstrgraph = UnstrGausalGraph(indir, outdir, "syslog")
-        self.error_unstrgraph = UnstrGausalGraph(indir, outdir, "error")
+        self.auth_unstrgraph = UnstrGausalGraph( outdir, "auth")
+        self.audit_unstrgraph = UnstrGausalGraph( outdir, "audit")
+        self.dns_unstrgraph = UnstrGausalGraph( outdir, "dns")
+        self.access_unstrgraph = UnstrGausalGraph( outdir, "access")
+        self.syslog_unstrgraph = UnstrGausalGraph( outdir, "syslog")
+        self.error_unstrgraph = UnstrGausalGraph( outdir, "error")
     
     # def test_temp_graph(self,):
     #     self.auth_unstrgraph.data_load()

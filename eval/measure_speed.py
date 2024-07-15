@@ -69,7 +69,7 @@ def eval_genlog_parse():
 
     # --------------- causal graph ---------------
     now = time.time()
-    dns_unstrgraph = UnstrGausalGraph(indir, outdir, "dns")
+    dns_unstrgraph = UnstrGausalGraph(outdir, "dns")
     dns_unstrgraph.data_load()
     dns_unstrgraph.causal_graph()
     print("Time spent for dns causal graph is: ", time.time() - now)
@@ -93,7 +93,7 @@ def eval_kvlog_parse():
 
     # --------------- causal graph ---------------
     now = time.time()
-    audit_unstrgraph = UnstrGausalGraph(indir, outdir, "audit")
+    audit_unstrgraph = UnstrGausalGraph(outdir, "audit")
     audit_unstrgraph.data_load()
     audit_unstrgraph.causal_graph()
     print("Time spent for audit causal graph is: ", time.time() - now)
@@ -117,7 +117,7 @@ def eval_reqlog_parse():
 
     # --------------- causal graph ---------------
     now = time.time()
-    access_unstrgraph = UnstrGausalGraph(indir, outdir, "access")
+    access_unstrgraph = UnstrGausalGraph(outdir, "access")
     access_unstrgraph.data_load()
     access_unstrgraph.causal_graph()
     print("Time spent for access causal graph is: ", time.time() - now)
@@ -127,9 +127,9 @@ def eval_graph_fusion():
 
     now = time.time()
 
-    dns_unstrgraph = UnstrGausalGraph(indir, outdir, "dns")
-    audit_unstrgraph = UnstrGausalGraph(indir, outdir, "audit")
-    access_unstrgraph = UnstrGausalGraph(indir, outdir, "access")
+    dns_unstrgraph = UnstrGausalGraph(outdir, "dns")
+    audit_unstrgraph = UnstrGausalGraph(outdir, "audit")
+    access_unstrgraph = UnstrGausalGraph(outdir, "access")
 
     dns_unstrgraph.data_load()
     audit_unstrgraph.data_load()
