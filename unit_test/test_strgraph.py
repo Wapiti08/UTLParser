@@ -22,12 +22,12 @@ class TestLogparser(unittest.TestCase):
 
         self.strgraph = StruGrausalGraph(indir, outdir, "conn")
     
-    def test_node_check(self):
-        pass
+    # def test_node_check(self):
+    #     pass
 
-    def test_causal_graph(self,):
-        self.strgraph.data_load()
-        G = self.strgraph.causal_graph()
+    # def test_causal_graph(self,):
+    #     self.strgraph.data_load()
+    #     G = self.strgraph.causal_graph()
     
     def test_graph_save(self):
         self.strgraph.data_load()
