@@ -96,7 +96,7 @@ if __name__ == "__main__":
     parser = ArgumentParser(description="converting logs to provenance graphs")
 
     # specify application name to generate log
-    parser.add_argument("-a","--application", type=str, help="input the name of application which generates logs")
+    parser.add_argument("-a","--application", type=str, help="input the type of log to process, example is like: dns")
 
     # specify log location
     parser.add_argument("-i", "--input", type=str, help="input the log file name to process", default=indir)

@@ -6,8 +6,7 @@
 
 ---
 
-Towards Unified Semantic Log Parsing Framework for Temporal Causal Graph Construction 
-
+Unified Semantic Log Parsing and Causal Graph Construction for Attack Attribution
 ## Features
 - correlate data from multiple sources (network traffic, system/applications/service logs, process execution status)
 - automatically recognize log format, and calculate depth and similarity threshold
