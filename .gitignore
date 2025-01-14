@@ -5,3 +5,4 @@ test/
 unit_test/data
 __pycache__
 large_data/
+CITATION.cff
