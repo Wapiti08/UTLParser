@@ -12,3 +12,4 @@ base58==2.1.1
 regex==2022.3.2
 pyarrow==16.0.0
 fastparquet==2024.2.0
+ray==2.40.0

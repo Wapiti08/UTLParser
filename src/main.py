@@ -16,6 +16,7 @@ import config
 from argparse import ArgumentParser
 import logging
 import networkx as nx
+import ray
 
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s [%(levelname)s]: %(message)s',
@@ -29,6 +30,19 @@ file_handler.setFormatter(file_formatter)
 logger.addHandler(file_handler)
 
 
+@ray.remote
+def process_log(log_app, log_path, output_path, iocs_list):
+    ''' process a single log file in parallel
+    
+    '''
+    uparser = unilogparser.LogParser(log_app, log_path, output_path, iocs_list)
+    logparser = uparser.choose_logparser()
+    uparser.generate_output(logparser)
+
+
+ray.init()
+
+
 class GraphTrace:
     def __init__(self, log_app, log_path, output_path, iocs_list, stru:bool):
         self.log_app = log_app
@@ -39,11 +53,28 @@ class GraphTrace:
         self.grapher = caugraph.GausalGraph(self.output_path, self.output_path, self.log_app)
 
     def log_parse(self):
-        ''' generate the unified output for given log data
+        ''' generate the unified output for a single log file
         
         '''
-        uparser = unilogparser.LogParser(self.log_app, self.log_path, self.output_path, self.iocs_list)
-        uparser.generate_output(uparser.choose_logparser())
+        logger.info(f"Sumbitting task to process log: {self.log_path}")
+        process_log.remote(self.log_app, self.log_path, self.output_path, self.iocs_list)
+
+    def multi_log_parse(self, log_configs):
+        ''' process mutiple logs in parallel using Ray
+        
+        :param log_configs: a list of parameters [[log_app, log_path, output_path, iocs_list],...]
+        '''
+        tasks = []
+        for log_config in log_configs:
+            log_app, log_path, output_path, iocs_list = log_config
+            tasks.append(
+                process_log.remote(log_app, log_path, output_path, iocs_list)
+            )
+        
+        # wait for all tasks to complete
+        ray.get(tasks)
+        logger.info("All log processing tasks completed.")
+
 
     def causal_graph(self, ):
         ''' generate causal graphs from unified output
@@ -142,10 +173,16 @@ if __name__ == "__main__":
     struc = args.structure
     entity_path = args.entity_path
     
-    # fuse subgraphs
-    if args.fuse:
+    # generate multiple subgraphs
+    if args.app_list:
         print("** make sure you provide application list and generate uniformed output before **")
-        fused_graph = fused_causal_graph(args.app_list, output_path, entity_path)
+        # parallel process subgraphs
+        graphtracker = GraphTrace(log_app, log_path, output_path, iocs_list, struc)
+        log_configs = [(log_app, log_path, output_path, iocs_list) for log_app in args.app_list]
+        graphtracker.multi_log_parse(log_configs)
+        # fuse subgraphs if required 
+        if args.fuse:
+            fused_graph = fused_causal_graph(args.app_list, output_path, entity_path)
 
     if args.output and args.input and args.application:
         # process single log transformation

@@ -9,6 +9,8 @@ from core.logparse import uniformat
 from core.logparse import strreader
 import config
 import logging
+import ray
+
 # set the configuration
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s [%(levelname)s]: %(message)s',
@@ -18,6 +20,7 @@ logging.basicConfig(level=logging.DEBUG,
 # create a logger
 logger = logging.getLogger(__name__)
 
+@ray.remote
 class LogParser:
     def __init__(self, log_app, log_path, output_path, iocs_list):
         '''
