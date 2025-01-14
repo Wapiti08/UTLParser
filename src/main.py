@@ -42,7 +42,6 @@ def process_log(log_app, log_path, output_path, iocs_list):
 
 ray.init()
 
-
 class GraphTrace:
     def __init__(self, log_app, log_path, output_path, iocs_list, stru:bool):
         self.log_app = log_app

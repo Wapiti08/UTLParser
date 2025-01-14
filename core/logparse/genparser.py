@@ -34,6 +34,8 @@ import yaml
 from core.pattern import domaininfo
 import config
 from spacy.tokenizer import Tokenizer
+import ray
+
 
 # set the configuration
 logging.basicConfig(level=logging.DEBUG,
@@ -294,6 +296,10 @@ class GenLogParser:
         '''
 
         return util.gen_regex_from_logformat(logformat)
+
+    @ray.remote
+    def process_chunk(self):
+        
 
     def log_to_dataframe(self, log_file: Path, regex, headers):
         ''' write raw log to pandas dataframe, with list and headers
