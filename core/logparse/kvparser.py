@@ -19,6 +19,8 @@ from utils import util
 from core.pattern import domaininfo
 import pandas as pd
 import config
+import ray
+import multiprocessing
 
 # set the configuration
 logging.basicConfig(level=logging.DEBUG,
@@ -30,39 +32,15 @@ logging.basicConfig(level=logging.DEBUG,
 logger = logging.getLogger(__name__)
 
 
-class KVParser:
-
-    def __init__(self, indir:str, outdir:str, log_name:str, \
-                 log_type:str, app:str):
-        '''
-        :param poi_list: for example: ["type", "timestamp", "acct", "exe", "res"]
-        '''
-        self.PoI = config.POI[app][log_type]
-        self.format_output = {
-            "Time":[],
-            "Src_IP":[],
-            "Dest_IP":[],
-            "Proto":[],
-            "Domain":[],
-            "Parameters":[],
-            "IOCs":[],
-            "PID":[],
-            "Actions":[],
-            "Status":[],
-            "Direction":[],
-            "Label":[]
-
-        }
-        self.logName = log_name
-        self.path = indir
-        self.savePath = outdir
+@ray.remote
+class KVParserWorker:
+    def __init__(self, log_type, app, poi, logs_chunk):
         self.log_type = log_type
         self.app = app
+        self.poi = poi
+        self.logs_chunk = logs_chunk
 
-        self.logs = Path(self.path).joinpath(self.logName).read_text().splitlines()
-
-
-    def split_pair(self, sen:str):
+    def split_pair(self, sen):
         ''' for audit logs,
         split key-value pair default by space with recursive setting --- 
         suitable for pure key-value pair matching
@@ -103,7 +81,97 @@ class KVParser:
 
         return key_value_pairs
 
-    def args_parse(self, args:str ):
+
+    @staticmethod
+    def ext_format_time(time_pair: str):
+        ''' extract seconds to format time, the example is like:
+        msg=audit(1642516741.631:2492)
+        
+        '''
+        # Extracting the timestamp part
+        timestamp_str = time_pair.split("(")[1].split(":")[0]
+        # Converting timestamp string to a float
+        timestamp_float = float(timestamp_str)
+        # Converting the timestamp to a datetime object
+        timestamp_datetime = datetime.fromtimestamp(timestamp_float)
+        # Formatting datetime object to the desired format
+        return timestamp_datetime.strftime("%Y-%b-%d %H:%M:%S.%f")
+
+
+    def poi_ext(self, pairs):
+        ''' extract poi from pairs split from one sentence
+        
+        '''
+        ext_poi = {}
+        # split pairs to key-value dict
+        for pair in pairs:
+            if pair != '':
+                # remove timestamp part
+                if pair.startswith("msg=audit"):
+                    ext_poi["timestamp"] = self.ext_format_time(pair)
+                # process msg=unit=x
+                if pair.count("=") == 2:
+                    pair = pair.split('=',1)[1]
+
+                res = pair.split("=")
+                key, value = res[0], res[1]
+                if key in self.PoI:
+                    if value != "?":
+                        ext_poi[key] = value
+
+        return ext_poi
+    
+
+    @staticmethod
+    def value_check(str_value: str):
+        ''' extract only value like path/domain/ip/username by giving the keyname
+        
+        '''
+        # for process related value check
+        proc_val_pattern = r'^(\d+)\(([^()]+)\)$'
+        res = re.match(proc_val_pattern, str_value)
+        # match ip or ip with port
+        if res:
+            content = res.group(2)
+            # check whether ip or path
+            if "->" in content:
+                # match the src and/or dest ip with port
+                return util.ip_match(content)
+            else:
+                return util.ip_match(str_value)
+
+        # match the path 
+        if "\\" in str_value or "/" in str_value:
+            return util.path_match(str_value)
+        
+        # match the domain
+        if "." in str_value:
+            return util.domain_match(str_value)
+        
+        # filename
+        return str_value
+    
+    @staticmethod
+    def header_value_pair(sen, regex, headers):
+        ''' generate the key value pair according to headers and regex matching
+        
+        '''
+        kv_pairs = []
+        try:
+            match = regex.search(sen.strip())
+            message = [match.group(header) for header in headers]
+            message = [mes for mes in message if mes != '' ]
+            # generate pairs
+            for header, message in zip(headers, message):
+                kv_pairs.append(f"{header.lower()}={message}")
+
+        except Exception as e:
+            logger.warning("Skip line: %s", sen)
+            return None
+        
+        return kv_pairs
+
+    def args_parse(self, args):
         ''' for process log, 
         further process special args with poi: fd, path and potential sub event
         
@@ -114,6 +182,7 @@ class KVParser:
             return poi_dict
         
         args_dict = {}
+    
         # check whether args contains other structure
         args_tokens = args.split("=",1)
         if len(args_tokens[1].split(" ")) == 1:
@@ -165,120 +234,87 @@ class KVParser:
                     args_dict = blank_value(['path', 'src_ip', 'dest_ip'], args_dict)
 
             return args_dict
-
-    def value_check(self, value_string: str):
-        ''' extract only value like path/domain/ip/username by giving the keyname
         
-        '''
 
-        # for process related value check
-        proc_val_pattern = r'^(\d+)\(([^()]+)\)$'
-        res = re.match(proc_val_pattern, value_string)
-        # match ip or ip with port
-        if res:
-            content = res.group(2)
-            # check whether ip or path
-            if "->" in content:
-                # match the src and/or dest ip with port
-                return util.ip_match(content)
-            else:
-                return util.ip_match(value_string)
-
-        # match the path 
-        if "\\" in value_string or "/" in value_string:
-            return util.path_match(value_string)
-        
-        # match the domain
-        if "." in value_string:
-            return util.domain_match(value_string)
-        
-        # filename
-        return value_string
-
-
-    def header_value_pair(self, sen, regex, headers):
-        ''' generate the key value pair according to headers and regex matching
-        
-        '''
-        kv_pairs = []
-        try:
-            match = regex.search(sen.strip())
-            message = [match.group(header) for header in headers]
-            message = [mes for mes in message if mes != '' ]
-            # generate pairs
-            for header, message in zip(headers, message):
-                kv_pairs.append(f"{header.lower()}={message}")
-
-        except Exception as e:
-            logger.warning("Skip line: %s", sen)
-            return None
-        
-        return kv_pairs
-
-    def ext_format_time(self, time_pair: str):
-        ''' extract seconds to format time, the example is like:
-        msg=audit(1642516741.631:2492)
-        
-        '''
-        # Extracting the timestamp part
-        timestamp_str = time_pair.split("(")[1].split(":")[0]
-        # Converting timestamp string to a float
-        timestamp_float = float(timestamp_str)
-        # Converting the timestamp to a datetime object
-        timestamp_datetime = datetime.fromtimestamp(timestamp_float)
-        # Formatting datetime object to the desired format
-        return timestamp_datetime.strftime("%Y-%b-%d %H:%M:%S.%f")
-
-    def poi_ext(self, pairs: list):
-        ''' extract poi from pairs split from one sentence
-        
-        '''
-        ext_poi = {}
-        # split pairs to key-value dict
-        for pair in pairs:
-            if pair != '':
-                # remove timestamp part
-                if pair.startswith("msg=audit"):
-                    ext_poi["timestamp"] = self.ext_format_time(pair)
-                # process msg=unit=x
-                if pair.count("=") == 2:
-                    pair = pair.split('=',1)[1]
-
-                res = pair.split("=")
-                key, value = res[0], res[1]
-                if key in self.PoI:
-                    if value != "?":
-                        ext_poi[key] = value
-
-        return ext_poi
-    
-    def log_parse(self, ):
-        ''' process logs into a list of ioc mapping dict
-        
-        '''
-        # define the sum poi dict to save the extracted poi from per log
-        sum_poi_dict = {}
-        for poi in self.PoI:
-            sum_poi_dict[poi] = []
-
-        for log in tqdm(self.logs, desc="parsing {} logs...".format(self.log_type)):
+    def parse_logs_chunk(self):
+        sum_poi_dict = {poi: [] for poi in self.poi}
+        for log in self.logs_chunk:
             kv_pairs = self.split_pair(log)
             if kv_pairs:
                 if self.log_type == "audit":
                     poi_dict = self.poi_ext(kv_pairs)
-                elif self.log_type == "process":
-                    # check whether there is args part
+                elif self.log_type == 'process':
                     poi_dict = self.poi_ext(kv_pairs[:-1])
                     poi_dict.update(self.args_parse(kv_pairs[-1]))
-
+                
                 # check missing poi value
-                for poi in self.PoI:
-                    if poi not in poi_dict.keys():
-                        sum_poi_dict[poi].append('-')
-                    else:
-                        sum_poi_dict[poi].append(poi_dict[poi])
-
+                for poi in self.poi:
+                    sum_poi_dict[poi].append(poi_dict.get(poi, '-'))
+    
         return sum_poi_dict
+    
+@ray.remote
+def merge_dicts(dict_list):
+    merged_dict = {key: [] for key in dict_list[0].keys()}
+    for d in dict_list:
+        for key in d:
+            merged_dict[key].extend(d[key])
+    
+    return merged_dict
+
+
+class KVParser:
+
+    def __init__(self, indir:str, outdir:str, log_name:str, \
+                 log_type:str, app:str):
+        '''
+        :param poi_list: for example: ["type", "timestamp", "acct", "exe", "res"]
+        '''
+        self.PoI = config.POI[app][log_type]
+        self.format_output = {
+            "Time":[],
+            "Src_IP":[],
+            "Dest_IP":[],
+            "Proto":[],
+            "Domain":[],
+            "Parameters":[],
+            "IOCs":[],
+            "PID":[],
+            "Actions":[],
+            "Status":[],
+            "Direction":[],
+            "Label":[]
+
+        }
+        self.logName = log_name
+        self.path = indir
+        self.savePath = outdir
+        self.log_type = log_type
+        self.app = app
+
+        self.logs = Path(self.path).joinpath(self.logName).read_text().splitlines()
+
+
+    def chunk_logs(self):
+        num_cpus = multiprocessing.cpu_count()
+        chunk_size = len(self.logs) // num_cpus + 1
+
+        return [self.logs[i:i + chunk_size] for i in range(0, len(self.logs), chunk_size)]
+    
+
+    def log_parse(self, ):
+        ''' process logs into a list of ioc mapping dict
+        
+        '''
+        chunks = self.chunk_logs()
+        workers = [KVParserWorker.remote(self.log_type, self.app, self.poi, chunk) for chunk in chunks]
+        features = [worker.parse_logs_chunk.remote() for worker in workers]
+        parsed_chunks = ray.get(features)
+
+        merge_dicts = ray.get(merge_dicts.remote(parsed_chunks))
+
+        return merge_dicts
+    
 
     def get_output(self, label: int):
         ''' define the corresponding mapping from poi to column

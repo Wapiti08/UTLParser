@@ -20,7 +20,6 @@ logging.basicConfig(level=logging.DEBUG,
 # create a logger
 logger = logging.getLogger(__name__)
 
-@ray.remote
 class LogParser:
     def __init__(self, log_app, log_path, output_path, iocs_list):
         '''

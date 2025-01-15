@@ -35,7 +35,7 @@ from core.pattern import domaininfo
 import config
 from spacy.tokenizer import Tokenizer
 import ray
-
+import multiprocessing
 
 # set the configuration
 logging.basicConfig(level=logging.DEBUG,
@@ -75,7 +75,7 @@ class Node:
         self.childD = childD
         self.depth = depth
         self.digitOrtoken = digitOrtoken
-        
+    
 
 class GenLogParser:
 
@@ -297,29 +297,54 @@ class GenLogParser:
 
         return util.gen_regex_from_logformat(logformat)
 
-    @ray.remote
-    def process_chunk(self):
+    @staticmethod
+    def deter_chunk_size(data_len, target_chunks_per_cpu=4, min_chunk_size=1000):
+        ''' automatically determine the chunk size based on CPU number
         
+        '''
+        cpu_num = multiprocessing.cpu_count()
+        target_chunk_num = cpu_num * target_chunks_per_cpu
+        # calculate initial chunk size
+        chunk_size = max(min_chunk_size, data_len // target_chunk_num)
+        # ensure at least one chunk per cpu
+        chunk_size = max(chunk_size, (data_len + cpu_num - 1) // cpu_num)
+
+        return chunk_size
+
+    @ray.remote
+    def process_chunk(self, lines, regex, headers):
+        ''' process a chunk of log lines and return a dataframe
+         
+        '''
+        log_messages = []
+        for line in lines:
+            try:
+                match = regex.search(line.strip())
+                if match:
+                    message = [match.group(header) for header in headers]
+                    log_messages.append(message)
+            except Exception as e:
+                logger.warning("Skip line: %s", line)
+        
+        return pd.DataFrame(log_messages, columns = headers)
 
     def log_to_dataframe(self, log_file: Path, regex, headers):
         ''' write raw log to pandas dataframe, with list and headers
         
         '''
-        log_messages = []
-        lcount = 0
-
         with log_file.open('r') as fr:
             data = fr.readlines()
-            for line in data:
-                try:
-                    match = regex.search(line.strip())
-                    message = [match.group(header) for header in headers]
-                    log_messages.append(message)
-                    lcount += 1
-                except Exception as e:
-                    logger.warning("Skip line: %s", line)
+        
+        # calculate chunk size
+        chunk_size = self.deter_chunk_size(len(data))
+        # split the data into chunks
+        chunks = [data[i: i+chunk_size] for i in range(0, len(data), chunk_size)]
 
-        logdf = pd.DataFrame(log_messages, columns = headers)
+        # process each chunk in parallel
+        results = ray.get([self.process_chunk.remote(chunk, regex, headers) for chunk in chunks])        
+
+        # combine all the results into a signle DataFrame
+        logdf = pd.concat(results, ignore_index=True)
         logdf.insert(0, "LineId", None)
         logdf["LineId"] = logdf.index + 1
         print("Total lines: ", len(logdf))
