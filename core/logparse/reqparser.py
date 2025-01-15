@@ -19,6 +19,8 @@ import pandas as pd
 from urllib.parse import urlparse
 from core.pattern import domaininfo
 import config
+import ray
+import multiprocessing
 
 # set the configuration
 logging.basicConfig(level=logging.DEBUG,
@@ -33,6 +35,33 @@ logger = logging.getLogger(__name__)
 # define the default log format
 log_format = "<Src_IP> - - \[<Time>\] \"<Request_Method> <Content> <HTTP_Version>\" \
                 <Status> <Response_Size> \"<Referer>\" \"<User_Agent>\"",
+
+@ray.remote
+def parse_log_chunk(chunk, regex, headers, poi_list, time_parser, \
+                    url_parser, domain_extractor, user_agent_extractor):
+    log_messages = []
+    for line in chunk:
+        try:
+            # match every component
+            match = regex.search(line.strip())
+            message = [match.group(header) for header in headers]
+            log_messages.append(message)
+        except Exception as e:
+            logger.warning("Skip line: %s", line)
+    
+    logdf = pd.DataFrame(log_messages, columns = headers)
+    if logdf.empty:
+        return pd.DataFrame()
+    
+    # apply diverse lambda functions
+    logdf["Time"] = logdf['Time'].apply(time_parser)
+    logdf['Content'] = logdf["Content"].apply(url_parser)
+    logdf["Referer"] = logdf["Referer"].apply(domain_extractor)
+    logdf["User_Agent"] = logdf["User_Agent"].apply(user_agent_extractor)
+
+    desired_columns = [header for header in headers if any(header.lower() == poi.lower() for poi in poi_list)]
+    return logdf[desired_columns]
+
 
 class ReqParser:
 
@@ -65,25 +94,24 @@ class ReqParser:
 
         self.logs = Path(self.path).joinpath(self.logName).read_text().splitlines()
     
-    def domain_ext(self, referer_part):
+    @staticmethod
+    def domain_ext(referer_part):
         ''' 
         
         '''
         parsed_url = urlparse(referer_part)
         return parsed_url.netloc
 
-    def url_para_ext(self, content_part):
+    @staticmethod
+    def url_para_ext(content_part):
         ''' extract the parameters from request content based on question mark
         
         '''
         # check whether ? exists in content
-        if "?" in content_part:
-            paras = content_part.split("?")[1]
-            return paras
-        else:
-            return "-"
-    
-    def gen_logformat_regex(self, logformat):
+        return content_part.split("?")[1] if "?" in content_part else "-"
+
+    @staticmethod
+    def gen_logformat_regex(logformat):
         '''
         
         '''
@@ -102,12 +130,10 @@ class ReqParser:
                 # create a named capture group
                 regex += "(?P<%s>.*?)" % header
                 headers.append(header)
-        regex = re.compile("^" + regex + "$")
+        return headers, re.compile("^" + regex + "$")
 
-        return headers, regex
-
-    
-    def time_parse(self, time_string):
+    @staticmethod
+    def time_parse(time_string):
         ''' change the time format to unified format
         
         '''
@@ -117,11 +143,10 @@ class ReqParser:
         # parse the input string using input format
         parsed_date = datetime.strptime(time_string, input_format)
 
-        formatted_date = parsed_date.strftime(output_format)
+        return parsed_date.strftime(output_format)
 
-        return formatted_date
-
-    def user_agent_ext(self, user_agent_part):
+    @staticmethod
+    def user_agent_ext(user_agent_part):
         ''' optional: extract the user agent names
         
         '''
@@ -131,40 +156,8 @@ class ReqParser:
 
         return [ browser for browser in browser_names if browser not in common_browsers]
 
-    def poi_ext(self, regex, headers):
-        ''' match the poi according to component regex
-        
-        general poi_list: src_ip, time, request_method, content (parameters),
-            status, referer(domain), user_agent(tool name)
-        '''
-        log_messages = []
-
-        for line in self.logs:
-            try:
-                # match every component
-                match = regex.search(line.strip())
-                message = [match.group(header) for header in headers]
-                log_messages.append(message)
-            except Exception as e:
-                logger.warning("Skip line: %s", line)
-
-        logdf = pd.DataFrame(log_messages, columns = headers)
-        logdf.insert(0, 'LineId', None)
-        logdf["LineId"] = logdf.index + 1
-        # extract expected columns based on poi
-        desired_columns = [header for header in headers if any(header.lower() == poi.lower() for poi in self.PoI)]
-        print("Total lines: ", len(logdf))
-        logdf = logdf[desired_columns]
-        # extract the necessary part based on functions
-        logdf['Time'] = logdf["Time"].apply(lambda x: self.time_parse(x))
-        logdf["Content"] = logdf['Content'].apply(lambda x: self.url_para_ext(x))
-        logdf['Referer'] = logdf['Referer'].apply(lambda x: self.domain_ext(x))
-        logdf["User_Agent"] = logdf["User_Agent"].apply(lambda x: self.user_agent_ext(x))
-
-        return logdf
-    
     def get_output(self, label:int):
-        '''
+        ''' 
         
         '''
         start_time = datetime.now() 
@@ -172,24 +165,38 @@ class ReqParser:
         logger.info("generating the format output for {}-{} logs".format(self.app.lower(), self.log_type.lower()))
         column_poi_map = domaininfo.unstru_log_poi_map[self.app][self.log_type]
 
-        if self.app.lower() == "apache":
-            if "access" in self.log_type.lower():
-                # generate the regex and headers
-                headers, regex = self.gen_logformat_regex(log_format[0])
-                logdf = self.poi_ext(regex, headers)
-                log_num = len(logdf)
+        if self.app.lower() == "apache" and "access" in self.log_type.lower():
+            # generate the regex and headers
+            headers, regex = self.gen_logformat_regex(log_format)
+            # generate chunks based on cpu number
+            num_cpus = multiprocessing.cpu_count()
+            chunk_size = len(self.logs) // num_cpus
+            chunks = [self.logs[i:i + chunk_size] for i in range(0, len(self.logs), chunk_size)]
 
-                for column, _ in self.format_output.items():
-                    if column in ["Time", "Src_IP", "Status"]:
-                        self.format_output[column] = logdf[column].tolist()
-                    elif column in ["Domain", "Parameters","Actions","IOCs"]:
-                        self.format_output[column] = logdf[column_poi_map[column]].tolist()
-                    elif column == "Direction":
-                        self.format_output[column] = [column_poi_map[column]] * log_num 
-                    elif column == "Label":
-                        self.format_output[column] = [label] * log_num
-                    else:
-                        self.format_output[column] = ["-"] * log_num
+            # initialize ray and apply ray remote
+            ray.init()
+            results = ray.get([
+                parse_log_chunk.remote(
+                    chunk, regex, headers, self.PoI, self.time_parse, self.url_para_ext, self.domain_ext, self.user_agent_ext
+                ) for chunk in chunks
+            ])
+
+            ray.shutdown()
+            logdf = pd.concat(results, ignore_index=True)
+
+            log_num = len(logdf)
+
+            for column, _ in self.format_output.items():
+                if column in ["Time", "Src_IP", "Status"]:
+                    self.format_output[column] = logdf[column].tolist()
+                elif column in ["Domain", "Parameters","Actions","IOCs"]:
+                    self.format_output[column] = logdf[column_poi_map[column]].tolist()
+                elif column == "Direction":
+                    self.format_output[column] = [column_poi_map[column]] * log_num 
+                elif column == "Label":
+                    self.format_output[column] = [label] * log_num
+                else:
+                    self.format_output[column] = ["-"] * log_num
 
                 # logger.info("the parsing output is like: {}".format(self.format_output))
 
