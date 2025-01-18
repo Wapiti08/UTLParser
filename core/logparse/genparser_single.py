@@ -318,6 +318,8 @@ class GenLogParser:
         logdf["LineId"] = logdf.index + 1
         print("Total lines: ", len(logdf))
         logger.info("The parsing rate is: {:.2%}".format(len(logdf) / len(data) ))
+        
+        
         return logdf
 
 
@@ -340,12 +342,14 @@ class GenLogParser:
     def parse(self,):
         # define the parsing file path
         print("Parsing file: " + Path(self.path).joinpath(self.logName).as_posix())
-        start_time = datetime.now()
         rootNode = Node()
         logCluL = []
+        start_time = datetime.now()
 
         # load data
         self.load_data()
+        logger.info("Parsing done. [Time taken: {!s}]".format(datetime.now() - start_time))
+
         # process line by line
         for idx, line in tqdm(self.df_log.iterrows(), desc="Processing log lines"):
             # treesearch the logcluster of line
@@ -373,8 +377,6 @@ class GenLogParser:
 
         # output result
         self.outputResult(logCluL)
-
-        logger.info("Parsing done. [Time taken: {!s}]".format(datetime.now() - start_time))
 
 
     def outputResult(self, logClustL):

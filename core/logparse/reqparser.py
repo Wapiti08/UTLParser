@@ -172,7 +172,7 @@ class ReqParser:
             num_cpus = multiprocessing.cpu_count()
             chunk_size = len(self.logs) // num_cpus
             chunks = [self.logs[i:i + chunk_size] for i in range(0, len(self.logs), chunk_size)]
-
+            parse_start_time = datetime.now() 
             # initialize ray and apply ray remote
             ray.init()
             results = ray.get([
@@ -183,6 +183,7 @@ class ReqParser:
 
             ray.shutdown()
             logdf = pd.concat(results, ignore_index=True)
+            logger.info("Parsing Done. [Time taken: {!s}]".format(datetime.now() - parse_start_time))
 
             log_num = len(logdf)
 

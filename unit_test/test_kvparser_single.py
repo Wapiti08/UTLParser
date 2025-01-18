@@ -10,7 +10,8 @@ from pathlib import Path
 sys.path.insert(0, Path(sys.path[0]).parent.as_posix())
 
 import unittest
-from core.logparse.kvparser import KVParser
+from core.logparse.kvparser_single import KVParser
+import config
 
 
 class TestLogparser(unittest.TestCase):
@@ -43,16 +44,16 @@ class TestLogparser(unittest.TestCase):
             app='apache',
         )   
 
-    # def test_split_pair(self,):
+    def test_split_pair(self,):
         
-    #     # sentence_audit = """type=USER_START msg=audit(1642635541.040:3245): pid=3539 uid=0 auid=0 ses=443 msg='op=PAM:session_open acct="root" exe="/usr/sbin/cron" hostname=? addr=? terminal=cron res=success'"""
-    #     sentence_process = "23:40:09.104759831 3 httpd (28599) < semop 5113 23:40:09.104820227 3 httpd (28599) > getsockname"
-    #     sen_process_1 = "23:40:09.104016814 3 httpd (28599) > fcntl fd=13(127.0.0.1:40016->127.0.0.1:80) cmd=3(F_SETFD)"
-    #     # key_value_audit_pairs = self.logparser.split_pair(sentence_audit)
-    #     key_value_proc_pairs = self.logparser.split_pair(sen_process_1)
-    #     # print(key_value_audit_pairs)
-    #     # print(key_value_proc_pairs)
-    #     desired_pair_map_audit = ["type=USER_START", "msg=audit(1642635541.040.3245)", "pid=3539", "uid=0", "auid=0","ses=443", "msg='op=PAM:session_open", 'acct="root"', 'exe="/usr/sbin/cron"', "hostname=?", "addr=?", "terminal=cron", "res=success'"]
+        # sentence_audit = """type=USER_START msg=audit(1642635541.040:3245): pid=3539 uid=0 auid=0 ses=443 msg='op=PAM:session_open acct="root" exe="/usr/sbin/cron" hostname=? addr=? terminal=cron res=success'"""
+        sentence_process = "23:40:09.104759831 3 httpd (28599) < semop 5113 23:40:09.104820227 3 httpd (28599) > getsockname"
+        sen_process_1 = "23:40:09.104016814 3 httpd (28599) > fcntl fd=13(127.0.0.1:40016->127.0.0.1:80) cmd=3(F_SETFD)"
+        # key_value_audit_pairs = self.logparser.split_pair(sentence_audit)
+        key_value_proc_pairs = self.logparser.split_pair(sen_process_1)
+        # print(key_value_audit_pairs)
+        # print(key_value_proc_pairs)
+        desired_pair_map_audit = ["type=USER_START", "msg=audit(1642635541.040.3245)", "pid=3539", "uid=0", "auid=0","ses=443", "msg='op=PAM:session_open", 'acct="root"', 'exe="/usr/sbin/cron"', "hostname=?", "addr=?", "terminal=cron", "res=success'"]
         # self.assertEquals(key_value_audit_pairs, desired_pair_map_audit)
 
     def test_args_parse(self,):

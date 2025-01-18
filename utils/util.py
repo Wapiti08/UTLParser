@@ -14,7 +14,7 @@ from tqdm import tqdm
 import pandas as pd
 from datetime import datetime
 import re
-import config
+import cfg
 
 
 nlp = spacy.load("en_core_web_lg")
@@ -123,9 +123,9 @@ def ip_match(test_string:str):
     '''
     match_list = []
     # check ip with port first
-    ip_port = config.regex["ip_with_port"]
-    ipv4 = config.regex["ip4"]
-    ipv6 = config.regex["ip6"]
+    ip_port = cfg.regex["ip_with_port"]
+    ipv4 = cfg.regex["ip4"]
+    ipv6 = cfg.regex["ip6"]
 
     for ip_regex in [ip_port, ipv4, ipv6]:
         res = re.search(ip_regex, test_string)
@@ -143,7 +143,7 @@ def port_match(test_string:str):
     '''
     match_list = []
     # check port
-    port_regex = config.regex["port"]
+    port_regex = cfg.regex["port"]
 
     res = re.search(port_regex, test_string)
     if res:
@@ -177,8 +177,8 @@ def path_match(test_string:str):
     
     '''
     match_list = []
-    path_win = config.regex["path_win"]
-    path_unix = config.regex["path_unix"]
+    path_win = cfg.regex["path_win"]
+    path_unix = cfg.regex["path_unix"]
     for path_regex in [path_win, path_unix]:
         res = re.search(path_regex, test_string)
         if res:
@@ -194,7 +194,7 @@ def domain_match(test_string:str):
     
     '''
     match_list = []
-    domain_rex = config.regex["domain"]
+    domain_rex = cfg.regex["domain"]
     res = re.search(domain_rex, test_string)
     if res:
         for domain in re.findall(domain_rex, test_string):

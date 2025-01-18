@@ -9,6 +9,9 @@
         type=CRED_DISP msg=audit(1642267021.539:851): pid=15420 uid=0 auid=0 ses=123 msg='op=PAM:setcred acct="root" exe="/usr/sbin/cron" hostname=? addr=? terminal=cron res=success'
     PoI: type, timestamp, acct, exe, res
 '''
+import sys
+from pathlib import Path
+sys.path.insert(0, Path(sys.path[0]).parent.as_posix())
 import re
 from datetime import datetime
 import logging
@@ -18,7 +21,7 @@ import yaml
 from utils import util
 from core.pattern import domaininfo
 import pandas as pd
-import config
+import cfg
 import ray
 import multiprocessing
 
@@ -71,7 +74,7 @@ class KVParserWorker:
         elif self.log_type == "process":
             if self.app == "sysdig":
                 # read specific format
-                proces_format = config.format[self.log_type][self.app]
+                proces_format = cfg.format[self.log_type][self.app]
                 # create key value pair for previous part
                 headers, regex = util.gen_regex_from_logformat(proces_format)
                 res = self.header_value_pair(sen, regex, headers)
@@ -270,7 +273,7 @@ class KVParser:
         '''
         :param poi_list: for example: ["type", "timestamp", "acct", "exe", "res"]
         '''
-        self.PoI = config.POI[app][log_type]
+        self.poi = cfg.POI[app][log_type]
         self.format_output = {
             "Time":[],
             "Src_IP":[],
@@ -302,16 +305,22 @@ class KVParser:
         return [self.logs[i:i + chunk_size] for i in range(0, len(self.logs), chunk_size)]
     
 
-    def log_parse(self, ):
+    def log_parse(self,):
         ''' process logs into a list of ioc mapping dict
         
         '''
+        start_time = datetime.now() 
+        ray.shutdown()
+
+        ray.init()
         chunks = self.chunk_logs()
         workers = [KVParserWorker.remote(self.log_type, self.app, self.poi, chunk) for chunk in chunks]
         features = [worker.parse_logs_chunk.remote() for worker in workers]
         parsed_chunks = ray.get(features)
-
         merge_dicts = ray.get(merge_dicts.remote(parsed_chunks))
+        ray.shutdown()
+
+        logger.info("Parsing Done. [Time taken: {!s}]".format(datetime.now() - start_time))
 
         return merge_dicts
     

@@ -261,6 +261,7 @@ class KVParser:
         for poi in self.PoI:
             sum_poi_dict[poi] = []
 
+        start_time = datetime.now() 
         for log in tqdm(self.logs, desc="parsing {} logs...".format(self.log_type)):
             kv_pairs = self.split_pair(log)
             if kv_pairs:
@@ -277,6 +278,7 @@ class KVParser:
                         sum_poi_dict[poi].append('-')
                     else:
                         sum_poi_dict[poi].append(poi_dict[poi])
+        logger.info("Parsing Done. [Time taken: {!s}]".format(datetime.now() - start_time))
 
         return sum_poi_dict
 

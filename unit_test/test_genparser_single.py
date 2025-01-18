@@ -2,8 +2,9 @@ import sys
 from pathlib import Path
 sys.path.insert(0, Path(sys.path[0]).parent.as_posix())
 import unittest
-from core.logparse.genparser import GenLogParser
+from core.logparse.genparser_single import GenLogParser
 import config
+from datetime import datetime
 
 # calculated result from uniform
 format_dict = {
@@ -61,8 +62,6 @@ format_dict = {
 
 }
 
-
-
 class TestLogparser(unittest.TestCase):
 
     def setUp(self):
@@ -91,7 +90,6 @@ class TestLogparser(unittest.TestCase):
             maxChild=100,
         )
 
-
         
         # test for linux syslog
         # rex = format_dict['Linux']['syslog']['regex']
@@ -111,7 +109,7 @@ class TestLogparser(unittest.TestCase):
         #     maxChild=100,
         # )
 
-        # # test for apache auth
+        # test for apache auth
         # rex = format_dict['Apache']['auth']['regex']
         # log_format = format_dict['Apache']['auth']['log_format']
         # depth = format_dict['Apache']['auth']['depth']
@@ -149,6 +147,7 @@ class TestLogparser(unittest.TestCase):
 
 
     def test_parse(self):
+
         self.logparser.parse()
 
         # self.assertEqual()
@@ -180,7 +179,7 @@ class TestLogparser(unittest.TestCase):
         # depth = format_dict['Apache']['error']['depth']
         # st = format_dict['Apache']['error']['st']
 
-        # test for dns logs
+        # # test for dns logs
         rex = format_dict['DNS']['dnsmasq']['regex']
         log_format = format_dict['DNS']['dnsmasq']['log_format']
         depth = format_dict['DNS']['dnsmasq']['depth']
@@ -200,8 +199,8 @@ class TestLogparser(unittest.TestCase):
             outdir=outdir,
             log_format=log_format,
             # log_name="error.log",
-            # log_name="dns.log",
-            log_name="auth.log",
+            log_name="dns.log",
+            # log_name="auth.log",
             keep_para=True,
             maxChild=100,
         )

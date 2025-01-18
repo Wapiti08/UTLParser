@@ -138,7 +138,7 @@ class ReqParser:
             status, referer(domain), user_agent(tool name)
         '''
         log_messages = []
-
+        start_time = datetime.now() 
         for line in self.logs:
             try:
                 # match every component
@@ -160,6 +160,8 @@ class ReqParser:
         logdf["Content"] = logdf['Content'].apply(lambda x: self.url_para_ext(x))
         logdf['Referer'] = logdf['Referer'].apply(lambda x: self.domain_ext(x))
         logdf["User_Agent"] = logdf["User_Agent"].apply(lambda x: self.user_agent_ext(x))
+        
+        logger.info("Parsing Done. [Time taken: {!s}]".format(datetime.now() - start_time))
 
         return logdf
     

@@ -280,6 +280,7 @@ class GenLogParser:
             Path(self.path).joinpath(self.logName), regex, headers
         )
 
+
     def preprocess(self, line):
         ''' match the explicit variables or indicitor as the <*>
         including ip, domain, path ...
@@ -298,21 +299,23 @@ class GenLogParser:
         return util.gen_regex_from_logformat(logformat)
 
     @staticmethod
-    def deter_chunk_size(data_len, target_chunks_per_cpu=4, min_chunk_size=1000):
+    def deter_chunk_size(data_len):
         ''' automatically determine the chunk size based on CPU number
         
         '''
         cpu_num = multiprocessing.cpu_count()
-        target_chunk_num = cpu_num * target_chunks_per_cpu
-        # calculate initial chunk size
-        chunk_size = max(min_chunk_size, data_len // target_chunk_num)
-        # ensure at least one chunk per cpu
-        chunk_size = max(chunk_size, (data_len + cpu_num - 1) // cpu_num)
+        chunk_size = data_len // cpu_num  + 1
+
+        # target_chunk_num = cpu_num * target_chunks_per_cpu
+        # # calculate initial chunk size
+        # chunk_size = max(min_chunk_size, data_len // target_chunk_num)
+        # # ensure at least one chunk per cpu
+        # chunk_size = max(chunk_size, (data_len + cpu_num - 1) // cpu_num)
 
         return chunk_size
 
     @ray.remote
-    def process_chunk(self, lines, regex, headers):
+    def process_chunk(lines, regex, headers):
         ''' process a chunk of log lines and return a dataframe
          
         '''
@@ -332,23 +335,29 @@ class GenLogParser:
         ''' write raw log to pandas dataframe, with list and headers
         
         '''
+
         with log_file.open('r') as fr:
             data = fr.readlines()
         
         # calculate chunk size
         chunk_size = self.deter_chunk_size(len(data))
+        ray.shutdown()
+
+        ray.init()
         # split the data into chunks
         chunks = [data[i: i+chunk_size] for i in range(0, len(data), chunk_size)]
-
         # process each chunk in parallel
-        results = ray.get([self.process_chunk.remote(chunk, regex, headers) for chunk in chunks])        
-
+        results = ray.get([self.process_chunk.remote(chunk, regex, headers) 
+                           for chunk in chunks])        
         # combine all the results into a signle DataFrame
         logdf = pd.concat(results, ignore_index=True)
+        ray.shutdown()
+
         logdf.insert(0, "LineId", None)
         logdf["LineId"] = logdf.index + 1
         print("Total lines: ", len(logdf))
         logger.info("The parsing rate is: {:.2%}".format(len(logdf) / len(data) ))
+        
         return logdf
 
 
@@ -371,12 +380,13 @@ class GenLogParser:
     def parse(self,):
         # define the parsing file path
         print("Parsing file: " + Path(self.path).joinpath(self.logName).as_posix())
-        start_time = datetime.now()
         rootNode = Node()
         logCluL = []
-
+        start_time = datetime.now()
         # load data
         self.load_data()
+        logger.info("Parsing Done. [Time taken: {!s}]".format(datetime.now() - start_time))
+
         # process line by line
         for idx, line in tqdm(self.df_log.iterrows(), desc="Processing log lines"):
             # treesearch the logcluster of line
@@ -404,8 +414,6 @@ class GenLogParser:
 
         # output result
         self.outputResult(logCluL)
-
-        logger.info("Parsing done. [Time taken: {!s}]".format(datetime.now() - start_time))
 
 
     def outputResult(self, logClustL):
