@@ -9,7 +9,7 @@ from pathlib import Path
 sys.path.insert(0,Path(sys.path[0]).resolve().parent.as_posix())
 import networkx as nx
 from datetime import datetime, timedelta
-import config
+import cfg
 from utils import util
 
 class GraphFusion:

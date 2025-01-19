@@ -14,7 +14,7 @@ from core.graph_create.unstrcgraph import UnstrGausalGraph
 from core.graph_create.gfusion import GraphFusion
 from core.graph_label import graphlabel
 import time
-import config
+import cfg
 import logging
 import networkx as nx
 
@@ -34,7 +34,7 @@ format_dict = {
         "dnsmasq": {
             "log_format": "<Month> <Date> <Timestamp> <Component>: <Content>",
             # match the domain, ipv4 and ipv6
-            "regex": [config.regex['domain'], config.regex['ip4'], config.regex['ip6']],
+            "regex": [cfg.regex['domain'], cfg.regex['ip4'], cfg.regex['ip6']],
             "st":0.3,
             # right
             'depth':4,
@@ -46,7 +46,7 @@ cur_path = Path.cwd()
 indir = cur_path.joinpath("large_data").as_posix()
 outdir = cur_path.joinpath("large_data","result").as_posix()
 
-graphfusion = GraphFusion(config.avg_len, cur_path.parent.joinpath("core","entity_reco"))
+graphfusion = GraphFusion(cfg.avg_len, cur_path.parent.joinpath("core","entity_reco"))
 
 
 def eval_genlog_parse():
@@ -167,8 +167,8 @@ def eval_graph_label():
 
     # test for sysdig process
     graphlabeler = graphlabel.GraphLabel(
-        attr_iocs_dict=config.attr_iocs_dict,
-        label_dict=config.ait_iot_dict,
+        attr_iocs_dict=cfg.attr_iocs_dict,
+        label_dict=cfg.ait_iot_dict,
         )
     now = time.time()
     graphlabeler.subgraph_label(G=sub_graph)[1]

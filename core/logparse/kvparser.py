@@ -10,18 +10,16 @@
     PoI: type, timestamp, acct, exe, res
 '''
 import sys
-from pathlib import Path
-sys.path.insert(0, Path(sys.path[0]).parent.as_posix())
+
 import re
+import cfg
 from datetime import datetime
 import logging
 from tqdm import tqdm
 from pathlib import Path
-import yaml
 from utils import util
 from core.pattern import domaininfo
 import pandas as pd
-import cfg
 import ray
 import multiprocessing
 
@@ -33,7 +31,6 @@ logging.basicConfig(level=logging.DEBUG,
 
 # create a logger
 logger = logging.getLogger(__name__)
-
 
 @ray.remote
 class KVParserWorker:
@@ -118,7 +115,7 @@ class KVParserWorker:
 
                 res = pair.split("=")
                 key, value = res[0], res[1]
-                if key in self.PoI:
+                if key in self.poi:
                     if value != "?":
                         ext_poi[key] = value
 
@@ -214,7 +211,7 @@ class KVParserWorker:
                     key, value = res[0], res[1]
                     # further process to extract precise values
                     res = self.value_check(value)
-                    if key in self.PoI:
+                    if key in self.poi:
                         # check the type
                         if isinstance(res, list):
                             if len(res) == 2:
@@ -267,7 +264,6 @@ def merge_dicts(dict_list):
 
 
 class KVParser:
-
     def __init__(self, indir:str, outdir:str, log_name:str, \
                  log_type:str, app:str):
         '''
@@ -310,19 +306,20 @@ class KVParser:
         
         '''
         start_time = datetime.now() 
+        
         ray.shutdown()
 
-        ray.init()
+        ray.init(runtime_env={"working_dir": Path.cwd().parent.as_posix()})
         chunks = self.chunk_logs()
         workers = [KVParserWorker.remote(self.log_type, self.app, self.poi, chunk) for chunk in chunks]
         features = [worker.parse_logs_chunk.remote() for worker in workers]
         parsed_chunks = ray.get(features)
-        merge_dicts = ray.get(merge_dicts.remote(parsed_chunks))
+        merge_dict = ray.get(merge_dicts.remote(parsed_chunks))
         ray.shutdown()
 
         logger.info("Parsing Done. [Time taken: {!s}]".format(datetime.now() - start_time))
 
-        return merge_dicts
+        return merge_dict
     
 
     def get_output(self, label: int):

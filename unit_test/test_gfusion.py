@@ -10,7 +10,7 @@ sys.path.insert(0, Path(sys.path[0]).parent.as_posix())
 import unittest
 from core.graph_create import gfusion
 import networkx as nx
-import config
+import cfg
 
 class TestGFusion(unittest.TestCase):
 
@@ -38,7 +38,7 @@ class TestGFusion(unittest.TestCase):
     def test_choose_thres(self):
         # read full graph graphml file
         T = "2022-Jan-15 10:17:01.246000"
-        print(self.gfuser.choose_thres(self.G, T, config.time_thres_list))
+        print(self.gfuser.choose_thres(self.G, T, cfg.time_thres_list))
 
     def test_inte_score(self):
         print("computed integrity score is:")

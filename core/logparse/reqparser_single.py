@@ -18,7 +18,7 @@ from pathlib import Path
 import pandas as pd
 from urllib.parse import urlparse
 from core.pattern import domaininfo
-import config
+import cfg
 
 # set the configuration
 logging.basicConfig(level=logging.DEBUG,
@@ -41,7 +41,7 @@ class ReqParser:
         :param poi_list: src_ip, time, request_method, content (parameters),
                          status, referer(domain), user_agent(tool name)
         '''
-        self.PoI = config.POI[app][log_type]
+        self.PoI = cfg.POI[app][log_type]
         self.format_output = {
             "Time":[],
             "Src_IP":[],

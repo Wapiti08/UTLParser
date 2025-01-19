@@ -7,7 +7,7 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 from datetime import datetime
-import config
+import cfg
 from core.graph_create.gfusion import GraphFusion
 from pathlib import Path
 
@@ -32,8 +32,8 @@ def comm_graph_ext(G:nx.classes.digraph.DiGraph):
 
 def temp_graph_ext(sub_graphs_list: list, T: datetime, entity_path:Path):
     # load time_delay_list
-    time_delay_list = config.time_thres_list
-    graphfuser = GraphFusion(config.avg_len, entity_path)
+    time_delay_list = cfg.time_thres_list
+    graphfuser = GraphFusion(cfg.avg_len, entity_path)
     conn_graph = graphfuser.graph_conn(sub_graphs_list)
     # choose the threshold
     opt_time = graphfuser.choose_thres(conn_graph, T, time_delay_list)

@@ -11,6 +11,7 @@ sys.path.insert(0, Path(sys.path[0]).parent.as_posix())
 
 import unittest
 from core.logparse.kvparser import KVParser
+import cfg
 
 
 class TestLogparser(unittest.TestCase):

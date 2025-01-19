@@ -12,14 +12,14 @@ from core.logparse.reqparser import ReqParser
 from core.logparse.strreader import StrLogParser
 import pandas as pd
 import json
-import config
+import cfg
 
 format_dict = {
     "DNS": {
         "dnsmasq": {
             "log_format": "<Month> <Date> <Timestamp> <Component>: <Content>",
             # match the domain, ipv4 and ipv6
-            "regex": [config.regex['domain'], config.regex['ip4'], config.regex['ip6']],
+            "regex": [cfg.regex['domain'], cfg.regex['ip4'], cfg.regex['ip6']],
             "st":0.3,
             'depth':4,
         },
@@ -28,14 +28,14 @@ format_dict = {
         "auth": {
             "log_format": "<Month> <Day> <Timestamp> <Component> <Proto>: <Content>",
             # match the ip, port, id
-            "regex": [config.regex['ip4'],config.regex['port'],config.regex['id']],
+            "regex": [cfg.regex['ip4'],cfg.regex['port'],cfg.regex['id']],
             "st": 0.33,
             "depth": 4,
         },
         "error": {
             "log_format": "\[<Week> <Month> <Day> <Timestamp> <Year>\] \[<Proto>\] \[pid <PID>\] \[client <Src_IP>\] <Content>",
             # match the path, port, id
-            "regex": [config.regex['path_unix']],
+            "regex": [cfg.regex['path_unix']],
             "st": 0.2,
             "depth": 3,
         }

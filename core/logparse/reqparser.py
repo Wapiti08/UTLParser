@@ -18,7 +18,7 @@ from pathlib import Path
 import pandas as pd
 from urllib.parse import urlparse
 from core.pattern import domaininfo
-import config
+import cfg
 import ray
 import multiprocessing
 
@@ -70,7 +70,7 @@ class ReqParser:
         :param poi_list: src_ip, time, request_method, content (parameters),
                          status, referer(domain), user_agent(tool name)
         '''
-        self.PoI = config.POI[app][log_type]
+        self.PoI = cfg.POI[app][log_type]
         self.format_output = {
             "Time":[],
             "Src_IP":[],
@@ -118,7 +118,7 @@ class ReqParser:
         headers = []
         # split the strings that start with '<', followed by one or more characters that
         # are not angle brackets and then end with ">"
-        splitters = re.split(r"(<[^<>]+>)", logformat)
+        splitters = re.split(r"(<[^<>]+>)", logformat[0])
         regex = ""
         for k in range(len(splitters)):
             if k % 2 == 0:
@@ -174,7 +174,7 @@ class ReqParser:
             chunks = [self.logs[i:i + chunk_size] for i in range(0, len(self.logs), chunk_size)]
             parse_start_time = datetime.now() 
             # initialize ray and apply ray remote
-            ray.init()
+            ray.init(runtime_env={"working_dir": Path.cwd().parent.as_posix()})
             results = ray.get([
                 parse_log_chunk.remote(
                     chunk, regex, headers, self.PoI, self.time_parse, self.url_para_ext, self.domain_ext, self.user_agent_ext

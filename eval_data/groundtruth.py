@@ -7,7 +7,7 @@ import sys
 from pathlib import Path
 sys.path.insert(0, Path(sys.path[0]).parent.as_posix())
 from core.logparse.genparser import GenLogParser
-import config
+import cfg
 import re
 import pandas as pd
 
@@ -17,7 +17,7 @@ format_dict = {
         "dnsmasq": {
             "log_format": "<Month> <Date> <Timestamp> <Component>: <Content>",
             # match the domain, ipv4 and ipv6
-            "regex": [config.regex['domain'], config.regex['ip4'], config.regex['ip6']],
+            "regex": [cfg.regex['domain'], cfg.regex['ip4'], cfg.regex['ip6']],
             "st":0.3,
             # right
             'depth':4,
@@ -27,14 +27,14 @@ format_dict = {
         "auth": {
             "log_format": "<Month> <Day> <Timestamp> <Component> <Proto>: <Content>",
             # match the ip, port, id
-            "regex": [config.regex['ip4'],config.regex['port'],config.regex['id']],
+            "regex": [cfg.regex['ip4'],cfg.regex['port'],cfg.regex['id']],
             "st": 0.2,
             "depth": 4,
         },
         "audit": {
             "log_format": "<Type> <Time>: <Content>",
             # match the ip, port, id
-            "regex": [config.regex['ip4'],config.regex['port'],config.regex['id']],
+            "regex": [cfg.regex['ip4'],cfg.regex['port'],cfg.regex['id']],
             "st": 0.2,
             "depth": 6,
         },
@@ -43,7 +43,7 @@ format_dict = {
         "syslog":{
             "log_format": "<Month> <Day> <Timestamp> <Component> <Proto>: <Content>",
             # match path
-            "regex": [config.regex['path_unix'],config.regex['domain'],config.regex['ip_with_port'],config.regex['ip4']],
+            "regex": [cfg.regex['path_unix'],cfg.regex['domain'],cfg.regex['ip_with_port'],cfg.regex['ip4']],
             "st": 0.2,
             "depth":6,
         }

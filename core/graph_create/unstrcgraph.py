@@ -14,7 +14,7 @@ import logging
 from core.graph_label import graphlabel
 from pathlib import Path
 import pandas as pd
-import config
+import cfg
 import ast
 
 logging.getLogger('matplotlib.font_manager').disabled = True
@@ -94,7 +94,7 @@ class UnstrGausalGraph:
         '''
         G = nx.MultiDiGraph()
         # create node value and attrs
-        if self.log_type in config.log_type['gen']:
+        if self.log_type in cfg.log_type['gen']:
             log_type = 'general'
         else:
             log_type = self.log_type
@@ -203,7 +203,7 @@ class UnstrGausalGraph:
     def graph_save(self, G, name:str):
 
         fig, ax = plt.subplots()
-        graphdraw = graphlabel.GraphLabel(config.attr_iocs_dict, config.ait_iot_dict)
+        graphdraw = graphlabel.GraphLabel(cfg.attr_iocs_dict, cfg.ait_iot_dict)
         graphdraw.draw_labeled_multigraph(G, "value", ax)
         fig.tight_layout()
         if not name:

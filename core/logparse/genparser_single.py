@@ -32,7 +32,7 @@ from core.logparse.semdep import DepParse
 import spacy
 import yaml
 from core.pattern import domaininfo
-import config
+import cfg
 from spacy.tokenizer import Tokenizer
 
 # set the configuration

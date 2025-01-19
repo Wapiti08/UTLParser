@@ -18,7 +18,7 @@ import yaml
 from utils import util
 from core.pattern import domaininfo
 import pandas as pd
-import config
+import cfg
 
 # set the configuration
 logging.basicConfig(level=logging.DEBUG,
@@ -37,7 +37,7 @@ class KVParser:
         '''
         :param poi_list: for example: ["type", "timestamp", "acct", "exe", "res"]
         '''
-        self.PoI = config.POI[app][log_type]
+        self.PoI = cfg.POI[app][log_type]
         self.format_output = {
             "Time":[],
             "Src_IP":[],
@@ -93,7 +93,7 @@ class KVParser:
         elif self.log_type == "process":
             if self.app == "sysdig":
                 # read specific format
-                proces_format = config.format[self.log_type][self.app]
+                proces_format = cfg.format[self.log_type][self.app]
                 # create key value pair for previous part
                 headers, regex = util.gen_regex_from_logformat(proces_format)
                 res = self.header_value_pair(sen, regex, headers)

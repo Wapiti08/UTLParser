@@ -10,7 +10,7 @@ sys.path.insert(0, Path(sys.path[0]).parent.as_posix())
 
 import unittest
 from core.graph_label import graphlabel
-import config
+import cfg
 import networkx as nx
 from collections import Counter
 
@@ -27,8 +27,8 @@ class TestLogparser(unittest.TestCase):
 
         # test for sysdig process
         self.graphlabeler = graphlabel.GraphLabel(
-            attr_iocs_dict=config.attr_iocs_dict,
-            label_dict=config.ait_iot_dict,
+            attr_iocs_dict=cfg.attr_iocs_dict,
+            label_dict=cfg.ait_iot_dict,
         )
     
     def test_ioc_match(self):

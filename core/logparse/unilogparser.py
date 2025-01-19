@@ -7,7 +7,7 @@ from core.logparse import reqparser
 from core.logparse import genparser
 from core.logparse import uniformat
 from core.logparse import strreader
-import config
+import cfg
 import logging
 import ray
 
@@ -37,7 +37,7 @@ class LogParser:
         outdir = self.output_path
         logname = Path(self.log_path).stem
         
-        if logname in config.log_type["kv"]:
+        if logname in cfg.log_type["kv"]:
             logparser = kvparser.KVParser(
                 indir = indir,
                 outdir = outdir,
@@ -46,7 +46,7 @@ class LogParser:
                 app = self.log_app
                 )
             
-        elif logname in config.log_type["req"]:
+        elif logname in cfg.log_type["req"]:
             logparser = reqparser.ReqParser(
                 indir = indir,
                 outdir = outdir,
@@ -55,15 +55,15 @@ class LogParser:
                 app = self.log_app
             )
         
-        elif logname in config.log_type["gen"]:
+        elif logname in cfg.log_type["gen"]:
             # check whether parameters have been calculated before
-            if self.log_app in config.format_dict.keys():
-                if logname in config.format_dict[self.log_app].keys():
+            if self.log_app in cfg.format_dict.keys():
+                if logname in cfg.format_dict[self.log_app].keys():
                     # rex is decided by types of IOCs to extract
-                    rex = config.format_dict[self.log_app]["regex"]
-                    log_format = config.format_dict[self.log_app]["log_format"]
-                    depth = config.format_dict[self.log_app]["depth"]
-                    st = config.format_dict[self.log_app]["st"]
+                    rex = cfg.format_dict[self.log_app]["regex"]
+                    log_format = cfg.format_dict[self.log_app]["log_format"]
+                    depth = cfg.format_dict[self.log_app]["depth"]
+                    st = cfg.format_dict[self.log_app]["st"]
                 else:
                     logger.info("{} in {} has not been processed before, \
                                 generating parameters".format(logname, self.log_app))
@@ -72,7 +72,7 @@ class LogParser:
                         logger.warn("The desired entities have not been provided, please add a list in command")
                         sys.exit(1)
                     else:
-                        rex = [config.regex[ioc] for ioc in self.iocs_list ]
+                        rex = [cfg.regex[ioc] for ioc in self.iocs_list ]
                     depth, thres, log_format = self.gen_parser_paras()
             else:
                 logger.info("logs in {} has not been processed before, \
@@ -82,7 +82,7 @@ class LogParser:
                     logger.warn("The desired entities have not been provided, please add a list in command")
                     sys.exit(1)
                 else:
-                    rex = [config.regex[ioc] for ioc in self.iocs_list ]
+                    rex = [cfg.regex[ioc] for ioc in self.iocs_list ]
                 depth, thres, log_format = self.gen_parser_paras()
             
             # parse general logs
@@ -98,7 +98,7 @@ class LogParser:
                 maxChild=100,
                 )
 
-        elif logname in config.log_type["str"]:
+        elif logname in cfg.log_type["str"]:
             logparser = strreader.StrLogParser(
                 indir = indir,
                 outdir = outdir,

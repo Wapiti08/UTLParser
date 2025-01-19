@@ -12,7 +12,7 @@ from utils import util
 from core.logparse import unilogparser
 from core.graph_create import caugraph
 from core.graph_label import graphlabel
-import config
+import cfg
 from argparse import ArgumentParser
 import logging
 import networkx as nx
@@ -94,8 +94,8 @@ def graph_label(fused_graph):
     :return subgraphs, labels
     '''
     graphlabeler = graphlabel.GraphLabel(
-        attr_iocs_dict=config.attr_iocs_dict,
-        label_dict=config.ait_iot_dict,
+        attr_iocs_dict=cfg.attr_iocs_dict,
+        label_dict=cfg.ait_iot_dict,
     )
 
     return graphlabeler.subgraph_label(fused_graph)

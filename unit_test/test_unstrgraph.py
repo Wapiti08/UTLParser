@@ -11,7 +11,7 @@ import unittest
 from core.graph_create.unstrcgraph import UnstrGausalGraph
 from core.graph_create.gfusion import GraphFusion
 from core.graph_create import gfeature
-import config
+import cfg
 
 class TestUnStrgraph(unittest.TestCase):
     ''' test the parsing performance for access log
@@ -21,7 +21,7 @@ class TestUnStrgraph(unittest.TestCase):
         cur_path = Path.cwd()
         indir = cur_path.joinpath("data","result").as_posix()
         outdir = cur_path.joinpath("data","result").as_posix()
-        self.graphfusion = GraphFusion(config.avg_len, cur_path.parent.joinpath("core","entity_reco"))
+        self.graphfusion = GraphFusion(cfg.avg_len, cur_path.parent.joinpath("core","entity_reco"))
 
         self.auth_unstrgraph = UnstrGausalGraph( outdir, "auth")
         self.audit_unstrgraph = UnstrGausalGraph( outdir, "audit")

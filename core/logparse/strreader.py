@@ -15,7 +15,7 @@ from pathlib import Path
 from datetime import datetime
 from core.pattern import domaininfo
 import pandas as pd
-import config
+import cfg
 import pandas as pd
 
 # set the configuration
@@ -31,7 +31,7 @@ class StrLogParser:
 
     def __init__(self, indir:str, outdir:dir, log_name:str, log_type:str, app:str):
         
-        self.PoI = config.POI[app][log_type]
+        self.PoI = cfg.POI[app][log_type]
         self.format_output = {
             "Time":[],
             "Src_IP":[],

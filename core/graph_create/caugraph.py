@@ -8,7 +8,7 @@ import sys
 from pathlib import Path
 sys.path.insert(0, Path(sys.path[0]).parent.as_posix())
 from core.graph_create import strcgraph, unstrcgraph, gfusion, gfeature
-import config
+import cfg
 
 class GausalGraph:
     ''' process raw logs 
@@ -67,7 +67,7 @@ def fuse_subgraphs(log_type_list:list, output_path:str, entity_path:str):
         grapher.data_load()
         sub_graph_list.append(grapher.causal_graph())
     
-    graphfusion = gfusion.GraphFusion(config.avg_len, entity_path)
+    graphfusion = gfusion.GraphFusion(cfg.avg_len, entity_path)
 
     fused_graph = graphfusion.graph_conn(sub_graph_list)
     grapher.graph_save(fused_graph, "full")
