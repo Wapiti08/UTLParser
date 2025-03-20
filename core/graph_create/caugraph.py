@@ -28,7 +28,7 @@ class GausalGraph:
             self.caugrapher = strcgraph.StruGrausalGraph(self.input_file, self.output_file, self.log_type)
 
         else:
-            self.caugrapher = unstrcgraph.UnstrGausalGraph(self.input_file, self.output_file, self.log_type)            
+            self.caugrapher = unstrcgraph.UnstrGausalGraph(self.output_file, self.log_type)            
         
         # load unified output
         self.caugrapher.data_load()

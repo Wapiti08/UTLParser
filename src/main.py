@@ -40,7 +40,7 @@ def process_log(log_app, log_path, output_path, iocs_list):
     uparser.generate_output(logparser)
 
 
-ray.init()
+ray.init(runtime_env={"working_dir": Path.cwd().parent.as_posix()})
 
 class GraphTrace:
     def __init__(self, log_app, log_path, output_path, iocs_list, stru:bool):
