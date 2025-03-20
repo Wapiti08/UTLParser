@@ -63,8 +63,10 @@ python -m spacy download en_core_web_lg
 
 - how to use
 ```
-# single log source processing
-python3 main.py -a dns -i /xxx/UTLParser/unit_test/data/dns.log
+# enter into the src folder where main.py locates
+
+# single log source processing -- under src folder
+python3 main.py -a dns -i dns.log
 
 # multiple log sources processing --- fused graph
 python3 main.py -f True -al 'dns,error,access,audit'
