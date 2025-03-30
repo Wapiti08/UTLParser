@@ -6,7 +6,9 @@
 
 ---
 
-Unified Semantic Log Parsing and Causal Graph Construction for Attack Attribution
+Unified Parallel Semantic Log Parsing based on Causal Graph Construction for Attack Attribution
+
+**Accepted at 45th IEEE International Conference on Distributed Computing Systems (IEEE ICDCS 2025)**
 
 ## Features
 - correlate data from multiple sources (network traffic, system/applications/service logs, process execution status)
